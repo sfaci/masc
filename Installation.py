@@ -1,7 +1,7 @@
 import sqlite3
 
 # Path where installations databases are stored
-INSTALLATIONS_PATH = "installations/"
+DICTIONARY_PATH = "dicts/"
 
 # This class store information about a CMS installation in a database
 # to be able to compare later with itself
@@ -19,7 +19,7 @@ class Installation:
 
 
     def __add_data(self):
-        connection = sqlite3.connect(INSTALLATIONS_PATH + self.name + ".db")
+        connection = sqlite3.connect(DICTIONARY_PATH + self.name + ".db")
         sql = "CREATE TABLE entries (id INTEGER PRIMARY KEY AUTOINCREMENT, " + \
             "path TEXT, content TEXT, mtime REAL)"
 
