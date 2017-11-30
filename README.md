@@ -1,2 +1,2 @@
 # masc
-Malware Scanner
+A malware (web) scanner

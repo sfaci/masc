@@ -1,44 +1,32 @@
 #!/usr/bin/python3
 
+import sys
 import os
-import magic
-from MascEntry import MascEntry
-from Wordpress import Wordpress
+import argparse
+from MascUtils import MascUtils
 
-TEST_DIR = "test/"
-WORDPRESS_DIR = TEST_DIR + "wordpress/"
 CWD = os.getcwd() + "/"
 
-entry_list = []
+parser = argparse.ArgumentParser()
+parser.add_argument("--site_type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
+                    choices=["wordpress", "drupal", "joomla", "magento"])
+parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
+parser.add_argument("--add_file", help="Add a suspect file to the dictionary", metavar="FILENAME")
+parser.add_argument("--add_word", help="Add a suspect content to the dictionary", metavar="STRING")
+args = parser.parse_args()
 
+if len(sys.argv) == 1:
+    print("No arguments provided. Execute '" + sys.argv[0] + " -h' for help")
+    exit()
 
-# Scan a full dir recursively and store 'MascEntry' objects in a list
-def store_dir_content(dir_path):
-    scanned_dir = os.scandir(dir_path)
-    for entry in scanned_dir:
-        entry_stat = os.stat(entry.path)
-        if entry.is_dir():
-            st_type = "dir"
-        else:
-            st_type = "file"
-
-        masc_entry = MascEntry(entry.name, CWD + entry.path, entry_stat.st_size, entry_stat.st_mode, entry_stat.st_atime,
-                               entry_stat.st_mtime, entry_stat.st_ctime, st_type)
-        entry_list.append(masc_entry)
-
-        if entry.is_dir():
-            store_dir_content(entry.path)
-
-
-# Only to test store_dir_content function
-#store_dir_content(WORDPRESS_DIR)
-#for me in entry_list:
-#    print(me.full_path)
-#    print (me.is_plain_text())
-
-wordpress = Wordpress(WORDPRESS_DIR)
-wordpress.list()
-for me in wordpress.entry_list:
-    print(me.full_path)
-
-print(wordpress.files_count())
+if args.scan:
+    if args.site_type == "wordpress":
+        MascUtils.scan_website(args.site_type, args.scan)
+elif args.add_file:
+    if args.site_type == "wordpress":
+        MascUtils.add_suspect_file(args.add_file)
+elif args.add_word:
+    if args.site_type == "wordpress":
+        MascUtils.add_suspect_content(args.add_word)
+else:
+    print("No option provided. Try execute '" + sys.argv[0] + " -h' for help")
