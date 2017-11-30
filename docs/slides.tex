@@ -1,0 +1,118 @@
+% Author: Santiago Faci <santiago.faci@gmail.com>
+% http://github.com/sfaci/masc
+
+\documentclass[xcolor={dvipsnames}]{beamer}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{beamerthemeshadow}
+\usepackage[spanish]{babel}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+
+\definecolor{resalta}{cmyk}{0,1,0,0}
+
+\usepackage{listings}
+\lstset{basicstyle=\tiny\ttfamily,breaklines=true}
+\lstset{framextopmargin=50pt}
+\lstset{keywordstyle=\tiny\color{blue}\bfseries}
+\lstset{stringstyle=\tiny\color{red}\ttfamily}
+\lstset{commentstyle=\tiny\color{OliveGreen}\ttfamily}
+\lstset{showstringspaces=false}
+
+\begin{document}
+\title{masc: malware (web) scanner}  
+\author{Santiago Faci\\ \url{sfaci@fundacionmontessori.com}}
+\institute{\small{Colegio Montessori (Zaragoza)}}
+\date{\Large{Hackathon Cybercamp 2017}} 
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}[plain]\frametitle{Índice}\tableofcontents
+\end{frame} 
+
+
+\section{¿Qué es masc?} 
+\begin{frame}\frametitle{¿Qué es masc?} 
+
+    \begin{block}{malware web scanner}
+    Escanea un sitio web ya comprometido en busca de malware con el objetivo de eliminarlo
+    \end{block}
+
+    \begin{itemize}
+        \item Busca y/o limpia, automáticamente, malware en un sitio web que sabemos que ha sido atacado
+        \item Aunque no pensemos que hemos sido atacados, podemos ejecutarlo periodicamente para comprobarlo. No todos los ataques son ruidosos
+        \item Comportamiento a medida de algunos CMS concretos
+        \item Trabaja basándose en diccionarios que pueden ser ampliados y mejorados
+        \item La idea es que sea fácilmente extensible para que se adapte a otros CMS y arquitecturas web
+    \end{itemize}
+\end{frame}
+
+\subsection{¿Quién va a usar masc?}
+\begin{frame}\frametitle{¿Quién va a usar masc?}
+    \begin{block}{¿Quién va a usar masc?}
+        \begin{itemize}
+            \item Cualquier que exponga un sitio web a Internet es susceptible de ser atacado
+            \item Administradores de sitios web que hayan sido atacados o que quieran comprobar si lo han sido
+            \item Para administradores de sistemas puesto que el código se inyecta en las web para utilizar el sistema entero en beneficio propio
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\subsection{¿Por qué masc?}
+\begin{frame}\frametitle{¿Por qué existe masc?}
+    \begin{block}{¿Por qué existe masc?}
+        \begin{itemize}
+            \item Aunque cumplamos todos los protocolos para protegernos, no estamos totalmente a salvo
+            \item Precisamente la idea surgió hace un tiempo administrando sitios web que habían sido atacados (la mayoría Wordpress). Para
+            entonces tenía unos scripts \emph{bash} que buscaban patrones en el código para eliminar manualmente esos ficheros
+            \item Hay muchas herramientas para proteger pero parece díficil encontrarlas para arreglar desastres
+            \item Hay infinidad de información sobre cómo limpiar esos sitios web, pero manualmente
+            \item Algunas herramientas nunca encontraban nada (linux-malware-detect, ClamAV, . . .)
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Estado actual}
+\begin{frame}\frametitle{Estado actual de masc}
+    \begin{block}{Estado actual}
+        \begin{itemize}
+            \item Ahora mismo \emph{masc} es un comando que escanea un sitio web WordPress en busca de ficheros o contenido sospechosos
+            \item Está escrito en Python, lenguaje orientado a objetos, potente, con infinidad de librerías y bastante extendido en el ámbito de la seguridad
+            \item Ahora basa su conocimiento en unos diccionarios con aquellos ficheros o contenidos que sabemos que los atacantes generan/emplean
+            \item Los diccionarios pueden ampliarse manualmente a través de \emph{masc}
+            \item Muestra al usuario los ficheros que parecen sospechosos
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Propuestas para el hackathon}
+
+\begin{frame}\frametitle{Propuestas para el hackathon}
+    \begin{block}{Propuestas para desarrollar}
+    \begin{itemize}
+        \item Hacer que \emph{masc} trabaje con diferentes CMS (Drupal, Joomla, Magento, . . .)
+        \item Convertirlo también en una aplicación web (con ayuda de Django)
+        \item Crear una arquitectura que lo haga facilmente extensible
+        \item Comprobar los permisos de los ficheros y directorios
+        \item Ofrecer al usuario la posibilidad de restaurar el funcionamiento del sitio web
+        \item Utilizar las firmas del proyecto \emph{WebMalwareScanner} de \emph{OWASP}
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Más ideas}
+
+\begin{frame}\frametitle{Ideas para el futuro}
+    \begin{block}{Cómo puede crecer masc}
+    \begin{itemize}
+        \item Ampliar el diccionario de firmas (como hace \emph{WebMalwareScanner})
+        \item Mejorar el interfaz web
+        \item Escaneo remoto de sitios web
+        \item Monitorización en tiempo real para detectar cambios rapidamente y volver a un estado anterior
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+\end{document}
