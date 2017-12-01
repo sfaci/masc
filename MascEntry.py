@@ -2,7 +2,7 @@ import magic
 import re
 
 
-# A filesystem entry: file or directory
+# A filesystem entry: file or directory with some information
 class MascEntry:
 
     # Apparently 'st_creator' and 'st_type' are only available in some Unix (like Unix)
@@ -24,13 +24,15 @@ class MascEntry:
         self.creator = creator
 
 
-    # Return the content of a plain text file
+    # Return the content if it's a plain text file
     def get_content(self):
-        if self.is_plain_text():
-            file = open(self.absolute_path)
-            content = file.read()
-            file.close()
-            return content
+        if not self.is_plain_text():
+            return None
+
+        file = open(self.absolute_path)
+        content = file.read()
+        file.close()
+        return content
 
 
     # Check if the entry is a file
@@ -62,6 +64,6 @@ class MascEntry:
 
         return True
 
-
+    # string representation of an entry
     def __str__(self):
         return self.absolute_path

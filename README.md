@@ -1,7 +1,11 @@
 # masc
 A malware (web) scanner
 
+## About
+
 [homepage](https://sfaci.github.io/masc)
+
+## Usage
 
 ```bash
 usage: masc.py [-h] [--site_type {wordpress,drupal,joomla,magento}]
@@ -16,3 +20,11 @@ optional arguments:
   --add_file FILENAME   Add a suspect file to the dictionary
   --add_word STRING     Add a suspect content to the dictionary
 ```
+
+## Documentation
+
+[wiki](https://github.com/sfaci/masc/wiki)
+
+## Author
+
+

@@ -3,7 +3,11 @@
 import sys
 import os
 import argparse
-from MascUtils import MascUtils
+from Wordpress import Wordpress
+from Drupal import Drupal
+from Joomla import Joomla
+from PrintUtils import print_green, print_blue, print_results
+from Dictionary import Dictionary
 
 CWD = os.getcwd() + "/"
 
@@ -20,13 +24,47 @@ if len(sys.argv) == 1:
     exit()
 
 if args.scan:
+    print_blue("Reading dictionary . . . ", "")
+    Dictionary.load_suspect_files(args.site_type, args.scan)
+    Dictionary.load_suspect_content(args.site_type, args.scan)
+    Dictionary.load_signatures()
+    print_green("done.")
+
+    cms = None
     if args.site_type == "wordpress":
-        MascUtils.scan_website(args.site_type, args.scan)
+        cms = Wordpress(args.scan)
+    elif args.site_type == "drupal":
+        cms = Drupal(args.scan)
+    elif args.site_type == "joomla":
+        cms = Joomla(args.scan)
+
+    # Scan and load some information about the website
+    print_blue("Scanning web site . . . ")
+    cms.scan()
+    print_green("done.")
+
+    # Search for suspect files (base on several rules like dictionary, clean installation, . . .)
+    print_blue("Searching for suspect files (by name) . . . ")
+    results = cms.search_suspect_files()
+    print_results(results, "Suspect files were found. Listing . . .", "No suspect files were found")
+
+    #Search for suspect content (base on dictionary)
+    print_blue("Searching for suspect files (by content) . . .")
+    results = cms.search_suspect_content()
+    print_results(results, "Suspect content were found in some file/s. Listing . . .", "No suspect content were found")
+
+    # Search for malware (base on OWASP WebMalwareScanner signatures database)
+    print_blue("Searching for malware (by signatures) . . .")
+    results = cms.search_malware_signatures()
+    print_green("done.")
+
 elif args.add_file:
     if args.site_type == "wordpress":
-        MascUtils.add_suspect_file(args.add_file)
+        Dictionary.add_suspect_file(args.add_file)
+        print_blue("Added '" + args.add_file + "' as a suspect file to the dictionary")
 elif args.add_word:
     if args.site_type == "wordpress":
-        MascUtils.add_suspect_content(args.add_word)
+        Dictionary.add_suspect_content(args.add_word)
+        print_blue("Added '" + args.add_word + "' as a suspect word to the dictionary")
 else:
     print("No option provided. Try execute '" + sys.argv[0] + " -h' for help")
