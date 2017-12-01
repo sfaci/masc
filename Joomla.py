@@ -6,7 +6,6 @@ class Joomla(CMS):
 
     def __init__(self, path):
         super().__init__(path)
-        print_debug("Soy un Joomla")
 
 
     def compare_with_clean_installation(self):

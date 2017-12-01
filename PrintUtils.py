@@ -40,4 +40,5 @@ def print_results(results, data_found_message, data_not_found_message):
             if type(file) is MascEntry:
                 print("\t" + file.path)
             else:
-                print("\t" + file + ": " + results[file])
+                print("\t" + file)
+                # print("\t" + file + ": " + results[file])

@@ -12,7 +12,6 @@ class Wordpress(CMS):
 
     def __init__(self, path):
         super().__init__(path)
-        print_debug("Soy un Wordpress")
 
 
     # Search for suspect files in the current installation
@@ -47,8 +46,8 @@ class Wordpress(CMS):
     # Search for suspect content in the current installation based on the masc dictionary
     def search_suspect_content(self):
 
-        results = {}
-
+        results = []
+        '''
         for entry in self.entry_list:
             if entry.is_file() and entry.is_plain_text():
                 file = open(entry.absolute_path)
@@ -59,14 +58,7 @@ class Wordpress(CMS):
                                 results[entry.absolute_path] = current_line
                 except:
                     print_red("Error reading file: " + entry.absolute_path)
-
-        return results
-
-    # Search for malware signatures using OWASP Web Malware Scanner database
-    def search_malware_signatures(self):
-
-        results = []
-
+        '''
         return results
 
 

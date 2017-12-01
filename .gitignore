@@ -3,6 +3,7 @@
 .idea
 test
 test.py
+ideas.txt
 
 # Latex Beamer files
 *.aux

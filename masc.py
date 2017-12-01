@@ -24,7 +24,7 @@ if len(sys.argv) == 1:
     exit()
 
 if args.scan:
-    print_blue("Reading dictionary . . . ", "")
+    print_blue("Loading dictionaries and signatures. . . ")
     Dictionary.load_suspect_files(args.site_type, args.scan)
     Dictionary.load_suspect_content(args.site_type, args.scan)
     Dictionary.load_signatures()
@@ -44,19 +44,19 @@ if args.scan:
     print_green("done.")
 
     # Search for suspect files (base on several rules like dictionary, clean installation, . . .)
-    print_blue("Searching for suspect files (by name) . . . ")
-    results = cms.search_suspect_files()
-    print_results(results, "Suspect files were found. Listing . . .", "No suspect files were found")
+    #print_blue("Searching for suspect files (by name) . . . ")
+    #results = cms.search_suspect_files()
+    #print_results(results, "Suspect files were found. Listing . . .", "No suspect files were found")
 
     #Search for suspect content (base on dictionary)
-    print_blue("Searching for suspect files (by content) . . .")
-    results = cms.search_suspect_content()
-    print_results(results, "Suspect content were found in some file/s. Listing . . .", "No suspect content were found")
+    #print_blue("Searching for suspect files (by content) . . .")
+    #results = cms.search_suspect_content()
+    #print_results(results, "Suspect content were found in some file/s. Listing . . .", "No suspect content were found")
 
     # Search for malware (base on OWASP WebMalwareScanner signatures database)
     print_blue("Searching for malware (by signatures) . . .")
     results = cms.search_malware_signatures()
-    print_green("done.")
+    print_results(results, "Malware were found. Listing files. . .", "No malware were found")
 
 elif args.add_file:
     if args.site_type == "wordpress":
