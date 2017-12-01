@@ -1,43 +1,24 @@
 import os
-from MascEntry import MascEntry
+import urllib.request
+import zipfile
+from CMS import CMS
+from PrintUtils import print_red, print_debug
+from Constants import CACHE_DIR
+from Dictionary import Dictionary
+
+
 # This class represents a Wordpress installation
-class Wordpress:
+class Wordpress(CMS):
 
     def __init__(self, path):
-        # Path where this Wordpress is installed
-        self.path = path
-        # It will contain all the plain text files
-        self.entry_list = []
+        super().__init__(path)
+        print_debug("Soy un Wordpress")
 
 
-    # List and stores all the plain text files
-    def scan(self, path=""):
-        if path == "":
-            path = self.path
-        scanned_dir = os.scandir(path)
-        for entry in scanned_dir:
-            entry_stat = os.stat(entry.path)
-            if entry.is_dir():
-                st_type = "dir"
-            else:
-                st_type = "file"
-
-            masc_entry = MascEntry(entry.name, entry.path, os.getcwd() + "/" + entry.path, entry_stat.st_size, entry_stat.st_mode,
-                                   entry_stat.st_atime,
-                                   entry_stat.st_mtime, entry_stat.st_ctime, st_type)
-            self.entry_list.append(masc_entry)
-
-            # If the entry is a directory it continues listing deeper
-            if entry.is_dir():
-                self.scan(entry.path)
-
-
-    # Return the number of plain text files in this Wordpress installation
-    def files_count(self):
-        return len(self.entry_list)
-
-
-    def find_suspect_files(self, suspect_files):
+    # Search for suspect files in the current installation
+    # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
+    # to check if this file belong to an official installation
+    def search_suspect_files(self):
 
         results = []
 
@@ -46,14 +27,25 @@ class Wordpress:
                 results.append(entry)
                 continue
 
-            for file in suspect_files:
+            for file in Dictionary.suspect_files:
                 if entry.path == file:
                     results.append(entry)
 
         return results
 
 
-    def find_suspect_content(self, suspect_content):
+    # Compare the files of the current installation with a clean installation to look for suspect files
+    # It returns the current installation files that doesn't appear in the official installation
+    # TODO make someting with WP themes and other unknown content (maybe search in the Internet the structure)
+    def compare_with_clean_installation(self):
+
+        results = []
+
+        return results
+
+
+    # Search for suspect content in the current installation based on the masc dictionary
+    def search_suspect_content(self):
 
         results = {}
 
@@ -62,10 +54,58 @@ class Wordpress:
                 file = open(entry.absolute_path)
                 try:
                     for current_line in file:
-                        for line in suspect_content:
+                        for line in Dictionary.suspect_content:
                             if line in current_line:
                                 results[entry.absolute_path] = current_line
                 except:
-                    print("Error reading file: " + entry.absolute_path)
+                    print_red("Error reading file: " + entry.absolute_path)
 
         return results
+
+    # Search for malware signatures using OWASP Web Malware Scanner database
+    def search_malware_signatures(self):
+
+        results = []
+
+        return results
+
+
+    # Obtain the version of the current installation
+    def get_version(self):
+
+        version_line = ""
+
+        with open(self.path + "wp-includes/version.php") as file:
+            for line in file:
+                if "$wp_version =" in line:
+                    version_line = line.lstrip()
+                    break
+
+        slices = version_line.split("'")
+        return slices[1]
+
+    # Download a clean installation of the current website
+    def download_clean_installation(self):
+
+        url = "https://wordpress.org/wordpress-" + self.version + ".zip"
+        zip_file = CACHE_DIR + "wordpress-" + self.version + ".zip"
+
+        urllib.request.urlretrieve(url, zip_file)
+
+        if not os.path.isfile(zip_file):
+            return False
+
+        return True
+
+    # Unzip a zip file that contains a clean installation of the current website
+    def unzip_clean_installation(self):
+
+        filename = "wordpress-" + self.version;
+        zip_filename = filename + ".zip"
+        zip_path = CACHE_DIR + zip_filename
+
+        zip_file = zipfile.ZipFile(zip_path, "r")
+        zip_file.extractall(CACHE_DIR + filename)
+        zip_file.close()
+
+        return True
