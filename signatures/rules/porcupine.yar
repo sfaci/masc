@@ -1,0 +1,29416 @@
+
+rule Porcupine_Junk_37174
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??4e3d43333d4233735f74656d6f735f6f5f6d65746f646f5f636572746f5f706172615f766f633d43333d41415f6c7563726172 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36003
+{
+strings:
+	$a0 = { 6361736173206261686961 }
+	$a1 = { 6e6f74612066697363616c }
+	$a2 = { 2e6274656d7075726c2e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37173
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??46657272616d656e74615f6f6e2d6c696e655f706172615f766f633d43333d41415f76656e6465725f6d7569746f5f6e615f696e7465726e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36001
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 2f636c2e6c792f }
+	$a2 = { 636173617362616869612e636f6d2e6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37585
+{
+strings:
+	$a0 = { 777363726970742E6372656174656F626A656374282761646F64622E73747265616D27293B2076617220636F6465203D }
+	$a1 = { 6465636F646528746578742C20636F6465293B206576616C286465636F646564293B }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32016
+{
+strings:
+	$a0 = { 6e6577732d6361736162616869612e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32012
+{
+strings:
+	$a0 = { 666f69206d61726361646f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 3230313520596f7554756265 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_21321
+{
+strings:
+	$a0 = { 316b314d7959566363416d3154315546716f6e744b684f3145304c417a41745a61564f5a5a492d5864682e6a7067 }
+	$a1 = { 6369656c6f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_26448
+{
+strings:
+	$a0 = { 5265706c792d546f3a20656d61696c5f6c6f67406d61696c327765626d61737465722e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31158
+{
+strings:
+	$a0 = { 7469746c653e524544454349454c4f }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 706172636572696120656e747265206120524544454341524420652061204349454c4f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31595
+{
+strings:
+	$a0 = { 416e6578616d6f732065737461206475706c6963617461 }
+	$a1 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34673
+{
+strings:
+	$a0 = { 5072657a61646f28612920436c69656e74652053616e74616e646572 }
+	$a1 = { 2e706870?? }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31596
+{
+strings:
+	$a0 = { 536567756520616e65786f }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a7350576830644841 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31599
+{
+strings:
+	$a0 = { 53656775652061204e4665206465206e756d65726f203030303030 }
+	$a1 = { 2f706167652e70687023 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31846
+{
+strings:
+	$a0 = { 7365752070656469646f2c203c6120687265663d22687474703a2f2f636f6e7461746f2e6d732f }
+	$a1 = { 636f6d707261666163696c2e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31840
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d70726f76616e7465206465706f7369746f }
+	$a1 = { 4061646d696e2e636f6d2e62723e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37416
+{
+strings:
+	$a0 = { 40726567697374726f7075626c692e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37412
+{
+strings:
+	$a0 = { 61637475616C696365207375206375656E7461206F20737573206E7565766F7320636F7272656F73 }
+	$a1 = { 74797065666F726D2E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36842
+{
+strings:
+	$a0 = { 66616365626f6f6b20687474703a2f2f6269742e6c792f }
+	$a1 = { 76657220666f746f2066616365626f6f6b }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_26539
+{
+strings:
+	$a0 = { 696E666F6D61696C }
+	$a1 = { 73756120636F6E746120736572[1-8]626C6F717565616461 }
+	$a2 = { 627261646573636F20732F61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34509
+{
+strings:
+	$a0 = { 46726f6d3a20496e666f726d652042616e636f20446f2042726173696c }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37320
+{
+strings:
+	$a0 = { 7469746c653e435245444943415244 }
+	$a1 = { 6d656e736167656d20636f72726574616d656e7465 }
+	$a2 = { 696d616765736861636b2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37321
+{
+strings:
+	$a0 = { 63617274[1-8]6F20636861766573206465207365677572616E[1-8]6120656E636F6E7472612D73652065787069726164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37639
+{
+strings:
+	$a0 = { 7469746c653e6272616461 }
+	$a1 = { 4d756c7469706c757320466964656c6964616465 }
+	$a2 = { 72657367617465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32681
+{
+strings:
+	$a0 = { 766964656f2064612076697669 }
+	$a1 = { 73746f726167652e676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33207
+{
+strings:
+	$a0 = { 416263206465205072656d696f73 }
+	$a1 = { 74696e7975726c2e636f6d2f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37256
+{
+strings:
+	$a0 = { 626c6f717565696f2074656d70 }
+	$a1 = { 2e7765627369746573656775726f2e636f6d2f }
+	$a2 = { 534143204242202d2030383030 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33202
+{
+strings:
+	$a0 = { 5b434f4d554e494341444f20425241444553434f5d }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 2e666263646e2e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37258
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??3d45323d39433d39345f??3d20496e666f656d61696c202d205072657a61646f20436c69656e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_21844
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 436861766573206465205365677572616e }
+	$a2 = { 617475616c697a61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37530
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 76697375616C697A6172202F20626169786172 }
+	$a2 = { 6C61766F726F206173736573736F726961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32162
+{
+strings:
+	$a0 = { 6F72[2]616D656E746F20636F6D706C65746F }
+	$a1 = { 676678322E686F746D61696C2E636F6D2F }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32165
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 536f6369616c3a20504f52544f2053454755524f }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37651
+{
+strings:
+	$a0 = { 426f6c65746f20656d2061747261736f }
+	$a1 = { 3e63656e7472616c2e76656e64617340626f6c2e636f6d2e62723c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32166
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 5047686c5957512b494478745a58526849476830644841745a58463161585939496e4a6c5a6e4a6c6332676949474e76626e526c626e5139496a453756564a4d5057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37191
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22[1]3B2075726C3D687474703A2F2F[1-32]2E77656263696E646172696F2E636F6D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37190
+{
+strings:
+	$a0 = { 55457344424251414141414941424f546f3067506f69654f614155414148554841414170414141415132397463484a76646d4675644755675a47556756484a68626e4e6868385a7649454a68 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37197
+{
+strings:
+	$a0 = { 36392e3136322e38392e3134302f53654d614e614c2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37196
+{
+strings:
+	$a0 = { 636F727265696F73207265616C697A6F7520756D612074656E746174697661 }
+	$a1 = { 616365737365206F207765622068747470733A2F2F676F6F676C6564726976652E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37195
+{
+strings:
+	$a0 = { 687474703A2F2F3136322E3234382E3234362E323134 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33160
+{
+strings:
+	$a0 = { 456d6973733d45336f206465204e462d65 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 656d20666f726d61746f20504446 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33161
+{
+strings:
+	$a0 = { 506167616d656e746f20656d2041747261736f }
+	$a1 = { 74722e696d2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33167
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f20626f6c65746f }
+	$a1 = { 616d617a6f6e6177732e636f6d2f }
+	$a2 = { 747261636b696e6770726f2e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_29541
+{
+strings:
+	$a0 = { 7265636562657520756d61206d656e736167656d20646520766f7a }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33165
+{
+strings:
+	$a0 = { 466f6920656d697469646120756d61204e462d65 }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 6d6167617a696e656c75697a612e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32156
+{
+strings:
+	$a0 = { 406c6f6e672d63782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36690
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??557267656e74655f5375615f636f6e74615f7365723d43333d41315f626c6f717565616461 }
+	$a1 = { 46726f6d3a20225475646f417a756c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32155
+{
+strings:
+	$a0 = { 406c6f6e672d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_29388
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D68747470[10-50]2F636F6D70726F76616E74652E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32150
+{
+strings:
+	$a0 = { 406c6f61642d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32151
+{
+strings:
+	$a0 = { 406c6f61642d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36698
+{
+strings:
+	$a0 = { 5375626a6563743a2053657520636164617374726f206e6f204d65726361646f204c697672652c20666f69206465736174697661646f }
+	$a1 = { 526561746976652073657520436164617374726f2041676f726121 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37428
+{
+strings:
+	$a0 = { 6e6f76616e616e65742e696e666f2f63616d657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_30358
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A[1-8]3A6230782E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37122
+{
+strings:
+	$a0 = { 706167616D656E746F20636F6E6669726D61646F }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 2F662E636C2E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36237
+{
+strings:
+	$a0 = { 46726f6d3a205475646f415a554c }
+	$a1 = { 5375626a6563743a203d??5554462d38??51??434f4e544120424c4f515545414441 }
+	$a2 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33373
+{
+strings:
+	$a0 = { 3c6469762069643d656e67656e68617269613e }
+	$a1 = { 4361726f20436c69656e74652042616e636f20566f746f72616e74696d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33372
+{
+strings:
+	$a0 = { 2e736f75726365666f7267652e6e65742f }
+	$a1 = { 4361726f20436c69656e74652042616e636f20566f746f72616e74696d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36232
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f20646f2042726173696c }
+	$a1 = { 4174656e64696d656e746f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36231
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20696d706f7274616e74652062616e636f20646f2062726173696c }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35030
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 417475616c697a65206f20536f667477617265206465205365677572616e }
+	$a2 = { 42616e636f20646f2042726173696c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37200
+{
+strings:
+	$a0 = { 636F6E73746120656D206E6F73736F732073697374656D61206F20706167616D656E746F }
+	$a1 = { 6E6F20736572617361 }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37207
+{
+strings:
+	$a0 = { 40756c74726163656e7465722e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37597
+{
+strings:
+	$a0 = { 5b3137372e31312e35312e3135355d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37209
+{
+strings:
+	$a0 = { 63726f7373726f6164732d6772616e6974652e636f6d2f636f727265696f732f70656e64656e74652f?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33760
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a2045737065726f207175652061707265636965206d657520637572726963756c6f }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33761
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a2045737065726f2071756520706f737361206d6520616a75646172 }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_20259
+{
+strings:
+	$a0 = { 417475616c697a61e7e36f206465205365677572616ee761 }
+	$a1 = { 427261646573636f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37429
+{
+strings:
+	$a0 = { 43616D696E686F010009766172546D70446972 }
+	$a1 = { 646963676572616C0100046D61696E01001628 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33797
+{
+strings:
+	$a0 = { 4242205365677572616e2663636564696c3b61 }
+	$a1 = { 617475616c697a612663636564696c3b266174696c64653b6f2063616461737472616c }
+	$a2 = { 74656d706f72266161637574653b7269616d656e746520626c6f71756561646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33794
+{
+strings:
+	$a0 = { 6174697669646164657320696e636f6d756d20656d2073756120636f6e746120486f746d61696c }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37423
+{
+strings:
+	$a0 = { 7472697066616d696c792e636f6d2f6465736361726761732f4e6f74696669636163616f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37422
+{
+strings:
+	$a0 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d447431636d773961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37421
+{
+strings:
+	$a0 = { 2e636f6e7461646f636c69656e7465732e6573792e6573 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37420
+{
+strings:
+	$a0 = { 6d61726b74696e672d636f6e746162696c6964616465312e636f6d2e62722f6964 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37427
+{
+strings:
+	$a0 = { 6d756c68616e67737573616e2e636f2e6b722f6367692f2d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37426
+{
+strings:
+	$a0 = { 73454a766247563062773d3d??3d20656d203d??49534f2d383835392d31??42??5958527959584e767341 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37425
+{
+strings:
+	$a0 = { 73756120656E636F6D656E64613A2068747470733A2F2F676F6F676C656472697665 }
+	$a1 = { 74656E74617469766120646520656E7472656761 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37424
+{
+strings:
+	$a0 = { 696E74696D61[1-8]6F20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32935
+{
+strings:
+	$a0 = { 7469746c653e4361726f204d656d62726f2050617950616c }
+	$a1 = { 61746976696461646520696e636f6d756d20656d2073756120636f6e7461 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32936
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 617475616C697A61[1-8]6F206465207365677572616E }
+	$a2 = { 73757370656E73[1-8]6F206175746F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32745
+{
+strings:
+	$a0 = { 4f7263616d656e746f }
+	$a1 = { 536567756520616e65786f }
+	$a2 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32931
+{
+strings:
+	$a0 = { 636F72726563[1-8]6F2064652061636573736F20616F206175746F6174656E64696D656E746F }
+	$a1 = { 7265636164617374726F }
+	$a2 = { 62622E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32932
+{
+strings:
+	$a0 = { 5375626A6563743A20417475616C697A61[1-8]6F203A2042616E636F20646F2042726173696C20532F41207C2043656E7472616C206465204174656E64696D656E746F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32746
+{
+strings:
+	$a0 = { 656d20416e65786f }
+	$a1 = { 504568555455772b5045314656454567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d547456556b773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37517
+{
+strings:
+	$a0 = { 6D6F737472617220636F6E746575646F206F752065786962697220696D6167656E73 }
+	$a1 = { 7072696D6569726F70726F746573746F726563696665 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37516
+{
+strings:
+	$a0 = { 40677275706f63342e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37515
+{
+strings:
+	$a0 = { 652D6D61696C20666F69207072656D6961646F2068747470733A2F2F6269746C79 }
+	$a1 = { 6361727265666F7572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33150
+{
+strings:
+	$a0 = { 576861747341707020572665756d6c3b62 }
+	$a1 = { 596f7520682661636972633b76652061206e6577206d657373616765 }
+	$a2 = { 2e706870?? }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37511
+{
+strings:
+	$a0 = { 6174746163686D656E742E706E67203120616E65786F }
+	$a1 = { 636C642E70742F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33152
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f203d??49534f2d383835392d31??51??4974613d4641 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34646
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 696d67756f6c }
+	$a2 = { 616d617a6f6e617773 }
+	$a3 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_31153
+{
+strings:
+	$a0 = { 696E7465726E65742062616E6B696E67 }
+	$a1 = { 63616461737472616D656E746F206F627269676174[1-8]72696F20646F20636F6D70757461646F72 }
+	$a2 = { 657669746172206F20626C6F717565696F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34644
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 6269746c793d3245636f6d }
+	$a2 = { 416e65786f3d32453a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34643
+{
+strings:
+	$a0 = { 427573636120652041707265656e73 }
+	$a1 = { 4164766f6761646f73204173736f636961646f73 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34641
+{
+strings:
+	$a0 = { 7469746c653e4e6f746966696361 }
+	$a1 = { 50617363686f616c6f74746f }
+	$a2 = { 7a69702e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_34100
+{
+strings:
+	$a0 = { 50696c6c26237832373b205361766564204d79204d61727269616765 }
+	$a1 = { 6f7220777269746520746f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32209
+{
+strings:
+	$a0 = { 4062782d636c642e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31154
+{
+strings:
+	$a0 = { 63616461737472616D656E746F206F627269676174 }
+	$a1 = { 657669746172206F20626C6F717565696F }
+	$a2 = { 696E7465726E65742062616E6B696E67 }
+	$a3 = { 63616461737472616D656E746F206F6E6C696E65 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_32202
+{
+strings:
+	$a0 = { 4064782d706e732e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32200
+{
+strings:
+	$a0 = { 4062782d6170722e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32201
+{
+strings:
+	$a0 = { 4063782d706e732e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33187
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 4173736573736f726961206520436f6272616e }
+	$a2 = { 616d617a6f6e6177732e636f6d2f }
+	$a3 = { 2e706870223e }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_33180
+{
+strings:
+	$a0 = { 5375626a6563743a204356432056696167656e733a }
+	$a1 = { 2373656d707265436f6d5643 }
+	$a2 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33182
+{
+strings:
+	$a0 = { 4356432056696167656e732073656d70726520636f6d205643 }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37394
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 73756120636F6E746120657374[1-8]656D206D6F646F20696E6F706572616E7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32330
+{
+strings:
+	$a0 = { 4061782d636c642e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33188
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 43616461737472652d7365206520636f6e636f727261 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35919
+{
+strings:
+	$a0 = { 636f6d70726f76616e7465 }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33343
+{
+strings:
+	$a0 = { 6f6d70726f76616e7465 }
+	$a1 = { 582d5048502d536372697074 }
+	$a2 = { 582d485454502d506f7374696e672d5552493a2068747470733a2f2f7777772e676f6f676c65 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33340
+{
+strings:
+	$a0 = { 582d485454502d506f7374696e672d5552493a2068747470733a2f2f7777772e676f6f676c65 }
+	$a1 = { 636f6d70726f76616e746520646520646570 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33346
+{
+strings:
+	$a0 = { 7265636562657520756d2070726573656e746520436163617553686f77 }
+	$a1 = { 3e496d7072696d6972206375706f6d3c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34424
+{
+strings:
+	$a0 = { 616d617a6f6e6177732e636f6d2f662e636c2e6c792f }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 656e76696172206e6f20736575205768617374417070 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34425
+{
+strings:
+	$a0 = { 676f6f2e676c2f }
+	$a1 = { 736567756e64612076696120646120466174757261 }
+	$a2 = { 446f776e6c6f6164206173205a6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_24176
+{
+strings:
+	$a0 = { 73697374656D61206465206964656E746966696361[2-10]6F2064612063616978612065636F6E[1-8]6D696361206665646572616C }
+	$a1 = { 626C6F717565696F20646520737561 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33348
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f2070617261206f73206974656e73 }
+	$a1 = { 4f7263616d656e746f2e7a6970??68746d6c??646f6e776c6f6164?? }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32446
+{
+strings:
+	$a0 = { 617475616c697a613d43333d41373d43333d41336f206465207365677572616e }
+	$a1 = { 73696d706c6573206520723d43333d413170696461 }
+	$a2 = { 626c6f71756561646f206f207365752061636573736f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36648
+{
+strings:
+	$a0 = { 636c69656e7465206e6574 }
+	$a1 = { 66617475726120656d207064662e20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32441
+{
+strings:
+	$a0 = { 7469746c653e53616e74616e646572 }
+	$a1 = { 646973706f73697469766f7320646573617475616c697a61646f73 }
+	$a2 = { 506c7567696e206465205365677572616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37503
+{
+strings:
+	$a0 = { 2f686f6d652f6772616e646531322f7075626c69635f68746d6c2f696d616765732f72616e646f6d2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36640
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 2e3530776562732e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36643
+{
+strings:
+	$a0 = { 687474703a2f2f67756969616465636f6d707261732e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32364
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20617175693A20687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36483
+{
+strings:
+	$a0 = { 662e636c2e6c792f }
+	$a1 = { 656d20616e65786f2068747470733a2f2f7777772e64726f70626f78 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34352
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 5375626a6563743a2046773a20456e633a204e4665 }
+	$a2 = { 2e70687023?? }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35310
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20427261646573636f2070726f746f636f6c6f3a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35313
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20456e633a202d2042616e636f20646f2042726173696c20532f41202d20436f6d756e696361646f }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35595
+{
+strings:
+	$a0 = { 75706c6f61642e77696b696d656469612e6f72672f }
+	$a1 = { 646f63732e676f6f676c652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32264
+{
+strings:
+	$a0 = { 406368726d2d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35597
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 414d43266e6273703b4173736573736f726961 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33239
+{
+strings:
+	$a0 = { 564D576172650000FFFFFFFF0400000057696E6500000000FFFFFFFF0A0000005669727475616C2050430000FFFFFFFF0B0000005669727475616C20426F78 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35221
+{
+strings:
+	$a0 = { 5375626a6563743a2050726f6772616d61204369656c6f20466964656c6964616465 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33233
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f206465204d756c7461 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33230
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 4173736573736f726961206520436f6272616e }
+	$a2 = { 616d617a6f6e6177732e636f6d2f }
+	$a3 = { 73697465732e676f6f676c652e636f6d }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_33231
+{
+strings:
+	$a0 = { 4578747261746f206465204d756c746173204f6e6c696e65 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 446570617274616d656e746f20457374616475616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36901
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??42616e636f5f53616e74616e6465725f533d3245413d32455f2d5f434f4d554e494341444f5f555247454e54453d33415f537561735f646566696e69 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35798
+{
+strings:
+	$a0 = { 5375626a6563743a2043656e7472616c206465204174656e64696d656e746f2042616e636f20646f2042726173696c207c20526567756c6172697a652d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35356
+{
+strings:
+	$a0 = { 64656269746f732070656e64656e74657320656d2073657520435046 }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_34072
+{
+strings:
+	$a0 = { 5265706c792d546f3a2064696574612d747572626f40626f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35001
+{
+strings:
+	$a0 = { 7469746c653e40626f6c2e636f6d }
+	$a1 = { 42616e636f20646f2042726173696c }
+	$a2 = { 6369617320656d2073657573206461646f732063616461737472616973 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35002
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f20427261646573636f }
+	$a1 = { 5375626a6563743a20415649534f202d20496e666f656d61696c202d }
+	$a2 = { 205048504d61696c6572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35005
+{
+strings:
+	$a0 = { 5375626a6563743a2046773a20417669736f202d2028 }
+	$a1 = { 582d5048502d }
+	$a2 = { 46726f6d3a202253616e74616e646572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_23950
+{
+strings:
+	$a0 = { 636F6E74726F6C6520646520706167616D656E746F }
+	$a1 = { 616E65786F206F20626F6C65746F }
+	$a2 = { 626169786172207475646F20636F6D6F207A6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35178
+{
+strings:
+	$a0 = { 636f6d70726f76616e746520646f20646570 }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_25132
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E }
+	$a1 = { 69746F6B656E }
+	$a2 = { 666F72612064652073696E63726F6E6961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_34089
+{
+strings:
+	$a0 = { 5265706c792d746f3a2065736372657661656d726573706f73746140626f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35173
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 2f636c2e6c792f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35172
+{
+strings:
+	$a0 = { 7469746c653e446f63756d656e746f }
+	$a1 = { 436f6d70726f76616e746520646520446570 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35170
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 2e6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35177
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37652
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 2E616D617A6F6E6177732E636F6D2F7265796C6F6E67682F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35174
+{
+strings:
+	$a0 = { 67616e686f7520756d2076616c652070726573656e7465 }
+	$a1 = { 4e266174696c64653b6f20726573706f6e6461206573746520652d6d61696c }
+	$a2 = { 6d65726361646f6c697672652e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37653
+{
+strings:
+	$a0 = { 6264736d62656175746965732e636f6d2f6661747572615f7669612f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34183
+{
+strings:
+	$a0 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a1 = { 536567756520656d20616e65786f }
+	$a2 = { 5748415453415050 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_28850
+{
+strings:
+	$a0 = { 63617274[1-8]6F20636861766573206465207365677572616E }
+	$a1 = { 617475616C697A61[1-8]6F206F627269676174 }
+	$a2 = { 627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35480
+{
+strings:
+	$a0 = { 496e666f726d617469766f204f6e2d4c696e652053616e74616e646572 }
+	$a1 = { 2f6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31064
+{
+strings:
+	$a0 = { 436f6e74656e742d446973706f736974696f6e3a206174746163686d656e74 }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d7739614852306344 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31067
+{
+strings:
+	$a0 = { 436f6e74656e742d446973706f736974696f6e3a206174746163686d656e74 }
+	$a1 = { 625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d7739 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36784
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F[7-8]20736567756520616E65786F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36262
+{
+strings:
+	$a0 = { 7469746c653e536567756520656d20416e65786f }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36263
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32909
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 53697374656d6120496e7465677261646f206465204573747261646173 }
+	$a2 = { 2f73742f??4e6f746966696361 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_21698
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 46726f6d3a2042616e636f20646f2042726173696c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35004
+{
+strings:
+	$a0 = { 7361766562696E6172796461746120636875706173616661646128766169736F6674 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35003
+{
+strings:
+	$a0 = { 436F6E74656E742D5472616E736665722D456E636F64696E673A20626173653634 }
+	$a1 = { 2E7A697022[0-5]556D467949526F48 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35000
+{
+strings:
+	$a0 = { 4d656e736167656d2070726f746567696461 }
+	$a1 = { 64726f70626f782e636f6d2f }
+	$a2 = { 3a313032303330 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37401
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D68747470 }
+	$a1 = { 666174757261207669766F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37152
+{
+strings:
+	$a0 = { 3230302e39382e36392e3231312f612e747874 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37151
+{
+strings:
+	$a0 = { 646570617274616d656e746f6e6c696e652e636f6d2e62722f69642f616e65786f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37019
+{
+strings:
+	$a0 = { 6E6F74612066697363616C }
+	$a1 = { 64726F70626F782E636F6D2F }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37324
+{
+strings:
+	$a0 = { 5375626a6563743a202320436f6d756e696361646f20427261646573636f20532f41202d206576697465206f2063616e63656c616d656e746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37235
+{
+strings:
+	$a0 = { 6d726f692e636f6d2e74772f74656d706c617465732f61746f6d69632f746f702e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30631
+{
+strings:
+	$a0 = { 6E6F766120706167696E61 }
+	$a1 = { 626F6C6574696D206465206F636F7272[1-8]6E6369612028622E6F2E2920656D20616E65786F }
+	$a2 = { 696D7072696D6972206F20622E6F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37231
+{
+strings:
+	$a0 = { 726166616c2e76616361742e636f6d2e706c2f706c7567696e732f656469746f72732f7661692e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31451
+{
+strings:
+	$a0 = { 5365677565206120706c616e696c6861 }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32346
+{
+strings:
+	$a0 = { 646f63756d656e746f }
+	$a1 = { 73746f726167652e676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32340
+{
+strings:
+	$a0 = { 53656775652061626169786f20416e657861646f }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31747
+{
+strings:
+	$a0 = { 73696E64696361746F6E61686F72612E636F6D2E62722F696E7075747265677964742E6A7067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32342
+{
+strings:
+	$a0 = { 616e65786f }
+	$a1 = { 504768306257772b4943414e4367304b5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d447431636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37409
+{
+strings:
+	$a0 = { 6D696E6861206661747572612068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37013
+{
+strings:
+	$a0 = { 4e462d652d456d69746964612e5044462068747470 }
+	$a1 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34194
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 46726f6d3a2042616e636f2049746175 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33988
+{
+strings:
+	$a0 = { 5375626a6563743a205445525241202d20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37159
+{
+strings:
+	$a0 = { 736563757265312d646f776e6c6f61642e746b2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29895
+{
+strings:
+	$a0 = { 4369656c6f202d20436f6d707261205072656d69616461 }
+	$a1 = { 636c697175652061717569 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34193
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d616d6f7320717565206f73206461646f732064652073756120636f6e746120656e636f6e7472616d2d73652064657373696e63726f6e697a61646f73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_15951
+{
+strings:
+	$a0 = { 4361726f205765626d61696c202f20452d6d61696c20646f20757375 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33987
+{
+strings:
+	$a0 = { 7361632E636F6E74616374[8-10]40626F6C2E636F6D2E6272 }
+	$a1 = { 424F4C45544F5F455F4E4645 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33980
+{
+strings:
+	$a0 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 7c20444f574e4c4f414420464f544f53207c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33981
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a2045737065726f2071756520706f737361206d652064617220756d61206f706f7274756e6964616465 }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33982
+{
+strings:
+	$a0 = { 656d20616e65786f206f206d657520637572723d43333d414463756c6f }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33005
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 6e6f74612066697363616c207061726120636f6e73756c7461203a2058585858 }
+	$a2 = { 423257202d20436f6d70616e686961204469676974616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31789
+{
+strings:
+	$a0 = { 7469746c653e42616e636f }
+	$a1 = { 656e636f6e7472612d7365206578706972616461 }
+	$a2 = { 626c6f717565696f20616f732063616e616973206465206175746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_31733
+{
+strings:
+	$a0 = { 7a616d656b2e666c6f72796e2e706c2f696e636c756465732f7068706d61696c65722f61322e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31920
+{
+strings:
+	$a0 = { 4e4f5449464943413d43373d43334f }
+	$a1 = { 504768306257772b44516f3864476c306247552b51584e6a6232776751323969636d46753532467a50433930615852735a54344e43 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31690
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 496d70656163686d656e7420646120507265736964656e7465 }
+	$a2 = { 737567617273796e632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31691
+{
+strings:
+	$a0 = { 5A003A005C004E004500570032003000310035005C004C006F00610064005C00760065007200730061006F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31695
+{
+strings:
+	$a0 = { 347368617265642E636F6D2F }
+	$a1 = { 75706C6F61642E77696B696D656469612E6F72672F }
+	$a2 = { 616E65786F20626F6C65746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34057
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 656d20616e65786f206e6f7461732066697363616973 }
+	$a2 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31699
+{
+strings:
+	$a0 = { 6361726C6F737061676C6961726F2E686F737065646167656D646573697465732E77732F646574617264652F50435F436C69656E74 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_23860
+{
+strings:
+	$a0 = { 627261646573636F2E636F6D2E6272 }
+	$a1 = { 627261646573636F20656E636F6E7472612D736520656D2070726F636573736F2064652073757370656E73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_22757
+{
+strings:
+	$a0 = { 4e6f74612066697363616c }
+	$a1 = { 70726f746f636f6c6f206465206175746f72697a61 }
+	$a2 = { 4352557a20414c5441 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33941
+{
+strings:
+	$a0 = { 416465733d45336f5f64655f5365677572616e3d4537615f656e636f6e7472612d7365 }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33947
+{
+strings:
+	$a0 = { 636F72726563[1-8]6F2064652061636573736F20616F206175746F2D6174656E64696D656E746F }
+	$a1 = { 73616E74616E6465722E636F6D2E62722F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33944
+{
+strings:
+	$a0 = { 636169786120646520636f727265696f20666f6920657863656469646f }
+	$a1 = { 7175616c74726963732e636f6d2f6a66652f666f726d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32000
+{
+strings:
+	$a0 = { 453A5C42616E6B735C4C6F616465727320323031355C4C6F616465722076624E657420323031355C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32004
+{
+strings:
+	$a0 = { 706167616d656e746f20666f69206170726f7661646f }
+	$a1 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31168
+{
+strings:
+	$a0 = { 40736d696c65732e636f6d2e62723e }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37255
+{
+strings:
+	$a0 = { 40636f6e6669726d6163616f42422e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31851
+{
+strings:
+	$a0 = { 417669736f205765624d61696c3a20446574656374616d6f7320763d4544727573 }
+	$a1 = { 646f63732e676f6f676c652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31581
+{
+strings:
+	$a0 = { 75706c6f61642e77696b696d656469612e6f7267 }
+	$a1 = { 5345444558203130206520646f20534544455820486f6a65 }
+	$a2 = { 347368617265642e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36404
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c6973204f72646572 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_36409
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c69732d536f6674 }
+	$a1 = { 5375626a6563743a20446973636f756e74 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31738
+{
+strings:
+	$a0 = { 64006F0077006E006C006F006100640073006300330033002E00730073006C0062006C0069006E006400610064006F002E0063006F006D002F0043006F006E006600690067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37626
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??3d45323d39433d39345f??3d20496e666f656d61696c20427261646573636f202d20556c74696d6f20417669736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34533
+{
+strings:
+	$a0 = { 46726f6d3a2053616e74616e646572 }
+	$a1 = { 6f6e74696e756172207573616e646f206f73207365727669 }
+	$a2 = { 696e692663636564696c3b696172206f207265636164617374726f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37469
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 62616978617220636F6D6F207A6970 }
+	$a2 = { 636F6E746162696C6964616465206173736973 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34531
+{
+strings:
+	$a0 = { 73616e74616e6465722e636f6d2e62722f7265636164617374726f32303135 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37245
+{
+strings:
+	$a0 = { 46726f6d3a20224d65726361646f4c69767265 }
+	$a1 = { 5375626a6563743a2056616d6f732073757370656e6465722073756120636f6e7461 }
+	$a2 = { 2f77702d636f6e74656e742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37241
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??43616978615f496e666f726d615f2d5f526563616461737472616d656e746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34999
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 46726f6d3a207375626d6172696e6f }
+	$a2 = { 66696c65732e316472762e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34222
+{
+strings:
+	$a0 = { 42616e636f2049746175 }
+	$a1 = { 53696e63726f6e697a61722069546f6b656e }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34227
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f20497461 }
+	$a1 = { 53696e63726f6e697a61722069546f6b656e }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34224
+{
+strings:
+	$a0 = { 46726f6d3a207375626d6172696e6f }
+	$a1 = { 6c69766566696c6573746f72652e636f6d2f }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36106
+{
+strings:
+	$a0 = { 706167616d656e746f2064652073756120666174757261 }
+	$a1 = { 74696e7975726c2e636f6d2f }
+	$a2 = { 2f77702d636f6e74656e742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_31588
+{
+strings:
+	$a0 = { 6a6d626964656e74696669636174696f6e2e636f6d2f7230782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36104
+{
+strings:
+	$a0 = { 70726F6475746F732E20687474703A2F2F6269742E6C792F[7-8]20706C616E696C6861206465206F72 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37181
+{
+strings:
+	$a0 = { 554573444242514141414149414a69596f30692b51782f5763673441414c3468414141594141414151335679636d6c6a64577876556d396963323975 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37182
+{
+strings:
+	$a0 = { 556d467949526f48414d2b5163774141445141414141414141414333413351676b454d4162556b4141446d4f4141414377347a57445a79316f3067644d78344149414141 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37183
+{
+strings:
+	$a0 = { 554573444242514141414149414b57626f6b6969627837636a673441414e6f684141415541414141516d39735a585276494752764947466a62334a6b62793532596e4f3957566c7a6f306753 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37184
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 616D63206173736573736F726961 }
+	$a2 = { 2F636C2E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37185
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22[1]3B75726C3D687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37186
+{
+strings:
+	$a0 = { 5375626a6563743a20636f6d70726f76616e7465206465206465706f7369746f20656d20636f6e746120636f7272656e746120656d2030 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_29889
+{
+strings:
+	$a0 = { 6A75737469[1-8]6120656C6569746F72616C20687474703A2F2F692E696D6775722E }
+	$a1 = { 6972726567756C6172696461646520656D207365752074[1-8]74756C6F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37188
+{
+strings:
+	$a0 = { 5375626a6563743a20636f6d70726f76616e7465206465206465706f7369746f20656d20636f6e746120636f7272656e746120656d202030 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37189
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D7265667265736820636F6E74656E743D22[1]3B2075726C3D68747470733A2F2F7777772E64726F70626F78 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34696
+{
+strings:
+	$a0 = { 636f6d70617265636572206e657373612070726f63757261646f726961 }
+	$a1 = { 2e6269746e616d696170702e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36202
+{
+strings:
+	$a0 = { 582d504850 }
+	$a1 = { 6d65726361646f6c696272652e636f6d2f }
+	$a2 = { 67616e686f7520756d2076616c652070726573656e7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36203
+{
+strings:
+	$a0 = { 46726f6d3a20224174656e64696d656e746f20496e7465726e65742042616e6b696e67 }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36200
+{
+strings:
+	$a0 = { 436f6e746120436f7272656e7465204974617520536572612053757370656e7361 }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36201
+{
+strings:
+	$a0 = { 636F6E6669726D61[1-8]6F2064652074726F6361206E6F20737465616D }
+	$a1 = { 6269746C792E636F6D2F }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36754
+{
+strings:
+	$a0 = { 5375626a6563743a20436c69656e746520427261646573636f2c20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 46726f6d3a2022427261646573636f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37037
+{
+strings:
+	$a0 = { 73756120416465733d45336f206465205365677572616e3d45376120656e636f6e7472612d73652064657361746976616461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33304
+{
+strings:
+	$a0 = { 417475616c697a613d43333d41373d43333d41336f206465207765626d61696c }
+	$a1 = { 2e6573792e65732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37333
+{
+strings:
+	$a0 = { 627261646573636f696e666f656d61696c2e636f6d2e62722f617475616c697a61722f646973706f73697469766f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33307
+{
+strings:
+	$a0 = { 466964656c6964616465204d756c7469706c7573 }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 3e4341444153545241523c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33301
+{
+strings:
+	$a0 = { 5375626a6563743a204974617520556e6962616e636f202d20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33302
+{
+strings:
+	$a0 = { 417475616c697a6172206461646f73202854616e20436f646529 }
+	$a1 = { 42616e636f20427261646573636f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33303
+{
+strings:
+	$a0 = { 636172743d43333d41336f20636861766520646520736572677572616e }
+	$a1 = { 656e636f6e7472612d736520657870697261646f }
+	$a2 = { 427261646573636f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37210
+{
+strings:
+	$a0 = { 70656e64656e63696140636f727265696f732e636f6d2e6272 }
+	$a1 = { 2e6672656564646e732e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37211
+{
+strings:
+	$a0 = { 67336e3372346c6c2e64646e732e6e65742f6175746f6d6163616f736b74 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37212
+{
+strings:
+	$a0 = { 646d46794948526f5a573545627941394948526f5a573545627942386643425464484a70626d637563484a76644739306558426c4c6e427962335a7063326c76626d467362486b67505430676457356b5a575a70626d566b49487838494756325957776f496e5279645755694b54733d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37213
+{
+strings:
+	$a0 = { 3136322e3234382e3234312e39302f636f6e74726f6c65676572616c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37214
+{
+strings:
+	$a0 = { 626c6f6773706f742e636f6d }
+	$a1 = { 526173747265616d656e746f5f44655f4f626a65746f73 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37215
+{
+strings:
+	$a0 = { 687474703a2f2f3139322e3139382e39322e362f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36594
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e7465203a2042616e636f20446f2042726173696c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37217
+{
+strings:
+	$a0 = { 636f727265696f7364656d61726b74696e672e636f6d2e62722f69642f696e6465782e68746d6c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33095
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 50726f6772616d61204369656c6f20466964656c6964616465 }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33090
+{
+strings:
+	$a0 = { 5375626a6563743a204974617520532f41202d20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33091
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 63617274[1-9]6F20646520636861766573206465207365677572616E[1-8]6120656E636F6E7472612D736520657870697261646F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33757
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a20436f6e746f20636f6d2073756120616a756461 }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37438
+{
+strings:
+	$a0 = { 434f4d5041524543494d454e544f20454d20415544493d43414e434941 }
+	$a1 = { 3e7777772e6d70662e636f6d2e62723c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37439
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20554f4c202d }
+	$a1 = { 636c642e70742f646c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35981
+{
+strings:
+	$a0 = { 5375626a6563743a2053757370656e64656d6f7320612073756120636f6e7461 }
+	$a1 = { 74617469632e6d6c7374617469632e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36570
+{
+strings:
+	$a0 = { 42616e636f20497461267561637574653b20333020686f72617320657374266161637574653b20646973706f6e6962696c697a616e646f2061206e6f766120617475616c697a612663636564696c3b266174696c64653b6f206465207365677572616e2663636564696c3b61 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37432
+{
+strings:
+	$a0 = { 6269742e6c792f6f7769657538 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37433
+{
+strings:
+	$a0 = { 6269742e6c792f31567131663975 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37434
+{
+strings:
+	$a0 = { 66657269656e776f686e756e672d706f7374682e64652f696d616765732f73746f726965732f73742f?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36747
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 63686176652064652061636573736f3a2068747470733a2f2f6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37436
+{
+strings:
+	$a0 = { 504768306257772b44516f67504852706447786c506b466e645746795a4755754c6934754c6934754c6934754c6934754c6934754c69347550433930615852735a54344e4369 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37437
+{
+strings:
+	$a0 = { 2e73697374656d616465696e666f726d6163616f732e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32148
+{
+strings:
+	$a0 = { 406f7074696e2d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37508
+{
+strings:
+	$a0 = { 626F6C65746F }
+	$a1 = { 646F776E6C6F616420656D20666F726D61746F207064662068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37504
+{
+strings:
+	$a0 = { 77686174736170702E636F6D20687474703A2F2F6269742E6C792F[7-8]20696E7374616C6172 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37505
+{
+strings:
+	$a0 = { 64656269746F7320656D207175657374[1-8]6F3A20687474703A2F2F6269742E6C792F }
+	$a1 = { 616365737365207777772E736572617361 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37507
+{
+strings:
+	$a0 = { 504531465645456753465255554331465556564a566a31535a575a795a584e6f49454e50546c5246546c5139496a413749465653544431 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37590
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 5469746C65202854616973204220426F72676573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32147
+{
+strings:
+	$a0 = { 406f7074696e2d6a782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34633
+{
+strings:
+	$a0 = { 6E6F746966696361[1-8]6F2065787472616A7564696369616C }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 696D7072696D697220626F6C65746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36557
+{
+strings:
+	$a0 = { 7469746c653e5365677565206f20636f6d70726f76616e7465 }
+	$a1 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34639
+{
+strings:
+	$a0 = { 736567756e646120766961 }
+	$a1 = { 2f6f772e6c792f }
+	$a2 = { 446f776e6c6f6164206173205a6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35196
+{
+strings:
+	$a0 = { 46726f6d3a20225669616772612053746f7265 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34988
+{
+strings:
+	$a0 = { 44516f675047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430784f335679624430 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32593
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 6269746e616d696170702e636f6d }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37198
+{
+strings:
+	$a0 = { 626F737461010005637576656901000A7061756E617362657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35902
+{
+strings:
+	$a0 = { 636F727265696F732068747470733A2F2F6269742E6C79 }
+	$a1 = { 726173747265696F20646F206F626A65746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33633
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f2049746175 }
+	$a1 = { 2e706870??69643d }
+	$a2 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_29730
+{
+strings:
+	$a0 = { 20646570617274616D656E746F2066696E616E636569726F207072657A61646F20636C69656E7465 }
+	$a1 = { 696E666F726D61[1-8]657320657374006F20636F7272657461732E2068747470 }
+	$a2 = { 76697375616C697A61722068747470 }
+	$a3 = { 62616978617220646174612076656E63696D656E746F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_32211
+{
+strings:
+	$a0 = { 4061707a2d63782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35499
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f2028612920436c69656e74653a20436f6d756e696361646f20496d706f7274616e7465202d20556c74696d6f20417669736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32218
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f }
+	$a1 = { 7469746c653e50524f4d4f43414f5f4349454c4f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29540
+{
+strings:
+	$a0 = { 61636F6D70616E686520736575732070656469646F733A }
+	$a1 = { 7365752076656E63696D656E746F20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36691
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??42616e636f5f53616e74616e6465725f2d5f5365755f4d6f64756c6f5f64655f50726f74653d45373d45336f5f656e636f6e7472612d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36869
+{
+strings:
+	$a0 = { 64656D6F2E6F76682E6575 }
+	$a1 = { 687474703A2F2F6269742E6C792F[7-8]20636F6272616E[1-8]612064652061747261736F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36372
+{
+strings:
+	$a0 = { 736563757269747920616c657274 }
+	$a1 = { 636c69636b2022566572696679204d79204163636f756e7422 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36371
+{
+strings:
+	$a0 = { 75706772616465206f66206f7572206461746162617365 }
+	$a1 = { 2e666f726d327061792e636f6d2f }
+	$a2 = { 49542048656c70204465736b }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32856
+{
+strings:
+	$a0 = { 5265706c792d546f3a20746f6e796a6f73776f726b40676d61696c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34740
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 2f636c2e6c792f }
+	$a2 = { 70686f746f6275636b65742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33250
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d5363726970 }
+	$a1 = { 4144564f4741444f532065204153534f434941444f53 }
+	$a2 = { 6269742e6c792f }
+	$a3 = { 426169786172207475646f20636f6d6f207a6970 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_36692
+{
+strings:
+	$a0 = { 5375626a6563743a2053696e63726f6e697a652073657520446973706f73697469766f2069546f6b656e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35246
+{
+strings:
+	$a0 = { 46726f6d3a202269746175406d61696c2e636f6d2e627222 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_35445
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c69732d50726f2050696c6c73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32153
+{
+strings:
+	$a0 = { 696e7465726e616c2e636c6f75646170702e6e6574 }
+	$a1 = { 46726f6d3a2070726f6d6f63616f407269636172646f656c6574726f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32457
+{
+strings:
+	$a0 = { 40767073312e757267656e7465652e6f72673e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31100
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 54454c454752414d413a }
+	$a2 = { 696d616765732e616d65726963616e61732e636f6d2e6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33253
+{
+strings:
+	$a0 = { 50524F4A45544F20484158434C4F5048455254565C4C6F61646572 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36697
+{
+strings:
+	$a0 = { 46726f6d3a206d65726361646f6c69767265203c6d65726361646f6c697672653e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36673
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 2e66726565747a692e636f6d2f }
+	$a2 = { 2e626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36672
+{
+strings:
+	$a0 = { 73697465732e652d7765626d6b742e636f6d2f }
+	$a1 = { 6e6f74612066697363616c }
+	$a2 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32459
+{
+strings:
+	$a0 = { 406d72666d732d69782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36676
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a203d??49534f2d383835392d31??42??734535766447453d??3d2046697363616c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37534
+{
+strings:
+	$a0 = { 6a6164656c677265676f72696f2e636f6d2e62722f626f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37536
+{
+strings:
+	$a0 = { 7274742e70742f74656d706c617465732f6265657a2f696e6465782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34163
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 6269743d32456c792f }
+	$a2 = { 617373696e61747572613d32456469676974616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34162
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 536567756520656d20416e65786f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34161
+{
+strings:
+	$a0 = { 677374617469632e636f6d2f }
+	$a1 = { 536567756520656d20416e65786f }
+	$a2 = { 636c642e70742f646c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34160
+{
+strings:
+	$a0 = { 636c642e70742f646c2f }
+	$a1 = { 677374617469632e636f6d2f }
+	$a2 = { 546974756c6f2050726f7465737461646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33360
+{
+strings:
+	$a0 = { 3C7361632E636F6E74616374[10]40626F6C2E636F6D2E62723E }
+	$a1 = { 723D43333D4137616D656E746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_37538
+{
+strings:
+	$a0 = { 6172656961666f7274616c657a612e636f6d2e62722f626f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34168
+{
+strings:
+	$a0 = { 536f6c6963697461646f2045737461206f206c696e6b }
+	$a1 = { 7a69702e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35582
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 656e747265676120646f7320636f727265696f73 }
+	$a2 = { 2e6269746e616d696170702e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35580
+{
+strings:
+	$a0 = { 7469746c653e416e65786f206f2044414e4645 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33248
+{
+strings:
+	$a0 = { 617669736f20696d706f7274616e7465 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 46726f6d3a204d4544494e4120414c4f4e534f204144564f4741444f53 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35587
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 42616978617220446f63756d656e746f205265663a204e462d652068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35584
+{
+strings:
+	$a0 = { 7265676973747261646f206e6f2047524156414d45 }
+	$a1 = { 2e68747a6d74612e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35585
+{
+strings:
+	$a0 = { 656d20616e65786f206f2044414e4645 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35254
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f20636c69656e74652c206f20736575206d6f64756c6f206465207365677572616e636120656e636f6e7472612d736520646573617475616c697a61646f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33241
+{
+strings:
+	$a0 = { 633d43333d423370696120646f2070726f636564696d656e746f }
+	$a1 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33244
+{
+strings:
+	$a0 = { 66617475726120656D2061747261736F2E2068747470733A2F2F676F6F676C656472697665 }
+	$a1 = { 746D702062726173696C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_28209
+{
+strings:
+	$a0 = { 697461752E636F6D2E62722F }
+	$a1 = { 617475616C697A61722073657520646973706F73697469766F206465207365677572616E }
+	$a2 = { 617475616C697A61722061676F7261 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35341
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 3e426169786172207475646f20636f6d6f207261723c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35345
+{
+strings:
+	$a0 = { 76696120646f2073657520626f6c65746f }
+	$a1 = { 2e77656263696e646172696f2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35346
+{
+strings:
+	$a0 = { 76697375616c697a6172206f20616e65786f }
+	$a1 = { 2e77656263696e646172696f2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35347
+{
+strings:
+	$a0 = { 76697375616c697a617220616e65786f2020687474703a2f2f6269743d32456c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35348
+{
+strings:
+	$a0 = { 3C6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35349
+{
+strings:
+	$a0 = { 52617221 }
+	$a1 = { 4D45544120687474702D65717569763D22726566726573682220636F6E74656E743D22303B55524C3D687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36979
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 617A756C206C696E686173 }
+	$a2 = { 726563616461737472616D656E746F206465207365677572616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_28207
+{
+strings:
+	$a0 = { 627261646573636F2E636F6D2E62722F }
+	$a1 = { 617475616C697A61[1-8]6F206461206368617665207365677572616E }
+	$a2 = { 62616E636F20627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35075
+{
+strings:
+	$a0 = { 42414e434f20444f2042524153494c202d20434f4d554e494341444f20494d504f5254414e5445 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35168
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 2e6d7977696e646f7773686f7374696e672e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35169
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f2070617261206f73206974656e73 }
+	$a1 = { 2e6d7977696e646f7773686f7374696e672e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37292
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 707265636f736465706c616e6f646573617564652e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36580
+{
+strings:
+	$a0 = { 7469746c653e5072657a61646f20436c69656e7465 }
+	$a1 = { 4f6272696761646f20706f7220636f6d70726172 }
+	$a2 = { 3e464143494c3c2f666f6e743e3c666f6e7420636f6c6f723d2223303038303030223e2e636f6d3c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36183
+{
+strings:
+	$a0 = { 616e65786f20626f6c65746f }
+	$a1 = { 616e65786f3a20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36589
+{
+strings:
+	$a0 = { 72656365697461206665646572616C20687474703A2F2F692E696D677572 }
+	$a1 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34365
+{
+strings:
+	$a0 = { 5375626a6563743a204e6f766f20617564696f20636f6d656e746172696f20656d2073756120666f746f }
+	$a1 = { 46726f6d3a2066616365626f6f6b }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_29242
+{
+strings:
+	$a0 = { 696e7465726e616c2e636c6f75646170702e6e6574 }
+	$a1 = { 46726f6d3a2057616c6d6172742e636f6d }
+	$a2 = { 652e77616c6d6172742e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35765
+{
+strings:
+	$a0 = { 76697375616c697a617220616e65786f }
+	$a1 = { 2e7661692e6c612f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36808
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c20532e41202d20417475616c697a652073657573206461646f732c206576697465206f20626c6f717565696f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36801
+{
+strings:
+	$a0 = { 40696e666f656d61696c726563616461737472616d656e746f2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36804
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E[1-8]6120656E636F6E7472612D73652065787069726164 }
+	$a1 = { 627261646573636F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32918
+{
+strings:
+	$a0 = { 7469746c653e4677643a20557267656e746520436f6272616e }
+	$a1 = { 6269742e6c79 }
+	$a2 = { 544d502042524153494c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_28185
+{
+strings:
+	$a0 = { 6D633A7375626A656374 }
+	$a1 = { 73756120636F6E746120736572[1-8]2063616E63656C616461 }
+	$a2 = { 636C697175652068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_28356
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 636F6D70726F76616E7465 }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_28358
+{
+strings:
+	$a0 = { 6E6F74612066697363616C }
+	$a1 = { 676F6F676C6564726976652E636F6D2F }
+	$a2 = { 736567756520656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35102
+{
+strings:
+	$a0 = { 7469746c653e417669736f206465205365677572616e }
+	$a1 = { 427261646573636f }
+	$a2 = { 2f676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35103
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 2f676f6f2e676c2f }
+	$a2 = { 2e6c69766566696c6573746f72652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32914
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 5045314656454567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d547456556b773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31314
+{
+strings:
+	$a0 = { 5375626a6563743a20417475616c697a6163616f204d6f64756c6f206465205365677572616e6361204242 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32917
+{
+strings:
+	$a0 = { 70726573656e74652064612043616361752073686f77 }
+	$a1 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35012
+{
+strings:
+	$a0 = { 7469746c653e536b797065 }
+	$a1 = { 6d656e736167656d20646520766f7a }
+	$a2 = { 6c6976652e636f6d2f48616e646c6572732f496d61676550726f7879 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37363
+{
+strings:
+	$a0 = { 2866756E6374696F6E28297B7D2928293B2076617220636F6465203D2027616161616161616161616161616734336D6D74707A7263696C6A6F396E31686A6A696F65637331757569756A6E696A766D6969736E69676A6E71 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_22654
+{
+strings:
+	$a0 = { 50514141414c4b4f77746177764f39734e4e336a7465464f5451715336584b58515868737264516c5750566e37467154394453724258664c6d434772686458316d4c755974647977584f35756d78655a7977397730314e314e7467416d3154315545585a50583269536f7056312d62344a6f4e72335630763974756d2e6a7067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31764
+{
+strings:
+	$a0 = { 540045005100550049004C00410042004F004F004D0042004F004F004D }
+	$a1 = { 444F4E464F524D4944414445 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_25462
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 6C696E6B2061626169786F3A20687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36451
+{
+strings:
+	$a0 = { 706f6c69636961206665646572616c }
+	$a1 = { 7369746520646520636f6e746575646f20696c6567616c }
+	$a2 = { 6269742e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36450
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 7369746520646520636f6e746575646f20696c6567616c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36453
+{
+strings:
+	$a0 = { 626f6c65746f20656d20617472617a6f }
+	$a1 = { 676f6f676c6564726976652e636f6d }
+	$a2 = { 63656e7472616c2e76656e64617340626f6c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37244
+{
+strings:
+	$a0 = { 616c6d61736f75726365732e636f6d2f74656d706c617465732f61746f6d69632f746f702e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_30621
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A[1-8]3A7878782E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32356
+{
+strings:
+	$a0 = { 20746162656C6120646520707265[1-8]6F7320687474703A2F2F636C2E6C792F }
+	$a1 = { 7A697020646F776E6C6F61642028 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32357
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 507265766973616f20646520656e74726567613a }
+	$a2 = { 676f6f2e676c2f }
+	$a3 = { 636f6d707261666163696c2e636f6d }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_32355
+{
+strings:
+	$a0 = { 5768617473417070202d2041676f726120646973706f6e266961637574653b76656c2070617261205043 }
+	$a1 = { 576861747341707020494e43 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_35762
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c69732d536f667420496e63 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31483
+{
+strings:
+	$a0 = { 7469746c653e42616e636f2049746126756163757465 }
+	$a1 = { 61706f6c6f2e636f6d2e62722f6167656e74655f64655f6e65676f63696f732f626f74616f5f63616461737472655f7365 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_23309
+{
+strings:
+	$a0 = { 7365752063617274[1-8]6F20646520636861766573206465207365677572616E[1-8]6120656E636F6E7472612D73652065787069726164 }
+	$a1 = { 736572[1-8]20626C6F71756561646F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37595
+{
+strings:
+	$a0 = { 46726f6d3a20446976756c67756520636f6d203d??49534f2d383835392d31??51??5052453d43374f??3d20444520435553544f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29336
+{
+strings:
+	$a0 = { 3c6e6f7265706c794061646d696e2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31826
+{
+strings:
+	$a0 = { 696D616765736861636B2E75732F }
+	$a1 = { 7375612073656E686120656C657472[1-8]6E69636120666F69206578706972616461 }
+	$a2 = { 687362632E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31667
+{
+strings:
+	$a0 = { 636164617374726f20666f69207265616c697a61646f20636f6d207375636573736f }
+	$a1 = { 4d617374657263617264 }
+	$a2 = { 2f696d6167656d2e706870 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31664
+{
+strings:
+	$a0 = { 5157356c654739665133567963734f74593356736279356f64473173 }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f79426f644852774f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31663
+{
+strings:
+	$a0 = { 3120616e65786f207c20434f4d50524f56414e54455f545246 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31662
+{
+strings:
+	$a0 = { 66696e616e63322e626c6f6766696e616e632e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33955
+{
+strings:
+	$a0 = { 69546f6b656e20656e636f6e7472612d73652064657373696e63726f6e697a61646f }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33954
+{
+strings:
+	$a0 = { 546f6b656e20656e636f6e7472612d73652064657373696e63726f6e697a61646f }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33956
+{
+strings:
+	$a0 = { 2e647265616d686f737470732e636f6d }
+	$a1 = { 4d61737465726361726420456d6f636f6573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37115
+{
+strings:
+	$a0 = { 736f756c7175616c6974792e696e666f2f63616d657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36069
+{
+strings:
+	$a0 = { 52656365697665643a2066726f6d20774f726b732d61636572722d5043 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33959
+{
+strings:
+	$a0 = { 696E7465726E65742062616E6B696E672065787069726F75 }
+	$a1 = { 6C696E6B2061626169786F }
+	$a2 = { 62616E636F20646F2062726173696C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33958
+{
+strings:
+	$a0 = { 4361726f207573753d43333d413172696f }
+	$a1 = { 7365723d43333d41336f2073757370656e736f7320656d20343820686f726173 }
+	$a2 = { 686f7374696e6773697465666f72667265652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_23278
+{
+strings:
+	$a0 = { 636f6e7461746f407361632e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_27790
+{
+strings:
+	$a0 = { 696d616765736861636b2e636f6d2f }
+	$a1 = { 62656d2076696e646f2061204369656c6f }
+	$a2 = { 666f6920736f72746561646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_23275
+{
+strings:
+	$a0 = { 6368617665206465207365677572616E }
+	$a1 = { 656E636F6E7472612D7365206578706972616461 }
+	$a2 = { 62616E636F20627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_31601
+{
+strings:
+	$a0 = { 74696d626572747261696c732e6e65742f7468756d62312e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_24334
+{
+strings:
+	$a0 = { 6E6F74612066697363616C }
+	$a1 = { 63686176652064652061636573736F3A20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34453
+{
+strings:
+	$a0 = { 6369656c6f2e636f6d2e62722f7265636164617374726f32303135 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34452
+{
+strings:
+	$a0 = { 7469746c653e42616e636f20427261646573636f }
+	$a1 = { 736572266174696c64653b6f20626c6f71756561646f73 }
+	$a2 = { 43617274266174696c64653b6f204368617665206465205365677572616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34455
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20415649534f }
+	$a1 = { 46726f6d3a20496e666f456d61696c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34456
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74652042616e636f20646f2042726173696c }
+	$a1 = { 46726f6d3a20496e666f456d61696c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37431
+{
+strings:
+	$a0 = { 5375626a6563743a2053616e74616e6465722056616e476f6768202d20436f6d756e696361646f20496d706f7274616e74652021 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37435
+{
+strings:
+	$a0 = { 64657374696e6f676573656c6c2e636f6d2e61722f706c7567696e732f757365722f696e646578312e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32720
+{
+strings:
+	$a0 = { 6961762E65746E616769672F6F616675742F6D6F632E62657761646F6E726F636F696566 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32102
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32100
+{
+strings:
+	$a0 = { 776565626c792e636f6d2f75706c6f6164732f }
+	$a1 = { 42616978617220436f6d6f207a6970 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37138
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 616D63206173736573736F726961 }
+	$a2 = { 2F662E636C2E6C792F }
+	$a3 = { 6269746C792E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_30434
+{
+strings:
+	$a0 = { 636169786120696E7465726E65742062616E6B696E67 }
+	$a1 = { 7365727669[1-8]6F7320626C6F7175656164 }
+	$a2 = { 726563616461737472616D656E746F206465207365677572616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_21300
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 6269742e6c79 }
+	$a2 = { 70726f636e66652e706466 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32316
+{
+strings:
+	$a0 = { 4E4F5646494E414C4C4F414444444444444444442E706462 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34525
+{
+strings:
+	$a0 = { 537572707265656e6461204d617374657243617264 }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 436c697175652061717569 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_30025
+{
+strings:
+	$a0 = { 646973706F73697469766F20646520736567757261[1-8]6120657374[1-8]626C6F71756561646F }
+	$a1 = { 636F6E746120736572[1-8]626C6F717565616461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37584
+{
+strings:
+	$a0 = { 7368656C6C657865637574652277736372697074 }
+	$a1 = { 73656C6563742A66726F6D77696E33325F6E6574776F726B61646170746572636F6E66696775726174696F6E77686572656970656E61626C6564 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33885
+{
+strings:
+	$a0 = { 6174697669646164657320696e636f6d756e7320656d2073756120636f6e7461 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37502
+{
+strings:
+	$a0 = { 6b726f686e2d676f656872696e672e64652f696d616765732f7265636164617374726f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36571
+{
+strings:
+	$a0 = { 44414e464520456c6574723d46346e69636f20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37500
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 736D73206F6E6C696E65 }
+	$a2 = { 7265766973[1-8]6F206465206C696D69746573 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37501
+{
+strings:
+	$a0 = { 2e7265766973616f64656c696d6974657362622e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34231
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20415649534f }
+	$a1 = { 46726f6d3a202242616e636f20497461 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33889
+{
+strings:
+	$a0 = { 5265636164617374726f5f3a5f42616e636f5f53616e74616e646572 }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32313
+{
+strings:
+	$a0 = { 646f776e6c6f616420646120706c616e696c6861 }
+	$a1 = { 676f6f676c6564726976652e }
+	$a2 = { 50726f746f636f6c6f20646520456e76696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36487
+{
+strings:
+	$a0 = { 6469676974616c206173736573736f726961 }
+	$a1 = { 626f6c65746f }
+	$a2 = { 74696e797069632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36117
+{
+strings:
+	$a0 = { 636F727265696F73 }
+	$a1 = { 74656E74617469766120646520656E7472656761 }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33744
+{
+strings:
+	$a0 = { 49006E007400650072006E0061006C004E0061006D0065000000770077004E004F0056004F005F00460049004E0041004C005F004C004F00410044 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33742
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 4e6f74612046697363616c20456c657472 }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33740
+{
+strings:
+	$a0 = { 44656269746f5f526563656974614665646572616c }
+	$a1 = { 2f73742f??56697375616c697a6172 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37299
+{
+strings:
+	$a0 = { 5375626a6563743a204576697465206f20426c6f717565696f2064652073756120436f6e7461 }
+	$a1 = { 42616e636f2053616e74616e64657220532e41 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_24840
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 616e65786f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37293
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c202d20457374616d6f7320617475616c697a616e646f206e6f73736f732073697374656d61732e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31335
+{
+strings:
+	$a0 = { 695F6174746163682E676966203120616E65786F3A2068747470 }
+	$a1 = { 66617A656E646F20756D61207065737175697361 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_21430
+{
+strings:
+	$a0 = { 696e6b656e61732e72752f696d616765732f636173613031 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33405
+{
+strings:
+	$a0 = { 63617274[1-8]6F20636861766520646520736572677572616E }
+	$a1 = { 656E636F6E7472612D73652065787069726164 }
+	$a2 = { 627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_15787
+{
+strings:
+	$a0 = { 74696e797069632e636f6d2f31346b68647334 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33799
+{
+strings:
+	$a0 = { 426c6f717565696f2064652073756120436f6e7461 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 74696e7975726c2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36216
+{
+strings:
+	$a0 = { 46726f6d3a204174656e64696d656e746f2042616e636f20446f2042726173696c }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37348
+{
+strings:
+	$a0 = { 2e32616d6572696361616e61732e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37349
+{
+strings:
+	$a0 = { 7469746C653E6F66657274617320616D65726963616E6173 }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33319
+{
+strings:
+	$a0 = { 46726f6d3a2049746175 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36649
+{
+strings:
+	$a0 = { 4e4f54412046495343414c }
+	$a1 = { 2e7365727665687474702e636f6d2f?? }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37344
+{
+strings:
+	$a0 = { 696D6775722E636F6D }
+	$a1 = { 616E6F206E6F766F20636F6D2061206369656C6F }
+	$a2 = { 2F74722E696D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37345
+{
+strings:
+	$a0 = { 40617475616c697a616e646f73656d7072652e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37610
+{
+strings:
+	$a0 = { 61636164656d696369742e64652f6b6e2f74762e6a7067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_29966
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 6e616f207469766520726573706f737461 }
+	$a2 = { 536567756520616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36219
+{
+strings:
+	$a0 = { 6c696d6974652064652061726d617a656e616d656e746f }
+	$a1 = { 666f726d6372616674732e636f6d2f }
+	$a2 = { 636f6e746120646520652d6d61696c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37341
+{
+strings:
+	$a0 = { 3e777777772e646f747a2e636f6d2f4174656e64696d656e746f2f436164617374726f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37342
+{
+strings:
+	$a0 = { 46726f6d3a2050726f6772616d6120446f747a203c6163636f756e74734070617373706f72742e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37343
+{
+strings:
+	$a0 = { 77656232796f752e61742f68746c6a656e626163682f696d616765732f696d672e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36585
+{
+strings:
+	$a0 = { 446973706f73697469766f5f64655f5365677572616e3d4537615f427261646573636f5f4972726567756c6172 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36584
+{
+strings:
+	$a0 = { 46726f6d3a20223a3a3a42616e636f20427261646573636f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36581
+{
+strings:
+	$a0 = { 5375626a6563743a2053696e63726f6e697a6163616f20646520546f6b656e }
+	$a1 = { 617475616c697a612663636564696c3b266174696c64653b6f206465207365677572616e2663636564696c3b61 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37228
+{
+strings:
+	$a0 = { 6E6F766F2061706C6963617469766F2066616365626F6F6B20706172612077696E646F7773 }
+	$a1 = { 676F6F676C6575736572636F6E74656E742E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36583
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d617469766f20427261646573636f20532e412050726f746f636f6c6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36582
+{
+strings:
+	$a0 = { 69746120333020686F7261732065737420646973706F6E6962696C697A616E646F2061206E6F766120617475616C697A61206F206465207365677572616E }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33085
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 706f7570616e2663636564696c3b6120736572266161637574653b2073757370656e7361 }
+	$a2 = { 6368617665206465207365677572616e2663636564696c3b61206578706972616461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32611
+{
+strings:
+	$a0 = { 636F6E74656E743D22303B2075726C3D687474703A2F2F6269742E6C792F[7]2220687474702D65717569763D72656672657368 }
+	$a1 = { 627261646573636F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32610
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 73746f726167652e676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33535
+{
+strings:
+	$a0 = { 44656172204163636f756e7420557365724944 }
+	$a1 = { 7570677261646520796f757220456d61696c }
+	$a2 = { 53797374656d2041646d696e6973747261746f722047726f7570 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33534
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c61646d6e6973747261746f7273407175616c697479736572766963652e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29155
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]6F206465207365677572616E }
+	$a1 = { 6576697465207472616E73746F726E6F73 }
+	$a2 = { 627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32042
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f }
+	$a1 = { 67657469722e6e65742f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37616
+{
+strings:
+	$a0 = { 40766d6937363338372e636f6e7461626f2e686f73743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32048
+{
+strings:
+	$a0 = { 7469746c653e436169786120506f7374616c }
+	$a1 = { 6974732e6f72672e62722f }
+	$a2 = { 496e7465726e65742042616e6b696e67 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33159
+{
+strings:
+	$a0 = { 6163636f7574407061737361706f72742e636f6d2e6272 }
+	$a1 = { 766f65617a756c2e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36567
+{
+strings:
+	$a0 = { 666F69206C616E0061646120756D612061646573006F20656D2073756120636F6E7461206262 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37539
+{
+strings:
+	$a0 = { 3230302d39382d3230312d3232372e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36843
+{
+strings:
+	$a0 = { 5375626A6563743A20[3-15]2064656E756E63696F7520756D6120666F746F20737561206E6F2066616365626F6F6B2E202D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32728
+{
+strings:
+	$a0 = { 7469746c653e4e46652d }
+	$a1 = { 766965772e70687023 }
+	$a2 = { 7374617469632e61766173742e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37519
+{
+strings:
+	$a0 = { 706172612070726F746573746F }
+	$a1 = { 656D20343820686F7261732E2068747470 }
+	$a2 = { 736F6369616C3A206C65626C6F6E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32723
+{
+strings:
+	$a0 = { 76697375616C697A6172206F20616E65786F20687474703A2F2F67652E74742F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32722
+{
+strings:
+	$a0 = { 536567756520616e65786f }
+	$a1 = { 67652e74742f6170692f312f66696c6573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37533
+{
+strings:
+	$a0 = { 3230302d39382d3136342d35332e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37532
+{
+strings:
+	$a0 = { 3230302d39382d3131332d3137382e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37535
+{
+strings:
+	$a0 = { 3230302d39382d3131322d32312e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32132
+{
+strings:
+	$a0 = { 61637475616c697a61207375206375656e7461 }
+	$a1 = { 6275696c64796f7572666f726d732e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32724
+{
+strings:
+	$a0 = { 7469746c653e436f727265696f732032303135 }
+	$a1 = { 2e706870??636f6469676f3d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37088
+{
+strings:
+	$a0 = { 2F43726561746F720A28FEFF0047006F006F0067006C0065 }
+	$a1 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34625
+{
+strings:
+	$a0 = { 4f723d4537616d656e746f }
+	$a1 = { 416e65786f3a202020687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37085
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22313B75726C3D2268747470733A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35976
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 6f722663636564696c3b616d656e746f }
+	$a2 = { 2f6a2e6d702f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32596
+{
+strings:
+	$a0 = { 406d61792d7372692e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32597
+{
+strings:
+	$a0 = { 406c6e6b2d6373782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32594
+{
+strings:
+	$a0 = { 406d61792d73726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32595
+{
+strings:
+	$a0 = { 406d61792d7372682e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32591
+{
+strings:
+	$a0 = { 406c6e6b2d6473782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37510
+{
+strings:
+	$a0 = { 636F72706F20646520626F6D626569726F73 }
+	$a1 = { 6269746C792E636F6D2F }
+	$a2 = { 6175746F20646520696E667261 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32269
+{
+strings:
+	$a0 = { 4d6f64756c6f5f64655f5365677572616e3d43333d4137613d32435f48534243 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32598
+{
+strings:
+	$a0 = { 406d61792d7372672e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32599
+{
+strings:
+	$a0 = { 406c6e6b2d6673782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37405
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??42??5532566e6457556759574a686158687649475044733342705953426b6279426a614756786457556763484a766447567a6447466b627941794d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32436
+{
+strings:
+	$a0 = { 53737353636176206c6f7020666f676f206661697363612074696d706f20666c6f75636f72 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37407
+{
+strings:
+	$a0 = { 2e64646e732e6e65742f223e56697375616c697a617220426f6c65746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32434
+{
+strings:
+	$a0 = { 50726976616369646164652065205768617473417070 }
+	$a1 = { 73746f726167652e676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36369
+{
+strings:
+	$a0 = { 5375626a6563743a2043617274616f206465205365677572616e63612053616e74616e64657220457870697261646f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32432
+{
+strings:
+	$a0 = { 5768617473417070 }
+	$a1 = { 676f72646f2e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37403
+{
+strings:
+	$a0 = { 74616e7a2e73766f6265726f7374656e646f72662e64652f696d616765732f70686f636167616c6c6572792f67702f?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37402
+{
+strings:
+	$a0 = { 3C66696E616E636569726F5F72685F[6-7]4074657272612E636F6D2E62723E }
+	$a1 = { 536567756520656D20416E65786F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32689
+{
+strings:
+	$a0 = { 496e7465726e65742042616e6b696e67204361697861 }
+	$a1 = { 726563616461737472616d656e746f }
+	$a2 = { 74696e7975726c2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34750
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 2e70687023 }
+	$a2 = { 636865717565206465766f6c7669646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37408
+{
+strings:
+	$a0 = { 73696e686f6e6c792e636f6d2f2f6e65772f76657230322f77702d636f6e74656e742f6375706f6d2f?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32439
+{
+strings:
+	$a0 = { 46726f6d3a2044656e617472616e202d20444552 }
+	$a1 = { 4578747261746f }
+	$a2 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34753
+{
+strings:
+	$a0 = { 7469746c653e426f6c65746f }
+	$a1 = { 7265666572656e746520616f20636f6e747261746f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34192
+{
+strings:
+	$a0 = { 676F696162612C2063616A752C2061636169206966206E6F7420777363726970742E617267756D656E74732E6E616D65642E6578697374732822656C6576617465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30197
+{
+strings:
+	$a0 = { 6C69766576696577732F6174746163686D656E742E706E67203120616E65786F207C }
+	$a1 = { 636F6D70726F76616E74652068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34191
+{
+strings:
+	$a0 = { 4f6272696761646f20706f7220636f6d70726172206e6120474f4c }
+	$a1 = { 71722e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34195
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 616365737365206F20736974696F2068747470733A2F2F636C642E70742F646C2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_33088
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A20[5]3A787578612E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_28785
+{
+strings:
+	$a0 = { 627261646573636F2E636F6D2E62722F }
+	$a1 = { 6D6F7469766F3A206461646F73206361646173747261697320646976657267656E746573 }
+	$a2 = { 73756120617475616C697A61[1-8]6F2068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32663
+{
+strings:
+	$a0 = { 406c6e6b2d6273782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32468
+{
+strings:
+	$a0 = { 406d72666d732d6d782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37521
+{
+strings:
+	$a0 = { 656c6574726f2d686964726f2e636f6d2f626f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37526
+{
+strings:
+	$a0 = { 63656e7472616c6d756c7469617669736f2e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37527
+{
+strings:
+	$a0 = { 6d6169736d6b746d756c74692e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37525
+{
+strings:
+	$a0 = { 6d756c7469617669736f636c6173732e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35483
+{
+strings:
+	$a0 = { 76697375616c697a617220616e65786f20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37528
+{
+strings:
+	$a0 = { 726173676174656d756c74696d6b742e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32467
+{
+strings:
+	$a0 = { 6e6f7768656c706465736b3230313340676d61696c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35484
+{
+strings:
+	$a0 = { 436f74612663636564696c3b266174696c64653b6f206465205072652663636564696c3b6f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 646f63732e676f6f676c652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34578
+{
+strings:
+	$a0 = { 7469746c653e4e6f746966696361 }
+	$a1 = { 50617363686f616c6f74746f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34579
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D68747470733A2F2F7777772E64726F70626F782E }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35247
+{
+strings:
+	$a0 = { 6578636565646564206974732073746f72616765206c696d6974 }
+	$a1 = { 2f77702d61646d696e2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35576
+{
+strings:
+	$a0 = { 504768306257772b44516f67504852706447786c506b646c636d46755a4738675247396a6457316c626e527649464245526a777664476c306247552b44516f675047686c595751 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33252
+{
+strings:
+	$a0 = { 7265667265736820636F6E74656E743D22303B2075726C3D68747470733A2F2F7777772E64726F70626F78 }
+	$a1 = { 6F6E6D6F7573656F7665723D22696E666F28746869732C2270726F6475746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35574
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 3e426169786172207475646f20636f6d6f205261723c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33254
+{
+strings:
+	$a0 = { 5375626a6563743a20446f63756d656e746f73 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 4144564f4741444f532065204153534f434941444f53 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33256
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 4144564f4741444f532065204153534f434941444f53 }
+	$a2 = { 6269746c792e636f6d2f }
+	$a3 = { 426169786172207475646f20636f6d6f207a6970 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_33257
+{
+strings:
+	$a0 = { 4e6f74612050726f6d6973733d4633726961 }
+	$a1 = { 6d65746120687474702d65717569763d3344227265667265736822 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36967
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]6F20646F206D[1-8]64756C6F206465207365677572616E }
+	$a1 = { 2E70687020636C697175652061717569 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36966
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??42??34707955??3d2042616e636f20646f2042726173696c20532e413a20417669736f20496d706f7274616e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36965
+{
+strings:
+	$a0 = { 46726f6d3a20496e666f726d65204242 }
+	$a1 = { 5375626a6563743a203d??69736f2d383835392d31??51??5375615f636f6e74615f657374615f636f6d5f70656e64656e636961 }
+	$a2 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35378
+{
+strings:
+	$a0 = { 6163636f756e74734070617373706f72742e636f6d }
+	$a1 = { 636f6d70726f76616e746520646520646570 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35809
+{
+strings:
+	$a0 = { 436f74613d43333d41373d43333d41336f206465205072653d43333d41376f }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34281
+{
+strings:
+	$a0 = { 636f6d70726f76616e7465 }
+	$a1 = { 6269746e616d696170702e636f6d }
+	$a2 = { 6269742e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32297
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 6E6F74612066697363616C }
+	$a2 = { 636C2E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35377
+{
+strings:
+	$a0 = { 347368617265642e636f6d2f }
+	$a1 = { 4d7569746f20636f72616a6f7361206b6b6b6b }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_28271
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 656E636F6E7472612D7365206578706972616461 }
+	$a2 = { 73656E68612064612063656E7472616C206465206174656E64696D656E746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36503
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20646f2042726173696c }
+	$a1 = { 2e616161616161616161616161616161616161616161616161616161616161 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_18927
+{
+strings:
+	$a0 = { 436f6d707261205072656d69616461204369656c6f }
+	$a1 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32402
+{
+strings:
+	$a0 = { 656D69746120737561206E6F74612066697363616C20617175693A2068747470733A2F2F636C642E70742F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36593
+{
+strings:
+	$a0 = { 6E6F74612066697363616C }
+	$a1 = { 656D20666F726D61746F207064662068747470733A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35393
+{
+strings:
+	$a0 = { 536567756520656d20416e65786f }
+	$a1 = { 43686571756573204465766f6c7669646f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36596
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 626c6f672e6d686176696c612e636f6d2e62722f77702d636f6e74656e742f70686f746f732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36599
+{
+strings:
+	$a0 = { 5449544c453e46573a20436172746120646520436f6272616e }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 6368657175652d6465766f6c7669646f2e706466 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35399
+{
+strings:
+	$a0 = { 4d414e4441444f20444520494e54494d41 }
+	$a1 = { 2e6269746e616d696170702e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35398
+{
+strings:
+	$a0 = { 7469746C653E53657276692663636564696C3B6F204F6E6C696E65 }
+	$a1 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D }
+	$a2 = { 4C6F72656D20697073756D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_28656
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]2064652061636573736F2070617261206F73207365727669[1-8]6F7320646F206175746F6174656E64696D656E746F }
+	$a1 = { 6C696E6B2061626169786F3A2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35715
+{
+strings:
+	$a0 = { 7469746c653e526573706f737461205765626d61696c }
+	$a1 = { 6d656e736167656d20656d20736575207765626d61696c2c203c612068726566 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36333
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 636F727265[1-8]6F2064652061636573736F20616F206175746F6174656E64696D656E746F }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37298
+{
+strings:
+	$a0 = { 2F636C2E6C792F[10-12]2F646F776E6C6F61642F4E6F76615F436F7461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36284
+{
+strings:
+	$a0 = { 6e6f74612066697363616c20656c657472 }
+	$a1 = { 6d6f64756c65732f6d6f645f }
+	$a2 = { 76697375616c697a617220626169786172 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37091
+{
+strings:
+	$a0 = { 736f756c7175616c6974792e696e666f2f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_25593
+{
+strings:
+	$a0 = { 66616C6861206E6F20636572746966696361646F2073736C2064652073756120636F6E7461 }
+	$a1 = { 627261646573636F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36282
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D2230203B75726C3D687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32292
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 536567756520656d20416e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35025
+{
+strings:
+	$a0 = { 4465706f7369746f20656665747561646f }
+	$a1 = { 6563787374796c65313e45737461646f3a }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32294
+{
+strings:
+	$a0 = { 76697375616c697a6172206f20616e65786f2c203c6120687265663d22687474703a2f2f67652e74742f6170692f312f66696c6573 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35155
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f2070617261206f73206974656e73 }
+	$a1 = { 2e6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31717
+{
+strings:
+	$a0 = { 7469746c653e436f6d70726f76616e7465 }
+	$a1 = { 737567617273796e632e636f6d2f }
+	$a2 = { 536567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35094
+{
+strings:
+	$a0 = { 7469746c653d33442242616978617220636f6d6f207a6970 }
+	$a1 = { 2f636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31714
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31712
+{
+strings:
+	$a0 = { 636f6d656e74266161637574653b72696f20646520766f7a }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 46616365626f6f6b2c20496e63 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31711
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 6e66652e707265666569747572612e73702e676f762e6272 }
+	$a2 = { 6269742e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36446
+{
+strings:
+	$a0 = { 656d20616e65786f20626f6c65746f }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36444
+{
+strings:
+	$a0 = { 64726f70626f782e636f6d2f }
+	$a1 = { 3e435552524943554c4f3d30443d30415649544145204f4e4c494e453c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31719
+{
+strings:
+	$a0 = { 6d756c7466696e616e636569726f2e636f6d2f7e6d756c7466 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31718
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 6e662d655f426f6c65746f2068747470 }
+	$a2 = { 4976616e2064652053616e74616e61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35899
+{
+strings:
+	$a0 = { 5375626a6563743a204657443a20436f6d756e696361646f20496d706f7274616e7465204944 }
+	$a1 = { 3c6974617540 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31768
+{
+strings:
+	$a0 = { 7072656D696164612073696372656469 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 706F7374696D672E6F72672F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31678
+{
+strings:
+	$a0 = { 416d616e646120676f6d65733b }
+	$a1 = { 6e616d653d437572726963756c756d5f416d616e64612e7a6970 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31679
+{
+strings:
+	$a0 = { 416d616e646120676f6d65733b }
+	$a1 = { 6e616d653d437572726963756c756d5f416d616e64612d476f6d65732e7a6970 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31903
+{
+strings:
+	$a0 = { 636F727265696F732E636F6D2E62722F }
+	$a1 = { 6C6F63616C697A6172202D2068697374007269636F20646F }
+	$a2 = { 676F6F2E676C2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35891
+{
+strings:
+	$a0 = { 6D756E646F646173747269626F732E636F6D }
+	$a1 = { 73757370656E6465722073756120636F6E7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31671
+{
+strings:
+	$a0 = { 76616c652050726573656e74652043616361752d53686f77 }
+	$a1 = { 494d5052494d49522d4355504f4d }
+	$a2 = { 666263646e2e6e65742f6870686f746f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33520
+{
+strings:
+	$a0 = { 70616765207265646972656374696F6E2068747470733A2F2F636C642E70742F646C2F646F776E6C6F61642F }
+	$a1 = { 2F426F6C65746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36058
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 636c642e70742f646c2f646f776e6c6f6164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36055
+{
+strings:
+	$a0 = { 7469746c653e72697070656420627920424f5353 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36054
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 636c642e70742f646c2f646f776e6c6f6164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36495
+{
+strings:
+	$a0 = { 616e65786f2061626169786f }
+	$a1 = { 506c616e696c68613a20687474703a2f2f6269743d32456c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_27789
+{
+strings:
+	$a0 = { 3c6163636f756e74734070617373706f72742e636f6d3e }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33713
+{
+strings:
+	$a0 = { 75706c6f61642e77696b696d656469612e6f72672f }
+	$a1 = { 766964656f73206d61697320616365737361646f73 }
+	$a2 = { 45717569706520596f7554756265 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34082
+{
+strings:
+	$a0 = { 436172743d45336f2053616e74616e646572 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 7a69702e6e65742f }
+	$a3 = { 63616461737472652d7365 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_34081
+{
+strings:
+	$a0 = { 446973706f73697469766f2069546f6b656e2064657373696e63726f6e697a61646f }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_30879
+{
+strings:
+	$a0 = { 3120616E65786F207C20687474703A2F2F6269742E6C792F[7]20636F6D70726F76616E7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34426
+{
+strings:
+	$a0 = { 2e647265616d686f737470732e636f6d3e }
+	$a1 = { 4d617374657263617264 }
+	$a2 = { 3e436c6971756520417175693c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_26960
+{
+strings:
+	$a0 = { 61646573266174696c64653b6f206e6f2073697374656d61206465207365677572616e2663636564696c3b61204369656c6f }
+	$a1 = { 73697374656d6120696e7465677261646f20636f6d206d6f62696c65 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31877
+{
+strings:
+	$a0 = { 46696e616e636569726f }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31873
+{
+strings:
+	$a0 = { 436f6d70726f76616e7465 }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30369
+{
+strings:
+	$a0 = { 6175746F2D6174656E64696D656E746F }
+	$a1 = { 62616E636F20646F2062726173696C }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_28833
+{
+strings:
+	$a0 = { 5375626a6563743a20464f544f53 }
+	$a1 = { 703e416e65786f3a }
+	$a2 = { 687474703a2f2f6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36783
+{
+strings:
+	$a0 = { 7469746c653e504554524f42524153205052454d4d4941 }
+	$a1 = { 3e434c4951554520415155493c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32115
+{
+strings:
+	$a0 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32116
+{
+strings:
+	$a0 = { 73782e636f6d2e6272 }
+	$a1 = { 436f6d7061726563696d656e746f5f656d5f41756469656e636961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34554
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e746520497461 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34885
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 73756120636f6e746120656e636f6e7472612d7365206578706972616461 }
+	$a2 = { 626c6f717565696f20616f732063616e616973 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34880
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20497461 }
+	$a1 = { 2e70687022 }
+	$a2 = { 6d696e742e676f762e636d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37194
+{
+strings:
+	$a0 = { 50726f6d6f3d45373d45336f20646520466964656c6964616465204d756c7469706c7573 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35433
+{
+strings:
+	$a0 = { 53616e74616e64657220496e7465726e65742042616e6b696e67207465766520756d6120617475616c697a61 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37193
+{
+strings:
+	$a0 = { 61636573736F20616F20696E7465726E65742062616E6B696E6720656E636F6E7472612D7365206C696D697461646F }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37192
+{
+strings:
+	$a0 = { 7365752061636573736F20616F20696E7465726E65742062616E6B696E6720656E636F6E7472612D7365206C696D697461646F }
+	$a1 = { 62622E636F6D2E62722F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30740
+{
+strings:
+	$a0 = { 696e7465726e616c2e636c6f75646170702e6e6574 }
+	$a1 = { 7469746c653e5269636172646f20456c6574726f }
+	$a2 = { 2e6573792e65732f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_30219
+{
+strings:
+	$a0 = { 3c496e666f656d61696c2e427261646573636f40656d61696c2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31614
+{
+strings:
+	$a0 = { 5375626a6563743a2046773a20456e633a2042616e636f20646f2042726173696c }
+	$a1 = { 776562662e6c612f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31617
+{
+strings:
+	$a0 = { 7469746c653e43656e7472616c49544155 }
+	$a1 = { 74696e797069632e636f6d2f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36128
+{
+strings:
+	$a0 = { 696d616765732e6f726b75742e636f6d }
+	$a1 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36120
+{
+strings:
+	$a0 = { 46726f6d3a20504f4c49434941204645444552414c }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 2f6a2e6d702f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37512
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??42616e636f5f53616e74616e6465725f42726173696c5f533d3245415f2d5f434f4d554e494341444f5f494d504f5254414e54453d33415f417475616c697a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37514
+{
+strings:
+	$a0 = { 6C6F6A617320616D65726963616E6173 }
+	$a1 = { 636C6971756520617175692E20687474703A2F2F692E696D677572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37280
+{
+strings:
+	$a0 = { 627261646573636f }
+	$a1 = { 73657520646973706f73697469766f206465207365677572616e }
+	$a2 = { 656e636f6e7472612d7365206465736174697661646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37287
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??3d45323d39433d39345f??3d??a92042616e636f20646f2042726173696c20556c74696d6f20417669736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37286
+{
+strings:
+	$a0 = { 46726f6d3a202242422d534547 }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37288
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a2042616e636f20646f2042726173696c202d20457669746520626c6f717565696f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34955
+{
+strings:
+	$a0 = { 656c656e616c616e672e736f75726365666f7267652e6e6574 }
+	$a1 = { 42616e636f20566f746f72616e74696d2043617274266f74696c64653b6573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31559
+{
+strings:
+	$a0 = { 4F0072006900670069006E0061006C00460069006C0065006E0061006D00650000006500780070006C006F007200650072002E00620063006B002E006500780065 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35945
+{
+strings:
+	$a0 = { 5375626a6563743a2053757370656e64656d6f7320612073756120636f6e7461 }
+	$a1 = { 582d5048502d }
+	$a2 = { 46726f6d3a204d65726361646f4c69767265 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33022
+{
+strings:
+	$a0 = { 4f7263616d656e746f20656d20416e65786f }
+	$a1 = { 4d45544120485454502d45515549563d334452656672657368 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33320
+{
+strings:
+	$a0 = { 46726f6d3a2053616e74616e646572 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36775
+{
+strings:
+	$a0 = { 5375626a6563743a2042414e434f20444f2042524153494c202d20534d53204f4e4c494e45 }
+	$a1 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33327
+{
+strings:
+	$a0 = { 46726f6d3a20476572656e6369612049746175 }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33324
+{
+strings:
+	$a0 = { 42656d2056696e646f206120436f6d707261205072656d69616461 }
+	$a1 = { 2e706870223e }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37358
+{
+strings:
+	$a0 = { 62616E636F2073616E74616E64657220732E612E20636F727265[1-8]657320696D706F7274616E746573 }
+	$a1 = { 636F6E6669726D6172207375617320646566696E69 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37357
+{
+strings:
+	$a0 = { 666F69206C616E[1-8]61646120756D6120617475616C697A61[1-8]6F2064652061636573736F20616F206175746F6174656E64696D656E746F }
+	$a1 = { 696E696369617220617475616C697A61 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33328
+{
+strings:
+	$a0 = { 46726f6d3a20435245444943415244 }
+	$a1 = { 616a7564616d757475612e636f6d2e62722f }
+	$a2 = { 5361766520666f722057656220536c69636573 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37606
+{
+strings:
+	$a0 = { 696D6775722E636F6D }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 656D61696C40636173617362616869612E636F6D2E6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33983
+{
+strings:
+	$a0 = { 43414958412045434f4e264f636972633b4d494341 }
+	$a1 = { 626c6f717565696f7320656d2066757475726f732061636573736f73 }
+	$a2 = { 6e266174696c64653b6f2073656a61207265616c697a616461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37603
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c73657276696573407765626d61696c2e6364 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37602
+{
+strings:
+	$a0 = { 5265706c792d546f3a2073657276696573407765626d61696c2e6364 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37238
+{
+strings:
+	$a0 = { 687474703A2F2F636C2E6C792F[10-12]2F646F776E6C6F61642F50656469646F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_23427
+{
+strings:
+	$a0 = { 62616E636F20627261646573636F }
+	$a1 = { 6368617665206465207365677572616E[1-16]6120627261646573636F20656E636F6E7472612D7365206578706972616461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32608
+{
+strings:
+	$a0 = { 416775617264616e646f205265746972616461 }
+	$a1 = { 5048504d61696c6572 }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37232
+{
+strings:
+	$a0 = { 62696f6e757472792e636f6d2e62722f696e666f726d617469766f2f696d672f446f6373 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32605
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 2e64646e732e6e6574 }
+	$a2 = { 697375616c697a617220656d20666f726d61746f20584d4c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37230
+{
+strings:
+	$a0 = { 636C2E6C792F3241314A334A3354327632632F646F776E6C6F61642F436F746163616F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37236
+{
+strings:
+	$a0 = { 636F6D70726F76616E74652068747470 }
+	$a1 = { 666F746F732068696C75783A20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37237
+{
+strings:
+	$a0 = { 636c2e6c792f3348304b3333306f306e30672f646f776e6c6f61642f50656469646f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32603
+{
+strings:
+	$a0 = { 4500780070006C006F007200650072005C006D007300770069006E00730063006B002E006F00630078000021520065006700530076007200330032002E0065007800650020002F00730020000009740065006D0070 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37095
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472[1-8]6E69636120656D3A20687474703A2F2F6269742E6C792F[7-10]687474703A2F2F7777772E6E66652E66617A656E6461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34576
+{
+strings:
+	$a0 = { 73696E63726F6E697A61[1-8]6F206F627269676174 }
+	$a1 = { 696D6775722E636F6D2F }
+	$a2 = { 697461752E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33087
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 74696e797069632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33081
+{
+strings:
+	$a0 = { 536567756520616e65786f }
+	$a1 = { 73756a6569746120612070726f746573746f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32059
+{
+strings:
+	$a0 = { 636f727265696f2065786365646575206f206c696d6974652064652061726d617a656e616d656e746f }
+	$a1 = { 2e747269706f642e636f6d2f }
+	$a2 = { 61646d696e6973747261646f72206465207765626d61696c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37273
+{
+strings:
+	$a0 = { 636861766573206465207365677572616E[1-8]612062722061646573636F2065787069726172 }
+	$a1 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33057
+{
+strings:
+	$a0 = { 736162657475646f2e7870672e756f6c2e636f6d2e6272 }
+	$a1 = { 415455414c495a4143414f206465205365677572616e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33185
+{
+strings:
+	$a0 = { 4964656e7469666963616d6f7320756d2070726f626c656d61206e6f207365752061636573736f }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+	$a2 = { 2e706870??636c69656e74653d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37417
+{
+strings:
+	$a0 = { 6e6f76616e616e65742e696e666f2f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37415
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c6973 }
+	$a1 = { 5375626a6563743a2048756765 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36174
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c3634373831323731374071712e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32125
+{
+strings:
+	$a0 = { 646565702e6e656f2e6774632d61782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36170
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]6F206465207365677572616E }
+	$a1 = { 736572[1-8]626C6F7175656164 }
+	$a2 = { 6E61206167[1-8]6E636961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32122
+{
+strings:
+	$a0 = { 646565702e706c75732e6c6f6e672d62782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32121
+{
+strings:
+	$a0 = { 646565702e706c75732e6c6f6e672d68782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32120
+{
+strings:
+	$a0 = { 646565702e706c75732e6c6f6e672d66782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37524
+{
+strings:
+	$a0 = { 636F6E73746120656D2073657520637066 }
+	$a1 = { 636F70797269676874207669766F2063656C756C6172 }
+	$a2 = { 6269746C792E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37522
+{
+strings:
+	$a0 = { 73696e686f6e6c792e636f6d2f696d616765732f646f632f61636573732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37523
+{
+strings:
+	$a0 = { 73747265616D2E636C6F736528293B6F626A7368656C6C2E72756E2875746638617272746F73747228626173653634646563746F617272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37520
+{
+strings:
+	$a0 = { 65666574756569206F20706167616D656E746F }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 74696E797069632E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34615
+{
+strings:
+	$a0 = { 686f746d61696c2e636f6d2f6d61696c2f7733 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 736567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33646
+{
+strings:
+	$a0 = { 4578747261746f206465204d756c746173204f6e6c696e65 }
+	$a1 = { 737567617273796e632e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33645
+{
+strings:
+	$a0 = { 7469746c653e566973612044656269746f }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34964
+{
+strings:
+	$a0 = { 6f723d4537616d656e746f2070617261206f73206974656e73 }
+	$a1 = { 2f636f722e746f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34963
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 2E77656263696E646172696F2E636F6D2F }
+	$a2 = { 646570617274616D656E746F2066696E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34613
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 7072657374613d43333d41373d43333d41336f }
+	$a2 = { 2f69732e67642f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34612
+{
+strings:
+	$a0 = { 4f723d4537616d656e746f }
+	$a1 = { 416e65786f3a202020687474703a2f2f6269743d32456c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36647
+{
+strings:
+	$a0 = { 70726573656e74652063616361752d73686f77 }
+	$a1 = { 3120616e65786f3a2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35966
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 2e7365727665706963732e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34803
+{
+strings:
+	$a0 = { 582d504850 }
+	$a1 = { 2f6875676f2e706870 }
+	$a2 = { 6c69766566696c6573746f72652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33613
+{
+strings:
+	$a0 = { 7265617469766172207365757320446f747a }
+	$a1 = { 6e73616530322e636173696d616765732e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32275
+{
+strings:
+	$a0 = { 4062782d706e732e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35474
+{
+strings:
+	$a0 = { 636169786120646520636f727265696f2065786365646575 }
+	$a1 = { 2e7175616c74726963732e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37317
+{
+strings:
+	$a0 = { 5375626a6563743a20526173747265616d656e746f20436f727265696f73202d20436f6d756e696361646f2028 }
+	$a1 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37701
+{
+strings:
+	$a0 = { 40677275706f6176616c2e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37144
+{
+strings:
+	$a0 = { 636f6272616e636131302e77656263696e646172696f2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37413
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20666F6920656D6974696461 }
+	$a1 = { 707265666572656E6369612E2068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37410
+{
+strings:
+	$a0 = { 73756120656E636F6D656E64613A2068747470733A2F2F6269746C792E636F6D }
+	$a1 = { 616775617264616E646F207265746972616461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32427
+{
+strings:
+	$a0 = { 436f6d70726f76616e7465206465204465706f7369746f }
+	$a1 = { 6163636f756e74734070617373706f72742e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37140
+{
+strings:
+	$a0 = { 73747261686f766b612d6175746f2e72752f696e6465785f66696c65732f5f6373732f454d4953534f52 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33332
+{
+strings:
+	$a0 = { 636F72726563[1-8]6F2064652061636573736F20616F206175746F2D6174656E64696D656E746F }
+	$a1 = { 617475616C697A61[1-8]6F206E656365737361726961 }
+	$a2 = { 62622E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37142
+{
+strings:
+	$a0 = { 6269742E6C792F[7-8]20626F6C65746F20616E64726164652066696368746E6572 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37143
+{
+strings:
+	$a0 = { 504768306257772b44516f4a5047686c5957512b44516f4a504852706447786c506a4967566d6c6849454a76624756306279416f51553546574538 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34760
+{
+strings:
+	$a0 = { 5047316c64474567614852306343316c63585670646a3069556d566d636d567a614349675932397564475675644430694d447456556b773961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34763
+{
+strings:
+	$a0 = { 70656469646f20646520636f6d707261 }
+	$a1 = { 616e65786f20636c69717565 }
+	$a2 = { 6269743d32456c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34762
+{
+strings:
+	$a0 = { 736f6c69636974616e646f206f206f723d4537616d656e746f }
+	$a1 = { 446f776e6c6f616420687474703a2f2f6269743d32456c79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37148
+{
+strings:
+	$a0 = { 6F752065786962697220696D6167656E732220687474703A2F2F6269742E6C792F }
+	$a1 = { 74696E797069632E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37149
+{
+strings:
+	$a0 = { 40637265646974636173682e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37310
+{
+strings:
+	$a0 = { 5375626a6563743a20526173747265616d656e746f20646520456e636f6d656e646120436f727265696f73202d20436f6d756e696361646f }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35767
+{
+strings:
+	$a0 = { 4369656c6f202d20436f6d707261205072656d69616461 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_36278
+{
+strings:
+	$a0 = { 656d61696c3a20636f6e7461746f40627261736c696465722d6f72672e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37649
+{
+strings:
+	$a0 = { 7365727669646f726d6b746d756c74692e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36956
+{
+strings:
+	$a0 = { 42616e636f2053616e74616e64657220532e41 }
+	$a1 = { 636572746966696361646f73206465207365677572616e2663636564696c3b61 }
+	$a2 = { 656e7472617220656d2073757370656e73 }
+	$a3 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_32676
+{
+strings:
+	$a0 = { 5765626d61696c2c20652d6d61696c20436f6e74612050726f7072696574 }
+	$a1 = { 5765626d61696c2c204571756970612064652047657374 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36955
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f2053616e74616e64657220532e412e202d20434f4d554e494341444f20555247454e5445 }
+	$a1 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35498
+{
+strings:
+	$a0 = { 2f6d61696c2e6c6976652e696e626f782e706870?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36612
+{
+strings:
+	$a0 = { 5048504d61696c6572 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 3e436c69656e746520426f7469636172696f2e3c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34145
+{
+strings:
+	$a0 = { 69732e67642f }
+	$a1 = { 446f776e6c6f6164206461206d756c74612061717569 }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36614
+{
+strings:
+	$a0 = { 616c743d4f75746c6f6f6b57696e7a6970 }
+	$a1 = { 416775617264616e646f20756d6120726573706f737461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36618
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 56697375616C697A617220416E65786F20202020687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35272
+{
+strings:
+	$a0 = { 53757370656e64656d6f7320612073756120636f6e7461 }
+	$a1 = { 4d65726361646f5061676f }
+	$a2 = { 2e356762667265652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33065
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 2e6d79766e632e636f6d }
+	$a2 = { 74696e797069632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35568
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 416772616465636520612050726566 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35562
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 64657665207365722061726d617a656e61646f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34355
+{
+strings:
+	$a0 = { 6C6973746120636F6D206F732070656469646F73 }
+	$a1 = { 6F772E6C792F }
+	$a2 = { 77696B696D656469612E6F7267 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_25325
+{
+strings:
+	$a0 = { 627261646573636F20657374[1-8]207265616C697A616E646F20756D2070726F636564696D656E746F206465207365677572616E[1-8]6120696E7465726E6F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36484
+{
+strings:
+	$a0 = { 766f75636865722061626169786f3a20687474703a2f2f69732e67642f }
+	$a1 = { 74616d2076696167656e73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33269
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 536567756520656d20616e65786f }
+	$a2 = { 4173736573736f726961206520436f6272616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33336
+{
+strings:
+	$a0 = { 53697374656d6120496e7465677261646f206465204573747261646173 }
+	$a1 = { 7265676973747261646f206e6f2047524156414d45 }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37391
+{
+strings:
+	$a0 = { 656c69736f2e69722f74656d706c617465732f61746f6d69632f746f702e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36724
+{
+strings:
+	$a0 = { 6e6f74696669636163616f20646520636f6272616e6361202d }
+	$a1 = { 70617363686f616c6f74746f206164766f6761646f73 }
+	$a2 = { 626f6c65746f20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35295
+{
+strings:
+	$a0 = { 5375626a6563743a204677643a20454e433a205b434f4d554e494341444f20495441555d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35384
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 2e77656263696e646172696f2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35380
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 446f776e6c6f6164203a2020687474703a2f2f6269743d32456c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35383
+{
+strings:
+	$a0 = { 7469746c653e436f6d70726f76616e7465 }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 3120616e65786f3a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35720
+{
+strings:
+	$a0 = { 46726f6d3a2022496e666f656d61696c }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35721
+{
+strings:
+	$a0 = { 417475616c697a6163616f20427261646573636f205365677572616e }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35050
+{
+strings:
+	$a0 = { 4369656c6f2d50723d45416d696f73??3d203c6163636f756e74734070617373706f72742e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_25696
+{
+strings:
+	$a0 = { 5765626d61696c20617475616c697a6172 }
+	$a1 = { 636f727265696f2065786365646575206f206c696d6974652064652061726d617a656e616d656e746f }
+	$a2 = { 76616c6964617220612073756120636169786120646520636f727265696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_27031
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 416e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35389
+{
+strings:
+	$a0 = { 456d20616e65786f }
+	$a1 = { 70726f636573736f206a7564696369616c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36026
+{
+strings:
+	$a0 = { 69746F6B656E }
+	$a1 = { 73696E63726F6E697A61[1-8]6F2064652073657520646973706F73697469766F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37576
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 616E65786F3A2068747470733A2F2F6269746C792E636F6D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35701
+{
+strings:
+	$a0 = { 76697375616c697a617220416e65786f3d32453a2068747470733a2f2f6269746c793d3245636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35702
+{
+strings:
+	$a0 = { 76697375616c697a617220416e65786f2e3a20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35704
+{
+strings:
+	$a0 = { 6269746c792e636f6d2f }
+	$a1 = { 2e7661692e6c612f }
+	$a2 = { 3e42616978617220636f6d6f205044463c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_33141
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A20[1-8]3A7468756D62312E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36827
+{
+strings:
+	$a0 = { 7375706f7274656262406f757669646f7269612e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_28889
+{
+strings:
+	$a0 = { 46726f6d3a20224349454c4f }
+	$a1 = { 696d616765736861636b2e75732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31377
+{
+strings:
+	$a0 = { 73756120636F6E746120736572[1-8]63616E63656C616461 }
+	$a1 = { 7072657A61646F28612920636C69656E7465206D6963726F736F6674 }
+	$a2 = { 656D203234686F7261732E20636C697175652068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32280
+{
+strings:
+	$a0 = { 6d6a6e65676f63696f73696d6f62696c696172696f732e636f6d2e62722f706f7274616c2f696d616765732f62616e6e6572732f726563662e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32933
+{
+strings:
+	$a0 = { 7469746c653e50616753656775726f }
+	$a1 = { 636f6d70726120666f69207265616c697a61646120656d20736575204e4f4d45 }
+	$a2 = { 2e676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32930
+{
+strings:
+	$a0 = { 45666574756569206120544544 }
+	$a1 = { 73746f726167652e676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32285
+{
+strings:
+	$a0 = { 676f72646f2e706870 }
+	$a1 = { 676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35038
+{
+strings:
+	$a0 = { 53657276693d43333d41376f20646520656e747265676120646f7320636f727265696f73 }
+	$a1 = { 2f636f722e746f2f }
+	$a2 = { 633d43333d42336469676f20646520726173747265616d656e746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36807
+{
+strings:
+	$a0 = { 5047316c6447456761575139496a4d314e534967614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a7350 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35037
+{
+strings:
+	$a0 = { 53657276693d43333d41376f20646f7320636f727265696f73 }
+	$a1 = { 2f636f722e746f2f }
+	$a2 = { 633d43333d42336469676f20646520726173747265616d656e746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35226
+{
+strings:
+	$a0 = { 7469746c653e4372656469636172642056616e746167656e73 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35143
+{
+strings:
+	$a0 = { 464f4e542d46414d494c593a20276c75636964612073616e7320756e69636f6465 }
+	$a1 = { 6661747572612076656e63696461 }
+	$a2 = { 4164766f6761646f73 }
+	$a3 = { 2f5052453e }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_35144
+{
+strings:
+	$a0 = { 7469746c653e436f6e666572656e636961 }
+	$a1 = { 426f6c65746f20456c657472 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35352
+{
+strings:
+	$a0 = { 626F6C65746F2076656E6369646F }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 2F636C2E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35149
+{
+strings:
+	$a0 = { 3C703E282828204D202D2030202D2052202D2054202D2030202D204C202D207C202D204E202D2030202929293C2F703E }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31706
+{
+strings:
+	$a0 = { 7469746c653e446f776e6c6f6164 }
+	$a1 = { 706f73736f20706f737461206573736520766964656f206e6f2066616365 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31707
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 4578747261746f20646520636f6272616e }
+	$a2 = { 737567617273796e632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31700
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 636f727265696f736f6e6c696e652e636f6d2e62722f }
+	$a2 = { 67652e74742f6170692f312f66696c65732f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31701
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 636f6d656e74266161637574653b72696f20646520766f7a }
+	$a2 = { 67652e74742f6170692f312f66696c65732f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36904
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C20656E636F6E7472612D736520656D2070726F636573736F2064652073757370656E73 }
+	$a1 = { 70726F636564696D656E746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33888
+{
+strings:
+	$a0 = { 696d672e616d65726963616e61732e636f6d2e6272 }
+	$a1 = { 4e6f74612046697363616c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36983
+{
+strings:
+	$a0 = { 5375626a6563743a204242202d205072657a61646f20436c69656e7465 }
+	$a1 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37385
+{
+strings:
+	$a0 = { 3c66696e616e634073616e7461626172626172612e64646e7361692e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31649
+{
+strings:
+	$a0 = { 5375626a6563743a204553434c41524543494d454e544f }
+	$a1 = { 4c7939696158517562486b }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31642
+{
+strings:
+	$a0 = { 6e656365737369746f20636f6d20757267656e636961 }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069556d566d636d567a614349675932397564475675644430694d44736756564a4d5057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31647
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 2f446f63756d656e746f732e7a6970223e426169786172204e6f74612046697363616c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37389
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 636F6E73746120656D206E6F73736F2062616E636F206465206461646F73 }
+	$a2 = { 6D61696F726573206573636C61726563696D656E746F732E2068747470 }
+	$a3 = { 73657261736120732F61 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_36047
+{
+strings:
+	$a0 = { 7469746c653e456469746f722048544d4c }
+	$a1 = { 4172717569766f28732920656d20416e65786f287329 }
+	$a2 = { 616b616d616968642e6e65742f6870686f746f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36045
+{
+strings:
+	$a0 = { 436f6d70726f76616e7465205472616e736665723d45416e6369613d4130202572616e646f6d5f6e756d25 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31593
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 43616461737472652d7365206520636f6e636f7272612067723d4531746973 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33783
+{
+strings:
+	$a0 = { 70726F636564696D656E746F20696E7665737469676174 }
+	$a1 = { 676F6F676C6564726976652E636F6D2F }
+	$a2 = { 636F7079726967687420646570617274616D656E746F20646520706F6C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31970
+{
+strings:
+	$a0 = { 46726f6d3a20466964656c6964616465204369656c6f }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31972
+{
+strings:
+	$a0 = { 46726f6d3a204369656c6f }
+	$a1 = { 43616461737472652d7365 }
+	$a2 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31802
+{
+strings:
+	$a0 = { 64726976652e676f6f676c652e636f6d2f }
+	$a1 = { 426169786172203c2f413e }
+	$a2 = { 4a6573757320746520616d61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37543
+{
+strings:
+	$a0 = { 3230302d39382d3131342d3230392e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_19744
+{
+strings:
+	$a0 = { 50726f6d6f63616f204369656c6f }
+	$a1 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30425
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20646f2042726173696c }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37544
+{
+strings:
+	$a0 = { 66696e616e636569726f323031366a756e686f2e6f72636d657263616e74696c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31587
+{
+strings:
+	$a0 = { 5375626a6563743a20427261646573636f20532f4120436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 7374617469632e61766173742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37625
+{
+strings:
+	$a0 = { 5265706C792D546F3A20726573706F737461636F6E7461746F40626F6C2E636F6D2E6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32127
+{
+strings:
+	$a0 = { 4475706c69636174617320656d2041626572746f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 56697375616c697a6172204475706c6963617461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36715
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c6973 }
+	$a1 = { 5375626a6563743a204e6f74696669636174696f6e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37160
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??42616e636f5f646f5f42726173696c5f532f415f2d5f4d3d463364756c6f5f64655f5365677572616e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37548
+{
+strings:
+	$a0 = { 636f6e746162696c69646164656d61726b74696e672e636f6d2e62722f6964?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37578
+{
+strings:
+	$a0 = { 636C69636B2068657265203334302070696E6E69636B696E6E69636B }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37169
+{
+strings:
+	$a0 = { 5375626A6563743A20496E666F726D616D6F732071756520737561206368617665206465207365677572616E[1-8]6120427261646573636F20656E636F6E7472612D7365206578706972616461202D205B }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31603
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20696d706f7274616e746520427261646573636f }
+	$a1 = { 74696e797069632e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_27995
+{
+strings:
+	$a0 = { 6368617665206465207365677572616E[1-8]6120656E636F6E7472612D7365206578706972616461 }
+	$a1 = { 627261646573636F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37565
+{
+strings:
+	$a0 = { 5375626a6563743a20757267656e74652073616e74616e64657220756c74696d6f20617669736f2028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37497
+{
+strings:
+	$a0 = { 73696e686f6e6c792e636f6d2f2f696d616765732f706c79732f61636573732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33720
+{
+strings:
+	$a0 = { 7469746c653e4d756c746173 }
+	$a1 = { 4e6f7469666963613d45373d45336f20444552 }
+	$a2 = { 6d61696c65722e696d2f747261636b696e67 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36180
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 5375626a6563743a203d??5554462d38??51??4f735f466c616772616e7465735f64656e756e636961646f735f6e6f5f46616e7461737469636f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34491
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D68747470733A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37700
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20696d706f7274616e74653a2053616e74616e646572 }
+	$a1 = { 456d61696c204361646173747261646f3a }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35900
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 46726f6d3a20227375626d6172696e6f407375626d6172696e6f }
+	$a2 = { 6269742e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33334
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 4d6173746572537572707265656e6461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37291
+{
+strings:
+	$a0 = { 46726f6d3a20224c657669747261 }
+	$a1 = { 5375626a6563743a204e6f74696669636174696f6e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33994
+{
+strings:
+	$a0 = { 53696e63726f6e69736d6f2049746175 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33333
+{
+strings:
+	$a0 = { 7469746c653e566f632665636972633b2047616e686f75 }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 446f747a2032303135 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33996
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74653a20556c74696d6f20417669736f212053696e63726f6e69736d6f20646520436f6d706c656d656e746f73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37368
+{
+strings:
+	$a0 = { 636F727265[1-8]6F2070617261206F2063616461737472616D656E746F20646520636F6D70757461646F726573 }
+	$a1 = { 736572[1-8]20626C6F7175656164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35167
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??4174656e3d45373d45336f5f2d5f436f6d756e696361646f5f496d706f7274616e74655f646f5f42616e636f5f646f5f42726173696c }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34816
+{
+strings:
+	$a0 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d7739 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34814
+{
+strings:
+	$a0 = { 7469746c653e204e6f74617320466973636169 }
+	$a1 = { 7469746c653d2252656369626f20646520706167616d656e746f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36760
+{
+strings:
+	$a0 = { 5375626a6563743a20452d6d61696c2053746f72616765204c696d697420457868617573746564 }
+	$a1 = { 46726f6d3a2022456d61696c20537570706f7274205465616d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36762
+{
+strings:
+	$a0 = { 7469746c653e42616e636f20646f2042726173696c }
+	$a1 = { 636c69656e746562622e636f6d2e62722f61636573736f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_22922
+{
+strings:
+	$a0 = { 5f394643565641416d31543155492d517236704f6b6551503857315873504f32423245304b5f36612e6a7067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36764
+{
+strings:
+	$a0 = { 46726f6d3a20457175697065206465203d??7574662d38??51??617475616c697a613d43333d41373d43333d41336f??3d206465207765626d61696c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37388
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 696E666F726D616D6F73207175652073756120636F6E7461 }
+	$a2 = { 6C696E6861206465207365677572616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33099
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f206f20636f6d70726f76616e7465 }
+	$a1 = { 74696e797069632e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37380
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C20636F6D756E696361646F }
+	$a1 = { 73697374656D612064657465637465206972726567756C6172696461646573 }
+	$a2 = { 636F6E6669726D6172207375617320646566696E69 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_31620
+{
+strings:
+	$a0 = { 73687269736874692e696e666f2f63686172697474792f696d616765732f70726f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30042
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 636865717565206465766F6C7669646F }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36958
+{
+strings:
+	$a0 = { 6A627320732F61206370662F636E706A }
+	$a1 = { 687474703A2F2F6269742E6C792F[7-8]2076697375616C697A6172 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36959
+{
+strings:
+	$a0 = { 2f662e636c2e6c792f }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 2e706870?? }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36016
+{
+strings:
+	$a0 = { 497461267561637574653b20657374266161637574653b20617475616c697a616e646f206f207365752061706172656c686f2069546f6b656e207061726120612076657273266174696c64653b6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36951
+{
+strings:
+	$a0 = { 6e6f74612066697363616c20656c657472 }
+	$a1 = { 656d20666f726d61746f207064662068747470 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36952
+{
+strings:
+	$a0 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d77396148523063446f764c324e734c6d7835 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37014
+{
+strings:
+	$a0 = { 636f6d707261207072656d69616461206f75726f636172642065206369656c6f }
+	$a1 = { 2e696d616765736861636b2e75732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33046
+{
+strings:
+	$a0 = { 636f6e746120656e636f6e7472616d2d73652064657373696e63726f6e697a61646f73 }
+	$a1 = { 626c6f717565696f2074656d706f72 }
+	$a2 = { 42616e636f20497461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32068
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 7072617a6f20706172612073696e63726f6e697a61 }
+	$a2 = { 697461752e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32112
+{
+strings:
+	$a0 = { 54414d20466964656c6964616465202d20536f727465696f }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_21908
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 46726f6d3a204369656c6f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37397
+{
+strings:
+	$a0 = { 6269742E6C792F[7]20636F727265696F73202D20726173747265616D656E746F206465206F626A65746F73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37396
+{
+strings:
+	$a0 = { 3231362e3132362e3139322e3133362f6164732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32117
+{
+strings:
+	$a0 = { 646565702e706c75732e6f7665722d6373782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36169
+{
+strings:
+	$a0 = { 5375626a6563743a204174656e????6f202d20556c74696d6f20417669736f }
+	$a1 = { 582d5048502d }
+	$a2 = { 46726f6d3a204242 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37404
+{
+strings:
+	$a0 = { 6a6f696e6d616e616765722e696e666f2f70726f6d6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36165
+{
+strings:
+	$a0 = { 646973706f73697469766f206465207365677572616e }
+	$a1 = { 656e636f6e7472612d73652076656e6369646f }
+	$a2 = { 696e7465726e657462616e6b696e67 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36163
+{
+strings:
+	$a0 = { 2f77702d636f6e74656e742f }
+	$a1 = { 417a756c204c696e686173 }
+	$a2 = { 3e52657367617461722050722665636972633b6d696f3c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37398
+{
+strings:
+	$a0 = { 737567617273796e632e636f6d2f70662f44333235373133385f3837335f313130363137393832 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33199
+{
+strings:
+	$a0 = { 5375626a6563743a20496d706f7274616e74653a2053757370656e64656d6f73207061726369616c6d656e7465206f2073657520636164617374726f205475646f20417a756c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32704
+{
+strings:
+	$a0 = { 55736572735C41646D696E2D50435C4465736B746F705C4F6E6C696E655C4F6E6C696E655C6F626A5C44656275675C4272696761646569726F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32706
+{
+strings:
+	$a0 = { 70656e64656e63696120636f6d2073657520435046 }
+	$a1 = { 676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37557
+{
+strings:
+	$a0 = { 3139322e3235342e37322e3136362f6170692e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33659
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 676d6d2d6d6572636f7375722e6f72672f7265736f75726365732f6f72672e676d6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32702
+{
+strings:
+	$a0 = { 6961762E67612F73616E756C6F632F64726F6E2F6F72746569702F72622E74656E2E6573616972632F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36497
+{
+strings:
+	$a0 = { 5375626a6563743a204175746f2d4174656e64696d656e746f2042616e636f20646f2042726173696c202d20526563616461737472616d656e746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34975
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 6f723d43333d4137616d656e746f2070617261206f73206974656e73 }
+	$a2 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37558
+{
+strings:
+	$a0 = { 66696e616e636569726f7a727a65706a7a727a65706a2e6f72636d657263616e74696c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33195
+{
+strings:
+	$a0 = { 5375626a6563743a20566f65417a756c202d2053722e20436c69656e746520417a756c20496e666f726d616d6f73207175652073657520436164617374726f20666f6920426c6f71756561646f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32708
+{
+strings:
+	$a0 = { 46726f6d3a20736572617361 }
+	$a1 = { 676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34973
+{
+strings:
+	$a0 = { 7469746c653e3276696120426f6c65746f }
+	$a1 = { 626f6c65746f20636f6d2076656e6369646f }
+	$a2 = { 436f6e74656e742d446973706f736974696f6e3a206174746163686d656e74 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37447
+{
+strings:
+	$a0 = { 4C6A6176612F696F2F46696C653B01000A536F7572636546696C6501000D4A584E4E626567682E6A617661 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33608
+{
+strings:
+	$a0 = { 7469746c653e42616e636f20497461267561637574653b202d20466569746f }
+	$a1 = { 66696c65732e636f6d756e6964616465732e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36326
+{
+strings:
+	$a0 = { 636f6e74615f617a756c5f7365723d43333d41315f626c6f717565616461 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d616765736861636b2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_24957
+{
+strings:
+	$a0 = { 616E65786F20646F20626F6C65746F20646520636F6272616E[1-8]612E2068747470 }
+	$a1 = { 616C66612066696E616365697261 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35952
+{
+strings:
+	$a0 = { 636F727265696F }
+	$a1 = { 74656E74617469766120646520656E7472656761 }
+	$a2 = { 6269746C792E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36329
+{
+strings:
+	$a0 = { 5265706c792d546f3a20776562616e74697669727573733230323040676d61696c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35461
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 53657261736120457870657269616e2e20546f646f73206f73204469726569746f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35467
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20566f746f72616e74696d }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31244
+{
+strings:
+	$a0 = { 6A6176617363726970743A766F69642830293B207361696261206D616973 }
+	$a1 = { 616E65786F206F206172717569766F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35469
+{
+strings:
+	$a0 = { 5375626a6563743a2053616e74616e6465722053656c656374202d204d6f64756c6f2064652050726f746563616f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37170
+{
+strings:
+	$a0 = { 687474703a2f2f6461666974696961636573736f72696f732e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32806
+{
+strings:
+	$a0 = { 406873782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32807
+{
+strings:
+	$a0 = { 406673782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_36046
+{
+strings:
+	$a0 = { 582d4d61696c65723a204d6963726f736f6674204f75746c6f6f6b204578707265737320362e30302e323630302e30303030 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32801
+{
+strings:
+	$a0 = { 46726f6d3a205269636172646f456c6574726f407361632e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35187
+{
+strings:
+	$a0 = { 4076756c74722e67756573743e }
+	$a1 = { 656e747265676120646f7320636f727265696f73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37179
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74652c536567756520656d20616e65786f20626f6c65746f2e2023 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36388
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f20436c69656e7465202861292043656e7472616c206465204174656e64696d656e746f20427261646573636f207c20526567756c6172697a652d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32319
+{
+strings:
+	$a0 = { 406d6e662d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34776
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 436f6c65746120646520456e636f6d656e646173 }
+	$a2 = { 696e646578322e68746d?? }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_24766
+{
+strings:
+	$a0 = { 7375617320636861766573206465207365677572616E[1-8]6120627261646573636F2065787069726172616D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35868
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74652053616e74616e64657220532e41202d2028 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35865
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f2053616e74616e646572 }
+	$a1 = { 5375626a6563743a205265617469766163616f204f6272696761746f726961204f6e6c696e65 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29327
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 67652e74742f6170692f312f66696c65732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35860
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 63617274[1-9]206368617665206465207365677572616E }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_36815
+{
+strings:
+	$a0 = { 657468696f7069616e73766964656f2e636f6d2f706f7274616c2f2f706c7567696e732f656469746f72732f7661692e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37654
+{
+strings:
+	$a0 = { 6d616c61646972617669736f2e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37656
+{
+strings:
+	$a0 = { 616c657274616d6178696d756c742e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36943
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f20496d706f7274616e74652042422e2050726f746f636f6c6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37607
+{
+strings:
+	$a0 = { 5b38392e3130372e35392e3139375d }
+	$a1 = { 5375626a6563743a206f7263616d656e746f20736f6c6963697461646f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32481
+{
+strings:
+	$a0 = { 406d72666d732d66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32483
+{
+strings:
+	$a0 = { 7469746c653e497461267561637574653b }
+	$a1 = { 636861766573206465207365677572616e }
+	$a2 = { 696d6775722e636f6d2f }
+	$a3 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_37601
+{
+strings:
+	$a0 = { 6D616E6461646F20646520696E74696D61 }
+	$a1 = { 646F63756D656E746F20656D20616E65786F3A20282068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34159
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f2070617261206f73206974656e73 }
+	$a1 = { 636c2e6c792f }
+	$a2 = { 456d61696c20656e766961646f20656d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36608
+{
+strings:
+	$a0 = { 5375626a6563743a202f534547554e44412d5649412f }
+	$a1 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34154
+{
+strings:
+	$a0 = { 66697a206f206465703d43333d42337369746f206f6e74656d }
+	$a1 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34155
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 2f2f752e746f2f }
+	$a2 = { 536567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34152
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 636c2e6c79 }
+	$a2 = { 58585858585858585858 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35609
+{
+strings:
+	$a0 = { 46726f6d3a2049746175 }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35608
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a205072657a61646f2053722e2861292c204175746f6174656e64696d656e746f204242202f20526567756c6172697a65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33074
+{
+strings:
+	$a0 = { 7469746c653e4d756c74617320444552206f6e6c696e65 }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35264
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20646f2042726173696c }
+	$a1 = { 5375626a6563743a2023205b20436f6d756e696361646f205d20496e666f726d617469766f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32248
+{
+strings:
+	$a0 = { 4073627a2d637a2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32249
+{
+strings:
+	$a0 = { 406b72742d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32408
+{
+strings:
+	$a0 = { 780078006E00650077007300700068006F006E0065002E006A0065006C00610073007400690063002E007400730075006B0061006500720075002E006E00650074002F00730065006300750072006900740079 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33073
+{
+strings:
+	$a0 = { 706c616e696c6861206465206f722663636564696c3b616d656e746f }
+	$a1 = { 636c642e70742f }
+	$a2 = { 456d70726573612042726173696c65697261 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32242
+{
+strings:
+	$a0 = { 46726f6d3a2022485342432042414e4b }
+	$a1 = { 6269742e646f2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32243
+{
+strings:
+	$a0 = { 406368726d2d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35552
+{
+strings:
+	$a0 = { 6269746c792e636f6d2f }
+	$a1 = { 2e6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32246
+{
+strings:
+	$a0 = { 406b72742d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32247
+{
+strings:
+	$a0 = { 406b72742d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32244
+{
+strings:
+	$a0 = { 406368726d2d63782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32245
+{
+strings:
+	$a0 = { 406368726d2d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34552
+{
+strings:
+	$a0 = { 687474702D65717569763D7265667265736820636F6E74656E743D22303B2075726C3D687474703A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32406
+{
+strings:
+	$a0 = { 737567617273796e632e636f6d2f }
+	$a1 = { 626f6c65746f20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33276
+{
+strings:
+	$a0 = { 50726f636573736f20496e7665737469676174 }
+	$a1 = { 4d494e4953544552494f205055424c49434f }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33277
+{
+strings:
+	$a0 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33274
+{
+strings:
+	$a0 = { 7469746c653e66616365626f6f6b }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33275
+{
+strings:
+	$a0 = { 46726f6d3a20223c4d696e6973746572696f }
+	$a1 = { 496d706f7274616e74653a5f496e74696d61 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34558
+{
+strings:
+	$a0 = { 456d20616e65786f }
+	$a1 = { 42616978617220636f6d6f207a6970 }
+	$a2 = { 737567617273796e632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34559
+{
+strings:
+	$a0 = { 7469746c653e496e74696d613d45373d45336f204665646572616c }
+	$a1 = { 696d616765736861636b2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35394
+{
+strings:
+	$a0 = { 73616E74616E646572206D[1-8]64756C6F2064652070726F7465 }
+	$a1 = { 636F6E746120736572[1-8]20626C6F7175656164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36738
+{
+strings:
+	$a0 = { 3120616E65786F2028 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37162
+{
+strings:
+	$a0 = { 3e57686174736170702070617261205043206f75204e6f7465626f6f6b3c }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36737
+{
+strings:
+	$a0 = { 5375626a6563743a204e6f74612046697363616c20656d20416e65786f202d }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36731
+{
+strings:
+	$a0 = { 7469746c653e46573a20426f6c65746f20417475616c697a61646f2e }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32403
+{
+strings:
+	$a0 = { 646f776e6c6f616420646120706c616e696c6861 }
+	$a1 = { 424149584152203a2068747470 }
+	$a2 = { 676f6f676c656472697665 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37382
+{
+strings:
+	$a0 = { 6f7267616e696361776f726c642e636f6d2f74656d706c617465732f61746f6d69632f746f702e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35045
+{
+strings:
+	$a0 = { 617475616c697a617220612073756120636f6e746120646520652d6d61696c }
+	$a1 = { 2e74797065666f726d2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35044
+{
+strings:
+	$a0 = { 7469746c653e436f6d707261205072656d69616461 }
+	$a1 = { 5361766520666f722057656220536c69636573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37161
+{
+strings:
+	$a0 = { 646f776e6c6f61642e77686174736170702d70632d646573626c6f71756561646f2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36311
+{
+strings:
+	$a0 = { 7665726966696361722073756120636f6e746120646520652d6d61696c }
+	$a1 = { 2e6d796a6f74666f726d2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34399
+{
+strings:
+	$a0 = { 687474702d65717569763d22726566726573682220636f6e74656e743d22303b75726c3d687474703a2f2f6d696772652e6d65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34392
+{
+strings:
+	$a0 = { 626f6c65746f20736f6c6963697461646f }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 696d616765736861636b2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36831
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c3a204e6f766f20506f7274616c202d20526567756c6172697a652d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36830
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f203a2042616e636f20646f2042726173696c202d2050726f746f636f6c6f20636c69656e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36832
+{
+strings:
+	$a0 = { 5375626a6563743a20436c69656e746520427261646573636f20706f6e747561206d616973206d696c686173212028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35731
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 3e426169786172207475646f20636f6d6f207a69703c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36834
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74653a204f2042616e636f20427261646573636f20532e412e20496e666f726d612028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35663
+{
+strings:
+	$a0 = { 43616978612045636f6e6f6d696361 }
+	$a1 = { 726563616461737472616d656e746f }
+	$a2 = { 2f676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37219
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f2053616e74616e6465722056616e20476f6768 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_25865
+{
+strings:
+	$a0 = { 46726f6d3a204369656c6f }
+	$a1 = { 2e6573792e65732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31619
+{
+strings:
+	$a0 = { 7469746c653e436c69656e7465204e6f766f2046697369636f }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 696d616765736861636b2e75732f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31348
+{
+strings:
+	$a0 = { 63617274[1-8]6F20636861766573206465207365677572616E }
+	$a1 = { 736572[1-8]20626C6F7175656164 }
+	$a2 = { 696E69636961722070726F636573736F2068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35049
+{
+strings:
+	$a0 = { 7469746c653e436f6d70726f76616e7465 }
+	$a1 = { 456d20416e65786f }
+	$a2 = { 2f7a69702e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37453
+{
+strings:
+	$a0 = { 636f727265696f206573743d43333d413120666f72612071756f7461 }
+	$a1 = { 2e747269706f642e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35043
+{
+strings:
+	$a0 = { 53657276693d45376f20646f7320636f727265696f73 }
+	$a1 = { 2f636f722e746f2f }
+	$a2 = { 633d46336469676f20646520726173747265616d656e746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33846
+{
+strings:
+	$a0 = { 3C736973637265642D[8-12]40626F6C2E636F6D2E62723E20 }
+	$a1 = { 4A46205269626569726F2065204164766F6761646F73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36313
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f2049746175 }
+	$a1 = { 582d504850 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35603
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 64726f70626f782e636f6d2f }
+	$a2 = { 736567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_25464
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E }
+	$a1 = { 69746F6B656E }
+	$a2 = { 626C6F71756561646F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36428
+{
+strings:
+	$a0 = { 5375626a6563743a2050656469646f20656e7472656775652061207472616e73706f727461646f7261 }
+	$a1 = { 7469746c653e616d65726963616e61732e636f6d }
+	$a2 = { 4e6f7465626f6f6b20566f7374726f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31737
+{
+strings:
+	$a0 = { 6D006100670065006C00610065006D0070002E0063006F006D002E00620072002F006A0073002F0078006D006C002F007300650067007200650064006F002F00670079007500640061007400660074006300610064007300630078 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31736
+{
+strings:
+	$a0 = { 536567756520626f6c65746f }
+	$a1 = { 504768306257772b44516f3864476c306247552b51584e6a6232776751323969636d46753532467a50 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31739
+{
+strings:
+	$a0 = { 687474703a2f2f6173636f6c2e7a69702e6e65742f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36421
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 76697375616c697a61722068747470733a2f2f6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36422
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 6e6f74612066697363616c }
+	$a2 = { 347368617265642e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36424
+{
+strings:
+	$a0 = { 6974656e7320636f6d707261646f73206520736575732076616c6f7265732e20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36425
+{
+strings:
+	$a0 = { 616d65726963616e61732e636f6d }
+	$a1 = { 6e6f7465626f6f6b20766f7374726f }
+	$a2 = { 6e6f74612066697363616c }
+	$a3 = { 2f77702d636f6e74656e742f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_32388
+{
+strings:
+	$a0 = { 46617475726120656d2041747261736f }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33896
+{
+strings:
+	$a0 = { 417564696f205768617473417070 }
+	$a1 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31650
+{
+strings:
+	$a0 = { 76616c652050726573656e74652043616361752d53686f77 }
+	$a1 = { 646174616875732e6e6f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31651
+{
+strings:
+	$a0 = { 636f7069617320717565206d65206d616e646f75 }
+	$a1 = { 414e45584f3a2020687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30506
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20427261646573636f }
+	$a1 = { 2e616161616161616161616161616161616161616161616161616161616161 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33899
+{
+strings:
+	$a0 = { 6d61696c2e6c6976652e696e626f782e706870 }
+	$a1 = { 7a61707a6170 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32387
+{
+strings:
+	$a0 = { 6c74722f695f6174746163682e676966 }
+	$a1 = { 646f63756d656e746f2e706870 }
+	$a2 = { 4e462d6520676572616461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31659
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a204e454e48554d }
+	$a1 = { 2f616e65786f732f416e65786f732e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35724
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d617469766f204f6e2d4c696e652053616e74616e646572203a204964656e7469666963616d6f7320756d2070726f626c656d61206e6f207365752061636573736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_22444
+{
+strings:
+	$a0 = { 46726f6d3a204369656c6f }
+	$a1 = { 2e706870 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29342
+{
+strings:
+	$a0 = { 636164617374726F[4]696E7465726E65742062616E6B696E672065787069726F75 }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36555
+{
+strings:
+	$a0 = { 777363726970742E6372656174656F626A656374 }
+	$a1 = { 73617665746F66696C65 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32770
+{
+strings:
+	$a0 = { 6961762E78696E65662F6F766F6E2F6D6F632E6164636C61696372656D6F63 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30709
+{
+strings:
+	$a0 = { 436F6E74656E742D547970653A206170706C69636174696F6E2F6F637465742D73747265616D3B206E616D653D }
+	$a1 = { 5047316C64474567614852306343316C63585670646A3069636D566D636D567A614349675932397564475675644430694D44736764584A735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_25691
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 6174656E64696D656E746F206F6E6C696E6520736572[1-8]20626C6F71756561646F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_36912
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c636f6e74617465706f72656d61696c40626f6c2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_27760
+{
+strings:
+	$a0 = { 5265706c792d546f3a204164696d2e6f666669636573407765626e616d652e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37233
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 2E726172206174656E63696F73616D656E74653A203A636F6E646F666F727465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32257
+{
+strings:
+	$a0 = { 7469746c653e434f4d50524f56414e544520444520444550 }
+	$a1 = { 6c69766566696c6573746f72652e636f6d2f }
+	$a2 = { 636c697175652061717569 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37172
+{
+strings:
+	$a0 = { 504768306257772b44516f4e436a786f5a57466b5067304b504852706447786c506e64336479354562324e31625756756447397a4c6d4e7662533569636a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34390
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 63686176657320646520736567757261 }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31813
+{
+strings:
+	$a0 = { 50524f434544494d454e544f20494e5645535449474154 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31814
+{
+strings:
+	$a0 = { 7469746c653e426f6c65746f20534b59 }
+	$a1 = { 504768306257772b44516f3864476c306247552b50433930615852735a54344e436a786f5a57466b5067304b5047316c64474567614852306343316c63585670646a3069636d566d636d567a }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31816
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 7469746c653e436f6d70726f76616e7465 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31817
+{
+strings:
+	$a0 = { 776861747361707020687474703A2F2F696D616765732E6F726B75742E636F6D2F }
+	$a1 = { 626C6F717565696F207061726369616C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32259
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 70656469646f206465206f72 }
+	$a2 = { 416e65786f3a2068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37611
+{
+strings:
+	$a0 = { 6e6f746173742d3030312d73697465312e6174656d7075726c2e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36142
+{
+strings:
+	$a0 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430784f335679624430 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36141
+{
+strings:
+	$a0 = { 46726f6d3a20224e46654d61696c2028 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36146
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 2e617a75726577656273697465732e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_26799
+{
+strings:
+	$a0 = { 70726F636564696D656E746F20696E7665737469676174 }
+	$a1 = { 656D20616E65786F }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37659
+{
+strings:
+	$a0 = { 547572746c79204c756d696e6f7573 }
+	$a1 = { 74696e7975726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36607
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 626169786172207475646f20636f6d6f207a69702028 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32136
+{
+strings:
+	$a0 = { 2f73742f??436f6d756e696361646f44656269746f5f526563656974614665646572616c }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33638
+{
+strings:
+	$a0 = { 3120616e65786f73207c }
+	$a1 = { 636f6d70726f76616e74652e50444620687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32134
+{
+strings:
+	$a0 = { 706167616d656e746f20666f6920636f6e6669726d61646f }
+	$a1 = { 4e6f74612046697363616c20456c657472 }
+	$a2 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37171
+{
+strings:
+	$a0 = { 5375626a6563743a20426c6f717565696f20646520436f6e7461202d20556c74696d6f20417669736f }
+	$a1 = { 46726f6d3a2053616e74616e646572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37177
+{
+strings:
+	$a0 = { 40636f6d756e696361646f3030322e63633e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37176
+{
+strings:
+	$a0 = { 7469746c653e4f66657274617320416d65726963616e6173 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37175
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??43616978615f45636f6e3d46346d6963615f4665646572616c2e5f5f5245463a }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34373
+{
+strings:
+	$a0 = { 46726f6d3a20415649534f2049544155 }
+	$a1 = { 556c74696d6f5f417669736f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_30725
+{
+strings:
+	$a0 = { 736572[1-8]73757370656E73 }
+	$a1 = { 63617274[1-8]6F20636861766573206465207365677572616E }
+	$a2 = { 627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32551
+{
+strings:
+	$a0 = { 68656c702e6465736b2e7465616d3030313540746563682d63656e7465722e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31639
+{
+strings:
+	$a0 = { 696e7465726e616c2e636c6f75646170702e6e6574 }
+	$a1 = { 46726f6d3a2077616c6d617274 }
+	$a2 = { 7469746c653e4f6665727461732057616c6d617274 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37618
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22313B75726C3D2268747470733A2F2F7777772E737567617273796E632E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31634
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c766572696669636174696f6e2e77656264707440636f6e73756c74616e742e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_30729
+{
+strings:
+	$a0 = { 77696B696D656469612E6F72672F77696B6970656469612F636F6D6D6F6E732F7468756D622F622F62622F4C6F676F5F6F665F4369656C6F }
+	$a1 = { 71756572207265636F6E68656365722065207265636F6D70656E736172 }
+	$a2 = { 6E616461207375706572612065737461206D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36630
+{
+strings:
+	$a0 = { 616e65786f3a20687474703a2f2f6269742e6c792f }
+	$a1 = { 676f6f676c6575736572636f6e74656e74 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36384
+{
+strings:
+	$a0 = { 5768617473417070 }
+	$a1 = { 4d656e736167656d20646520566f7a }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37092
+{
+strings:
+	$a0 = { 6e6f76616c6f636174696f6e2e696e666f2f6c656164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36383
+{
+strings:
+	$a0 = { 7469746c653e477275706f205252 }
+	$a1 = { 626f6c65746f20616e65786f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33857
+{
+strings:
+	$a0 = { 5375626a6563743a20415649534f20494d504f5254414e5445 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33858
+{
+strings:
+	$a0 = { 636f6e746120656e636f6e7472612d7365206578706972616461 }
+	$a1 = { 626c6f717565696f20616f732063616e616973206465206175746f2d6174656e64696d656e746f }
+	$a2 = { 42616e636f20646f2042726173696c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33859
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C2068747470733A2F2F75706C6F61646465696D6167656E73 }
+	$a1 = { 626C6F717565696F2064652073756120636F6E7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37574
+{
+strings:
+	$a0 = { 582d4d61696c65722d56657273696f6e3a20342e3331 }
+	$a1 = { 7469746c653e50726f6d6f633d45336f20416d65726963616e6173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36389
+{
+strings:
+	$a0 = { 76697375616c697a617220636f6d70726f7661 }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 6461646f7320646f20646570 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33717
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 42616978617220636f6d6f207a6970 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35924
+{
+strings:
+	$a0 = { 617475616c697a652073756120636169786120646520636f727265696f }
+	$a1 = { 3266682e636f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32628
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 666f726d61746f205044462068747470733a2f2f636c642e70742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33298
+{
+strings:
+	$a0 = { 2e647265616d686f737470732e636f6d }
+	$a1 = { 76696167656e732070617261204469736e6579 }
+	$a2 = { 4d617374657263617264 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_20196
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 2e616161616161616161616161616161616161616161616161616161616161 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33295
+{
+strings:
+	$a0 = { 46726f6d3a20404d61737465724361726473 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37375
+{
+strings:
+	$a0 = { 726563616461737472617475646f2e636c75622f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37374
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 617475616C697A61[1-8]6F20626232303136 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36093
+{
+strings:
+	$a0 = { 5375626a6563743a204e6f74612046697363616c20456d697469646120656d20736575204e6f6d652e }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36095
+{
+strings:
+	$a0 = { 2f662e636c2e6c792f }
+	$a1 = { 696d7072696d697220626f6c65746f }
+	$a2 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37689
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 6E6F74612066697363616C }
+	$a2 = { 687474702D65717569763D227265667265736822 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37679
+{
+strings:
+	$a0 = { 3230302d39382d3137332d3131372e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37379
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??3d45323d39433d39345f??3d20496e666f656d61696c202d205072657a61646f20436c69656e7465206d656e736167656d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33049
+{
+strings:
+	$a0 = { 7469746c653e416e65786f }
+	$a1 = { 426f6c6574696d206465204f636f7272 }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32254
+{
+strings:
+	$a0 = { 406e6f74652d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36717
+{
+strings:
+	$a0 = { 73756120636F6E7461207365720020626C6F717565616461 }
+	$a1 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36710
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??436f6d756e696361646f5f496d706f7274616e74655f2d5f53696e63726f6e697a613d43333d41373d43333d41336f5f69546f6b656e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36711
+{
+strings:
+	$a0 = { 5375626a6563743a204175746f204174656e64696d656e746f204242 }
+	$a1 = { 636f6e73656775652076697375616c697a61722065737361206d656e736167656d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32630
+{
+strings:
+	$a0 = { 6E616F2071756572656D6F73206D616973206573736120626167757EE76120717565207669726F7520657373652070616973 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34403
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 426169786172207475646f20636f6d6f207a6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37393
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C20687474703A2F2F692E696D677572 }
+	$a1 = { 726567756C6172697A61722073756120636F6E7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37392
+{
+strings:
+	$a0 = { 3c6f6e6c696e65406f6e6c696e652e636f6d2e62723e }
+	$a1 = { 42616e636f5f646f5f42726173696c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37682
+{
+strings:
+	$a0 = { 6269746172616668616265722e636f6d2e74722f77702d636f6e74656e742f646f632f61636573732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36534
+{
+strings:
+	$a0 = { 5375626a6563743a20497461752042616e6b4c696e6520532f41202e20436f6d756e696361646f20496d706f7274616e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37003
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f20436c69656e7465202d20436f6e636f72726120612070726f6d6f63616f20537572707265656e6461204d6173746572436172642e202d205b }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32252
+{
+strings:
+	$a0 = { 4073627a2d627a2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36898
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 696D6775722E636F6D2F }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37381
+{
+strings:
+	$a0 = { 6C697374617320636F6D706C65746173206661766F7220736F6C696369746172206F2076616C6F7220687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37386
+{
+strings:
+	$a0 = { 666174757261207669766F206D[1-8]76656C20616E657861 }
+	$a1 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37387
+{
+strings:
+	$a0 = { 66696e616e636569726f323031366d61696f2e6f72636d657263616e74696c2e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37384
+{
+strings:
+	$a0 = { 687474703A2F2F636C2E6C792F[10-12]2F646F776E6C6F61642F436F6E74726F6C65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36627
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d617469766f203a20427261646573636f20532f412050726f746f636f6c6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36892
+{
+strings:
+	$a0 = { 646f776e6c6f6164203a20687474703a2f2f6269742e646f2f }
+	$a1 = { 706c616e696c6861206465206f72 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36894
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 22426169786520466f746f735f646f2e2e2e70707322 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36897
+{
+strings:
+	$a0 = { 7365677565206F20636F6D70726F76616E7465 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37540
+{
+strings:
+	$a0 = { 616d617a6f6e6177732e636f6d2f7265796c6f6e67682f6a756e686f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37541
+{
+strings:
+	$a0 = { 3230302d39382d3136342d3135322e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37542
+{
+strings:
+	$a0 = { 3230302d39382d3131332d37332e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32711
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 636d77396148523063446f764c324a706443357365533878526e4a72575531444969426f644852774c57567864576c3250584a6c5a6e4a6c633267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32716
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 636d77396148523063446f764c324a706443357365533878536b5a6d524556304969426f644852774c57567864576c3250584a6c5a6e4a6c633267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37547
+{
+strings:
+	$a0 = { 6d61726b74696e672d636f6e746162696c6964616465312e636f6d2e62722f6964?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33661
+{
+strings:
+	$a0 = { 70656469646f20666f69206465737061636861646f }
+	$a1 = { 7375706572696e666f323031352e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33660
+{
+strings:
+	$a0 = { 46726f6d3a20223c436f727265696f732042726173696c20532f413e22 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34945
+{
+strings:
+	$a0 = { 4d656e736167656d2070726f746567696461 }
+	$a1 = { 4261697865206f20616e65786f }
+	$a2 = { 64726f70626f782e636f6d2f }
+	$a3 = { 73656e68612064652076697375616c697a61 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_33674
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20427261646573636f203a20436861766573206465207365677572616e }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34492
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D687474703A2F2F73656775652E73652F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31780
+{
+strings:
+	$a0 = { 616E65786F2068747470733A2F2F676F6F676C6564726976652E636F6D2F }
+	$a1 = { 6D696E6973746572696F207075626C69636F206461206A757374696361 }
+	$a2 = { 636F6D70617265636572206E657373612070726F63757261646F726961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35949
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 636f6d70726f76616e746520646f20646570 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35940
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 636c2e6c792f }
+	$a2 = { 42616978617220446f63756d656e746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34498
+{
+strings:
+	$a0 = { 626f6c65746f }
+	$a1 = { 66696c65732e316472762e636f6d2f }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36774
+{
+strings:
+	$a0 = { 5573753d453172696f286129205a696d627261 }
+	$a1 = { 636c6f7564312e6e65742e6272 }
+	$a2 = { 436f6e6669726d652073657520452d6d61696c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30382
+{
+strings:
+	$a0 = { 696E74696D61[1-8]6F207061726120636F6D7061726563696D656E746F20656D2061756469 }
+	$a1 = { 616E65786F }
+	$a2 = { 636F7079726967687420646570617274616D656E746F20646520706F6C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35454
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??436f6d756e696361646f5f496d706f7274616e74653a5f4f5f7365755f6d6f64756c6f5f64655f7365677572616e3d4537615f656e636f6e7472 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35455
+{
+strings:
+	$a0 = { 5375626a6563743a2046773a20456e633a20417669736f20696d706f7274616e7465202d2042414e434f2049544155 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36441
+{
+strings:
+	$a0 = { 46726f6d3a202270726f6d6f63616f406369656c6f }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36445
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e7465203a2042616e636f20427261646573636f }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35458
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??425241444553434f3d3264494e464f454d41494c5f }
+	$a1 = { 2f676f6f2e676c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36447
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??436f6d756e696361646f5f496d706f74616e74655f2d5f4974613d46415f4469676974616c }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37168
+{
+strings:
+	$a0 = { 626f6c657461732d7765626f6e6c696e652e6269746e616d696170702e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32409
+{
+strings:
+	$a0 = { 7E706F6E74616669726D650010A556636C2E46696C654374726C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37166
+{
+strings:
+	$a0 = { 736563757265352d646f776e6c6f61642e746b2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37167
+{
+strings:
+	$a0 = { 7275626961746162616c6f6361646f72612e636f6d2e62722f4944432d31303733373431383237 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37164
+{
+strings:
+	$a0 = { 736563757265332d646f776e6c6f61642e746b2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37165
+{
+strings:
+	$a0 = { 736563757265322d646f776e6c6f61642e746b2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_36051
+{
+strings:
+	$a0 = { 46726f6d3a20224c65766974726f2053686f70 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37163
+{
+strings:
+	$a0 = { 736563757265362d646f776e6c6f61642e746b2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32819
+{
+strings:
+	$a0 = { 73696E63726F6E69736D6F }
+	$a1 = { 646973706F73697469766F20736572[1-8]206465736162696C697461646F }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32818
+{
+strings:
+	$a0 = { 646573636f30322e646573636f30322e6a362e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34703
+{
+strings:
+	$a0 = { 76696120646120466174757261 }
+	$a1 = { 2f69732e67642f }
+	$a2 = { 446f776e6c6f6164206173205a6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35850
+{
+strings:
+	$a0 = { 63617274206F206368617665206465207365677572616E20612073616E74616E646572 }
+	$a1 = { 736572[1-8]20626C6F7175656164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31944
+{
+strings:
+	$a0 = { 646973706f73697469766f206465207365677572616e }
+	$a1 = { 69546f6b656e }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_29335
+{
+strings:
+	$a0 = { 582d4d61696c65723a20504850 }
+	$a1 = { 656d20416e65786f }
+	$a2 = { 636f6d70726f76616e7465206461207472616e7366 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_29337
+{
+strings:
+	$a0 = { 656D20616E65786F287329203A20687474 }
+	$a1 = { 636F6D70726F76616E7465206461207472616E7366 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35837
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 2e72752f636f6272616e63612e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32653
+{
+strings:
+	$a0 = { 4369656c6f20436f6d707261205072656d69616461 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d616765736861636b2e75732f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33702
+{
+strings:
+	$a0 = { 5265706c792d546f3a20637573746f726d6572636172656e657473697465406c6976652e636f2e756b }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37615
+{
+strings:
+	$a0 = { 5B305D3D227F3C7F687F747F6D7F6C7F3E7E7A617F657F617F647E057F737F637F727F697F707F747F3E7F657F767F617F6C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32491
+{
+strings:
+	$a0 = { 70726F636573736F20646520617475616C697A61 }
+	$a1 = { 62616E636F62726173696C2E636F6D2E62722F63616432303135 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37617
+{
+strings:
+	$a0 = { 636F6D2F6D6B796F6E672F7A69702F446F776E6C6F616446696C65 }
+	$a1 = { 734E6F6D654D617101000A7350617374615261697A01000373496401000473496477 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32496
+{
+strings:
+	$a0 = { 406d6178782d6a782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37612
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D20687474703A2F2F[1-24]2E6174656D7075726C2E636F6D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37613
+{
+strings:
+	$a0 = { 697073757576767A0700040100106A6176612F6C616E672F4F626A656374 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36636
+{
+strings:
+	$a0 = { 76697375616c697a617220656d20666f726d61746f207064662068747470733a2f2f656d61696c6d61726b6574696e672e6c6f6361776562 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34127
+{
+strings:
+	$a0 = { 474f4c204c696e686173 }
+	$a1 = { 452d5449434b4554 }
+	$a2 = { 74696e7975726c2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37619
+{
+strings:
+	$a0 = { 35322E3139372E38372E34332F4155543230303632303136 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36632
+{
+strings:
+	$a0 = { 416775617264616d6f732073756120726573706f737461 }
+	$a1 = { 6269743d32456c792f }
+	$a2 = { 676f6f676c6575736572636f6e74656e74 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33043
+{
+strings:
+	$a0 = { 5047686c5957512b494478745a58526849476830644841745a58463161585939496e4a6c5a6e4a6c6332676949474e76626e526c626e5139496a453756564a4d5057 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33045
+{
+strings:
+	$a0 = { 687474703a2f2f6e66652d7061756c697374616e612e6e65742f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33044
+{
+strings:
+	$a0 = { 536567756520616e65786f }
+	$a1 = { 6d65746120687474702d65717569763d334422726566726573682220636f6e74656e743d3344 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34019
+{
+strings:
+	$a0 = { 496e4a6c5a6e4a6c6332676949474e76626e526c626e5139496a413756564a4d505768306448 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32255
+{
+strings:
+	$a0 = { 4061707a2d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33048
+{
+strings:
+	$a0 = { 646f776e6c6f616420646120706c616e696c6861 }
+	$a1 = { 2e3167622e72752f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32251
+{
+strings:
+	$a0 = { 4073627a2d617a2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32250
+{
+strings:
+	$a0 = { 4061707a2d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32253
+{
+strings:
+	$a0 = { 406774632d67782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34199
+{
+strings:
+	$a0 = { 7469746c653e524544454349454c4f }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 3e4361646173747261723c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33286
+{
+strings:
+	$a0 = { 636f6d70726f76616e7465 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33285
+{
+strings:
+	$a0 = { 5472616e73666572656e636961 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 6269673e416272697220436f6d70726f76616e7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31384
+{
+strings:
+	$a0 = { 6D65726F20646F2074656C656772616D613A }
+	$a1 = { 6163616261206465207265636562657220756D2074656C656772616D61206F6E6C696E65 }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33282
+{
+strings:
+	$a0 = { 70726573656e7465204d617374657243617264 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 2e636c6f756466726f6e742e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35548
+{
+strings:
+	$a0 = { 6f723d4537616d656e746f }
+	$a1 = { 616e65786f20612063696d61 }
+	$a2 = { 6269743d32456c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36708
+{
+strings:
+	$a0 = { 76697375616C697A61[1-8]6F3A20687474703A2F2F6269742E646F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29598
+{
+strings:
+	$a0 = { 6369656C6F20666964656C69646164652071756572207265636F6E68656365722065207265636F6D70656E73617220766F63 }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34237
+{
+strings:
+	$a0 = { 64726f70626f782e636f6d2f }
+	$a1 = { 677374617469632e636f6d }
+	$a2 = { 636f7069612064652063686571756573206465766f6c7669646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37441
+{
+strings:
+	$a0 = { 63616c7465786b656e7468757273742e636f6d2e61752f6a2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34230
+{
+strings:
+	$a0 = { 417669736f2064652053757370656e73 }
+	$a1 = { 646f776e6c6f61642064652073756120666174757261 }
+	$a2 = { 616272652e61692f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34239
+{
+strings:
+	$a0 = { 50726573656e74652043616361752d53686f77 }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36674
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20427261646573636f204469612065204e6f697465 }
+	$a1 = { 2e6c69766566696c6573746f72652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35722
+{
+strings:
+	$a0 = { 564f58434152445320746520656e76696f7520756d2063617274 }
+	$a1 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35723
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 6461646f7320646f206465706f7369746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36840
+{
+strings:
+	$a0 = { 5375626a6563743a20427261646573636f202d2053756120636f6e7461207365726120626c6f717565616461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34233
+{
+strings:
+	$a0 = { 2f6d61696c2e6c6976652e696e626f782e706870 }
+	$a1 = { 706c616e696c686173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36849
+{
+strings:
+	$a0 = { 5375626a6563743a20436c69656e746520427261646573636f20726563656265206d616973206d696c68617321202d2028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36416
+{
+strings:
+	$a0 = { 737567617273796e632e636f6d2f }
+	$a1 = { 616c743d22496e666f726d617469766f22 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36413
+{
+strings:
+	$a0 = { 6269742E6C792F[7-8]2062616978617220666F746F73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35709
+{
+strings:
+	$a0 = { 42616e636f20646f2042726173696c202d2043656e7472616c206465204174656e64696d656e746f204242202d205b436f6d756e696361646f20496d706f7274616e74655d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36419
+{
+strings:
+	$a0 = { 626f6c65746f732e62656c6c696e617469706572657a2e636f6d2e6272 }
+	$a1 = { 2e647070726f2e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36418
+{
+strings:
+	$a0 = { 76616c6520636f6d62757374697665697320647572616e746520746f646f }
+	$a1 = { 74696e7975726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_36871
+{
+strings:
+	$a0 = { 72657761726473666C6F772C206C6C63 }
+	$a1 = { 72656D6F7665642066726F6D206F7572206C697374 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35052
+{
+strings:
+	$a0 = { 7469746c653d224e6f74612046697363616c20456c6574726f6e696361 }
+	$a1 = { 5f626c616e6b3e636173617362616869612e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31488
+{
+strings:
+	$a0 = { 636F6E7461746F2D736163[5-12]40626F6C2E636F6D2E6272 }
+	$a1 = { 75706C6F61642E77696B696D65646961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32805
+{
+strings:
+	$a0 = { 417475616c697a65207365752061706172656c686f20492d746f6b656e }
+	$a1 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31728
+{
+strings:
+	$a0 = { 73697465732E676F6F676C652E636F6D2F736974652F646F776E6C6F61647362726173696C323031342F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31729
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 545556555153426a623235305a573530505349774f794231636d7739 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31727
+{
+strings:
+	$a0 = { 443A5C6172717569766F736B6C6C6C6C6C6C6C6C6C6C6C6C5C6261697861726C6F6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31725
+{
+strings:
+	$a0 = { 6163636f756e74734070617373706f72742e636f6d }
+	$a1 = { 736567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31723
+{
+strings:
+	$a0 = { 7469746c653e49505455 }
+	$a1 = { 646f776e6c6f616420646f206361726e65 }
+	$a2 = { 2f76697375616c697a61722e706870 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31720
+{
+strings:
+	$a0 = { 7469746c653e466f746f73 }
+	$a1 = { 706f737461722065737361206e6f73736120666f746f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31721
+{
+strings:
+	$a0 = { 433A5C626B705C6E6F766F31325C637332303133625C6C6F6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34242
+{
+strings:
+	$a0 = { 636f6d656e746172696f20646520766f7a20656d2073756120666f746f }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31627
+{
+strings:
+	$a0 = { 4f7576697220636f6d656e743d453172696f20687474703a2f2f67652e74742f6170692f312f66696c65732f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31626
+{
+strings:
+	$a0 = { 656e747265676120646120656e636f6d656e6461 }
+	$a1 = { 2f656e636f6d656e64615f636f727265696f732e657865 }
+	$a2 = { 656e747265676120646f7320636f727265696f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33869
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a2045737065726f20717565206120766167612061696e64612073656a61206d696e6861 }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33868
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a205365677565206d657520637572726963756c756d }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33866
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a2045737065726f20706f64657220766f6c74617220616f206d65726361646f2064652074726162616c686f }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31628
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 636c2e6c792f }
+	$a2 = { 536567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33863
+{
+strings:
+	$a0 = { 636f6d70726f76616e7465 }
+	$a1 = { 656e76696172206e6f20736575205a61705a6170 }
+	$a2 = { 616d617a6f6e6177732e636f6d2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33860
+{
+strings:
+	$a0 = { 5375626a6563743a204e6665202d204152515549564f }
+	$a1 = { 4172717569766f202d266e6273703b4e4665 }
+	$a2 = { 636c642e70742f646c2f646f776e6c6f6164 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32396
+{
+strings:
+	$a0 = { 666e61632e636f6d2e62722f }
+	$a1 = { 636f6e6669726d6163616f20646520706167616d656e746f }
+	$a2 = { 2f696e6465782e706870 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_22051
+{
+strings:
+	$a0 = { 46726f6d3a20[5-30]406369656c6f2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32198
+{
+strings:
+	$a0 = { 406774632d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37187
+{
+strings:
+	$a0 = { 676F6F676C65206465706F7369746F206E6F6D696E616C }
+	$a1 = { 2E77656263696E646172696F2E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32199
+{
+strings:
+	$a0 = { 4061782d6170722e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31753
+{
+strings:
+	$a0 = { 616e746963766163746f7572732e636f6d2f616d6170612e676966 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31754
+{
+strings:
+	$a0 = { 46726f6d3a204369656c6f }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32009
+{
+strings:
+	$a0 = { 4d756c7469706c7573 }
+	$a1 = { 706f7374696d672e6f7267 }
+	$a2 = { 436f6272616e3d453761207265666572656e7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30809
+{
+strings:
+	$a0 = { 636F6D656E74[1-8]72696F20646520766F7A20656D2073756120666F746F }
+	$a1 = { 2E706870206F75766972 }
+	$a2 = { 66616365626F6F6B }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31915
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20646f20427261646573636f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34381
+{
+strings:
+	$a0 = { 5265706c792d546f3a207765626c696e6b736572766572407961686f6f2e636f2e756b }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32241
+{
+strings:
+	$a0 = { 4f52434f5a4f4c202d204153534553534f524941 }
+	$a1 = { 426f6c65746f20326120766961204f72636f7a6f6c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34382
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c7765626c696e6b736572766572407961686f6f2e636f2e756b }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31825
+{
+strings:
+	$a0 = { 7469746c653e506c616e696c6861206465204f72 }
+	$a1 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31536
+{
+strings:
+	$a0 = { 7473632e6e696b6f796f2e636f6d2e636e2f646f776e6c6f61642e617370 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34389
+{
+strings:
+	$a0 = { 63686176657320646520736567757261 }
+	$a1 = { 656E636F6E7472616D2D736520657870697261646173 }
+	$a2 = { 627261646573636F2E636F6D2E6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36194
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c69732d536f66742050696c6c73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31531
+{
+strings:
+	$a0 = { 5345475545204120504c414e494c4841 }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36577
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e7465 }
+	$a1 = { 46726f6d3a202273616340697461752e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36151
+{
+strings:
+	$a0 = { 7469746c653e436f6d70726f76616e7465 }
+	$a1 = { 64726f70626f782e636f6d2f }
+	$a2 = { 2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36153
+{
+strings:
+	$a0 = { 676f6f676c6564726976652e636f6d2f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 76697375616c697a6172206f7320616e65786f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36157
+{
+strings:
+	$a0 = { 2F6F772E6C792F[6-8]616E65786F3A }
+	$a1 = { 636F6D70726F76616E7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33919
+{
+strings:
+	$a0 = { 626169786520612070726f706f73746120656d20616e65786f }
+	$a1 = { 50524f504f5354415245444542524153494c2e504446 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33918
+{
+strings:
+	$a0 = { 7469746c653e5365677565206461646f7320646f20506167616d656e746f }
+	$a1 = { 416e65786f287329203a20436f6d70726f76616e74652e726172 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37491
+{
+strings:
+	$a0 = { 6e6f766f20636f6d2061204369656c6f }
+	$a1 = { 6269746e616d696170702e636f6d2f }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37498
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 617475616C697A61[1-8]6F2063616461737472616C }
+	$a2 = { 626C6F7175656164612074656D706F72617269616D656E7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34366
+{
+strings:
+	$a0 = { 46726f6d3a2049746175 }
+	$a1 = { 556c74696d6f5f417669736f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37147
+{
+strings:
+	$a0 = { 3139322e3131312e3134362e323232 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_30087
+{
+strings:
+	$a0 = { 3c6369656c6f4070726f6d6f636f65732e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37081
+{
+strings:
+	$a0 = { 5375626a6563743a2052653a2041756d656e746520736575203d??49534f2d383835392d31??51??503d45416e6973??3d204e61747572616c6d656e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_30718
+{
+strings:
+	$a0 = { 7469746c653e4369656c6f }
+	$a1 = { 23617669736f5f61626169786f }
+	$a2 = { 6d6170206e616d653d224d61704d6170 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36391
+{
+strings:
+	$a0 = { 636f6d70726f76616e7465 }
+	$a1 = { 616e65786f }
+	$a2 = { 50476c6d636d46745a53427a636d4d39496d6830644842 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37546
+{
+strings:
+	$a0 = { 636f6e7461206465207573753d453172696f205a696d627261 }
+	$a1 = { 2e74797065666f726d2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30249
+{
+strings:
+	$a0 = { 70726F6D6F[1-8]6F207661692064652076697361 }
+	$a1 = { 2E6573792E65732F }
+	$a2 = { 636172726F206E61206761726167656D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37545
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 696E7465726E65742062616E6B696E67 }
+	$a2 = { 626C6F7175656164 }
+	$a3 = { 706F7374696D672E6F7267 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_36398
+{
+strings:
+	$a0 = { 706c616e696c6861206465206f72 }
+	$a1 = { 626169786172206172717569766f }
+	$a2 = { 2f636c642e70742f646c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33848
+{
+strings:
+	$a0 = { 636F727265[1-8]6F2064652061636573736F20616F206175746F6174656E64696D656E746F }
+	$a1 = { 62616E636F20646F2062726173696C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32480
+{
+strings:
+	$a0 = { 446f63756d656e746f7320656d20616e65786f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 435646463a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36171
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d617469766f204f6e2d4c696e653a204964656e7469666963616d6f7320756d2070726f626c656d61206e6f207365752061636573736f }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_24808
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 67652e74742f6170692f312f66696c6573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36089
+{
+strings:
+	$a0 = { 6661747572612076656e63696461 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36087
+{
+strings:
+	$a0 = { 2f695f6174746163682e676966 }
+	$a1 = { 3e3120616e65786f3a3c }
+	$a2 = { 66617a656e646f20756d61207065737175697361 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34561
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e746520497461 }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34563
+{
+strings:
+	$a0 = { 5375626a6563743a2042423a20496e666f726d617469766f204f75726f63617264202d204369656c6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34835
+{
+strings:
+	$a0 = { 7469746c653e4e6f74696669636163616f20646520636f6272616e6361 }
+	$a1 = { 4261697861723a20436f6e766974652e7a6970 }
+	$a2 = { 61766173742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32090
+{
+strings:
+	$a0 = { 68007400740070003A002F002F007700770077002E0066006F0074006F00730032003000310035002E0063006F006D002F00610064006F00620065002E007400780074 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36488
+{
+strings:
+	$a0 = { 5375626a6563743a204657443a436f6d756e696361646f20557267656e7465 }
+	$a1 = { 46726f6d3a202273616340697461752e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36705
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e74652049746175202d20556c74696d6f20417669736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36704
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 65766974617220612073757370656E73 }
+	$a2 = { 2E6573792E65732F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36703
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 726567697374726F7320646F206D[1-8]64756C6F2064652070726F7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32098
+{
+strings:
+	$a0 = { 7061726173616265726d6169732e66696c65732e776f726470726573732e636f6d }
+	$a1 = { 50726f63757261646f72696120526567696f6e616c206461204a757374 }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34957
+{
+strings:
+	$a0 = { 4465706f7369746f20656665747561646f }
+	$a1 = { 4c6976655365637572697479 }
+	$a2 = { 747278642e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34954
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f2070617261206f73206974656e73 }
+	$a1 = { 2f636f722e746f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34952
+{
+strings:
+	$a0 = { 636f6d656e746172696f20646520766f7a20656d2073756120666f746f }
+	$a1 = { 6e6f726d74612e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30866
+{
+strings:
+	$a0 = { 746f66407777772e7574696c6974796170706f696e746d656e742e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34967
+{
+strings:
+	$a0 = { 53656775652061626169786f20416e65786f }
+	$a1 = { 2256697375616c697a61723a20436f6e766974652e7a697022 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37289
+{
+strings:
+	$a0 = { 626c756570686f746f732e636f6d2e62722f70726f6475746f732f70616e696c68612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37283
+{
+strings:
+	$a0 = { 636f727265696f7364656d61726b74696e672e636f6d2e62722f696d6167656e732f6d61696c696e626f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37282
+{
+strings:
+	$a0 = { 666573636f2e72752f5f706b692f77616c6d6172745f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37281
+{
+strings:
+	$a0 = { 6269742E6C792F[7]223E3C6269673E7777772E626F6C65746F636F6E656374612E7465727261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37032
+{
+strings:
+	$a0 = { 49544155 }
+	$a1 = { 582d5048502d }
+	$a2 = { 2f6f772e6c792f }
+	$a3 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_37033
+{
+strings:
+	$a0 = { 46726f6d3a2022427261646573636f20532f41 }
+	$a1 = { 5375626a6563743a204461646f73206361646173747261697320646976657267656e746573202d2050726f746f636f6c6f3a }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37285
+{
+strings:
+	$a0 = { 2F77616C6D6172745F70656469646F732F2076697375616C697A617220646574616C68657320646F2070656469646F2068747470 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37031
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f2028612920636c69656e74652042616e636f2053616e74616e646572 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36145
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C202D20736D73206F6E6C696E65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36144
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]6F2064652061636573736F20616F206175746F2D6174656E64696D656E746F }
+	$a1 = { 62622E636F6D2E6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33644
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 63616e63656c616d656e746f }
+	$a2 = { 54726962756e616c205375706572696f7220456c6569746f72616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36143
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 636F727265[1-8]6F2070617261206F2063616461737472616D656E746F20646520636F6D70757461646F726573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37378
+{
+strings:
+	$a0 = { 656E672068747470733A2F2F676F6F676C656472697665 }
+	$a1 = { 75706C6F61646465696D6167656E73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37377
+{
+strings:
+	$a0 = { 7469746c653e7768617473736170 }
+	$a1 = { 75706c6f61646465696d6167656e73 }
+	$a2 = { 566f636520657374612073656e646f2074726169646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37376
+{
+strings:
+	$a0 = { 7365637572652d73736c2d30332e67712f646f776e6c6f6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36881
+{
+strings:
+	$a0 = { 646570617274616D656E746F20646520636F6272616E20612E20687474703A2F2F7777772E636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37373
+{
+strings:
+	$a0 = { 626169786172207475646F20636F6D6F207A6970 }
+	$a1 = { 76697375616C697A6172206F7320616E65786F73 }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37372
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F[7-8]20636F6272616E[1-8]61207265666572656E746520616F2073657520637066 }
+	$a1 = { 676F6F676C6564726976652E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37371
+{
+strings:
+	$a0 = { 6269742E6C792F[7-8]2070726F636564696D656E746F20696E7665737469676174 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37370
+{
+strings:
+	$a0 = { 3135392e3132322e372e3135382f636f6e74726f6c65676572616c2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_28909
+{
+strings:
+	$a0 = { 616C65727461206465207365677572616E }
+	$a1 = { 66616C6861206E6F20636572746966696361646F2073736C }
+	$a2 = { 626C6F717565696F20696D65646961746F20646F207365752063617274 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36882
+{
+strings:
+	$a0 = { 676678322E686F746D61696C }
+	$a1 = { 3120616E65786F3A }
+	$a2 = { 2E7365727665687474702E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36880
+{
+strings:
+	$a0 = { 7265636562656E646F206120687474703A2F2F6F772E6C792F }
+	$a1 = { 6E6F74612066697363616C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_23706
+{
+strings:
+	$a0 = { 617475616C697A61[1-16]6F2064652073657520636164617374726F }
+	$a1 = { 636861766573206465207365677572616E }
+	$a2 = { 636F6E746120736572[1-8]626C6F717565616461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37575
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F }
+	$a1 = { 6E666520656D6574696461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37577
+{
+strings:
+	$a0 = { 70726F626C656D61206E6120636F6E746162696C69646164652E20687474703A2F2F676F6F2E676C2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37529
+{
+strings:
+	$a0 = { 3137322e39382e3139342e3138322f636f7265 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37571
+{
+strings:
+	$a0 = { 426f6c6574696d206465204f636f7272 }
+	$a1 = { 766f73736f20636f6d7061726563696d656e746f }
+	$a2 = { 6174746163686d656e743b2066696c656e616d653d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37570
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D687474703A2F2F[10-16]2E62632E676F6F676C6575736572636F6E74656E742E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37573
+{
+strings:
+	$a0 = { 407265636569746130312d6e6f74696669636163616f2e6366 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37572
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 2E64646E732E6E6574 }
+	$a2 = { 616D63206173736573736F726961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_20384
+{
+strings:
+	$a0 = { 6369656c6f2e636f6d }
+	$a1 = { 696d616765736861636b2e7573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33662
+{
+strings:
+	$a0 = { 7469746c653e4f75746c6f6f6b2e636f6d }
+	$a1 = { 7661692e6c612f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32712
+{
+strings:
+	$a0 = { 407477742d7372762e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32713
+{
+strings:
+	$a0 = { 40706e732d7372762e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37593
+{
+strings:
+	$a0 = { 5375626a6563743a20555247454e5445202d20526567697374726f206465204f636f7272656e6369612028 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37591
+{
+strings:
+	$a0 = { 66616365626F6F6B20626C6F71756561722074656D706F72617269616D656E7465 }
+	$a1 = { 646573626C6F717565696F4066616365626F6F6B6D61696C2E636F6D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_30397
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D687474703A2F2F67652E74742F6170692F312F66696C65732F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36452
+{
+strings:
+	$a0 = { 582d504850 }
+	$a1 = { 46726f6d3a2042616e636f2049746175 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36456
+{
+strings:
+	$a0 = { 46726f6d3a203d??69736f2d383835392d31??51??42616e636f5f4974613d4641 }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37598
+{
+strings:
+	$a0 = { 7469746C653E687474703A2F2F7777772E68756D6F72636F6D626F626167656D }
+	$a1 = { 3D227F3C7F687F747F6D7F6C7F3E7F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_27794
+{
+strings:
+	$a0 = { 756D20652D6D61696C206175746F6D }
+	$a1 = { 2E70687020636C6971756520706172612076697A75616C697A6172206F20626F6C65746F }
+	$a2 = { 63617272696E686F2E616D65726963616E61732E636F6D2E6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32008
+{
+strings:
+	$a0 = { 2e646573626c6f717565696f6c6f67696e2e636f6d2f }
+	$a1 = { 4d65726361646f5061676f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36975
+{
+strings:
+	$a0 = { 696d706f72742d6970686f6e652e78797a2f646f776e6c6f61642f4e6665 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37113
+{
+strings:
+	$a0 = { 6a616e6568616d6c657977656c6c732e636f6d2f6c69622f526563656974616e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36978
+{
+strings:
+	$a0 = { 4d6f737472617220436f6e746575646f206f752045786962697220496d6167656e73 }
+	$a1 = { 74696e797069632e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37110
+{
+strings:
+	$a0 = { 70726f636564696d656e746f20696e7665737469676174 }
+	$a1 = { 2f74722e696d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32477
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 676f72646f2e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37116
+{
+strings:
+	$a0 = { 706167616D656E746F20636F6E6669726D61646F }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 74696E797069632E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32002
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f }
+	$a1 = { 43616461737472652d7365 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32003
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35845
+{
+strings:
+	$a0 = { 5265706c792d746f3a20776562616363746f756e746372656174696f6e733232406f75746c6f6f6b2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35844
+{
+strings:
+	$a0 = { 5375626a6563743a2046773a20456e633a20417669736f203a20454d41494c3a42414e434f20444f2042524153494c202d20526567756c6172697a652d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35847
+{
+strings:
+	$a0 = { 53656e68613a }
+	$a1 = { 43266f61637574653b6469676f20646520617669736f3a205745424d41494c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35846
+{
+strings:
+	$a0 = { 5265706c792d746f3a203c776562616363746f756e746372656174696f6e733232406f75746c6f6f6b2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_27956
+{
+strings:
+	$a0 = { 736563726574617269612064612072656365697461 }
+	$a1 = { 646F63756D656E746F7320286973732920656D2064[1-8]6269746F73206C6F676F2061626169786F3A2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35840
+{
+strings:
+	$a0 = { 6163636f756e74734070617373706f72742e636f6d }
+	$a1 = { 582d485454502d506f7374696e672d5552493a2068747470733a2f2f7777772e676f6f676c65 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32390
+{
+strings:
+	$a0 = { 406b6b72742d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32624
+{
+strings:
+	$a0 = { 46726f6d3a202249746175 }
+	$a1 = { 436f6d756e696361646f20757267656e7465 }
+	$a2 = { 582d4c6962726172793a20496e6479 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32625
+{
+strings:
+	$a0 = { 4073656775726f6f6f2e6f72673e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32626
+{
+strings:
+	$a0 = { 406d72666d732d6a782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32620
+{
+strings:
+	$a0 = { 406d6178782d67782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32621
+{
+strings:
+	$a0 = { 406d6178782d68782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32622
+{
+strings:
+	$a0 = { 406d72666d732d68782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32623
+{
+strings:
+	$a0 = { 406c6e6b2d6573782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30485
+{
+strings:
+	$a0 = { 5a5730675957356c654738 }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d4473 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33710
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f204974617542616e6b4c696e65 }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_30480
+{
+strings:
+	$a0 = { 7768617473617070207061726120636F6D70757461646F72 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30481
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 4e6f74612046697363616c20456c657472 }
+	$a2 = { 7469746c653d224e4f54412e46495343414c22 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37621
+{
+strings:
+	$a0 = { 6e6f746173323031362e706c6174696e756d686f7374696e672e636f2e756b2f4e6f7661 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37623
+{
+strings:
+	$a0 = { 656D3EA0A0A0A0A0A0A0A0A0A0A0A0A0A0A0A0A0A0A0A0A020636F6D70726F76616E746520646520646570 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37622
+{
+strings:
+	$a0 = { 3137332e3233302e3135382e3133392f61626f75742f696e6465782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37627
+{
+strings:
+	$a0 = { 406466727231352e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37629
+{
+strings:
+	$a0 = { 6c6172697361636361362e69742f6c69627261726965732f70617474656d706c6174652f70617454656d706c6174652f496e70757446696c7465722f646f63756d656e746f6666696365646f63 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37628
+{
+strings:
+	$a0 = { 40647666626231312e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36620
+{
+strings:
+	$a0 = { 736567756520706c616e696c6861732068747470733a2f2f7777772e64726f70626f78 }
+	$a1 = { 662e636c2e6c792f6974656d73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36621
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 2f74722e696d2f }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34135
+{
+strings:
+	$a0 = { 66756E6374696F6E626175727528627976616C626173653634737472696E672922726663313532312231393939616E746F6E696E666F6C6C6572 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_36334
+{
+strings:
+	$a0 = { 46726f6d3a20224c65766974726f }
+	$a1 = { 5375626a6563743a20446973636f756e74 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32506
+{
+strings:
+	$a0 = { 2f6c6976656d61696c6f75746c6f6f6b2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37025
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20436f6d70726f76616e7465 }
+	$a1 = { 56697375616c697a6172206171756920687474703a2f2f6269742e6c79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36377
+{
+strings:
+	$a0 = { 736f6c69636974616f206465206f72616d656e746f }
+	$a1 = { 636f6d70616374616d6f7320636f6d2077696e726172 }
+	$a2 = { 706c616e696c686120636c697175652061626169786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37023
+{
+strings:
+	$a0 = { 70726F636564696D656E746F20696E7665737469676174 }
+	$a1 = { 616E65786F3A2068747470733A2F2F7777772E64726F70626F78 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34009
+{
+strings:
+	$a0 = { 7469746c653e6f722663636564696c3b616d656e746f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 6d616973206272657665 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32500
+{
+strings:
+	$a0 = { 646f6e776c6f616420646120706c616e696c6861 }
+	$a1 = { 676f6f676c656472697665 }
+	$a2 = { 50726f746f636f6c6f20646520456e76696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33056
+{
+strings:
+	$a0 = { 41636964656e746520646f2043616e746f7220437269737469616e6f20417261756a6f }
+	$a1 = { 676f6f676c6564726976652e636f6d2f686f73742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35443
+{
+strings:
+	$a0 = { 736f75726365666f7267652e6e65742f6373732f626f6f747374726170 }
+	$a1 = { 4361726f20436c69656e74652042616e636f20566f746f72616e74696d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35750
+{
+strings:
+	$a0 = { 666f746f732071756520766f6365206d65207065646975 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 436f6469676f3a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33052
+{
+strings:
+	$a0 = { 534547554520454d20414e45584f }
+	$a1 = { 485454502d45515549563d22526566726573682220434f4e54454e543d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34001
+{
+strings:
+	$a0 = { 50524f434544494d454e544f20494e5645535449474154 }
+	$a1 = { 64726976652e676f6f676c652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37029
+{
+strings:
+	$a0 = { 2f6d61696c2e696e626f782e706870?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33051
+{
+strings:
+	$a0 = { 76697375616c697a6163616f20646173206e6f746173 }
+	$a1 = { 67652e74742f6170692f }
+	$a2 = { 476572617220426f6c65746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35533
+{
+strings:
+	$a0 = { 63757272[1-8]63756C6F207175652070656469752E2068747470733A2F2F7777772E64726F70626F782E }
+	$a1 = { 616D617A6F6E6177732E636F6D2F662E636C2E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35531
+{
+strings:
+	$a0 = { 636F6D70726F76616E746520646520646570[1-8]7369746F2068747470733A2F2F7777772E64726F70626F782E }
+	$a1 = { 616D617A6F6E6177732E636F6D2F662E636C2E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35535
+{
+strings:
+	$a0 = { 454e454d2032303135202d3e2050726f626c656d617320656d20737561206669636861 }
+	$a1 = { 582d504850 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35534
+{
+strings:
+	$a0 = { 426f6c65746f5f456d657469646f }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33294
+{
+strings:
+	$a0 = { 44656269746f5f526563656974614665646572616c }
+	$a1 = { 2f??436f6d756e696361646f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33297
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 46726f6d3a204f72636f7a6f6c204173736573736f726961 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33290
+{
+strings:
+	$a0 = { 6C616372656D652064652070726573656E74652063616361752D73686F77 }
+	$a1 = { 616E657861646173206E6F206375706F6D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33291
+{
+strings:
+	$a0 = { 46726f6d3a2022417469766f7320532e41 }
+	$a1 = { 636f6e7461746f207669612074656c65666f6e65 }
+	$a2 = { 70726f746573746f206e6f20636172743d43333d423372696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33292
+{
+strings:
+	$a0 = { 46726F6D3A20227361632E636F6E74616374[10]22203C7361632E636F6E74616374[10]40626F6C2E636F6D2E62723E }
+	$a1 = { 4E465F454C4554523D43333D39344E494341 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33293
+{
+strings:
+	$a0 = { 46726F6D3A20227361632E636F6E74616374[10]22203C7361632E636F6E74616374[10]40626F6C2E636F6D2E62723E }
+	$a1 = { 4C494E4B207061726120646F776E6C6F6164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32534
+{
+strings:
+	$a0 = { 406d61792d7372662e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32535
+{
+strings:
+	$a0 = { 406d61792d7372622e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32536
+{
+strings:
+	$a0 = { 406d61792d7372612e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32537
+{
+strings:
+	$a0 = { 406d61792d7372652e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35711
+{
+strings:
+	$a0 = { 73756120636f6e746120656e636f6e7472612d7365206578706972616461 }
+	$a1 = { 2e64646e732e6e6574 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36712
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 2e7365727665626565722e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34221
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 4e6f74612046697363616c20456c657472 }
+	$a2 = { 6269742e6c792f }
+	$a3 = { 656d20666f726d61746f20504446 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_24263
+{
+strings:
+	$a0 = { 7375617320636861766573206465207365677572616E[1-8]6120697461[1-8]2062616E6B6C696E6520657374[1-8]2076656E63656E646F }
+	$a1 = { 7265616C697A6172206F20726563616461737472616D656E746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32773
+{
+strings:
+	$a0 = { 50524A204E4F564F535C50524A204D4F4E47452050475C4D6F64204C6F616465722056422031 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36719
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472[1-8]6E69636120656D3A20687474703A2F2F74696E7975726C2E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_28188
+{
+strings:
+	$a0 = { 5449544c453e50726f6d6f63616f204369656c6f20466174757261205a65726f2043616461737472652d7365 }
+	$a1 = { 636172726f206e6f766f207a65726f204b4d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35994
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 2e686f70746f2e6f7267 }
+	$a2 = { 4e4f54412046495343414c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35441
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 636f6e766572736173206772617661646173 }
+	$a2 = { 2e6269746e616d696170702e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37637
+{
+strings:
+	$a0 = { 6d61737465726d6b746d756c74692e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33990
+{
+strings:
+	$a0 = { 5265706c792d546f3a207765626d61696c614071712e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35289
+{
+strings:
+	$a0 = { 6D6574612069643D334422[1-5]2220687474702D65717569763D334422726566726573682220636F6E74656E743D334422[1-5]75726C3D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37634
+{
+strings:
+	$a0 = { 7669727475616c766965772e636f6d2e62722f6d756c6c612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36850
+{
+strings:
+	$a0 = { 5375626a6563743a205375612053656e6861206465204175746f2d4174656e64696d656e746f2042616e636f20646f2042726173696c20456e636f6e7472612d7365204578706972616461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35285
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 6d6174657269616973 }
+	$a2 = { 2e6a656c61737469636c772e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35284
+{
+strings:
+	$a0 = { 426f6c65746f }
+	$a1 = { 2e77656263696e646172696f2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35287
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 6c69627261726965732f7463706466 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37468
+{
+strings:
+	$a0 = { 7469746C653E636F6272616E }
+	$a1 = { 6D65746120687474702D65717569763D227265667265736822 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35157
+{
+strings:
+	$a0 = { 5375626a6563743a20427261646573636f207c20417475616c697a6163616f204f6272696761746f726961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36390
+{
+strings:
+	$a0 = { 46726f6d3a20224349454c4f }
+	$a1 = { 7469746c653e52657367617465 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36400
+{
+strings:
+	$a0 = { 676f6f676c6575736572636f6e74656e74 }
+	$a1 = { 6d696e6861636c61726f2e636c61726f }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37350
+{
+strings:
+	$a0 = { 7469746C653E616D65726963616E61732E636F6D202D20623277202D2070726F6D6F }
+	$a1 = { 676F6F676C6575736572636F6E74656E742E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35153
+{
+strings:
+	$a0 = { 53616e74616e646572 }
+	$a1 = { 696e7465726e65742062616e6b696e6720666f6920617475616c697a61646f }
+	$a2 = { 726563616461737472616d656e746f2064652073657573206461646f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37294
+{
+strings:
+	$a0 = { 636172727573656c657379666965737461732e636f6d2f7765622f74656d706c617465732f6265657a2f696e6465782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30651
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37146
+{
+strings:
+	$a0 = { 43726561746F720A28FEFF0047006F006F0067006C006529 }
+	$a1 = { 64726F70626F782E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35159
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 6368617665206465207365677572616E }
+	$a2 = { 696E7465726E65742062616E6B696E6720666F6920617475616C697A61646F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35158
+{
+strings:
+	$a0 = { 46726f6d3a20436f6d756e696361646f204242 }
+	$a1 = { 436c69656e74655f53616e74616e646572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35266
+{
+strings:
+	$a0 = { 61636573736f20616f20626f6c65746f }
+	$a1 = { 73746f726167652e676f6f676c65617069732e636f6d }
+	$a2 = { 4173736573736f72696120646520436f6272616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37411
+{
+strings:
+	$a0 = { 676572656E74652061646D696E69737472617469766F20736572617361 }
+	$a1 = { 696D6775722E636F6D2F }
+	$a2 = { 616D617A6F6E6177732E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35263
+{
+strings:
+	$a0 = { 636f7069612061626169786f }
+	$a1 = { 2e706870?? }
+	$a2 = { 616d617a6f6e6177732e636f6d2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35269
+{
+strings:
+	$a0 = { 626f6c65746f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 62616978617220636f6d6f207a6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37141
+{
+strings:
+	$a0 = { 6E6F74612066697363616C }
+	$a1 = { 666F6E653A205B6A6F6961732062726173696C5D }
+	$a2 = { 706F7765726564206279206A6F696173 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37414
+{
+strings:
+	$a0 = { 7768617473617070206D657373656E676572 }
+	$a1 = { 62616978652061676F726120646F20736974652068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35191
+{
+strings:
+	$a0 = { 56697375616c697a617220616e65786f2020687474703a2f2f6269743d32456c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32896
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 4e6f74612046697363616c }
+	$a2 = { 6c616e67756167652f454e2f56697375616c697a6172 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35195
+{
+strings:
+	$a0 = { 656d20416e65786f }
+	$a1 = { 677374617469632e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35194
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 6f6c65746f }
+	$a2 = { 2e77656263696e646172696f2e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35197
+{
+strings:
+	$a0 = { 61746976696461646520737573706569746120656d2073756120636f6e7461 }
+	$a1 = { 646f63756d656e746f20656d20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31759
+{
+strings:
+	$a0 = { 6C686E63312E646C6C0043506C4170706C6574 }
+	$a1 = { E56C686E6331001051547970496E666F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31758
+{
+strings:
+	$a0 = { 466F726D31000000416C706861646F7400000000536B656C65746F6E }
+	$a1 = { 4D6963726F736F66742056697375616C2053747564696F5C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37234
+{
+strings:
+	$a0 = { 5375626a6563743a202320417669736f202d20526567756c6172697a652073756120436f6e7461202d205265662e3a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31657
+{
+strings:
+	$a0 = { 443A5C6B6C6C6C6C6C6C5C57696E646F77734170706C69636174696F6E325C57696E646F77734170706C69636174696F6E325C6F626A5C52656C656173655C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37418
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 626F6C6574696D206465206F636F7272 }
+	$a2 = { 626F6C6574696D2068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29107
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f42726173696c406170616368652e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31630
+{
+strings:
+	$a0 = { 536567756520416e65786f }
+	$a1 = { 2f616e65786f732f416e65786f732e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_34440
+{
+strings:
+	$a0 = { 46726f6d3a20225669616772612d536f6674 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31633
+{
+strings:
+	$a0 = { 656d20416e65786f }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32871
+{
+strings:
+	$a0 = { 7065646920756d204f722663636564696c3b616d656e746f }
+	$a1 = { 616e65786f }
+	$a2 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32870
+{
+strings:
+	$a0 = { 50524f434544494d454e544f20494e56455354494741544f52494f }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 67652e74742f617069 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31638
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 646174616875732e6e6f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33870
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a205365677565206d657520637572726963756c756d207669746165 }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33871
+{
+strings:
+	$a0 = { 5375626a6563743a20454e433a20436f6e666f726d6520636f6d62696e61646f206573746f7520656e7669616e646f206d657520637572726963756c6f }
+	$a1 = { 676d6d2d6d6572636f7375722e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32878
+{
+strings:
+	$a0 = { 43006F006D00700061006E0079004E0061006D0065000000000050006C0061006E0069006C006800610020004500780065006C00200032003000310035 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_22047
+{
+strings:
+	$a0 = { 74696e797069632e636f6d2f32353769777164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35061
+{
+strings:
+	$a0 = { EDE0EFF0E8ECE5F0206D6963726F736F6674 }
+	$a1 = { 65646974646174612E6D736F }
+	$a2 = { 66696C653A2F2F2F633A2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35060
+{
+strings:
+	$a0 = { 7469746c653e536567756520656d20616e65786f }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35068
+{
+strings:
+	$a0 = { 5472616e73613d45373d45336f2062616e633d4531726961 }
+	$a1 = { 496e7465726e65742042616e6b696e67 }
+	$a2 = { 5363726970747320456e63727970746f72 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37268
+{
+strings:
+	$a0 = { 6d756e646f6c616e6469612e636f6d2e62722f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36573
+{
+strings:
+	$a0 = { 677374617469632e636f6d2f696d61676573 }
+	$a1 = { 69732e67642f }
+	$a2 = { 7369676176616c656d616973 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_28781
+{
+strings:
+	$a0 = { 44726f7046696c654e616d65203d2022737663686f73742e65786522 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34391
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 617475616C697A6172206F2073657520636572746966696361646F }
+	$a2 = { 6269742E6C79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37240
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c20532f412020417475616c697a6163616f204f6272696761746f726961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31430
+{
+strings:
+	$a0 = { 63617274[1-8]646520636861766573206465207365677572 }
+	$a1 = { 656E636F6E7472612D736520657870697261646F }
+	$a2 = { 626C6F717565696F20616F732063616E616973206465206175746F2D6174656E64696D656E746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_26106
+{
+strings:
+	$a0 = { 6d616c617370726f6e746173406d6173746572636172642e6f72673e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_30947
+{
+strings:
+	$a0 = { 636F6E747261746F2074657272613A }
+	$a1 = { 2F2532302F63656E7472616C2E7465727261 }
+	$a2 = { 6661766F72206E[1-8]6F20726573706F6E646572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31760
+{
+strings:
+	$a0 = { 6A726D776F6276332E646C6C0043506C4170706C6574 }
+	$a1 = { 6A726D776F627633001051547970496E666F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32272
+{
+strings:
+	$a0 = { 4e6f74612066697363616c }
+	$a1 = { 676f72646f2e706870 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32277
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 2f636f6e662e706870 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31833
+{
+strings:
+	$a0 = { 656d20616e65786f206f20626f6c65746f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 4361704372656469746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31830
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 44516f4e436a78745a58526849476830644841745a58463161585939496e4a6c5a6e4a6c6332676949474e76626e526c626e5139496a413749485679624431 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31527
+{
+strings:
+	$a0 = { 74696E797069632E636F6D2F }
+	$a1 = { 626F6C65746F }
+	$a2 = { 6D65746120687474702D65717569763D227265667265736822 }
+	$a3 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_31837
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20666f6920656d69746964612c20736567756520656d20616e65786f }
+	$a1 = { 66696c656e616d653d224e462d456c6574726f6e6963612e68746d6c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31834
+{
+strings:
+	$a0 = { 436f6e66697261207375612066617475726120656d2061747261736f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 476572656e746520646520436f6272616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33905
+{
+strings:
+	$a0 = { 6d656e736167656d20646520766f7a }
+	$a1 = { 576861747320417070 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33907
+{
+strings:
+	$a0 = { 7469746c653e444552202d204e4f5449464943413d43333d38373d43333d38334f20494e465241 }
+	$a1 = { 657363616e6561646f2070656c6f204176617374 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33903
+{
+strings:
+	$a0 = { 74696e797069632e636f6d2f }
+	$a1 = { 576861747341707020576562 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36662
+{
+strings:
+	$a0 = { 636c69656e7465206e6574 }
+	$a1 = { 2f636c642e70742f }
+	$a2 = { 76697375616c697a617220666174757261206e6574 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33909
+{
+strings:
+	$a0 = { 636f6e6669726d6172206f207265636562696d656e746f }
+	$a1 = { 416d69676f732e706870 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37484
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 496e7465726e65742042616e6b696e67 }
+	$a2 = { 726563616461737472616d656e746f }
+	$a3 = { 73757370656e736f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_30765
+{
+strings:
+	$a0 = { 6361697861206563[1-8]6D696361 }
+	$a1 = { 63616E61697320736572[1-8]6F20626C6F7175656164 }
+	$a2 = { 7265636164617374726F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31654
+{
+strings:
+	$a0 = { 40636c69656e74652d62622e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31656
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f5f42616e636f5f646f5f42726173696c }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33874
+{
+strings:
+	$a0 = { 7469746c653e536d696c657320474f6c }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 50617261207361626572206d6169732c20616365737365 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37551
+{
+strings:
+	$a0 = { 7669727475616973352e7669727475616973352e6a342e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33873
+{
+strings:
+	$a0 = { 50524f4752414d412044452056414e544147454e5320484950455243415244 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37553
+{
+strings:
+	$a0 = { 5375626A6563743A20496E666F656D61696C20427261646573636F202D20[1-8]6C74696D6F20417669736F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37552
+{
+strings:
+	$a0 = { 726976696174746f31342e726976696174746f3134343333322e62312e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37559
+{
+strings:
+	$a0 = { 3c656d61696c78406d61696c327765626d61737465722e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32774
+{
+strings:
+	$a0 = { 69006500780070006C006F00720065002E0065007800650000196500780070006C006F00720065007200200043003A005C0000135C006700620070006C007500670069006E000007200047004200001175007300650072006E0061006D006500001B6500720072006F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35589
+{
+strings:
+	$a0 = { 5375626a6563743a20526563616461737472616d656e746f2042616e636f2053616e74616e646572 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_25813
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d5363726970743a20303a6c756c752e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_30167
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 73756120636F6E746120656E636F6E7472612D7365206578706972616461 }
+	$a2 = { 696E696369617220612072656174697661 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_30895
+{
+strings:
+	$a0 = { 73756120636f6e746120646520652d6d61696c2065786365646575 }
+	$a1 = { 617475616c697a617220612073756120636f6e7461 }
+	$a2 = { 45717569706120646520476573743d45336f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37158
+{
+strings:
+	$a0 = { 63616461737472616D656E746F206F627269676174[1-8]72696F20646520636F6D70757461646F726573 }
+	$a1 = { 62616E636F2068736263 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34140
+{
+strings:
+	$a0 = { 626F6C65746F20646520636F6272616E }
+	$a1 = { 656D20616E65786F }
+	$a2 = { 636C642E70742F646C2F646F776E6C6F6164 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37180
+{
+strings:
+	$a0 = { 73756d6d65726c696e6b65722e696e666f2f6c656164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37150
+{
+strings:
+	$a0 = { 617475616c697a6163616f64657365677572616e636162622e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37153
+{
+strings:
+	$a0 = { 6e6162616c73792e636f6d2f696d616765732f73746f726965732f706f7274616c312e6a7067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37155
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]6F2064652061636573736F20616F206175746F6174656E64696D656E746F }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37157
+{
+strings:
+	$a0 = { 686f74656c2d617263696e732e636f6d2f696d616765732f7070742e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37156
+{
+strings:
+	$a0 = { 706F7374696D672E6F72672F }
+	$a1 = { 6368616E6365206465207265736761746172207365757320706F6E746F7320736D696C657320676F6C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32087
+{
+strings:
+	$a0 = { 4069626d636c6f75642e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36617
+{
+strings:
+	$a0 = { 6269742E6C792F[7-8]20626F6C65746F5F617475616C697A61646F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34922
+{
+strings:
+	$a0 = { 63616D70656F6E61746F2E726573706F6E7365626F64793A6F74656D7073746578782E73617665746F66696C65206E6F76696E6861 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33380
+{
+strings:
+	$a0 = { 61636162615f64655f726563656265725f756d5f496e666f656d61696c5f427261646573636f }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34925
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 736567756520626f6c65746f }
+	$a2 = { 4d2e4c2e20476f6d6573204164766f6761646f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37021
+{
+strings:
+	$a0 = { 5375626a6563743a2053696e63726f6e69736d6f2050656e64656e7465 }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36752
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 62616978617220646f63756d656e746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33016
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f20427261646573636f }
+	$a1 = { 636f6c6f7261646f6c696e6b732e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_30017
+{
+strings:
+	$a0 = { 6272617A696C2E6B6173706572736B792E636F6D2F66696C65732F696D616765732F77686174736170702E706E672077686174736170702C2061676F7261206E6F20736575207063 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37024
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f202d20534d53204f4e4c494e45 }
+	$a1 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37027
+{
+strings:
+	$a0 = { 73697374656D61206465206964656E746966696361[1-8]6F20646F2062616E636F20627261646573636F20657374[1-8]656D2070726F636573736F20646520617475616C697A61 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37290
+{
+strings:
+	$a0 = { 61636164656d69616372697374616c2e636f6d2e62722f666f6e74732f776562666f6e746b69742d32303134303732322d3136313132382f73706563696d656e5f66696c65732f6e6f74696669636163616f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37028
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??3d45323d39433d39345f??3d2042616e636f20427261646573636f20532f41 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37295
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a4e6f74612046697363616c203d??49534f2d383835392d31??42??5257786c64484c30626d6c6a59546f3d??3d2050656469646f }
+	$a1 = { 42616978617220446f63756d656e746f2046697363616c2047657261646f2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37296
+{
+strings:
+	$a0 = { 73697374656D6120696E7465677261646F206465206573747261646173206520726F646167656E73 }
+	$a1 = { 636C6963617220656D2063696D6120646173206D65736D61732E2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36605
+{
+strings:
+	$a0 = { 53616e74616e646572 }
+	$a1 = { 436172743d45336f206465205365677572616e3d453761204f6e2d6c696e6520656e636f6e7472612d736520696e617469766f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_21956
+{
+strings:
+	$a0 = { 6369656c6f40636f6d7072617072656d696164612e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37369
+{
+strings:
+	$a0 = { 4074657272612e636f6d2e62723e }
+	$a1 = { 7375626a6563743a203d??5554462d38??42??5357353061573168593246764945563464484a68494570315a476c6a615746734945315152673d3d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36181
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 656D20666F726D61746F2070646620687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37364
+{
+strings:
+	$a0 = { 407272636f6272616e63612e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37365
+{
+strings:
+	$a0 = { 737567617273796E632E636F6D2F }
+	$a1 = { 66696C653A2F2F2F433A2F55736572732F4348494E41 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37366
+{
+strings:
+	$a0 = { 616d636173736573736f7269612e776562686f702e6d65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37367
+{
+strings:
+	$a0 = { 504768306257772b44516f67494341675047686c5957512b44516f6749434167494341674944787a59334a706348512b5957786c636e516f4a305a766153426b5a58526c59335268 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37360
+{
+strings:
+	$a0 = { 626F6C6574696D206465206F636F7272656E63696120687474703A2F2F67652E74742F617069 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37361
+{
+strings:
+	$a0 = { 5375626a6563743a20526173747265616d656e746f20436f727265696f73 }
+	$a1 = { 2f74722e696d2f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37362
+{
+strings:
+	$a0 = { 656E747265676120612063616D696E686F }
+	$a1 = { 636C6173733D22737461747573626172223E3C2F6469763E3C2F6469763E3C2F6469763E3C73637269707420747970653D22746578742F6A617661736372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36188
+{
+strings:
+	$a0 = { 4c6f6a617320416d65726963616e6173 }
+	$a1 = { 7661692e6c61223e494d5052494d49522050454449444f3c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37455
+{
+strings:
+	$a0 = { 73706163656e616c616e6469612e696e666f2f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35288
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 626169786172207475646F20636F6D6F207A6970 }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37562
+{
+strings:
+	$a0 = { 73696e686f6e6c792e636f6d2f696d616765732f6463732f61636573732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37563
+{
+strings:
+	$a0 = { 35322e36372e36362e31352f436f6d70726f76616e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37560
+{
+strings:
+	$a0 = { 2E6F72636D657263616E74696C2E636F6D2E62722F[1-2]2E706870206F72[1-8]616D656E746F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37561
+{
+strings:
+	$a0 = { 7469746c653e6e6f7661746f70 }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37566
+{
+strings:
+	$a0 = { 616c656a6f727572616c2e636f6d2e61722f706c7567696e732f656469746f72732f6c6c65742f6f7263616d656e746f73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37567
+{
+strings:
+	$a0 = { 3134382e36322e3135352e3130342e62632e676f6f676c6575736572636f6e74656e742e636f6d2f6f636f7272656e636961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_29644
+{
+strings:
+	$a0 = { 696D7072696D697220626F6C65746F }
+	$a1 = { 76697375616C697A61722068747470 }
+	$a2 = { 6C76617265732070656E746561646F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_29313
+{
+strings:
+	$a0 = { 54656c656772616d61204f6e6c696e65 }
+	$a1 = { 67652e74742f6170692f312f66696c65732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36199
+{
+strings:
+	$a0 = { 46726f6d3a20225765626d61696c2055706461746522203c696e666f407570646174652e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36193
+{
+strings:
+	$a0 = { 5475646f20417a756c }
+	$a1 = { 6269742e646f2f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37550
+{
+strings:
+	$a0 = { 696D706F73746F2064652072656E6461 }
+	$a1 = { 737567617273796E632E636F6D2F }
+	$a2 = { 62616978617220616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32703
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f20427261646573636f }
+	$a1 = { 7469746c653e496e666f456d61696c }
+	$a2 = { 2e706870223e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33129
+{
+strings:
+	$a0 = { 434f4d554e494341444f20495441553330484f5241535d2043616e63656c616d656e746f20646520636f6e7461 }
+	$a1 = { 616b616d616968642e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_36642
+{
+strings:
+	$a0 = { 49534f2d383835392d31??42??734535766447453d??3d2046697363616c203d??49534f2d383835392d31??42??5257786c64484a76626d6c6a596241 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37587
+{
+strings:
+	$a0 = { 706C616E696C686120646520707265 }
+	$a1 = { 2E686F70746F2E6F7267 }
+	$a2 = { 676F7665726E6F20646F2065737461646F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37581
+{
+strings:
+	$a0 = { 636f6e737472756374696f6e6e6172636869746563747572652e636f6d2f706c7567696e732f73797374656d2f6c616e67756167652f6c6f672f696e6465782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37582
+{
+strings:
+	$a0 = { 3737752f5043464554304e5557564246494768306257772b44516f38614852746244344e436a786f5a57466b5067304b494341675047316c64474567614852306343316c63585670646a30 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37583
+{
+strings:
+	$a0 = { 3130382e3137392e3235322e37302f7e656d7072653136322f672f6368757061636162726173 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_24969
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d5363726970743a20[1-8]3a6d61672e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37588
+{
+strings:
+	$a0 = { 76697375616C697A6172202D2068747470733A2F2F7777772E737567617273796E63 }
+	$a1 = { 62616978617220616E65786F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37589
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 737567617273796E632E636F6D }
+	$a2 = { 62616978617220646F63756D656E746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37109
+{
+strings:
+	$a0 = { 737461726c696d6f7573696e65732e636f6d2e73672f6d6f64756c65732f6d6f645f636f6e746163742f626f6c65746f73 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36518
+{
+strings:
+	$a0 = { 436f6d756e696361646f20557267656e7465203a20436c69656e746520333020486f726173 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36048
+{
+strings:
+	$a0 = { 5375626a6563743a20417475616c697a61????6f206465205365677572616e }
+	$a1 = { 582d5048502d }
+	$a2 = { 46726f6d3a2042616e636f2053616e74616e646572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32015
+{
+strings:
+	$a0 = { 46726f6d3a204d617374657243617264 }
+	$a1 = { 7a69702e6e65742f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37662
+{
+strings:
+	$a0 = { 56697375616C697A617220416E65786F2E3A[1-8]68747470733A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32464
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32466
+{
+strings:
+	$a0 = { 406d61696c2e636f6d2e62723e }
+	$a1 = { 736567756520616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33119
+{
+strings:
+	$a0 = { 46726f6d3a20566961666163696c }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33114
+{
+strings:
+	$a0 = { 7469746c653e436f6d707261204170726f76616461 }
+	$a1 = { 2e3167622e72752f }
+	$a2 = { 2e6176672e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34723
+{
+strings:
+	$a0 = { 5375626a6563743a204d5046202d20436f6d7061726563696d656e746f }
+	$a1 = { 7a69702e6e65742f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32380
+{
+strings:
+	$a0 = { 406170722d6666782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32635
+{
+strings:
+	$a0 = { 7469746c653e415f7a756c }
+	$a1 = { 72657175697369746f73206465207365677572616e }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35853
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 2e6f7074782e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35858
+{
+strings:
+	$a0 = { 6172717569766F28732920656D20616E65786F287329203A20687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37556
+{
+strings:
+	$a0 = { 706C616E696C68612064652070656469646F }
+	$a1 = { 2320687474703A2F2F676F6F2E676C2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35541
+{
+strings:
+	$a0 = { 46726f6d3a204d617374657243617264 }
+	$a1 = { 77696b696d656469612e6f72672f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35542
+{
+strings:
+	$a0 = { 63617274[1-8]6F206368617665206465207365677572616E[1-8]6120656E636F6E7472612D736520657870697261646F }
+	$a1 = { 627261646573636F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33069
+{
+strings:
+	$a0 = { 616E65786F2068747470 }
+	$a1 = { 626F6C6574696D206465206F636F7272 }
+	$a2 = { 676F6F676C6564726976652E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35898
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??5341432d42425f2d5f526567756c6172697a655f7375615f636f6e74615f7c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37604
+{
+strings:
+	$a0 = { 7472656e6464657369676e736174686f6d652e636f2e756b2f6765742e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37636
+{
+strings:
+	$a0 = { 5375626a6563743a204677653a205365677565206120636f70696120646f2070656469646f2c }
+	$a1 = { 2e636c6f75646170702e6e65743e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35897
+{
+strings:
+	$a0 = { 65786365646575206f206c696d6974652064652061726d617a656e616d656e746f }
+	$a1 = { 2e6575352e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37635
+{
+strings:
+	$a0 = { 40616d617a726f31332e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37632
+{
+strings:
+	$a0 = { 6f7263616d656e746f303030312d3030312d73697465312e6774656d7075726c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37630
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d70726f76616e7465 }
+	$a1 = { 406173747261343934372e73746172746465646963617465642e636f6d3e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37631
+{
+strings:
+	$a0 = { 5375626a6563743a204576697465206d756c74617320652063616e63656c616d656e746f }
+	$a1 = { 2e70726e747363722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34038
+{
+strings:
+	$a0 = { 2f6d61696c2e6c6976652e696e626f782e706870 }
+	$a1 = { 636f6d70726f76616e7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33029
+{
+strings:
+	$a0 = { 55736572735C4D617269615C446F63756D656E74735C56697375616C2053747564696F20323030385C50726F6A656374735C66696E616C66696E616C4C4F4144 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33028
+{
+strings:
+	$a0 = { 46726f6d3a207361632e636f6e74616374 }
+	$a1 = { 4c494e4b207061726120646f776e6c6f6164 }
+	$a2 = { 676f6f676c656472697665 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33023
+{
+strings:
+	$a0 = { 7469746c653d3344224261697865204d657520437572726963 }
+	$a1 = { 64616e6574322e6e65742e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34030
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 656e636f6e7472612d736520616e65786f }
+	$a2 = { 2e62756773332e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33021
+{
+strings:
+	$a0 = { 46726f6d3a207361632e636f6e74616374 }
+	$a1 = { 646f776e6c6f6164206461206e6f7461 }
+	$a2 = { 676f6f676c656472697665 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33026
+{
+strings:
+	$a0 = { 46726F6D3A207361632E636F6E74616374[10]40626F6C2E636F6D2E6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33025
+{
+strings:
+	$a0 = { 50656e64656e6369617320656d2041747261736f }
+	$a1 = { 646f63732e676f6f676c652e636f6d }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33024
+{
+strings:
+	$a0 = { 726f6c616e646f206e6f2066616365626f6f6b }
+	$a1 = { 64616e6574322e6e65742e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35521
+{
+strings:
+	$a0 = { 7768617473617070 }
+	$a1 = { 6d656e736167656d20646520766f7a }
+	$a2 = { 2e686f737065646167656d646573697465732e7773 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35522
+{
+strings:
+	$a0 = { 7768617473617070 }
+	$a1 = { 2e686f737065646167656d646573697465732e7773 }
+	$a2 = { 6d656e736167656d20646520766f7a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_24569
+{
+strings:
+	$a0 = { 636F6E74726F6C6520646520706167616D656E746F73 }
+	$a1 = { 766572206F2064[1-8]6269746F2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35528
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F[7]223E56697375616C697A6172205044463C2F41 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34580
+{
+strings:
+	$a0 = { 7365786f206361736569726f20636f6d206e696e66657461 }
+	$a1 = { 7477697861722e6d652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35942
+{
+strings:
+	$a0 = { 2f736f6c75636f657362622e6c6f6c2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37554
+{
+strings:
+	$a0 = { 6C6F616465725F31332F706B6730362F706B6732303136 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36861
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f2053722e28612920436c69656e74653a2042616e636f20646f2042726173696c202d20556c74696d6f20417669736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36866
+{
+strings:
+	$a0 = { 5375626a6563743a20436c69656e7465202d2042616e636f20427261646573636f20532f412054656d6f7320756d20436f6d756e696361646f20496d706f7274616e746520212028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36865
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 64657373696E63726F6E697A61[1-8]6F2064652073756120636F6E7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34211
+{
+strings:
+	$a0 = { 64726f70626f782e636f6d2f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 636f706961206461206e6f7461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34210
+{
+strings:
+	$a0 = { 636f706961206461206e6f7461 }
+	$a1 = { 64726f70626f782e636f6d2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34212
+{
+strings:
+	$a0 = { 56696120646f20426f6c65746f }
+	$a1 = { 6c61627468702e75622e61632e69642f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34215
+{
+strings:
+	$a0 = { 3120616e65786f }
+	$a1 = { 687474702d65717569763d334422726566726573682220636f6e74656e743d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31949
+{
+strings:
+	$a0 = { 433A5C646F776E6C6F6164735C6C6F616465725F323031355C646F776E6C6F616465725C646F776E6C6F616465725C6F626A }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37340
+{
+strings:
+	$a0 = { 7469746C653E636C69656E7465 }
+	$a1 = { 70726F636573736F2064652072656174697661 }
+	$a2 = { 676F6F676C6575736572636F6E74656E742E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34219
+{
+strings:
+	$a0 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a1 = { 636f6d706f6e656e74732f636f6d5f6e6577736665656473 }
+	$a2 = { 66696c65732e316472762e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36769
+{
+strings:
+	$a0 = { 726567697374726F206465206F636F7272[1-8]6E6369613A2068747470733A2F2F7777772E64726F70626F78 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36768
+{
+strings:
+	$a0 = { 76697375616c697a61722073657520636f6d70726f76616e746520687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33337
+{
+strings:
+	$a0 = { 7469746c653e66616365626f6f6b }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37592
+{
+strings:
+	$a0 = { 73686f702e66616972706f72742e636f6d2e61752f6765742e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37594
+{
+strings:
+	$a0 = { 73686f702e66616972706f72742e636f6d2e61752f696e7374616c6c2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37599
+{
+strings:
+	$a0 = { 582d5048502d5363726970743a207777772e64636d6572697469666d2e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33338
+{
+strings:
+	$a0 = { 515735306232357062794243636d463649435967566d467565574567545746705953417449454e76596e4a6862756468494570315a476c6a615746734947556752586830636d467164575270 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37351
+{
+strings:
+	$a0 = { 407365727665722d30312e63663e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35299
+{
+strings:
+	$a0 = { 7469746c653e46617475726120656d2041747261736f }
+	$a1 = { 52617a266174696c64653b6f20536f6369616c3a204f4920532f41 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35292
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 2f6c69627261726965732f74637064662f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35293
+{
+strings:
+	$a0 = { 636865717565206465766f6c7669646f }
+	$a1 = { 2e6a656c61737469636c772e636f6d2e62722f }
+	$a2 = { 74696e797069632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35297
+{
+strings:
+	$a0 = { 4475706c6963617461203a203c612068726566 }
+	$a1 = { 6c657661646120612050726f746573746f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35294
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 636865717565206465766f6c7669646f }
+	$a2 = { 74696e797069632e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29779
+{
+strings:
+	$a0 = { 3c68656c706465736b63656e747265363440676d61696c2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_30580
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A[1-8]3A62642E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37178
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f2d53414e54414e444552 }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37334
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 656E636F6E7472612D736520626C6F7175656164 }
+	$a2 = { 617475616C697A[1-16]646973706F73697469766F206465207365677572616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35276
+{
+strings:
+	$a0 = { 4e462d45 }
+	$a1 = { 64657665207365722061726d617a656e61646f }
+	$a2 = { 2e64646e732e6e6574 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36856
+{
+strings:
+	$a0 = { 46726f6d3a20224e2e452e542e20432e6f2e6d2e622e6f2e204d2e752e6c2e742e692e22 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35270
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 73746f726167652e676f6f676c65617069732e636f6d }
+	$a2 = { 6e6f766f207469636b657420656c657472 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35161
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74652c20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 2f6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35279
+{
+strings:
+	$a0 = { 56697375616c697a617220616e65786f202068747470733a2f2f6269746c793d3245636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35679
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 6261636b75702064652068697374 }
+	$a2 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_25651
+{
+strings:
+	$a0 = { 5265706c792d546f3a2022615f6d61696c3737407961686f6f2e636f6d22 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_28998
+{
+strings:
+	$a0 = { 6262406175746f6174656e64696d656e746f2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32884
+{
+strings:
+	$a0 = { 5052494e542053435245454e }
+	$a1 = { 7469746c653e4e6f766f2053657276693d45376f205768617473417070 }
+	$a2 = { 74696e797069632e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31748
+{
+strings:
+	$a0 = { 796F6F796C332E646C6C0043506C4170706C6574 }
+	$a1 = { 796F6F796C33001051547970496E666F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31749
+{
+strings:
+	$a0 = { 636f6d70726f76616e746520646f20646570 }
+	$a1 = { 696d616765736861636b2e75732f }
+	$a2 = { 64726976652e676f6f676c652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36591
+{
+strings:
+	$a0 = { 5375626a6563743a2041646573??6f206465205365677572616e??612070656e64656e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35180
+{
+strings:
+	$a0 = { 4f6c686120657373617320666f746f73 }
+	$a1 = { 2e6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35181
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 7469746c653e4c6f6a617320416d65726963616e6173 }
+	$a2 = { 2e706870223e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31743
+{
+strings:
+	$a0 = { 640062007300710030003000310035002E00770068007300650072007600690064006F0072002E0063006F006D }
+	$a1 = { 490044003D0070006F007000650072006F006D0031 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31744
+{
+strings:
+	$a0 = { 68007400740070003A002F002F002F0000000000000000000000FF039514170002070058617661736361 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31745
+{
+strings:
+	$a0 = { 43504D6F64652E63706C0043506C4170706C6574 }
+	$a1 = { 545046300A544647696761466F726D094647696761466F726D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35188
+{
+strings:
+	$a0 = { 7469746c653e446f63756d656e746f2073656d }
+	$a1 = { 636f6d70726f76616e746520646520646570 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35189
+{
+strings:
+	$a0 = { 4573747261646173206520526f646167656e73 }
+	$a1 = { 7265676973747261646f206e6f2047524156414d45 }
+	$a2 = { 2e777872622e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32864
+{
+strings:
+	$a0 = { 63686571756573206465766f6c7669646f7320616e65786164612061626169786f3c2f7469746c65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32865
+{
+strings:
+	$a0 = { 7469746c653d224261697865204d6575204375727269632e2e2e646f632220687265663d22687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32862
+{
+strings:
+	$a0 = { 2f676f6f2e676c2f }
+	$a1 = { 76616c652070726573656e746520616d65726963616e6173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31606
+{
+strings:
+	$a0 = { 636f6d70726f76616e746520646520646570 }
+	$a1 = { 62757474696d2e6f72672e74722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32405
+{
+strings:
+	$a0 = { 416c657274613a20497461754d61696c }
+	$a1 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_25722
+{
+strings:
+	$a0 = { 4369656c6f }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35691
+{
+strings:
+	$a0 = { 46726f6d3a2022566961677261204f7264657222 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36506
+{
+strings:
+	$a0 = { 7469746c653e417469766120636f6272616e }
+	$a1 = { 706870223e434f4e545241544f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36505
+{
+strings:
+	$a0 = { 6e657420666f6e652076696120656d62726174656c20687474703a2f2f6269742e6c79 }
+	$a1 = { 676f6f676c6575736572636f6e74656e74 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31730
+{
+strings:
+	$a0 = { 46726f6d3a206369656c6f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35056
+{
+strings:
+	$a0 = { 416d65726963616e61732e636f6d22203c6163636f756e74734070617373706f72742e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35057
+{
+strings:
+	$a0 = { 7469746c653e656e67 }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 496e7465726e65742042616e6b696e672053616e74616e646572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31519
+{
+strings:
+	$a0 = { 626c6f6773706f742e636f6d2f2d5365464a764c79714d4f672f55677665786c32595438492f41414141414141414143552f4e61307a6d3036447933632f73313630302f76697275732e6a7067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37327
+{
+strings:
+	$a0 = { 6d61696c746f3a636f6e7461746f40627261736c696465722d6f72672e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30827
+{
+strings:
+	$a0 = { 436F6E74656E742D446973706F736974696F6E3A206174746163686D656E743B2066696C656E616D653D }
+	$a1 = { 5045314656454567614852306343316C63585670646A3069636D566D636D567A614349675932397564475675644430694D447456556B773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37323
+{
+strings:
+	$a0 = { 407a69706d61696c2e636f6d2e62723e }
+	$a1 = { 5375626a6563743a203d??5554462d38??51??536575735f66757475726f735f636c69656e7465735f615f756d5f636c697175655f64655f766f63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32240
+{
+strings:
+	$a0 = { 5375626a6563743a205768617473417070 }
+	$a1 = { 706f64652073657220757361646f206e6f2073657520636f6d70757461646f72 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_31672
+{
+strings:
+	$a0 = { 582d536f757263652d417267733a202f7573722f62696e2f706870202f686f6d652f696772656a6162612f7075626c69635f68746d6c2f706f7274616c2f696d616765732f666f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_31673
+{
+strings:
+	$a0 = { 68757265652e6d6e2f68757265656d6e2f696d616765732f73746f726965732f696e64322e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33934
+{
+strings:
+	$a0 = { 456d697373266174696c64653b6f206465204e6f74612046697363616c }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 45717569706520646520436f6272616e2663636564696c3b61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33937
+{
+strings:
+	$a0 = { 5375626a6563743a2052656369626f20646520506167616d656e746f }
+	$a1 = { 64726976652e676f6f676c652e636f6d2f }
+	$a2 = { 50726f746f636f6c6f20646520456e76696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33936
+{
+strings:
+	$a0 = { 56616c655f50726573656e74655f43616361752d53686f77 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36172
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29827
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 70726F636564696D656E746F20646520726567756C6172697A61 }
+	$a2 = { 7465726D696E6173206465206174656E64696D656E746F }
+	$a3 = { 65766974652074726173746F726E6F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_33865
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c746865696e72696368406763692e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_34734
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A20[1-8]3A676F72646F2E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34616
+{
+strings:
+	$a0 = { 5375626a6563743a205b62622e636f6d2e62725d3a20416c6572746120696d706f7274616e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31824
+{
+strings:
+	$a0 = { 6d656e626572303231 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31995
+{
+strings:
+	$a0 = { 426f6c65746f20656e766961646f20706f72 }
+	$a1 = { 64726976652e676f6f676c652e636f6d2f }
+	$a2 = { 56495355414c495a415220424f4c45544f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31643
+{
+strings:
+	$a0 = { 69746F6B656E }
+	$a1 = { 656E636F6E7472612D73652064657373696E63726F6E697A61646F }
+	$a2 = { 62616E636F20697461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31992
+{
+strings:
+	$a0 = { 7469746c653e4d44534b }
+	$a1 = { 6269742e646f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_25357
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 61646573[1-8]6F206465207365677572616E }
+	$a2 = { 636F6E746120736572[1-8]73757370656E7361 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31999
+{
+strings:
+	$a0 = { 3200300030002E00390038002E003100340039002E00390030002F0062006100730065002F0062006100730065005F0063 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31998
+{
+strings:
+	$a0 = { 5365677565206f20416e65786f }
+	$a1 = { 7477697861722e6d652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36378
+{
+strings:
+	$a0 = { 76696120646f20626f6c65746f }
+	$a1 = { 636f6d70616374616d6f73206f20626f6c65746f20636f6d2077696e726172 }
+	$a2 = { 626f6c65746f20636c697175652061626169786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34298
+{
+strings:
+	$a0 = { 46726f6d3a2053616e74616e646572 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34294
+{
+strings:
+	$a0 = { 5375626a6563743a20446973706f73697469766f2049746f6b656e }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36373
+{
+strings:
+	$a0 = { 7469746c653e536567756520416e65786f20426f6c65746f }
+	$a1 = { 6e6f6d652073656a61206e65676174697661646f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36150
+{
+strings:
+	$a0 = { 736567756520636f6d70726f76616e7465 }
+	$a1 = { 2f6a2e6d702f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32679
+{
+strings:
+	$a0 = { 717a612e636f6d2e62722f696e6465782e706870??69643d33445341 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32675
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 2e646f77736c696e6b732e696e666f2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32674
+{
+strings:
+	$a0 = { 63686571756573206465766f6c7669646f73 }
+	$a1 = { 436f706961206368657175652031 }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_26420
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 206461646F732063616461737472616973 }
+	$a2 = { 7365752063617274[1-8]6F20736572[1-8]626C6F71756561646F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32673
+{
+strings:
+	$a0 = { 717a612e636f6d2e62722f696e6465782e706870??69643d5341 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33262
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 63617274266174696c64653b6f206368617665206465207365677572616e }
+	$a2 = { 626c6f717565696f20696d65646961746f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33261
+{
+strings:
+	$a0 = { 556c74696d6f20617669736f212073696e63726f6e69736d6f2069746175 }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33260
+{
+strings:
+	$a0 = { 40417373696e61747572612e636f6d3e }
+	$a1 = { 417373696e617475726120456c6574723d46346e696361 }
+	$a2 = { 636172743d45336f207365723d45336f20626c6f71756561646f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33267
+{
+strings:
+	$a0 = { 42616e636f2049746175 }
+	$a1 = { 556c74696d6f20617669736f }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33266
+{
+strings:
+	$a0 = { 6e6f766f2067616e6861646f72 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+	$a3 = { 446f747a20323031 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_37586
+{
+strings:
+	$a0 = { 73616E74616E64657220732E612E207C206174656E64696D656E746F20636572746966696361646F206469676974616C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33268
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d617469766f2042616e636f20497461 }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36572
+{
+strings:
+	$a0 = { 7469746c653e496e666f6d61696c }
+	$a1 = { 3c7374726f6e673e427261646573636f205072696d653c2f7374726f6e673e }
+	$a2 = { 3e43414441535452452d53453c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_30605
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 63617274[1-8]6F20636861766573206465207365677572616E }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34586
+{
+strings:
+	$a0 = { 42616e636f204974612d20532e412e202d2053696e63726f6e697a61722069546f6b656e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34585
+{
+strings:
+	$a0 = { 5375626a6563743a20556c74696d6f20417669736f202d2042616e636f20646f2042726173696c2050726f746f636f6c6f2047726576652042616e6361726961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36574
+{
+strings:
+	$a0 = { 566f632665636972633b2067616e686f7520756d2076616c6520636f6d70726173 }
+	$a1 = { 6d65726361646f6c697672652e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37120
+{
+strings:
+	$a0 = { 436f6d707261205072656d69616461 }
+	$a1 = { 696d616765732e6f726b75742e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37121
+{
+strings:
+	$a0 = { 42616e636f20646f2042726173696c }
+	$a1 = { 626c6f717565696f206175746f6d266161637574653b7469636f2064652073756120636f6e7461 }
+	$a2 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32078
+{
+strings:
+	$a0 = { 616e65786f206f20636f6d70726f76616e7465 }
+	$a1 = { 62696e2f706870 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32074
+{
+strings:
+	$a0 = { 5375626a6563743a2052653a20436f6d70726f76616e7465 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 706f7374696d67 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32073
+{
+strings:
+	$a0 = { 696d672e616d65726963616e61732e636f6d2e6272 }
+	$a1 = { 4e6f74612046697363616c }
+	$a2 = { 6269742e646f2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32071
+{
+strings:
+	$a0 = { 466f746f546f727065646f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32070
+{
+strings:
+	$a0 = { 5768617473417070 }
+	$a1 = { 4d454e534147454d20444520564944454f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34930
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 636f6d707261206e6f2073657520435046 }
+	$a2 = { 6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34932
+{
+strings:
+	$a0 = { 2f6d61696c2e6c6976652e696e626f78 }
+	$a1 = { 616d617a6f6e6177732e636f6d2f662e636c2e6c79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34934
+{
+strings:
+	$a0 = { 4144564f4741444f532045204153534f434941444f53 }
+	$a1 = { 2e6274656d7075726c2e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_33784
+{
+strings:
+	$a0 = { 46726f6d3a20224c65766974726f }
+	$a1 = { 5375626a6563743a204e6f74696669636174696f6e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36854
+{
+strings:
+	$a0 = { 7768617473617070666F746F73[5-10]40766D69[3-6]2E636F6E7461626F2E686F7374 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37054
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f656d61696c20757267656e74653a204576697465206f20626c6f717565696f2e2050726f746f636f6c6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33006
+{
+strings:
+	$a0 = { 5265706c792d546f3a2073697374656d61737361646d696e73734062617269642e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37056
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??42616e636f5f53616e74616e6465725f42726173696c5f533d3245415f2d5f537561735f646566696e693d43333d41373d43333d423565735f61696e6461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37699
+{
+strings:
+	$a0 = { 5375626a6563743a204f626a65746f20616775617264616e646f207265746972616461205352 }
+	$a1 = { 2e70687022 }
+	$a2 = { 42726173707265737320436f70797269676874 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33003
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c202d20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33000
+{
+strings:
+	$a0 = { 4974613d46412d42616e6b6c696e65203330486f726173202d2053696e63726f6e697a61722069546f6b656e2028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37359
+{
+strings:
+	$a0 = { 636C69632061717569206520626169786520617320666F746F732028 }
+	$a1 = { 756D6120617469747564652E2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36196
+{
+strings:
+	$a0 = { 76697375616c697a617220616e65786f20202068747470733a2f2f6269746c792e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32183
+{
+strings:
+	$a0 = { 636f72706f72617469766f636f6d65726369616c736f7465726f2e636f6d2f706c7567696e732f636f6e74656e742f6f6b }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37353
+{
+strings:
+	$a0 = { 706e2d636f6e746162696c69646164652e636f6d2e62722f646f776e6c6f6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37352
+{
+strings:
+	$a0 = { 407365727665722d30362e63663e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32187
+{
+strings:
+	$a0 = { 7469746c653e42494e47 }
+	$a1 = { 736369656e6365747562652e67722f696d616765732f73746f726965732f636f656c686f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37354
+{
+strings:
+	$a0 = { 6269742E6C792F[7-16]2076697375616C697A617220616476656E746F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37356
+{
+strings:
+	$a0 = { 62616c74696374726176656c2e65652f636b656469746f722f6c616e672f56495355414c495a4152 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37445
+{
+strings:
+	$a0 = { 6a6f696e6d616e616765722e696e666f2f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36504
+{
+strings:
+	$a0 = { 706f7374696d672e6f72672f }
+	$a1 = { 726567697374726f2064652073756120636f6e7461 }
+	$a2 = { 5375706f727465204e6574666c6978 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36615
+{
+strings:
+	$a0 = { 5375626a6563743a20436c69656e74652053616e74616e64657220532f41207e20436f6d756e696361646f20496d706f72616e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32750
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 504568555455772b5045314656454567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d547456556b773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32738
+{
+strings:
+	$a0 = { 406b742d726f756e642e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32697
+{
+strings:
+	$a0 = { 350032002E00320035002E00330033002E00350036002F002E0069006D00610067006500730073002F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32696
+{
+strings:
+	$a0 = { 76616c652050726573656e74652043616361752d53686f77 }
+	$a1 = { 2572616e646f6d5f6e756d }
+	$a2 = { 3e494d5052494d49522d4355504f4d3c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32695
+{
+strings:
+	$a0 = { 726566657269646F20706167616D656E746F }
+	$a1 = { 6172717569766F2064657665207365722061726D617A656E61646F2E20687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32693
+{
+strings:
+	$a0 = { 74696e79706963 }
+	$a1 = { 436f70696120646f20436865717565 }
+	$a2 = { 616272652e61692f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32691
+{
+strings:
+	$a0 = { 6174697669646164657320696e636f6d756d20656d2073756120636f6e7461 }
+	$a1 = { 676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36057
+{
+strings:
+	$a0 = { 7665726966696361646f20646f20536974653a205757572e53414e54414e4445522e434f4d2e4252 }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36056
+{
+strings:
+	$a0 = { 5375626a6563743a205375706f7274652053616e74616e6465722053656c656374203a20426c6f717565696f20646520436f6e7461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32029
+{
+strings:
+	$a0 = { 57656475706461746540637962657273657276696365732e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36052
+{
+strings:
+	$a0 = { 6370726f33343231312e7075626c6963636c6f75642e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32699
+{
+strings:
+	$a0 = { 2e6269746e616d696170702e636f6d223e53616c766172206e6f204f6e654472697665 }
+	$a1 = { 736567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_23619
+{
+strings:
+	$a0 = { 636861766573206465207365677572616E[1-8]6120627261646573636F2065787069726F75 }
+	$a1 = { 627261646573636F2E636F6D2E6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34739
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 582d5048502d }
+	$a2 = { 6c69766566696c6573746f72652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33109
+{
+strings:
+	$a0 = { 2f7468756d622e706870 }
+	$a1 = { 495220666f69207265746966696361646f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_36985
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A20[1-3]3A7661692E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32452
+{
+strings:
+	$a0 = { 52656365697461204665646572616c }
+	$a1 = { 616e65786f732061626169786f }
+	$a2 = { 3e416e65786f732e3c2f613e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_23613
+{
+strings:
+	$a0 = { 696E666F656D61696C20627261646573636F }
+	$a1 = { 636861766573206465207365677572616E[1-8]6120627261646573636F2065787069 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34736
+{
+strings:
+	$a0 = { 5375626a6563743a204669717565692063686f636164612c206f6c6861206169207365207663207265636f6e68656365 }
+	$a1 = { 582d5048502d536372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32458
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 536567756520656d20416e65786f }
+	$a2 = { 436865717565206465766f6c7669646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33102
+{
+strings:
+	$a0 = { 76616c652d70726573656e7465204f626f7469636172696f }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37130
+{
+strings:
+	$a0 = { 68747470733a2f2f646168616d61726c692e78797a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36539
+{
+strings:
+	$a0 = { 656d20616e65786f287329203a2068747470 }
+	$a1 = { 73656a61206e65676174697661646f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35864
+{
+strings:
+	$a0 = { 436865717565206465766f6c7669646f }
+	$a1 = { 696d6775722e636f6d }
+	$a2 = { 636c697175652061717569 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37331
+{
+strings:
+	$a0 = { 636164617374726F20656E636F6E7472612D736520646573617475616C697A61646F }
+	$a1 = { 73757370656E73[1-8]6F206175746F6D6174696361 }
+	$a2 = { 73616E74616E646572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32358
+{
+strings:
+	$a0 = { 406b6b72742d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32359
+{
+strings:
+	$a0 = { 406d786d2d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37648
+{
+strings:
+	$a0 = { 6d647332303036622e77656263696e646172696f2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32602
+{
+strings:
+	$a0 = { 406d61792d73726a2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32351
+{
+strings:
+	$a0 = { 406b6b72742d6a782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37641
+{
+strings:
+	$a0 = { 70696e6e61636c657472616e73706f72742e63612f696d672f69636f6e732f746162732f7265646963696f6e616d656e746f2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32601
+{
+strings:
+	$a0 = { 406c6e6b2d6773782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37647
+{
+strings:
+	$a0 = { 66696e616e636569726f64656d61726b74696e676f6e6c696e652e636f6d2e62722f6964?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37646
+{
+strings:
+	$a0 = { 646570617274616d656e746f6f6e6c69652e636f6d2e62722f6964?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37645
+{
+strings:
+	$a0 = { 7365746f726f6e6c696e6564656d61726b74696e672e636f6d2e62722f6964?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37644
+{
+strings:
+	$a0 = { 406d61647564692d6964312e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32286
+{
+strings:
+	$a0 = { 406170722d65642e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33030
+{
+strings:
+	$a0 = { 3C7361632E636F6E74616374[10]40626F6C2E636F6D2E62723E }
+	$a1 = { 676F6F676C656472697665 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33031
+{
+strings:
+	$a0 = { 50726F746573746F }
+	$a1 = { 6269742E6C792F[7]223E325649412E424F4C45544F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33033
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 73746f726167652e676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33035
+{
+strings:
+	$a0 = { 6269742E6C792F[7]223E436C69717565206171756920706172612076697375616C697A61722061204E6F74612046697363616C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32289
+{
+strings:
+	$a0 = { 406d6e662d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34025
+{
+strings:
+	$a0 = { 636F6D656E74[1-8]72696F20646520766F7A }
+	$a1 = { 66616365626F6F6B }
+	$a2 = { 6269746C792E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34022
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 76697375616C697A617220687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35518
+{
+strings:
+	$a0 = { 7469746c653e536567756520323d424120766961 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_24060
+{
+strings:
+	$a0 = { 73697374656D61206465206964656E7469666963[1-8]6F2064612063616978612065636F6E[1-8]6D696361206665646572616C }
+	$a1 = { 63616E61697320636169786120736572[1-8]6F20626C6F71756561646F73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35517
+{
+strings:
+	$a0 = { 426f6c65746f5f456d657469646f2e20687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35511
+{
+strings:
+	$a0 = { 506c616e696c686120646f73206974656e733a20687474703a2f2f6269743d32456c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35510
+{
+strings:
+	$a0 = { 7768617473617070 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 6d656e736167656d20646520766f7a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35951
+{
+strings:
+	$a0 = { 5375626A6563743A2053657520646973706F73697469766F206465207365677572616E[1-8]6120495441[1-8]656E636F6E7472612D736520666F72612064652073696E63726F6E6961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36879
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??42616e636f5f53616e74616e6465725f533d3245415f2d5f434f4d554e494341444f5f494d504f5254414e5445 }
+	$a1 = { 3e436f7272653d45373d4635657320696d706f7274616e7465732053616e74616e6465723c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36878
+{
+strings:
+	$a0 = { 75706C6F61642E77696B696D65646961 }
+	$a1 = { 726563616461737472616D656E746F20646120617373696E617475726120656C657472 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36877
+{
+strings:
+	$a0 = { 5375626a6563743a20427261646573636f20496e666f726d6120526563616461737472616d656e746f20557267656e7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36873
+{
+strings:
+	$a0 = { 436f6d756e696361646f2042414e434f20444f2042524153494c2d20526567756c6172697a652073657573204461646f732043616461737472616973 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36771
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 7365677569723a2068747470733a2f2f7777772e64726f70626f78 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36773
+{
+strings:
+	$a0 = { 7768617473617070206d656e736167656d20646520766f7a }
+	$a1 = { 6d696772652e6d652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37608
+{
+strings:
+	$a0 = { 636F6D756E696361646F20696D706F7274616E7465206361697861 }
+	$a1 = { 696E7465726E65742062616E6B696E67 }
+	$a2 = { 626C6F6773706F742E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36776
+{
+strings:
+	$a0 = { 504768306257772b44516f674944786f5a57466b5067304b494341674944784e5256524249476830644841745a58463161585939496e4a6c5a6e4a6c633267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36777
+{
+strings:
+	$a0 = { D0CF11E0 }
+	$a1 = { 00417474726962757400 }
+	$a2 = { 0100FEFF030A0000FFFFFFFF0609020000000000C0000000000000461F000000C4EEEAF3ECE5EDF2204D6963726F736F6674204F666669636520576F7264000A0000004D53576F7264446F630010000000576F72642E446F63756D656E742E3800F439B271 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34206
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 6d61697320616365737361646f73206465206e6f7373612072656465 }
+	$a2 = { 596f7554756265 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34203
+{
+strings:
+	$a0 = { 46726f6d3a20223c3c74696772335f6f726967696e616c40686f746d61696c2e636f6d3e3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34200
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 636C642E70742F646C2F }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34112
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 436f6d70726f76616e7465203a2068747470 }
+	$a2 = { 456e766961646f20706f72203a207361632e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33325
+{
+strings:
+	$a0 = { 4465706f7369746f206e6f6d696e616c }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 3e4261697861723c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35035
+{
+strings:
+	$a0 = { 2e64646e732e6e6574223e56697375616c697a617220426f6c65746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34117
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 687474702d65717569763d334422726566726573682220636f6e74656e743d334422303b2075726c3d334468747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33322
+{
+strings:
+	$a0 = { 46726f6d3a2022506f6c69636961204665646572616c }
+	$a1 = { 6964656e746966696361646f20656d2061636573736f20696c6567616c }
+	$a2 = { 582d4c6962726172793a20496e6479 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33329
+{
+strings:
+	$a0 = { 70726f746573746f206e6f2063617274 }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 452d6d61696c3a206f7065726163696f6e616c40617469766f7373612e636f6d2e6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31777
+{
+strings:
+	$a0 = { 5768617473417070 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 626c6f67646f6d6172696f666c6176696f2e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_24169
+{
+strings:
+	$a0 = { 4d6972726f7265642066726f6d207777772e6f72636f7a6f6c2e636f6d2e62722f626f6c65746f2d6f6e2d6c696e65206279204854547261636b }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29496
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E }
+	$a1 = { 666F72612064652073696E63726F6E6961 }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35759
+{
+strings:
+	$a0 = { 6d61696c746f3a72656d6f5f6c697374407961686f6f2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35241
+{
+strings:
+	$a0 = { 3C6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D[1-2]3B75726C3D22687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35243
+{
+strings:
+	$a0 = { 666f69207072656d6961646f }
+	$a1 = { 2f6f772e6c792f }
+	$a2 = { 636163617573686f77 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35242
+{
+strings:
+	$a0 = { 536567756520416e65786f }
+	$a1 = { 436f6d70726f76616e7465 }
+	$a2 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35245
+{
+strings:
+	$a0 = { 2e636f6e76657273617377686174736170702e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35244
+{
+strings:
+	$a0 = { 6d65746120687474702d65717569763d334422726566726573682220636f6e74656e743d3344313b75726c3d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35249
+{
+strings:
+	$a0 = { 7469746c653e5365752050656469646f }
+	$a1 = { 6461646f7320646f2050656469646f3a }
+	$a2 = { 6176617374 }
+	$a3 = { 676f6f676c6575736572636f6e74656e74 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_35088
+{
+strings:
+	$a0 = { 5375626A6563743A2053657520646973706F73697469766F20497461[1-8]20656E636F6E7472612D736520646573696E63726F6E697A61646F2C20526567756C6172697A6520496D6564696174616D656E746521 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35885
+{
+strings:
+	$a0 = { 7469746c653e4e6f74612046697363616c }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 2e72676b76642e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37549
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 696E7465726E65742062616E6B696E6720736572[1-8]626C6F7175656164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35083
+{
+strings:
+	$a0 = { 7469746c653e656e67 }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 42616e636f2053616e74616e646572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35645
+{
+strings:
+	$a0 = { 656d20416e65786f }
+	$a1 = { 747261636b2d696d672e68747a6d7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35647
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 706167616d656e746f20646f20626f6c65746f }
+	$a2 = { 64726976652e676f6f676c652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35646
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 747261636b2d696d672e68747a6d7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_35598
+{
+strings:
+	$a0 = { 46726f6d3a20224c6576697472612d50726f2053746f7265 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35649
+{
+strings:
+	$a0 = { 6269746c792e636f6d2f }
+	$a1 = { 656e747265676120646f7320636f727265696f73 }
+	$a2 = { 2e6269746e616d696170702e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32853
+{
+strings:
+	$a0 = { 3c6d65746120687474702d65717569763d334422726566726573682220636f6e74656e743d334422303b2075726c3d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31613
+{
+strings:
+	$a0 = { 536567756520416e65786f }
+	$a1 = { 2f616e65786f2f416e65786f732e706870?? }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31610
+{
+strings:
+	$a0 = { 2f73742f??426169786172 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31616
+{
+strings:
+	$a0 = { 656e747265676120646120656e636f6d656e6461 }
+	$a1 = { 646f63732e676f6f676c652e636f6d2f }
+	$a2 = { 656e747265676120646f7320636f727265696f73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_28215
+{
+strings:
+	$a0 = { 6E6F766120706167696E61203120677674202D207777772E6776742E636F6D2E6272 }
+	$a1 = { 70726F6D6573736120646520706167616D656E746F206465207365752064656269746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31615
+{
+strings:
+	$a0 = { 7469746c653e66616365626f6f6b }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 666f746f7320636f6d20766f63 }
+	$a3 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_33856
+{
+strings:
+	$a0 = { 4964656e7469666963616d6f7320656d206e6f73736f2073697374656d61 }
+	$a1 = { 73332e616d617a6f6e6177732e636f6d2f662e636c2e6c792f6974656d73 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35420
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 414d43266e6273703b4173736573736f726961 }
+	$a2 = { 616d617a6f6e6177732e636f6d2f662e636c2e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33854
+{
+strings:
+	$a0 = { 5375626a6563743a20204e6665202d204152515549564f }
+	$a1 = { 4172717569766f202d266e6273703b4e4665 }
+	$a2 = { 636c642e70742f646c2f646f776e6c6f6164 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33852
+{
+strings:
+	$a0 = { 4d50465f4f6e6c696e65 }
+	$a1 = { 2f??4d5046 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33853
+{
+strings:
+	$a0 = { 5375626a6563743a204e4665204e6163696f6e616c }
+	$a1 = { 436c697175652061717569 }
+	$a2 = { 636c642e70742f646c2f646f776e6c6f61642f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33851
+{
+strings:
+	$a0 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a1 = { 7469746c653d2256697375616c697a617220496e74696d61 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37655
+{
+strings:
+	$a0 = { 617669736F206465207472616E7361 }
+	$a1 = { 72656369626F2E2068747470733A2F2F676F6F676C6564726976652E636F6D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32352
+{
+strings:
+	$a0 = { 406b6b72742d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32982
+{
+strings:
+	$a0 = { 746974756C6F20646520636F6272616E }
+	$a1 = { 6172717569766F2064657665207365722061726D617A656E61646F2E20687474703A2F2F67652E74742F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36982
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f2042616e636f20646f2042726173696c20532f412028 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32987
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 2f4e462d652e706466 }
+	$a2 = { 423257202d20436f6d70616e686961204469676974616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32986
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 2f56697375616c697a61725f4e46652e7064662f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32354
+{
+strings:
+	$a0 = { 7469746c653e50726f6772616d6120466964656c6964616465 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 4369656c6f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32988
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 56494120424f4c45544f2050454e44454e54452e205044463c2f613e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35080
+{
+strings:
+	$a0 = { 44516f67504852706447786c506e6433647935696232786c644738384c3352706447786c5067304b4944786f5a57466b5067304b494478745a5852684947 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36519
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36438
+{
+strings:
+	$a0 = { 7365677565206f20636f6d70726f76616e7465206465206573746f726e6f2e20687474703a2f2f74696e7975726c2e636f6d2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37328
+{
+strings:
+	$a0 = { 6c696272657269616d61727468612e636f6d2f74656d706c617465732f6265657a332f646573657276652e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_22714
+{
+strings:
+	$a0 = { 4073656775726f2e636f6d2e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37204
+{
+strings:
+	$a0 = { 6d6f6e746c6f63732e696e666f2f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_36485
+{
+strings:
+	$a0 = { 46726f6d3a20224c6576697472612d50726f204d656473 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33581
+{
+strings:
+	$a0 = { 434f4d454e544152494f20444520564f5a }
+	$a1 = { 2e7365727665687474702e636f6d }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37531
+{
+strings:
+	$a0 = { 61626169786F20616E657861646F }
+	$a1 = { 737567617273796E632E636F6D2F }
+	$a2 = { 677374617469632E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37640
+{
+strings:
+	$a0 = { 5375626a6563743a204369656c6f204f6c696d706961646173 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37643
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??42616e636f5f53616e74616e6465725f42726173696c5f533d3245415f2d5f434f4d554e494341444f5f494d504f5254414e5445 }
+	$a1 = { 2f77702d636f6e74656e742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_22150
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 636F6E7461207365720020626C6F7175656164612065207375617320636861766573206465207365677572616E00612063616E63656C61646173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_36253
+{
+strings:
+	$a0 = { 6d61696c746f3a7073676f75766569615f3840686f746d61696c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36207
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 436f6d70726f76616e7465 }
+	$a2 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32217
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A20[1-8]3A676F72646F2E706870 }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33929
+{
+strings:
+	$a0 = { 53697374656d6120496e7465677261646f206465204573747261646173 }
+	$a1 = { 47524156414d45 }
+	$a2 = { 77702d636f6e74656e742f75706c6f616473 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33924
+{
+strings:
+	$a0 = { 5375626a6563743a204661766f7220636f6e6669726d6172206f207265636562696d656e746f206465737465 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33923
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 6669726d61646f206a756e746f20612048436f737461 }
+	$a2 = { 7175616c697479636f6272616e636173 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33920
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 426f6c65746f20646520436f6272616e }
+	$a2 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34336
+{
+strings:
+	$a0 = { 636f727265696f20666f6920657863656469646f }
+	$a1 = { 2e747269706f642e636f6d }
+	$a2 = { 6571756970612064652061706f696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36870
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 706167616D656E746F2E2068747470 }
+	$a2 = { 696D70657269756D20636F6272616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_27899
+{
+strings:
+	$a0 = { 6369656C6F3A206E616461207375706572612065737361206D }
+	$a1 = { 6D672E73686F7074696D652E636F6D2E6272 }
+	$a2 = { 696D616765732E6F726B75742E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32940
+{
+strings:
+	$a0 = { 23700072006F006700720061006D00660069006C006500730028007800380036002900000D6C0069006E006B003D002000000B64006E0073003D002000000D5C0061002E0064006C006C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32321
+{
+strings:
+	$a0 = { 7175656a696f2e6f72672f }
+	$a1 = { 536567756520656d20616e65786f }
+	$a2 = { 697461752e636f6d2e6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36727
+{
+strings:
+	$a0 = { 6C6963656E6369616D656E746F20647076617420687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36343
+{
+strings:
+	$a0 = { 626f6c65746f2062616e63 }
+	$a1 = { 73746f726167652e676f6f676c65617069732e636f6d }
+	$a2 = { 75706c6f61646465696d6167656e732e636f6d2e6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31677
+{
+strings:
+	$a0 = { 5265706c792d546f3a20656d61696c6e6574406d61696c327765626d61737465722e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36347
+{
+strings:
+	$a0 = { 656D20616E65786F206F20626F6C65746F206461206E65676F636961[1-8]6F3A2068747470733A2F2F676F6F676C6564726976652E636F6D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37203
+{
+strings:
+	$a0 = { 5449544c453e4f66657274617320416d65726963616e6173 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 6672656564646e732e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37316
+{
+strings:
+	$a0 = { 676f6f676c6564726976652e636f6d }
+	$a1 = { 434c494320415155492045204241495845 }
+	$a2 = { 4163686f20736163616e6167656d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37223
+{
+strings:
+	$a0 = { 46726f6d3a2022416d65726963616e61732e636f6d }
+	$a1 = { 2e6672656564646e732e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37221
+{
+strings:
+	$a0 = { 50726f6d6f63616f204369656c6f20466964656c6964616465 }
+	$a1 = { 2e6672656564646e732e6f7267 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33255
+{
+strings:
+	$a0 = { 4974617520333020486f726173 }
+	$a1 = { 64696361737475646f2e636f6d2e62722f77702d636f6e74656e742f75706c6f616473 }
+	$a2 = { 646973706f73697469766f2069546f6b656e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37226
+{
+strings:
+	$a0 = { 636F6D756E696361646F20696D706F7274616E7465 }
+	$a1 = { 626C6F717565696F2064652073756120636F6E7461 }
+	$a2 = { 706F7374696D672E6F72672F }
+	$a3 = { 62622E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_37225
+{
+strings:
+	$a0 = { 63616978612065636F6E }
+	$a1 = { 726563616461737472616D656E746F }
+	$a2 = { 706F7374696D672E6F72672F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37224
+{
+strings:
+	$a0 = { 4064656c746178792e636f6d2e62723e }
+	$a1 = { 2e6672656564646e732e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30143
+{
+strings:
+	$a0 = { 67616c6c6572792e6d61696c6368696d702e636f6d2f626239343439326430373461333130346636356533366636342f696d616765732f3132313231322e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37229
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c20532f4120417475616c697a6163616f204f6272696761746f726961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34931
+{
+strings:
+	$a0 = { 636169786120646520636f727265696f20666f6920657863656469646f }
+	$a1 = { 666f726d6372616674732e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37132
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c202d20436f6d756e696361646f20496d706f7274616e74653a2023 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32069
+{
+strings:
+	$a0 = { 776565626c792e636f6d2f75706c6f6164732f }
+	$a1 = { 42616978617220656d205a6970 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32064
+{
+strings:
+	$a0 = { 437572726963756c756d }
+	$a1 = { 776565626c792e636f6d2f75706c6f6164732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34842
+{
+strings:
+	$a0 = { 44516f38625756305953426f644852774c57567864576c3250534a5352555a5352564e494969426a623235305a573530505349774f335679624431 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34843
+{
+strings:
+	$a0 = { 70656469646f20646520636f6d707261 }
+	$a1 = { 76697375616c697a617220616e65786f }
+	$a2 = { 6269746c793d3245636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_20003
+{
+strings:
+	$a0 = { 556e69746564204e6174696f6e73 }
+	$a1 = { 636f6d70656e736174696f6e2066756e6473 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29841
+{
+strings:
+	$a0 = { 70726F636564696D656E746F20696E7665737469676174 }
+	$a1 = { 646573706163686F20656D20616E65786F }
+	$a2 = { 636F7079726967687420646570617274616D656E746F20646520706F6C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34808
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20496d706f7274616e7465205465727261 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34902
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 2e686f737065646167656d646573697465732e77732f }
+	$a2 = { 446570617274616d656e746f2046696e616e636569726f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36260
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20646f2042726173696c }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37043
+{
+strings:
+	$a0 = { 6576697465206f20626c6f717565696f20706f7220646566696e697469766f2064652073657573207365727669 }
+	$a1 = { 43656e7472616c206465204174656e64696d656e746f204242 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37537
+{
+strings:
+	$a0 = { 3230302d39382d3134322d3230342e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_20486
+{
+strings:
+	$a0 = { 7469746c653e6369656c6f3a206e616461207375706572612065737361206d617175696e61 }
+	$a1 = { 76697a75616c697a6172 }
+	$a2 = { 61726561207368617065 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32600
+{
+strings:
+	$a0 = { 406c6e6b2d6173782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37346
+{
+strings:
+	$a0 = { 2F6269742E6C792F }
+	$a1 = { 43726561746F7228FEFF0052004100440020005000440046 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36669
+{
+strings:
+	$a0 = { 666f726d6372616674732e636f6d2f }
+	$a1 = { 5765626d6173746572204571756970652032303136 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36664
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f2049746175 }
+	$a1 = { 5375626a6563743a2020436f6d756e696361646f20496d706f7274616e7465202d20526567756c6172697a652d7365 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36592
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 73756120636F6E746120736572[1-8]646573617469766164 }
+	$a2 = { 636C697175652061717569 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36663
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20202d204175746f204174656e64696d656e746f204242 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_25340
+{
+strings:
+	$a0 = { 7061726173616265726d6169732e66696c65732e776f726470726573732e636f6d }
+	$a1 = { 70726f636564696d656e746f20696e7665737469676174 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36722
+{
+strings:
+	$a0 = { 646570617274616D656E746F20646520706F6C6963696120636976696C }
+	$a1 = { 626F6C6574696E206465206F636F7272006E6369612068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36402
+{
+strings:
+	$a0 = { 46726f6d3a202253616e74616e646572 }
+	$a1 = { 636f6e74615f7365723d45315f73757370656e73615f655f736575735f63616e6169735f64655f6174656e64696d656e746f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33106
+{
+strings:
+	$a0 = { 434f4d554e494341444f5f495441553330484f524153 }
+	$a1 = { 6f772e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_24981
+{
+strings:
+	$a0 = { 717565697861206465206372696D6520656D2073657520637066 }
+	$a1 = { 626F6C6574696D206465206F636F7272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36839
+{
+strings:
+	$a0 = { 5375626a6563743a204e6f7469666963612663636564696c3b266174696c64653b6f206465206465766f6c752663636564696c3b266174696c64653b6f206465205365646578 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36838
+{
+strings:
+	$a0 = { 5375626a6563743a20436f727265696f73202d204e6f7469666963612663636564696c3b266174696c64653b6f206465206465766f6c752663636564696c3b266174696c64653b6f206465205365646578 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32030
+{
+strings:
+	$a0 = { 5375626a6563743a20427261646573636f20496e666f726d61 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36064
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f203a2042616e636f20646f2042726173696c20532f41207c20416c657274612043656e7472616c206465204174656e64696d656e746f2042422e20526566 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32606
+{
+strings:
+	$a0 = { 7469746c653e452d6d61696c205375626d6172696e6f }
+	$a1 = { 2e7a7a2e6d752f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_33367
+{
+strings:
+	$a0 = { 7469746c653e20416e746f6e696f204272617a }
+	$a1 = { 2e706870223e20436f6272616e6361204a7564696369616c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32442
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 6E662D653A20687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33138
+{
+strings:
+	$a0 = { 464f544f20544f525045444f }
+	$a1 = { 2e6d7977696e646f7773686f7374696e672e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37124
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F }
+	$a1 = { 76657220636F6E766572736120626174652D7061706F2066616365626F6F6B }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37125
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 6f6c68616e646f206f2066616365626f6f6b2065207669752073756120666f746f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36590
+{
+strings:
+	$a0 = { 61636162612064652067616e686172206f206375706f6d2064612070726f6d6f }
+	$a1 = { 6375706f6d3a206369656c6f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37128
+{
+strings:
+	$a0 = { 7261737472656172207365752070656469646F2C2068747470733A2F2F676F6F676C6564726976652E636F6D2F }
+	$a1 = { 6D6167617A696E656C75697A61 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35849
+{
+strings:
+	$a0 = { 63617274266174696c64653b6f206368617665206465207365677572616e2663636564696c3b612053616e74616e646572 }
+	$a1 = { 636f6e746120736572266174696c64653b6f20626c6f7175656164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33741
+{
+strings:
+	$a0 = { 436f6e746120436f7272656e746520736572612073757370656e7361 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 6c65657975652e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35566
+{
+strings:
+	$a0 = { 63617274[1-8]6F206368617665206465207365677572616E006120627261646573636F2065787069726F75 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36778
+{
+strings:
+	$a0 = { 626169786172206f20666f726d756c6172696f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 6171756920687474703a2f2f6269742e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32348
+{
+strings:
+	$a0 = { 406b6b72742d67782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32619
+{
+strings:
+	$a0 = { 406d6178782d66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32618
+{
+strings:
+	$a0 = { 406d6178782d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35561
+{
+strings:
+	$a0 = { 617475616c697a613d43333d41373d43333d41336f5f6f6272696761743d43333d42337269615f646f5f6d3d43333d423364756c6f5f64655f70726f }
+	$a1 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32615
+{
+strings:
+	$a0 = { 406d6178782d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32614
+{
+strings:
+	$a0 = { 406d6178782d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32617
+{
+strings:
+	$a0 = { 406d6178782d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32616
+{
+strings:
+	$a0 = { 406d6178782d63782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32347
+{
+strings:
+	$a0 = { 406b6b72742d66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37620
+{
+strings:
+	$a0 = { 63616e74686f676f2e636f6d2f74656d706c617465732f6a615f74656c696e655f69762f636f6d706f6e656e742e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32613
+{
+strings:
+	$a0 = { 406d6178782d69782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31185
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 62616978617220636F6D6F207A697020736567756520656D20616E65786F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35413
+{
+strings:
+	$a0 = { 46726f6d3a2022444f545a }
+	$a1 = { 4578706972616e646f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35411
+{
+strings:
+	$a0 = { 7469746c653e4369656c6f }
+	$a1 = { 4369656c6f20466964656c6964616465 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34691
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 44414e4645 }
+	$a2 = { 2f636f722e746f2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34690
+{
+strings:
+	$a0 = { 76697375616c697a6172206f7520696d7072696d6972206f2044414e4645 }
+	$a1 = { 2f636f722e746f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35414
+{
+strings:
+	$a0 = { 69746F6B656E20656E636F6E7472612D736520646573696E63726F6E697A61646F }
+	$a1 = { 697461752E636F6D2E6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32539
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 616272652e61692f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37017
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 76697375616C697A617220656D20666F726D61746F207064662068747470733A2F2F7777772E64726F70626F782E636F6D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37012
+{
+strings:
+	$a0 = { 72656C617469766F732069707661 }
+	$a1 = { 646976696461206174697661206520626C6F717565696F }
+	$a2 = { 6269746C792E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34698
+{
+strings:
+	$a0 = { 5375626a6563743a204669717565692063686f636164612c206f6c6861206f20717565206d65206d616e646172616d }
+	$a1 = { 582d5048502d536372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34053
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 5375626a6563743a2046773a456e633a20736567756520656d20616e65786f206e6f7461732066697363616973 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34052
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 4e4665206465206e756d65726f204e46532d65 }
+	$a2 = { 2f23??4e46532d65 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33007
+{
+strings:
+	$a0 = { 464f544f53 }
+	$a1 = { 536567756520656d20616e65786f }
+	$a2 = { 6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34050
+{
+strings:
+	$a0 = { 656d20616e65786f206e6f746173 }
+	$a1 = { 636c642e70742f646c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33001
+{
+strings:
+	$a0 = { 63686571756573206465766f6c7669646f73 }
+	$a1 = { 616e65786164612061626169786f }
+	$a2 = { 676f6f676c6564726976652e636f6d2f686f73742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36852
+{
+strings:
+	$a0 = { 5375626a6563743a20556c74696d6f20417669736f202d2053756120636f6e7461207365726120626c6f717565616461 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34054
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 52454345495441204645444552414c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35503
+{
+strings:
+	$a0 = { 656E747265676120646F7320636F727265696F73 }
+	$a1 = { 2F636C2E6C792F }
+	$a2 = { 726173747265616D656E746F20616365737365 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34058
+{
+strings:
+	$a0 = { 6f723d43333d4137616d656e746f }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35507
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 656e747265676120646f7320636f727265696f73 }
+	$a2 = { 62726173636f6d206c746461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32296
+{
+strings:
+	$a0 = { 406e6f74652d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32501
+{
+strings:
+	$a0 = { 69746F6B656E20706572646575206F2073696E63726F6E69736D6F }
+	$a1 = { 62616E636F20697461 }
+	$a2 = { 74696E79706963 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36884
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c20534143204242 }
+	$a1 = { 7469746c653e42616e636f2042726173696c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36885
+{
+strings:
+	$a0 = { 5375626a6563743a204d41494c424f582049532046554c4c }
+	$a1 = { 46726f6d3a20224d61696c626f78204163636f756e74 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36886
+{
+strings:
+	$a0 = { 7469746c653e696d6167656d }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36887
+{
+strings:
+	$a0 = { 5375626a6563743a2043414e43454c414d454e544f2044452053554120434f4e54412053414e54414e444552202d20526567756c6172697a652061676f7261206d65736d6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36888
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f204974617520436f64 }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33170
+{
+strings:
+	$a0 = { 6F6E6D6F7573656F7665723D22696E666F28 }
+	$a1 = { 4D45544120485454502D45515549563D5265667265736820434F4E54454E543D22303B2055524C3D687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35988
+{
+strings:
+	$a0 = { 5375626a6563743a205341432d4242202d20526567756c6172697a652073756120636f6e7461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34273
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 676c75726c2e636f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34272
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 6c61627468702e75622e61632e69642f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34271
+{
+strings:
+	$a0 = { 5768617473417070204d656e73736167656d20646520566f7a }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34270
+{
+strings:
+	$a0 = { 2f6d61696c2e6c6976652e696e626f782e706870 }
+	$a1 = { 656e76696172206e6f20736575207768617374617070 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34277
+{
+strings:
+	$a0 = { 64726f70626f782e636f6d2f }
+	$a1 = { 416272697220496d6167656d }
+	$a2 = { 696d6167656d20646f20636865717565 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33312
+{
+strings:
+	$a0 = { 7469746c653e676f6f676c65 }
+	$a1 = { 416e65786f3a }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33315
+{
+strings:
+	$a0 = { 46726f6d3a20417469766f7320532e41 }
+	$a1 = { 636f6e7461746f207669612074656c65666f6e65 }
+	$a2 = { 70726f746573746f206e6f20636172743d43333d423372696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33314
+{
+strings:
+	$a0 = { 416e65786f3a203c6120687265663d22687474703a2f2f6f772e6c79 }
+	$a1 = { 5748415453415050 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30368
+{
+strings:
+	$a0 = { 617475616C697A61[1-8]6F20646F732073657573206461646F73 }
+	$a1 = { 62616E636F20646F2062726173696C }
+	$a2 = { 617475616C697A617220646973706F73697469766F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37430
+{
+strings:
+	$a0 = { 616E65786F3A20687474703A2F2F6269742E6C79 }
+	$a1 = { 736572766963652062726173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35477
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22[1-2]3B2075726C3D687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36133
+{
+strings:
+	$a0 = { 5375626a6563743a205b436f6d756e696361646f5d2042616e636f20646f2042726173696c }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36336
+{
+strings:
+	$a0 = { 596F75204D6179204E6F742042652041626C6520546F2053656E64204F722052656365697665204E6577204D61696C7320556E74696C20596F752052652D56616C6964617465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36134
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f203a2042616e636f20646f2042726173696c20532f41207c2043656e7472616c206465204174656e64696d656e746f }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_33681
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a2056616d6f73205265706173736172 }
+	$a1 = { 66696d646171756564616465636162656c6f2e6e6574 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35843
+{
+strings:
+	$a0 = { 6D696772652E6D65 }
+	$a1 = { 76697375616C697A617220646F63756D656E746F }
+	$a2 = { 73657261736120657870657269616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35478
+{
+strings:
+	$a0 = { 7469746C653E6A617661206C616F726420323031353C2F7469746C653E3C736372697074 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35479
+{
+strings:
+	$a0 = { 76616c652d70726573656e7465204f626f7469636172696f }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31763
+{
+strings:
+	$a0 = { 7469746c653e4f723d4537616d656e746f }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_37555
+{
+strings:
+	$a0 = { 66656465726163616f646173617564652e6f72672e62722f73797374656d2f7068706d61696c2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31761
+{
+strings:
+	$a0 = { 636F6D70616E68696165636F6E746162696C696461646509526573696449636F6E02000952657369644E616D65 }
+	$a1 = { 436F6E7461646F726465417669736F2E63706C0043506C4170706C6574 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31766
+{
+strings:
+	$a0 = { 6E656B312E646C6C0043506C4170706C6574 }
+	$a1 = { 6E656B31001051547970496E666F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31767
+{
+strings:
+	$a0 = { 7469746c653e4e6f74612d46697363616c }
+	$a1 = { 67652e74742f6170692f312f66696c65732f }
+	$a2 = { 45717569706520646520436f6272616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35768
+{
+strings:
+	$a0 = { 46726f6d3a20224369616c69732d50726f204f6e6c696e65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31765
+{
+strings:
+	$a0 = { 6672646A6F786D312E646C6C0043506C4170706C6574 }
+	$a1 = { 6672646A6F786D31001051547970496E666F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35344
+{
+strings:
+	$a0 = { 7469746c653e5269636172646f20456c6574726f }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35342
+{
+strings:
+	$a0 = { 4163636f756e7420486173204265656e204c696d69746564 }
+	$a1 = { 582d5048502d }
+	$a2 = { 46726f6d3a2050617950616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37642
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a203d??49534f2d383835392d31??42??73454a766247563062773d3d??3d20656d203d??49534f2d383835392d31??42??5158527959584e767341 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36595
+{
+strings:
+	$a0 = { 46726f6d3a202242616e636f20646f2042726173696c }
+	$a1 = { 4469766572673d45416e63696120656d2073756120436f6e7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34304
+{
+strings:
+	$a0 = { 436f6d70726f76616e7465206465206465706f7369746f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34303
+{
+strings:
+	$a0 = { 722663636564696c3b616d656e746f }
+	$a1 = { 6269746c793d3245636f6d2f }
+	$a2 = { 676f6f676c6575736572636f6e74656e743d3245636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35259
+{
+strings:
+	$a0 = { 5365677565206f20626f6c65746f }
+	$a1 = { 2f636f722e746f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35257
+{
+strings:
+	$a0 = { 7469746c653e4e6f74612046697363616c }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 2f676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35255
+{
+strings:
+	$a0 = { 70656e643d43333d41416e6369612066696e616e6365697261 }
+	$a1 = { 6c69627261726965732f7463706466 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35252
+{
+strings:
+	$a0 = { 6d756c746120646f2053656d205061726172 }
+	$a1 = { 2f6d696772652e6d652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35253
+{
+strings:
+	$a0 = { 7469746c653e4e6f74612046697363616c }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36685
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f20496d706f7274616e746520616f7320636c69656e746573202d205b62622e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32891
+{
+strings:
+	$a0 = { 23700072006F006700720061006D00660069006C006500730028007800380036002900000D6C0069006E006B003D002000000B64006E0073003D002000000D5C0061002E0064006C006C }
+	$a1 = { 436F6E736F6C654170706C69636174696F6E }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35745
+{
+strings:
+	$a0 = { 6269746c792e636f6d2f }
+	$a1 = { 696d616765732e77616c6d6172742e636f6d }
+	$a2 = { 2e6274656d7075726c2e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36875
+{
+strings:
+	$a0 = { 6578747261746F20646F2062656E65666963696F202820687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35655
+{
+strings:
+	$a0 = { 7365677565206f20636f6d70726f76616e7465 }
+	$a1 = { 7a69702e6e65742f }
+	$a2 = { 616c77617973646174612e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35567
+{
+strings:
+	$a0 = { 46726f6d3a202243696f6c69732053746f7265 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31169
+{
+strings:
+	$a0 = { 6172717569766f2064657665207365722061726d617a656e61646f }
+	$a1 = { 4e6f74612066697363616c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35434
+{
+strings:
+	$a0 = { 7469746c653e53616e74616e6465722042616b696e67 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36529
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 70726F636564696D656E746F20696E7665737469676174 }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36528
+{
+strings:
+	$a0 = { 5055424c49434f204645444552414c }
+	$a1 = { 4e54494d4120566f7373612053656e686f726961 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33823
+{
+strings:
+	$a0 = { 44656269746f732052656c617469766f732049505641 }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33824
+{
+strings:
+	$a0 = { 4d656e73736167656d20646520766f7a }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35435
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 46726f6d3a2042616e636f20566f746f72616e74696d }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_17433
+{
+strings:
+	$a0 = { 61676d616e65742e706c2f656e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35098
+{
+strings:
+	$a0 = { 5649564f20464f544f20544f525045444f }
+	$a1 = { 2e6174656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32998
+{
+strings:
+	$a0 = { 496d7072696d6972202d2056697375616c697a6172 }
+	$a1 = { 687474703a2f2f3138342e3137332e35392e313234 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35090
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 7469746c653e46616365626f6f6b20436f6d656e746172696f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_25333
+{
+strings:
+	$a0 = { 6368617665206465207365677572616E }
+	$a1 = { 627261646573636F }
+	$a2 = { 626C6F717565696F20696D65646961746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37314
+{
+strings:
+	$a0 = { 582d536f757263652d417267733a202f7573722f62696e2f706870202f686f6d652f6a6f6c75762f7075626c69635f68746d6c2f706c7567696e732f73797374656d2f632e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37462
+{
+strings:
+	$a0 = { 73706163656e616c616e6469612e696e666f2f63616d657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_24602
+{
+strings:
+	$a0 = { 6C69766576696577732F6174746163686D656E742E706E67203120616E65786F207C }
+	$a1 = { 626F6C65746F2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_28041
+{
+strings:
+	$a0 = { 646973706F73697469766F2069746F6B65 }
+	$a1 = { 73696E63726F6E697A61722069746F6B656E }
+	$a2 = { 697461752E636F6D2E6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36729
+{
+strings:
+	$a0 = { 42616e636f20646f2042726173696c202d20417475616c697a652073657573206461646f73 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37277
+{
+strings:
+	$a0 = { 676F6F676C652E636F6D2E62722F75726C3F }
+	$a1 = { 737567617273796E632E636F6D }
+	$a2 = { 6E6F74612066697363616C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29443
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 617475616C697A61 }
+	$a2 = { 64756C6F206465207365677572616E }
+	$a3 = { 626C6F7175656164 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_32208
+{
+strings:
+	$a0 = { 417669736f206465207265636562696d656e746f206465205365646578 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37045
+{
+strings:
+	$a0 = { 46726f6d3a20224e2e452e542e20432e4f2e4d2e422e4f2e204d2e552e4c2e542e492e22 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36357
+{
+strings:
+	$a0 = { 7469746c653e5768617473417070 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37270
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 616E65786F3A20687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33950
+{
+strings:
+	$a0 = { 4172717569766f28732920656d20416e65786f287329 }
+	$a1 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33957
+{
+strings:
+	$a0 = { 4172717569766f202d266e6273703b4e46653a }
+	$a1 = { 636c642e70742f646c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36358
+{
+strings:
+	$a0 = { 656e76696f75206d656e736167656d20646520617564696f }
+	$a1 = { 5768617473417070 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31880
+{
+strings:
+	$a0 = { 536567756520616e65786f }
+	$a1 = { 4e6f74612046697363616c }
+	$a2 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_23463
+{
+strings:
+	$a0 = { 61636573736F20616F20696E7465726E65742062616E6B696E6720666F6920657870697261646F2070656C6F2073697374656D61 }
+	$a1 = { 696E7465726E65742062616E6B696E67 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31978
+{
+strings:
+	$a0 = { 7469746c653e4d44534b }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_27869
+{
+strings:
+	$a0 = { 5265706c792d546f3a207765626d617374657275706772616465696e666f40676d61696c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_30594
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A[1-8]3A7468756D62322E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32336
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 7765626d61696c2e636f6c6f726d696e61732e636f6d2e62722f696d672f7a696d6272612f496d67504446446f63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32332
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 504768306257772b4943414e4367304b5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d447431636d77 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31665
+{
+strings:
+	$a0 = { 636572746966696361646f20494350 }
+	$a1 = { 62622e636f6d2e62722f6963702d62726173696c2f6c696d697465732f6174697661722e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31406
+{
+strings:
+	$a0 = { 616E65786F2068747470733A2F2F676F6F676C656472697665 }
+	$a1 = { 70726F63757261646F72696120726567696F6E616C2064612072657075626C696361202D2D2D206461746120646F20636F6D7061726563696D656E746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32338
+{
+strings:
+	$a0 = { 7469746c653e54656d6f73206120736174697366 }
+	$a1 = { 6269742e646f2f }
+	$a2 = { 5768617473417070 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31660
+{
+strings:
+	$a0 = { 46726f6d3a204369656c6f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34875
+{
+strings:
+	$a0 = { 3C6D6574612069643D22[1-8]2220687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34876
+{
+strings:
+	$a0 = { 7469746c653e446f63756d656e746f20656d20416e65786f }
+	$a1 = { 5047316c6447456761 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34870
+{
+strings:
+	$a0 = { 636f6d7061726563696d656e746f2061206e6f73736f7320657363726974 }
+	$a1 = { 737461746963666c69636b722e636f6d2f }
+	$a2 = { 4475617274652026204d656c6f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_25538
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E[1-8]20657374[1-8]646573617475616C697A61646F }
+	$a1 = { 6576697465207472616E73746F726E6F73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34259
+{
+strings:
+	$a0 = { 436f6d756e696361646f20496d706f7274616e74652053616e74616e646572202d20556c74696d6f20417669736f }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34252
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20415649534f }
+	$a1 = { 46726f6d3a202242616e636f20497461 }
+	$a2 = { 53696e63726f6e697a61722069546f6b656e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34485
+{
+strings:
+	$a0 = { 6d61696e73686f702e636f6d2e62722f }
+	$a1 = { 2f6a2e6d702f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37101
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??4361726f5f5765626d61696c5f3d32465f453d32446d61696c5f646f5f7573753d43333d413172696f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35726
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 656e747265676120646f7320636f727265696f73 }
+	$a2 = { 2f676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35828
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 3e42616978617220636f6d6f207a69703c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37696
+{
+strings:
+	$a0 = { 42616e636f5f53616e74616e646572 }
+	$a1 = { 7469746c653e4a616e6a616f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37697
+{
+strings:
+	$a0 = { 53616e74616e646572 }
+	$a1 = { 416c657274615f64655f5365677572616e3d4537615f706172615f7375615f436f6e7461 }
+	$a2 = { 7469746c653e53616e7461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33935
+{
+strings:
+	$a0 = { 7469746c653e626c7565746f6f7468 }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a2 = { 63616978612e676f762e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33939
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c7765626d61696c614071712e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34918
+{
+strings:
+	$a0 = { 5375626a6563743a20426f612074617264652c206661766f7220636f6e6665726972206120736567756e646120766961 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37355
+{
+strings:
+	$a0 = { 7472797B20646F776E6C6F616466696C652877643377637270742863686F73742C2078696429202B207764337763727074 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_30822
+{
+strings:
+	$a0 = { 65636F73706F727420306B6D20706F7220646961 }
+	$a1 = { 75706C6F61646465696D6167656E732E636F6D2E62722F }
+	$a2 = { 626C6F6773706F742E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35886
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 64726f70626f782e636f6d2f }
+	$a2 = { 2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34818
+{
+strings:
+	$a0 = { 4c69626572612663636564696c3b266174696c64653b6f206465205472616e7361 }
+	$a1 = { 42616e636f20646f2042726173696c }
+	$a2 = { 2e70687022 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37678
+{
+strings:
+	$a0 = { 72616661656c73617175657469352e72616661656c7361717565746935313637312e62382e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36272
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 6d656e73736167656d2065737461206c697672652064652076697275732e20616d65726963616e61732e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36277
+{
+strings:
+	$a0 = { 46726f6d3a20534143202f204f757669646f726961207c20427261646573636f }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_32353
+{
+strings:
+	$a0 = { 686f6d652f6c73656373652f7075626c69635f68746d6c2f436f6d6d6973696f6e2f6f75747075742f6665696f2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37670
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??4974613d46415f42616e6b6c696e655f2d5f436f6d756e696361646f5f496d706f7274616e7465 }
+	$a1 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37672
+{
+strings:
+	$a0 = { 407a656e696e6830312d6964352e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37673
+{
+strings:
+	$a0 = { 407A656E696E6830[1]2D6964[1-2]2E636C6F75646170702E6E65743E }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37675
+{
+strings:
+	$a0 = { 3230302d39382d3134322d3231382e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36906
+{
+strings:
+	$a0 = { 5375626a6563743a20526173747265616d656e746f20436f727265696f73202d20436f6d756e696361646f2028 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33243
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 434149584120494e5445524e45542042414e4b494e47 }
+	$a2 = { 676f6f2e676c2f }
+	$a3 = { 417475616c697a6172206d657520636164617374726f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_33245
+{
+strings:
+	$a0 = { 3c5465727261204e6574776f726b732042726173696c2053413e }
+	$a1 = { 506167616d656e746f20656d2041747261736f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_19917
+{
+strings:
+	$a0 = { 636f6e67657374696f6e616d656e746f20726563656e7465 }
+	$a1 = { 5265636f6e6669726d61722053656e6861 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33247
+{
+strings:
+	$a0 = { 40626f6c6574696d2d62622e696e666f2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33246
+{
+strings:
+	$a0 = { 436f6d707261205072656d69616461 }
+	$a1 = { 706f7374696d672e6f72672f }
+	$a2 = { 4369656c6f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36796
+{
+strings:
+	$a0 = { 46726f6d3a2022566961677261 }
+	$a1 = { 5375626a6563743a20446973636f756e74 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37332
+{
+strings:
+	$a0 = { 50004400460045 }
+	$a1 = { 737567617273796E632E636F6D2F }
+	$a2 = { 636F722E746F2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37330
+{
+strings:
+	$a0 = { 646f776e6c6f616420656d6973736f72206e6f74612066697363616c }
+	$a1 = { 7477697861722e6d652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37337
+{
+strings:
+	$a0 = { 616c74616e6e757461672e6d6e2f6c616e67756167652f7064665f666f6e74732f6672656573616e73622e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37336
+{
+strings:
+	$a0 = { 3137322e39382e3139392e3139382f6164732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37335
+{
+strings:
+	$a0 = { 74796e7570323031362e64646e732e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36677
+{
+strings:
+	$a0 = { 636f727265696f2065786365646575206f206c696d6974652064652061726d617a656e616d656e746f }
+	$a1 = { 2e3365657765622e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_24971
+{
+strings:
+	$a0 = { 696D6775722E636F6D }
+	$a1 = { 64656E756E63696120656D2073657520656D61696C }
+	$a2 = { 626F6C6574696D206465206F636F7272656E636961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37339
+{
+strings:
+	$a0 = { 736575206370662F636E706A202D2070726F746F636F6C6F3A20257231252072656C6174 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37338
+{
+strings:
+	$a0 = { 74756e736172646f6e2d666f756e646174696f6e2e6f72672f696e636c756465732f646f6d69742f44656c656761636961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36671
+{
+strings:
+	$a0 = { 444550415254414d454e544f20444520504f4c4943494120434956494c }
+	$a1 = { 7469746c653e557267656e74652053756120636f6e746120736572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36670
+{
+strings:
+	$a0 = { 46726f6d3a204d65726361646f204c69767265 }
+	$a1 = { 5375626a6563743a2056616d6f732073757370656e6465722073756120636f6e7461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_25352
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 6E6F74612066697363616C }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37459
+{
+strings:
+	$a0 = { 74656E7461746976617320646520656E7472656761 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 636F727265696F732E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_20454
+{
+strings:
+	$a0 = { 46726f6d3a20427261646573636f }
+	$a1 = { 6269742e6c79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33111
+{
+strings:
+	$a0 = { 7469746c653e42616e636f20646f2042726173696c }
+	$a1 = { 73756120636f6e7461207365723d453120424c4f515545414441 }
+	$a2 = { 434c495155452041515549 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33113
+{
+strings:
+	$a0 = { 6269746c792e636f6d2f }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d }
+	$a2 = { 616c6672616e63612e6e6574 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33112
+{
+strings:
+	$a0 = { 4e6f766f20436572746966696361646f20417475616c697a61646f }
+	$a1 = { 636f6e6669726d6172207375617320646566696e693d43333d41373d43333d42356573206465207365677572616e }
+	$a2 = { 42616e636f20646f2042726173696c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33115
+{
+strings:
+	$a0 = { 617475616c697a613d43333d41373d43333d41336f20646f20636172743d43333d41336f206465207365677572616e3d43333d413761 }
+	$a1 = { 626c6f71756561646f206f207365752061636573736f }
+	$a2 = { 4974617520496e746572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36412
+{
+strings:
+	$a0 = { 62616e636f20646f2062726173696c }
+	$a1 = { 73756120636f6e746120656e636f6e7472612d7365206578706972616461 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30399
+{
+strings:
+	$a0 = { 676F6F676C6575736572636F6E74656E742E636F6D2F }
+	$a1 = { 6A2E6D702F }
+	$a2 = { 736567756520656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32192
+{
+strings:
+	$a0 = { 646565702e6e656f2e64782d6170722e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32190
+{
+strings:
+	$a0 = { 406774632d66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32191
+{
+strings:
+	$a0 = { 4064782d6170722e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37249
+{
+strings:
+	$a0 = { 2E77656263696E646172696F2E636F6D2F206E662D6520706466 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37248
+{
+strings:
+	$a0 = { 636f6e666964656e6365696d6f62696c69617269612e636f6d2e62722f696d616765732f76697375616c697a6172 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37247
+{
+strings:
+	$a0 = { 6e6f74616e6163696f6e616c2e77656263696e646172696f2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37246
+{
+strings:
+	$a0 = { 6d617374696e732e776562686f702e6d65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37243
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22[1]3B2075726C3D68747470733A2F2F7777772E737567617273796E632E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37242
+{
+strings:
+	$a0 = { 6578636c7569752073756120636f6e7461206e6f207768617473617070 }
+	$a1 = { 3e446f776e6c6f616420416c6c3c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37489
+{
+strings:
+	$a0 = { 6b6c65696e7469657270656e73696f6e2d6e65756d616e6e2e64652f73722f?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37488
+{
+strings:
+	$a0 = { 2e706870223e3c7374726f6e673e56495355414c495a4152204455504c4943415441 }
+	$a1 = { 53425420446973747269627569646f7261 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37485
+{
+strings:
+	$a0 = { 2E7068702076697375616C697A6172206475706C6963617461 }
+	$a1 = { 6C65626C6F6E207465636E6F6C6F676961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37487
+{
+strings:
+	$a0 = { 7777772e6174656e64696d656e746f7669766f656e74657270726973652e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37486
+{
+strings:
+	$a0 = { 666F69206170726F7661646F21206874747073 }
+	$a1 = { 652D6D61696C3A20706F6E746F206672696F }
+	$a2 = { 676F6F676C6575736572636F6E74656E742E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37481
+{
+strings:
+	$a0 = { 617475616c697a61646f2d626f6c65746f2e7072696d656972616d616f62726173696c2e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37480
+{
+strings:
+	$a0 = { 35302e35362e35372e32372f76697375616c697a6172 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37483
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D7265667265736820636F6E74656E743D22303B2075726C3D687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37482
+{
+strings:
+	$a0 = { 73696c766572776f6f64706172717565742e636f6d2f696d616765732f62616e6e6572732f696d7072657373616f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_24534
+{
+strings:
+	$a0 = { 3120616E65786F3A202E2068747470 }
+	$a1 = { 706573717569736120646520707265[1-8]6F73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33754
+{
+strings:
+	$a0 = { 436f6e74615f436f7272656e74655f736572615f73757370656e }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 6c65657975652e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_29050
+{
+strings:
+	$a0 = { 687474703a2f2f6f772e6c792f }
+	$a1 = { 616e65786f206f20636f6d70726f76616e7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32775
+{
+strings:
+	$a0 = { 54006F007200720065006E007400570069006E00002972006A006F00730065006D006100740065007500730040006D00610069006C002E0063006F006D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36091
+{
+strings:
+	$a0 = { 46726f6d3a2042414e434f2053414e54414e444552 }
+	$a1 = { 5375626a6563743a20424c4f515545494f20444520434f4e5441 }
+	$a2 = { 5048504d61696c6572 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36090
+{
+strings:
+	$a0 = { 417475616c697a612663636564696c3b266174696c64653b6f2069546f6b656e }
+	$a1 = { 42616e636f20497461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_24538
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 616E65786F20612063[1-8]706961206461206E6F74612066697363616C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37467
+{
+strings:
+	$a0 = { 696e7374697475746f7068616c612e636f6d2e62722f736974652e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37638
+{
+strings:
+	$a0 = { 6d756c74696d6173746572617669736f2e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37463
+{
+strings:
+	$a0 = { 407265636569746130322d6e6f74696669636163616f2e63663e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37461
+{
+strings:
+	$a0 = { 6E6F74612066697363616C206E6F206C696E6B2061626169786F2E2068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37460
+{
+strings:
+	$a0 = { 66696e616e636569726f2d393736353037302e6a656c61737469632e73657276696e742e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37633
+{
+strings:
+	$a0 = { 73656d646f6e6f2e636f6d2e62722f77702d636f6e74656e742f706c7567696e732f616b69736d65742f706f73746669782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32374
+{
+strings:
+	$a0 = { 406170722d6866782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32375
+{
+strings:
+	$a0 = { 406170722d6b66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32372
+{
+strings:
+	$a0 = { 406170722d6a66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32373
+{
+strings:
+	$a0 = { 406170722d6c66782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32370
+{
+strings:
+	$a0 = { 7469746c653e5265636164617374726f204361697861 }
+	$a1 = { 2e3839306d2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32760
+{
+strings:
+	$a0 = { 406573782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34682
+{
+strings:
+	$a0 = { 76657269666963617220636f6d20757267656e636961 }
+	$a1 = { 2e706870?? }
+	$a2 = { 66696c65732e316472762e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32759
+{
+strings:
+	$a0 = { 406a73782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34685
+{
+strings:
+	$a0 = { 2f6d61696c2e6c6976652e696e626f782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32542
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 6170616761206573736520766964656f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32540
+{
+strings:
+	$a0 = { 7061726173616265726d6169732e66696c6573 }
+	$a1 = { 717565697861206465206372696d6520656d2073657520637066 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32752
+{
+strings:
+	$a0 = { 40737a2d726f756e642e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32544
+{
+strings:
+	$a0 = { 7469746c653e7768617473617070 }
+	$a1 = { 646f63732e676f6f676c65 }
+	$a2 = { 70617261205043 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34041
+{
+strings:
+	$a0 = { 7469746c653e436f6d70726f76616e746520646520446570 }
+	$a1 = { 636c642e70742f646c2f646f776e6c6f6164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34042
+{
+strings:
+	$a0 = { 6465706F7369746F20656665747561646F }
+	$a1 = { 3120616E65786F287329207C2068747470733A2F2F7777772E64726F70626F78 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34045
+{
+strings:
+	$a0 = { 50726573656e74652043616361752d53686f77 }
+	$a1 = { 636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34046
+{
+strings:
+	$a0 = { 66696C657265676E616D6522737461727462756365746122 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33019
+{
+strings:
+	$a0 = { 46726f6d3a20227361632e636f6e74616374 }
+	$a1 = { 646f776e6c6f6164206461206e6f7461 }
+	$a2 = { 676f6f676c656472697665 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36893
+{
+strings:
+	$a0 = { 73706f7274736572766963652e67722f706c7567696e732f656469746f72732f7661692e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29707
+{
+strings:
+	$a0 = { 7072657A61646F20636C69656E7465 }
+	$a1 = { 627261646573636F }
+	$a2 = { 6269742E6C792F }
+	$a3 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_34655
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_34572
+{
+strings:
+	$a0 = { 777269746520746f }
+	$a1 = { 3934363120436861726c6576696c6c6520426c7664 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34268
+{
+strings:
+	$a0 = { 73737a69616e2e736c7570736b2e706c2f2f6d656469612f73797374656d2f696d616765732f616e65786f2e706e67 }
+	$a1 = { 53532053414e544f53204144564f4741444f53 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34269
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 5375626a6563743a204e46532d6520676572616461 }
+	$a2 = { 70687023??4e46532d65 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35999
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e7465202d20556c74696d6f20417669736f }
+	$a1 = { 46726f6d3a202242616e636f2053616e74616e646572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34260
+{
+strings:
+	$a0 = { 7469746c653e416e64616d656e746f20646f2050726f636573736f }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32502
+{
+strings:
+	$a0 = { 73746F726167652E676F6F676C65617069732E636F6D2F616476616E6365642F646C6C2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36750
+{
+strings:
+	$a0 = { 636c6971756520687474703a2f2f6269742e6c79 }
+	$a1 = { 626f6c65746f20646520636f6272616e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36751
+{
+strings:
+	$a0 = { 746f7272657320636f6e746162696c69646164652068747470 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35997
+{
+strings:
+	$a0 = { 526576616c696461746520596f7572206163636f756e74 }
+	$a1 = { 6d61696c407570646174652e636f6d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35996
+{
+strings:
+	$a0 = { 50726f6772616d61204d6169732056616e746167656e7320437265646963617264 }
+	$a1 = { 2e706870223e506172746963697065 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36755
+{
+strings:
+	$a0 = { 666f746f732071756520766f6365206d65207065646975 }
+	$a1 = { 76697375616c697a617220687474703a2f2f6269742e6c79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35331
+{
+strings:
+	$a0 = { 46726f6d3a202269746175406d61696c2e636f6d22 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37664
+{
+strings:
+	$a0 = { 6E6F74612066697363616C206E6F20656E64657265[1-8]6F2061626169786F2E2068747470733A2F2F69732E67642F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37667
+{
+strings:
+	$a0 = { 636f6d65726369616c61626961726a6f2e636f6d2f70726f647563746f732f426f6c65746f417475616c697a61646f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37660
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D20687474703A2F2F[1-32]2E6674656D7075726C2E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37663
+{
+strings:
+	$a0 = { 7072696d65696e7465726e6163696f6e616c2e636f6d2e62722f76697375616c697a61722e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33309
+{
+strings:
+	$a0 = { 496e7465726e65742042616e6b696e67 }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { ??636c693d223e56495355414c495a4152 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33300
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 536567756520616e65786f }
+	$a2 = { 6465636161636c696d6163616f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35401
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 646570266f61637574653b7369746f20656665747561646f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35406
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 2e6174656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35404
+{
+strings:
+	$a0 = { 737567617273796E632E636F6D2F }
+	$a1 = { 696D6775722E636F6D2F }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35409
+{
+strings:
+	$a0 = { 7469746c653e536567756e646f20417669736f }
+	$a1 = { 76696120646120666174757261 }
+	$a2 = { 2f6a2e6d702f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35408
+{
+strings:
+	$a0 = { 696D616765732E616D65726963616E61732E636F6D2E6272 }
+	$a1 = { 7365727669[1-8]6F20646520656E747265676120646F7320636F727265696F73 }
+	$a2 = { 2F676F6F2E676C2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32913
+{
+strings:
+	$a0 = { 7469746c653e4677643a20557267656e746520436f6272616e }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 544d502042524153494c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31798
+{
+strings:
+	$a0 = { 5449544c453e4e6f74612046697363616c }
+	$a1 = { 696d616765736861636b2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36293
+{
+strings:
+	$a0 = { 6d6c20676f6d6573206164766f6761646f73 }
+	$a1 = { 626f6c65746f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31792
+{
+strings:
+	$a0 = { 7469746c653e466163655f32303134 }
+	$a1 = { 696d616765736861636b2e75732f }
+	$a2 = { 46616365626f6f6b2e636f6d2e6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35193
+{
+strings:
+	$a0 = { 46726f6d3a2049746175203330686f726173 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35192
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??3d44416c74696d6f5f617669736f5f2d5f4974613d46415f5365677572616e }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35229
+{
+strings:
+	$a0 = { 7265636562656E646F206F20636F6D70726F76616E7465 }
+	$a1 = { 61706C6963617469766F206369656C6F206D6F62696C65 }
+	$a2 = { 646F63732E676F6F676C652E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34310
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 4e4f54412046495343414c2050524f544f434f4c4f2049443a }
+	$a2 = { 50726f746f636f6c6f206465204175746f72697a61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_30865
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A[1-8]3A6272335F322E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35223
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 626f6c65746f }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35224
+{
+strings:
+	$a0 = { 6e6f206c696e6b2061626169786f }
+	$a1 = { 2e6d7977696e646f7773686f7374696e672e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35318
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 5461786120646520636f6e646f6d }
+	$a2 = { 73746f726167652e676f6f676c6561706973 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35316
+{
+strings:
+	$a0 = { 3120616e65786f207c }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35751
+{
+strings:
+	$a0 = { 656E636F6E7472612D73652065787069726164 }
+	$a1 = { 62616E636F20646F2062726173696C }
+	$a2 = { 696D616765732E6F726B75742E636F6D }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31157
+{
+strings:
+	$a0 = { 766964656f73206d61697320616365737361646f73 }
+	$a1 = { 2f73742f?? }
+	$a2 = { 596f7554756265 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37220
+{
+strings:
+	$a0 = { 6d6f6e746c6f63732e696e666f2f63616d657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36530
+{
+strings:
+	$a0 = { 70726F636564696D656E746F20696E7665737469676174 }
+	$a1 = { 6D696E697374[1-8]72696F207075626C69636F206665646572616C }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_37222
+{
+strings:
+	$a0 = { 407a69706d61696c2e636f6d2e62723e }
+	$a1 = { 5375626a6563743a203d??5554462d38??51??4d6f737472655f736575735f70726f6475746f735f706172615f6d696c683d43333d423565735f64655f706573736f6173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37227
+{
+strings:
+	$a0 = { 6d6173746572776562696e666f2e636f6d2e62722f73757065726d61696c696e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35842
+{
+strings:
+	$a0 = { 76697375616C697A617220616E65786F2E2068747470733A2F2F6269746C792E636F6D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30766
+{
+strings:
+	$a0 = { 74726962756E616C20726567696F6E616C20656C6569746F72616C }
+	$a1 = { 63616E63656C616D656E746F2070726F766973 }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32836
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 62616978617220656D20666F726D61746F207A6970 }
+	$a2 = { 676F6F676C6564726976652E636F6D2F686F73742F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35136
+{
+strings:
+	$a0 = { 726173747265616d656e746f20646f207365752070656469646f }
+	$a1 = { 3e636c6963616e646f20617175693c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33837
+{
+strings:
+	$a0 = { 6d656e73736167656d20646520766f7a }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33839
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f206f20636f6d70726f76616e7465 }
+	$a1 = { 2e64646e732e6e657422 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_29527
+{
+strings:
+	$a0 = { 5765626d61696c2065786365646575206f205365742051756f7461 }
+	$a1 = { 636f746120646520616c657274612d4572726f72 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_37309
+{
+strings:
+	$a0 = { 6565652e62616c696b657369722e6564752e74722f696d616765732f746f702e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37303
+{
+strings:
+	$a0 = { 3130382e3136372e3136382e35332f7e6333332f6c61632e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32235
+{
+strings:
+	$a0 = { 230054004500550053004F0055005600490043004900410044004F004E004500530053004100440052004F0047004100440041004400450043004F004300410043004F004C0041 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31561
+{
+strings:
+	$a0 = { 7469746c653e46617475726120656d2041747261736f }
+	$a1 = { 536f6369616c3a203c7374726f6e673e54454c454d4152 }
+	$a2 = { 41747261736f3c2f7374726f6e673e3a203c612068726566 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_16204
+{
+strings:
+	$a0 = { 353131313231303336313039373030303131313535303031303030303532383432313030303030363633322d50726f634e66652e504446 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32943
+{
+strings:
+	$a0 = { 536567756520656D20616E65786F }
+	$a1 = { 696D6775722E636F6D2F[7]2E706E672220616C743D224F6272696761646F0A }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32941
+{
+strings:
+	$a0 = { 6661637475726163696F6E2E6D657263757279736F6C7563696F6E65732E636F6D2F636F6E74656E742F7468656D65732F626173652F6D696E69666965642F696D616765732F6D2F[1]2E7A6970 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32232
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 536567756520656d20416e65786f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36038
+{
+strings:
+	$a0 = { 706167616d656e746f20666f6920636f6e6669726d61646f }
+	$a1 = { 61207469746c653d22676f6f676c6522 }
+	$a2 = { 3e696d7072696d6972206e6f746166697363616c3c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_36974
+{
+strings:
+	$a0 = { 6e6f76616c616e6469612e696e666f2f63616d657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_25742
+{
+strings:
+	$a0 = { 62616978617220636F6D6F207A6970 }
+	$a1 = { 626F6C65746F2062616E63[1-8]72696F }
+	$a2 = { 6164766F636163696120626174656E617469 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31875
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20646f2048736263 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37145
+{
+strings:
+	$a0 = { 46726f6d3a20224c657669747261 }
+	$a1 = { 5375626a6563743a20506572736f6e616c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_35688
+{
+strings:
+	$a0 = { 72656d6f7665722d61676f726140626f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34138
+{
+strings:
+	$a0 = { 76616C6F72636173203D20226931222070617261203D2022726573756C7461646F20706F736974766F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36628
+{
+strings:
+	$a0 = { 76697375616c697a617220656d20666f726d61746f2070646620687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36629
+{
+strings:
+	$a0 = { 6269742e6c79 }
+	$a1 = { 6a636c616e2e636f6d2e62722f736974652f696d672f706f737473 }
+	$a2 = { 6c696e6b207061726120646f776e6c6f6164 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31470
+{
+strings:
+	$a0 = { 73696E63726F6E697A61722073657520646973706F73697469766F206465207365677572616E }
+	$a1 = { 617475616C697A61722061676F72612068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36322
+{
+strings:
+	$a0 = { 496e74696d6163616f207061726120636f6d7061726563696d656e746f20656d2041756469656e636961 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33940
+{
+strings:
+	$a0 = { 7365677565206f20626f6c65746f }
+	$a1 = { 6d61696c2e6c6976652e696e626f782e706870 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31898
+{
+strings:
+	$a0 = { 416e65786f }
+	$a1 = { 3c6d65746120687474702d65717569763d22726566726573682220636f6e74656e743d22313b75726c3d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_21664
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 656e63616d696e68616e646f20612063??70696120646f7320646f63756d656e746f73 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36623
+{
+strings:
+	$a0 = { 76697375616c697a617220656d20666f726d61746f207064662068747470733a2f2f646c2e64726f70626f7875736572636f6e74656e74 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37518
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 62616978617220636F6D6F207A6970 }
+	$a2 = { 7365677565206F20636F6D70726F76616E7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31967
+{
+strings:
+	$a0 = { 436f6d70726f76616e7465206465205472616e73666572 }
+	$a1 = { 686f746d61696c2e636f6d2f }
+	$a2 = { 6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31052
+{
+strings:
+	$a0 = { 636F6D756E696361646F20696D706F7274616E7465 }
+	$a1 = { 617475616C697A61206F2063616461737472616C }
+	$a2 = { 626C6F717565696F2064652073756120636F6E7461 }
+	$a3 = { 62616E636F62726173696C2E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_31962
+{
+strings:
+	$a0 = { 7469746c653e426f6c65746f }
+	$a1 = { 4f52434f5a4f4c }
+	$a2 = { 417661737420616e746976 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31692
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c636f7272656f7563616840686f746d61696c2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31693
+{
+strings:
+	$a0 = { 4361726f20452d6d61696c20646520436f6e746120646520557375 }
+	$a1 = { 636169786120646520636f727265696f2065737461206368656961 }
+	$a2 = { 28362920436f6e6669726d6520612073656e68613a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32304
+{
+strings:
+	$a0 = { 6e6f73736f2073697374656d612066696e616e636569726f }
+	$a1 = { 536567756520656d20616e65786f }
+	$a2 = { 3120416e65786f207c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30943
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 646973706F6E[1-8]76656C2070617261207063 }
+	$a2 = { 6269742E6C792F }
+	$a3 = { 7768617473617070 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_31698
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 656E636F6E7472612D736520646573617475616C697A61646F }
+	$a2 = { 62616E636F20697461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_30052
+{
+strings:
+	$a0 = { 73696E63726F6E697A61 }
+	$a1 = { 69746F6B656E }
+	$a2 = { 6576697465206F20626C6F717565696F }
+	$a3 = { 62616E636F20697461 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_35830
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 64756C6F206465207365677572616E[1-8]6120656E636F6E7472612D736520646573617475616C697A61646F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34860
+{
+strings:
+	$a0 = { 656665747561646f20686f6a65 }
+	$a1 = { 582d5048502d }
+	$a2 = { 2e706870?? }
+	$a3 = { 69766566696c6573746f72652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_27509
+{
+strings:
+	$a0 = { 636F6D70726F76616E746520656C657472[1-8]6E69636F20646520646570 }
+	$a1 = { 65737465206172717569766F2064657665207365722061726D617A656E61646F202E2068747470 }
+	$a2 = { 6372757A20616C7461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34867
+{
+strings:
+	$a0 = { 347368617265642E636F6D2F }
+	$a1 = { 677374617469632E636F6D2F }
+	$a2 = { 70726F63757261646F72696120726567696F6E616C2064612072657075626C696361 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37026
+{
+strings:
+	$a0 = { 7265636562656E646F206F20636F6D70726F76616E7465 }
+	$a1 = { 73756120636F6E746120636F7272656E74652E20687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35834
+{
+strings:
+	$a0 = { 5375626a6563743a2046773a20456e633a20417669736f203a20436c69656e74652c2042414e434f20444f2042524153494c }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_23137
+{
+strings:
+	$a0 = { 656E636F6E7472612D736520636F6D2069727265677572616C696461646573 }
+	$a1 = { 61636573736F7320626C6F71756561646F73 }
+	$a2 = { 696E666F656D61696C2E627261646573636F2E636F6D2E6272 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37022
+{
+strings:
+	$a0 = { 504768306257772b44516f38614756685a44344e436a78745a58526849476830644841745a58463161585939496e4a6c5a6e4a6c6332676949474e76626e526c626e513949 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37443
+{
+strings:
+	$a0 = { 6D61696C746F3A6174656E64696D656E746F2E6262406D61696C2E636F6D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37444
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 617475616C697A61[1-8]6F20646F206D[1-8]64756C6F206465207365677572616E }
+	$a2 = { 70726F636564696D656E746F2C2068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37119
+{
+strings:
+	$a0 = { 42616e636f20646f2042726173696c }
+	$a1 = { 5265766973652073657573206c696d697465732061626169786f }
+	$a2 = { 2f6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37685
+{
+strings:
+	$a0 = { 5375626a6563743a20232042616e636f20646f2042726173696c20532f41202d20526567756c6172697a652073756120436f6e7461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37684
+{
+strings:
+	$a0 = { 5375626a6563743a20757267656e746520636c69656e74652073616e74616e64657220726563616461737472616d656e746f206f6e6c696e652028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37686
+{
+strings:
+	$a0 = { 5375626a6563743a20757267656e74652062616e636f2073616e74616e64657220726563616461737472616d656e746f2028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37681
+{
+strings:
+	$a0 = { 72616661656c73617175657469362e72616661656c7361717565746936383438342e62372e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37680
+{
+strings:
+	$a0 = { 3230302d39382d3137302d3135382e636c6f7564756f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33900
+{
+strings:
+	$a0 = { 4369656c6f }
+	$a1 = { 506f7374696e672d5552493a2068747470733a2f2f7777772e676f6f676c65 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33901
+{
+strings:
+	$a0 = { 436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 556e6962616e636f }
+	$a2 = { 6269746c792e636f6d2f }
+	$a3 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_30634
+{
+strings:
+	$a0 = { 4369656c6f203c67314067312e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_19111
+{
+strings:
+	$a0 = { 6163636f756e74734070617373706f72742e636f6d }
+	$a1 = { 427261646573636f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37669
+{
+strings:
+	$a0 = { 726164696f726567696f6e616c63656e74726f2e636f6d2f70742f696d616765732f616c746f732e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37668
+{
+strings:
+	$a0 = { 46726f6d3a2022536d696c6573 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33345
+{
+strings:
+	$a0 = { 556c74696d6f20617669736f212053696e63726f6e69736d6f2049746175 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36793
+{
+strings:
+	$a0 = { 617a756c202d206c696e686173 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 636f6e74612073657220626c6f7175656164 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_33805
+{
+strings:
+	$a0 = { 46726f6d3a202243696f6c6973 }
+	$a1 = { 5375626a6563743a204e6f74696669636174696f6e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37661
+{
+strings:
+	$a0 = { 68617320726563656E746C792075706461746564 }
+	$a1 = { 74656D706F72617279207369676E656420796F75206F75742E2068747470 }
+	$a2 = { 6D6963726F736F6674206D61696C206E6F74696669636174696F6E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37666
+{
+strings:
+	$a0 = { 63617274[1-8]6F20646520636861766573206465207365677572616E[1-8]6120656E636F6E7472612D73652065787069726164 }
+	$a1 = { 73616E74616E646572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37665
+{
+strings:
+	$a0 = { 73616E74616E646572 }
+	$a1 = { 63617274[1-8]6F20646520636861766573206465207365677572616E[1-8]6120656E636F6E7472612D73652065787069726164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33355
+{
+strings:
+	$a0 = { 7469746c653e506167616d656e746f20436f6e6669726d6164 }
+	$a1 = { 3e436f6d70726f76616e74652e7a69703c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33238
+{
+strings:
+	$a0 = { 526573676174652041676f7261206d65736d6f }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 46726f6d3a2050726f6772616d61204369656c6f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33234
+{
+strings:
+	$a0 = { 5375626a6563743a205b62622e636f6d2e62725d202d20416c65727461206465205365677572616e6361 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33235
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f2049746175 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 52657373696e63726f6e697a612663636564696c3b266174696c64653b6f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33236
+{
+strings:
+	$a0 = { 466964656c6964616465204d756c7469706c7573 }
+	$a1 = { 2e617477656270616765732e636f6d2f }
+	$a2 = { 434144415354524152 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33237
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 50726f6772616d612064652056616e746167656e73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37205
+{
+strings:
+	$a0 = { 43656e7472616c206465204174656e64696d656e746f204242202d205b }
+	$a1 = { 626c6f717565696f207061726369616c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33232
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f }
+	$a1 = { 7469746c653e4369656c6f202d20436f6d707261205072656d69616461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37206
+{
+strings:
+	$a0 = { 7469746c653e4f6665727461732057616c6d617274 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37322
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D }
+	$a1 = { 6661747572612074696D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35439
+{
+strings:
+	$a0 = { 626F6C65746F20646520636F6272616E }
+	$a1 = { 6269746C792E636F6D2F }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37325
+{
+strings:
+	$a0 = { 61636164656d696567757a656c6c696b2e636f6d2f636f6d70726f2d616e616c697365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37326
+{
+strings:
+	$a0 = { 676f6f676c6564726976652e636f6d2f }
+	$a1 = { 4151554920564320414345535341204f20564944454f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37329
+{
+strings:
+	$a0 = { 406f726967696e616c636f6272616e63612e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37496
+{
+strings:
+	$a0 = { 6d6178736f66746c6f636174696f6e2e696e666f2f63616d657261 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37495
+{
+strings:
+	$a0 = { 77696e736c6f636174696f6e2e696e666f2f6c656164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_29017
+{
+strings:
+	$a0 = { 6269742E6C792F }
+	$a1 = { 7365677565206D65752063757272[1-8]63756C6F20636F6D20666F746F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33154
+{
+strings:
+	$a0 = { 6c696e6b207061726120646f776e6c6f616420646120706c616e696c6861 }
+	$a1 = { 636c2e6c792f }
+	$a2 = { 6573743d43333d4131206c696d706f20646520763d43333d4144727573 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_32788
+{
+strings:
+	$a0 = { 626173656c696e6564696574736f6c7574696f6e2e636f6d2f676f72646f2e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30246
+{
+strings:
+	$a0 = { 64617465202D2D2D2D2D206D657373616765202D2D2D2D2D2070617261 }
+	$a1 = { 76697375616C697A6172206F20626F6C65746F2C2068747470 }
+	$a2 = { 6D6F757261206164766F6761646F73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33695
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f2e5072656d6961646f2e7777772e783122406170616368652e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32189
+{
+strings:
+	$a0 = { 4063782d6170722e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36814
+{
+strings:
+	$a0 = { 6e6f74612066697363616c }
+	$a1 = { 2e70687020687474703a2f2f696d672e616d65726963616e61732e }
+	$a2 = { 652d6d61696c206361646173747261646f3a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32185
+{
+strings:
+	$a0 = { 7469746c653e524544454349454c4f }
+	$a1 = { 524544454341524420652061204349454c4f }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32181
+{
+strings:
+	$a0 = { 6368617665206465207365677572616e2663636564696c3b6120427261646573636f20656e636f6e7472612d7365206578706972616461 }
+	$a1 = { 636f6e746120626c6f717565616461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37259
+{
+strings:
+	$a0 = { 494478745a58526849476830644841745a58463161585939496e4a6c5a6e4a6c6332676949474e76626e526c626e51394d547431636d7739496d68306448427a4f693876596d6c304c6d7835 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37254
+{
+strings:
+	$a0 = { 40736f636f6272616e6361732e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37257
+{
+strings:
+	$a0 = { 2e696e7465726e616c2e636c6f75646170702e6e6574 }
+	$a1 = { 41677261646563656d6f7320612073756120636f6d707261 }
+	$a2 = { 456d6974656e74653a204d756e646f20646f206950686f6e65 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37250
+{
+strings:
+	$a0 = { 3732333230343020646570746F2E20636F6D65726369616C2068747470733A2F2F7777772E64726F70626F78 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37251
+{
+strings:
+	$a0 = { 687474703A2F2F636F6D707261666163696C73702F6E66652F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37252
+{
+strings:
+	$a0 = { 5043464554304e5557564246494768306257772b44516f38614852746244344e436a786f5a57466b5067304b49434167504345744c5342495645314d4947316c64474567636d566d636d567a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37253
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 73657520646973706F722E2068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37564
+{
+strings:
+	$a0 = { 6d61696c746f3a2d636f6e7461746f40627261736c696465722d6f72672e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33796
+{
+strings:
+	$a0 = { 7469746c653e656e67 }
+	$a1 = { 70656e642665636972633b6e636961732066696e616e636569726173 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33793
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 456d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37492
+{
+strings:
+	$a0 = { 616d617a6f6e6177732e636f6d2f7265796c6f6e67682f6a756e686f2f426f6c65746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37493
+{
+strings:
+	$a0 = { 616c2d6661726162792e6b7a2f696d616765732f2f4d5f696d616765732f446f776e6c6f6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37490
+{
+strings:
+	$a0 = { 64656269746f2070656e64656e746520656d2073657520435046 }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35936
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e7465203a2042616e636f204974617520323420486f726173 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33798
+{
+strings:
+	$a0 = { 4252494e44452043414341552064652070726573656e7465 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37494
+{
+strings:
+	$a0 = { 3130342e3233382e3132372e3231392f30383036323031362f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37569
+{
+strings:
+	$a0 = { 777269746520746F203A203834343520616C697374657220626C7664 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37202
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??3d45323d39433d39345f??3d5061727469636970652065206170726f76656974652061732076616e746167656e7320646f2050726f6772616d61204369656c6f }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29046
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 67652e74742f6170692f312f66696c6573 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37474
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 4d6963726f736f6674205961486569 }
+	$a2 = { 4c4953544120444520544954554c4f53 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37475
+{
+strings:
+	$a0 = { 676F6F2E676C2F[6]20617475616C697A61722063757272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32363
+{
+strings:
+	$a0 = { 4074726b2d68782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37477
+{
+strings:
+	$a0 = { 726173747265616D656E746F206465206F626A65746F73 }
+	$a1 = { 73756120656E636F6D656E64613A20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32365
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 7365677572616e2663636564696c3b6120657374266174696c64653b6f20646573617475616c697a61646f73 }
+	$a2 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37471
+{
+strings:
+	$a0 = { 696D6775722E636F6D2F }
+	$a1 = { 72656365697461206665646572616C }
+	$a2 = { 73757370656E73[1-8]6F2064652073657520637066 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37472
+{
+strings:
+	$a0 = { 706F72206D65696F20646573746120736F6C696369746172 }
+	$a1 = { 7072617A6F7320646520656E74726567612E20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32366
+{
+strings:
+	$a0 = { 5375626a6563743a20416c657274612042616e636f20646f2042726173696c }
+	$a1 = { 7669752e736f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33762
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??496e7465726e65745f42616e6b696e675f4361697861 }
+	$a1 = { 7469746c653e5265636164617374726f204361697861 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33763
+{
+strings:
+	$a0 = { 5375626a6563743a203d??5554462d38??51??496e7465726e65745f42616e6b696e675f4361697861 }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34787
+{
+strings:
+	$a0 = { 4e617469766120535041 }
+	$a1 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+	$a2 = { 697461752e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37479
+{
+strings:
+	$a0 = { 33313330333432452033323333333832452033313332333732452033323331333932462033303336333033362033323330333133362032463646373036342036433643 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34785
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 393937512e373138342e333231322e333738373139392d52 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32559
+{
+strings:
+	$a0 = { 46726f6d3a2022576861747341707020576562 }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32749
+{
+strings:
+	$a0 = { 406d6e662d7372762e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32748
+{
+strings:
+	$a0 = { 406273782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32747
+{
+strings:
+	$a0 = { 406473782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36420
+{
+strings:
+	$a0 = { 5375615f636f6e74615f7365723d45315f73757370656e73615f655f736575735f63616e6169735f64655f6174656e64696d656e746f5f626c6f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32744
+{
+strings:
+	$a0 = { 40636c742d7372762e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32554
+{
+strings:
+	$a0 = { 2F00720062002E006D006F0063002E003100640075006F006C00630064006F006D }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36427
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E006120656E636F6E7472612D7365206465736162696C697461646F }
+	$a1 = { 73616E74616E6465722E636F6D2E6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32965
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 61646573[1-8]6F206465207365677572616E[1-8]6120656E636F6E7472612D736520646573617469766164 }
+	$a2 = { 706C7567696E206465207365677572616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34077
+{
+strings:
+	$a0 = { 616D617061203D20777363726970742E6372656174656F626A6563742866696D646F6D756E646F2822222C6B65792929 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34076
+{
+strings:
+	$a0 = { 7370616C696F2064696D207362656C696E612064696D2073726F6C65782064696D20737072616461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_36787
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F[7-8]20696D7072696D69722032766961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32560
+{
+strings:
+	$a0 = { 4361726f3a205765626d61696c2c20652d6d61696c20646120636f6e746120646f2070726f7072696574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34097
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 416e65786f }
+	$a2 = { 65676d2d636f6272616e6361732e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34096
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 456d20616e65786f }
+	$a2 = { 416e65786f2d426f6c65746f2d436f6d70726f76616e7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31092
+{
+strings:
+	$a0 = { 73697374656d612066696e616e636569726f2070656e64 }
+	$a1 = { 3120416e65786f3c2f7374726f6e673e207c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35217
+{
+strings:
+	$a0 = { 646561722070617970616C20757365722C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34099
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 416e65786f2d426f6c65746f2d436f6d70726f76616e74652e7a6970 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36716
+{
+strings:
+	$a0 = { 736567756520616e65786f }
+	$a1 = { 68756273706f742e6e6574 }
+	$a2 = { 636f722e746f2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37671
+{
+strings:
+	$a0 = { 4073616e672d6964382e636c6f75646170702e6e65743e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35508
+{
+strings:
+	$a0 = { 5375626a6563743a205265636164617374726f204361697861 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37677
+{
+strings:
+	$a0 = { 656e6f6e6561676c652e6e65742f6f6c642f696d616765732f73746f726965732f494d47 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37674
+{
+strings:
+	$a0 = { 736F727465696F2066696E616C2E20687474703A2F2F6269742E6C79 }
+	$a1 = { 6E6573746C652E636F6D2E62722F6C697374612F66696E616C6973746173 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34416
+{
+strings:
+	$a0 = { 7469746c653e46616365626f6f6b }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+	$a2 = { 766964656f3c2f613e20656d2071756520766f636520666f69206d61726361646f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31827
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 636164617374726F20646573617475616C697A61646F }
+	$a2 = { 636F6E746120736572[1-8]626C6F7175656164 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35412
+{
+strings:
+	$a0 = { 76696120646520626F6C65746F }
+	$a1 = { 666F726D61746F2070646620687474703A2F2F6269746C792E636F6D }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35699
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20496d706f7274616e746520646f2042616e636f20646f2042726173696c202d20526567756c6172697a652d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35418
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 646570266f61637574653b7369746f20656665747561646f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36713
+{
+strings:
+	$a0 = { 646F776E6C6F616420656D20666F726D61746F2070646620687474703A2F2F7777772E34736861726564 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35324
+{
+strings:
+	$a0 = { 53616e74616e646572 }
+	$a1 = { 417475616c697a6163616f20646f20646973706f73697469766f206465205365677572616e6361 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35325
+{
+strings:
+	$a0 = { 53616e74616e646572 }
+	$a1 = { 636f6e746120656e636f6e7472612d736520646573617475616c697a61646120636f6d206e6f73736f2073697374656d61 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32418
+{
+strings:
+	$a0 = { 726563616461737472616d656e746f }
+	$a1 = { 63616978612e636f6d2e62722f63616432303135 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32411
+{
+strings:
+	$a0 = { 406d6e662d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32410
+{
+strings:
+	$a0 = { 406170722d6966782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32417
+{
+strings:
+	$a0 = { 406d72666d732d67782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31781
+{
+strings:
+	$a0 = { 536567756520416e65786f }
+	$a1 = { 3c6d65746120687474702d65717569763d22726566726573682220636f6e74656e743d22303b2075726c3d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31782
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31783
+{
+strings:
+	$a0 = { 64656e742e726f2f2f636f6d706f6e656e74732f636f6d5f7365617263682f76696577732f7365617263682f6f6e2d6c696e652e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35238
+{
+strings:
+	$a0 = { 717569766f2064657665207365722061726d617a656e61646f }
+	$a1 = { 2e77656263696e646172696f2e636f6d2f }
+	$a2 = { 4e4f54412046495343414c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35239
+{
+strings:
+	$a0 = { 2e77656263696e646172696f2e636f6d2f }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 4e4f54412046495343414c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36868
+{
+strings:
+	$a0 = { 656D6973736F72202E2E2E2E2E2E2E2E2E2E2E2E2E2E3A2061206A7320696E666F726D }
+	$a1 = { 76697375616C697A617220626169786172 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35231
+{
+strings:
+	$a0 = { 6e6f206c696e6b2061626169786f }
+	$a1 = { 2e6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35234
+{
+strings:
+	$a0 = { 5045314656454567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d447456556b773961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35235
+{
+strings:
+	$a0 = { 6F72[1-8]616D656E746F2070617261206F73206974656E73 }
+	$a1 = { 2F636F722E746F2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_24360
+{
+strings:
+	$a0 = { 696e666f4061646d696e2e6f72673e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34255
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 7475646f20636f6d6f20616e65786f }
+	$a2 = { 56697375616c697a61722050726f636573736f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34254
+{
+strings:
+	$a0 = { 5375626a6563743a2050524f434544494d454e544f20494e5645535449474154 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33204
+{
+strings:
+	$a0 = { 7469746c653e6e662d726566 }
+	$a1 = { 3e416e65786f205245462d }
+	$a2 = { 536567756520616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34523
+{
+strings:
+	$a0 = { 456d20616e65786f }
+	$a1 = { 42616978617220636f6d6f207a6970 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34521
+{
+strings:
+	$a0 = { 7469746c653e44455452414e }
+	$a1 = { 496e6672612663636564696c3b266174696c64653b6f2064652054722661636972633b6e7369746f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35304
+{
+strings:
+	$a0 = { 504768306257772b44516f67504852706447786c506b466e645746795a4755384c3352706447786c5067304b4944786f5a57466b5067304b494478745a58526849 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34529
+{
+strings:
+	$a0 = { 2f6a2e6d702f }
+	$a1 = { 446574616c68657320646f2070656469646f }
+	$a2 = { 6269742e6c792f }
+	$a3 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_25186
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c615f6d61696c3737407961686f6f2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_25183
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 7265636164617374726F2064652073756120636F6E7461 }
+	$a2 = { 73656A616D20626C6F71756561646F73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_33795
+{
+strings:
+	$a0 = { 46726f6d3a20506172636569746f204e2045205420436f6d626f204d756c7469203c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36492
+{
+strings:
+	$a0 = { 5045314656454567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d547456556b773961 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36936
+{
+strings:
+	$a0 = { 46726f6d3a20537570706f7274205465616d203c68656c70407465616d2e6f72673e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36937
+{
+strings:
+	$a0 = { 46726f6d3a2022416d65726963616e61732e636f6d }
+	$a1 = { 5375626a6563743a20416d65726963616e61732e636f6d202d20536d617274205456204c454420223535222043757276612053616d73756e6720556c74726120484420344b20706f722052 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37383
+{
+strings:
+	$a0 = { 40726567697374726f2d62726173696c2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32820
+{
+strings:
+	$a0 = { 67652e74742f6170692f }
+	$a1 = { 6f6c6861726469676974616c }
+	$a2 = { 7768617473617070206e6f207063 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_33311
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A20[1-8]3A786D616E2E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37419
+{
+strings:
+	$a0 = { 626F6C65746F2062616E63 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 74696E797069632E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_22344
+{
+strings:
+	$a0 = { 46726f6d3a20427261646573636f }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33804
+{
+strings:
+	$a0 = { 616361626f75206361696e646f206e612072656465 }
+	$a1 = { 3e4261697861723c }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33806
+{
+strings:
+	$a0 = { 44516f38545556555153426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f315653544431 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33801
+{
+strings:
+	$a0 = { 70726f746573746f206e6f20636172743d463372696f }
+	$a1 = { 616d617a6f6e6177732e636f6d2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36826
+{
+strings:
+	$a0 = { 70726F6475746F20666F6920656E766961646F }
+	$a1 = { 68756273706F742E6E65742F }
+	$a2 = { 636F722E746F2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35783
+{
+strings:
+	$a0 = { 43616461737472652d7365 }
+	$a1 = { 5265646543617264 }
+	$a2 = { 2f676f6f2e676c2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29289
+{
+strings:
+	$a0 = { 73696E63726F6E69 }
+	$a1 = { 69746F6B656E }
+	$a2 = { 626C6F717565696F20646F2061636573736F }
+	$a3 = { 697461752E636F6D2E6272 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_30579
+{
+strings:
+	$a0 = { 3c436f6d756e696361646f407365726173612d676f762e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36786
+{
+strings:
+	$a0 = { 626F6C65746F20636F6272616E6361203D2068747470733A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36789
+{
+strings:
+	$a0 = { 6D616E646120617320717565207663207469726F752E20687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32223
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 536567756520656d20416e65786f }
+	$a2 = { 6d696772652e6d652f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32226
+{
+strings:
+	$a0 = { 436f6e666f726d6520726571756973697461646f }
+	$a1 = { 64726976652e676f6f676c652e636f6d }
+	$a2 = { 424f4c45544f205041524120504147414d454e544f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31555
+{
+strings:
+	$a0 = { 7469746c653e46617475726120656d2041747261736f3a536f6369616c3a203c7374726f6e673e54454c454d4152 }
+	$a1 = { 41747261736f3c2f7374726f6e673e3a203c612068726566 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31554
+{
+strings:
+	$a0 = { 736567756520616E65786F206F20636F6D70726F76616E7465 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 76697375616C697A617220616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31551
+{
+strings:
+	$a0 = { 45006D00700072006500730061002000320030003100320000003E000B0001004F0072006900670069006E0061006C00460069006C0065006E0061006D00650000006C006F0061006400650072002E006500780065 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31191
+{
+strings:
+	$a0 = { 687474703a2f2f6170702e646565706d61696c65722e696e2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31867
+{
+strings:
+	$a0 = { 736963726564692e636f6d2e62722f666f7263612f7072656d696164612f }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_36964
+{
+strings:
+	$a0 = { 61756d656e746172206f207365752070 }
+	$a1 = { 737570657261756d656e746f2e6e6574 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35440
+{
+strings:
+	$a0 = { 656e747265676120646f7320636f727265696f73 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 42726173636f6d204c746461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_32761
+{
+strings:
+	$a0 = { 72656d6f5f6c697374407961686f6f2e636f6d2e62722065206e6f20415353554e544f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33168
+{
+strings:
+	$a0 = { 5375626a6563743a20417669736f203d??49534f2d383835392d31??51??6974613d4641 }
+	$a1 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_26466
+{
+strings:
+	$a0 = { 5265706c792d546f3a2065736372657661656d726573706f73746140626f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_34946
+{
+strings:
+	$a0 = { 46726f6d3a20225669616772612d50726f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37201
+{
+strings:
+	$a0 = { 646976657273696f6e6573726f79616c7061726b2e636f6d2f706f7274616c2f2f696d616765732f6d632e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37658
+{
+strings:
+	$a0 = { 687474702D65717569763D22726566726573682220636F6E74656E743D22303B75726C3D20687474703A2F2F[1-32]2E6574656D7075726C2E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36853
+{
+strings:
+	$a0 = { 46726f6d3a2022427261646573636f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_20794
+{
+strings:
+	$a0 = { 7365677572616e006120627261646573636f20656e636f6e7472612d7365206578706972616461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33816
+{
+strings:
+	$a0 = { 7469746c653e50726f6772616d61205475646f417a756c }
+	$a1 = { 6f772e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31461
+{
+strings:
+	$a0 = { 62616e636f20646f2042726173696c206573746120736f6c69636974616e646f206120746f646f733c62723e636c69656e7465732066697369636f73206f207265636164617374726f2064652073657573206461646f73 }
+	$a1 = { 6174656e64696d656e746f407361632e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_37208
+{
+strings:
+	$a0 = { 6361726c6f732d73616e6368657a2e636f6d2f6c6973742f6a7065672e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31997
+{
+strings:
+	$a0 = { 7469746c653e53657261736120457870657269616e }
+	$a1 = { 636f6e73746120656d206e6f73736f2062616e636f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37395
+{
+strings:
+	$a0 = { 656D6973736F72202E2E2E2E2E2E2E2E2E2E2E2E2E2E3A2061206A7320696E666F726D }
+	$a1 = { 61627269722064616E6665206174656E63696F73616D656E7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37020
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c726573706f737461636f6e7461746f40626f6c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33822
+{
+strings:
+	$a0 = { 526563616461737472616d656e746f206465205365677572616e6361 }
+	$a1 = { 42616e636f20646f2042726173696c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36919
+{
+strings:
+	$a0 = { 6174656E64696D656E746F20627261646573636F }
+	$a1 = { 696E666F726D616D6F732071756520706F722066616C746120646520636F6E73697374 }
+	$a2 = { 636C697175652061717569 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33828
+{
+strings:
+	$a0 = { 43617274616f2046726565 }
+	$a1 = { 43414441535452452d5345 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_28612
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920636c69656e74652c20496e7465726e65742042616e6b696e6720427261646573636f202d20536567756e646f20617669736f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33976
+{
+strings:
+	$a0 = { 676f6f676c6564726976652e636f6d2f }
+	$a1 = { 43617274656972612050657264696461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34494
+{
+strings:
+	$a0 = { 46726f6d3a204d617374657243617264 }
+	$a1 = { 2f6a2e6d702f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33979
+{
+strings:
+	$a0 = { 7469746c653e416e65786f }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a2 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37390
+{
+strings:
+	$a0 = { 656E747265676120646F7320636F727265696F73207265616C697A6F7520756D612074656E746174697661 }
+	$a1 = { 656E747265676120646F732062726173636F6D206C746461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31958
+{
+strings:
+	$a0 = { 41636f72646f2066696e616e636569726f }
+	$a1 = { 7661692e6c612f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31951
+{
+strings:
+	$a0 = { 65766F6C7574696F6E736F6C75636F65732E636F6D2E62722F6C6F67732F50432D436C69656E7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31950
+{
+strings:
+	$a0 = { 75006E006900760065007200730061006C00640065006C00690076006500720079002E0072002E0077006F0072006C006400730073006C002E006E00650074002F00740063007000720065006D00690075006D002E006A00700067 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31952
+{
+strings:
+	$a0 = { 5C50435F436C69656E74322E7A6C696200000000FFFFFFFF0D0000005C77696E746C656B732E657865000000FFFFFFFF0D0000005C4C61756E636865722E657865 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31681
+{
+strings:
+	$a0 = { 6461646f732064652073756120636f6e746120656e636f6e7472616d2d73652064657373696e63726f6e697a61646f73 }
+	$a1 = { 626c6f717565696f2074656d706f72 }
+	$a2 = { 697461752e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_31685
+{
+strings:
+	$a0 = { 46726f6d3a204349454c4f }
+	$a1 = { 466174757261205a65726f }
+	$a2 = { 2e686f6c2e65732f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34011
+{
+strings:
+	$a0 = { 436172743d45336f204368617665206465207365677572616e3d45376120656e636f6e7472612d736520657870697261646f }
+	$a1 = { 427261646573636f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34010
+{
+strings:
+	$a0 = { 5375626a6563743a20427261646573636f20532f41202d20496e666f656d61696c3a2053756120636f6e746120706f6465207365722073757370656e7361 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32312
+{
+strings:
+	$a0 = { 616E65786F733A2068747470733A2F2F7777772E64726F70626F782E }
+	$a1 = { 6E6F74612066697363616C20656C657472 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31424
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34016
+{
+strings:
+	$a0 = { 426c6f717565696f20646520436f6e7461 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32035
+{
+strings:
+	$a0 = { 506f6c6963696120526f646f76693d4531726961 }
+	$a1 = { 636f706961206461206d756c7461 }
+	$a2 = { 76612e6d752f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32034
+{
+strings:
+	$a0 = { 446f776e6c6f6164206461206d756c746120617175692e2e2e20687474703a2f2f76612e6d752f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37399
+{
+strings:
+	$a0 = { 74656E7461746976617320646520656E7472656761206E6F2073657520656E64657265 }
+	$a1 = { 37206469617320636F727269646F732E2068747470733A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34895
+{
+strings:
+	$a0 = { 4d656e736167656d206465204e6174616c }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 52656361646f73204f6e6c696e65 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32038
+{
+strings:
+	$a0 = { 4d656e736167656d20687474703a2f2f6269742e6c792f }
+	$a1 = { 6d656e736167656d2120687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33915
+{
+strings:
+	$a0 = { 4657443a20414c45525441206c544155 }
+	$a1 = { 4d4d5f73776170496d616765 }
+	$a2 = { 6f772e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34891
+{
+strings:
+	$a0 = { 7469746c653e44455452414e }
+	$a1 = { 696e6672612663636564696c3b266174696c64653b6f2064652074722661636972633b6e7369746f }
+	$a2 = { 2f77702d636f6e74656e742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_22382
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 6f746120??697363616c }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34752
+{
+strings:
+	$a0 = { 6f6c68612065206170616761 }
+	$a1 = { 6274656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37284
+{
+strings:
+	$a0 = { 5375626a6563743a20526173747265616d656e746f20436f727265696f73202d20436f6d756e696361646f }
+	$a1 = { 2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32705
+{
+strings:
+	$a0 = { 6E6F766F66696E616C6C6F61645C6E6F766F66696E616C6C6F61645C6F626A5C52656C656173655C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34305
+{
+strings:
+	$a0 = { 73617665642066726f6d2075726c }
+	$a1 = { 7469746c653e566f746f72616e74696d }
+	$a2 = { 4361726f20436c69656e74652042616e636f20566f746f72616e74696d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34307
+{
+strings:
+	$a0 = { 2e647265616d736572766572732e636f6d3e }
+	$a1 = { 3e4d61737465726361726420456d6f636f65733c }
+	$a2 = { 3e436c6971756520417175693c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34653
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74652053616e74616e646572 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37499
+{
+strings:
+	$a0 = { 656D6974656E74652E2E2E2E2E2E2E2E2E2E2E2E3A206A6273 }
+	$a1 = { 646F776E6C6F61642068747470 }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33576
+{
+strings:
+	$a0 = { 5768617473617070 }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+	$a2 = { 6f772e6c792f }
+	$a3 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_36025
+{
+strings:
+	$a0 = { 636173617362616869612E636F6D2E627220687474703A2F2F636C2E6C792F }
+	$a1 = { 626C6F6773706F742E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36027
+{
+strings:
+	$a0 = { 73687574646F776E202D72202D74203330202D632041677561726465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34979
+{
+strings:
+	$a0 = { 7469746c653e4361736173204261686961202d204e462d65 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31868
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29452
+{
+strings:
+	$a0 = { 616E65786F3A2068747470 }
+	$a1 = { 706C616E696C686120616E657861 }
+	$a2 = { 636F737461206D6F72616573 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32781
+{
+strings:
+	$a0 = { 687474703A2F2F3138392E352E3137392E36373A37303030 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32780
+{
+strings:
+	$a0 = { 706f73736976656c20616e6578612061206d65736d61 }
+	$a1 = { 676f6f676c656472697665 }
+	$a2 = { 506c616e696c6861204e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32782
+{
+strings:
+	$a0 = { 736574207065696465693D22255553455250524F46494C45255C6765742E62617422 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37300
+{
+strings:
+	$a0 = { 636164617374726F2064652073756120636F6E7461 }
+	$a1 = { 626C6F717565696F2074656D706F72 }
+	$a2 = { 696E6963696172206120617475616C697A61 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37301
+{
+strings:
+	$a0 = { 7072656369736172207665726966696361722073657520652D6D61696C }
+	$a1 = { 636C69656E7465206D6963726F736F6674 }
+	$a2 = { 636C6971756520687474703A2F2F6269742E6C79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33350
+{
+strings:
+	$a0 = { 5375626a6563743a20556c74696d6f20417669736f203a2042616e636f20646f2042726173696c }
+	$a1 = { 707269766163696461646520646f2042616e636f20646f2042726173696c }
+	$a2 = { 3e436f6e6669726d61723c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33357
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f20436c69656e74652042616e636f20566f746f72616e74696d }
+	$a1 = { 2e736f75726365666f7267652e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37305
+{
+strings:
+	$a0 = { 666F69206C616E[1-8]61646120756D6120636F727265 }
+	$a1 = { 626C6F71756561646F2074656D706F72617269616D656E7465 }
+	$a2 = { 646573626C6F717565696F20656D20737561206167 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33354
+{
+strings:
+	$a0 = { 436f6d756e696361646f20496d706f7274616e746520646f2042616e636f20646f2042726173696c }
+	$a1 = { 617475616c697a613d45373d45336f2063616461737472616c }
+	$a2 = { 626c6f717565696f2064652073756120636f6e7461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37657
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f2053616e74616e646572202d20417669736f20696d706f7274616e7465 }
+	$a1 = { 696e7465726e616c2e636c6f75646170702e6e65743e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29925
+{
+strings:
+	$a0 = { 6372696D65206465207065646F66696C6961 }
+	$a1 = { 736567756520656D20616E65786F }
+	$a2 = { 626C6F6773706F74 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37650
+{
+strings:
+	$a0 = { 706f6e746f73204d756c7469706c7573 }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a2 = { 54726f71756520706f6e746f732061676f7261 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37279
+{
+strings:
+	$a0 = { 5375626A6563743A2041766973[1]20696D706F7274616E74653A204576697465206F20626C6F717565696F2064652073756120636F6E74612E2050726F746F636F6C6F3A }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_37274
+{
+strings:
+	$a0 = { 636861766573206465207365677572616E[1-8]612062722061646573636F2065787069726172 }
+	$a1 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33224
+{
+strings:
+	$a0 = { 46726f6d3a20224174656e64696d656e746f2042616e6b6c696e65 }
+	$a1 = { 2e706870??636c69656e74653d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33220
+{
+strings:
+	$a0 = { 5375626a6563743a204d617374657263617264205465206c6576612070617261204469736e6579 }
+	$a1 = { 2e647265616d686f737470732e636f6d3e }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36654
+{
+strings:
+	$a0 = { 706172746963697061722064612070726f6d6f }
+	$a1 = { 6369656c6f }
+	$a2 = { 6269742e6c792f }
+	$a3 = { 626c6f6773706f74 }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_36657
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f2053616e74616e646572 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37319
+{
+strings:
+	$a0 = { 63726f7373726f6164732d6772616e6974652e636f6d2f74696d62726173696c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37318
+{
+strings:
+	$a0 = { 6b69637179782e6f72636d657263616e74696c2e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32146
+{
+strings:
+	$a0 = { 406f7074696e2d6b782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32145
+{
+strings:
+	$a0 = { 6d65746120687474702d65717569763d22726566726573682220636f6e74656e743d22303b2075726c3d687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32144
+{
+strings:
+	$a0 = { 2f73742f??50656e64656e63696173 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37311
+{
+strings:
+	$a0 = { 617276656e73652e636f6d2e62722f323031312f696d616765732f636f756e742f6669782e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36658
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a205072657a61646f2028612920436c69656e74653a20436f6d756e696361646f20496d706f7274616e746520646f2042616e636f20646f2042726173696c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32141
+{
+strings:
+	$a0 = { 776565626c792e636f6d2f75706c6f6164732f }
+	$a1 = { 62616978617220636f6d6f207a6970 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32140
+{
+strings:
+	$a0 = { 636f6d7061726563696d656e746f20656d2061756469656e636961 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 54726962756e616c20526567696f6e616c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32888
+{
+strings:
+	$a0 = { 5265706c792d546f3a2073697374656d61737361646d696e4062617269642e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_24880
+{
+strings:
+	$a0 = { 616E65786F287329203A2068747470 }
+	$a1 = { 616E65786F206F20636F6D70726F76616E7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33146
+{
+strings:
+	$a0 = { 5375626a6563743a20564944454f204520464f544f5320444f2041434944454e544520444520435249535449414e4f20415241554a4f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_37513
+{
+strings:
+	$a0 = { 6d6178736f66746c6f636174696f6e2e696e666f2f63616e657461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_20473
+{
+strings:
+	$a0 = { 636169786120646520636f727265696f2065786365646575206f206c696d6974652064652061726d617a656e616d656e746f }
+	$a1 = { 726576616c696461722073756120636169786120646520636f727265696f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32170
+{
+strings:
+	$a0 = { 646565702e7765622e6f7665722d6273782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32173
+{
+strings:
+	$a0 = { 407836612e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33171
+{
+strings:
+	$a0 = { 656d20416e65786f }
+	$a1 = { 49434167504531465645456753465255554331465556564a566a31535a575a795a584e6f49454e50546c5246546c5139496a413749465653544431 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32179
+{
+strings:
+	$a0 = { 406c6f6e672d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36800
+{
+strings:
+	$a0 = { 7469746c653d3344496e7465726e65745f42616e6b696e6720687265663d334422687474703a2f2f74696e7975726c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37269
+{
+strings:
+	$a0 = { 76697375616C697A6172206F20636F6D70726F76616E746520687474703A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37261
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22[1]3B75726C3D687474703A2F2F[1-30]2E64646E732E6E6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37260
+{
+strings:
+	$a0 = { 737561206E74662D65 }
+	$a1 = { 6C696E6B207061726120646F776E6C6F61642E2068747470733A2F2F7777772E737567617273796E63 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37263
+{
+strings:
+	$a0 = { 766c75732e64646e732e6e65742f6175746f6d6163616f736b742e646c6c }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37262
+{
+strings:
+	$a0 = { 6d617274696e7374726173706f7274652e7a6170746f2e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37265
+{
+strings:
+	$a0 = { 687474703a2f2f6e6f74696669636163616f2e64646e732e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37264
+{
+strings:
+	$a0 = { 5C4B4C2052656D6F746120627920764C75535C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_30331
+{
+strings:
+	$a0 = { 582D5048502D4F726967696E6174696E672D5363726970743A[1-8]3A7230782E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32499
+{
+strings:
+	$a0 = { 7469746c653e626f6c65746f20417475616c697a61646f }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 6a2e6d702f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35099
+{
+strings:
+	$a0 = { 44494e484549524f204558545241 }
+	$a1 = { 706167696e616c75637261746976612e636f6d2e62722f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34208
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 4f6272696761646f20706f7220636f6d70726172206e6120474f4c }
+	$a2 = { 56495355414c495a412d4c4f2041515549 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32490
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 6E662D653A2068747470733A2F2F636C642E70742F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32492
+{
+strings:
+	$a0 = { 676F6F676C656472697665 }
+	$a1 = { 6170726573656E746100616F20646520736C69646573 }
+	$a2 = { 626169786172207475646F20636F6D6F207A6970 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32495
+{
+strings:
+	$a0 = { 636f6e666f726d6520736f6c6963697461646f }
+	$a1 = { 676f6f676c6561706973 }
+	$a2 = { 696d6775722e636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32497
+{
+strings:
+	$a0 = { 736973636F627261 }
+	$a1 = { 676F6F676C6561706973 }
+	$a2 = { 736567756E6461207669612064612073756120666174757261 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32086
+{
+strings:
+	$a0 = { 656e636f6e7472612d7365206578706972616461 }
+	$a1 = { 6368617665206465207365677572616e }
+	$a2 = { 427261646573636f }
+	$a3 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_32082
+{
+strings:
+	$a0 = { 66726175646520656d2073756120636f6e746120686f746d61696c }
+	$a1 = { 62696e2f706870 }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35321
+{
+strings:
+	$a0 = { 46726f6d3a20224c6576697472612d50726f20436f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37406
+{
+strings:
+	$a0 = { 636f6e746162696c69646164656d61726b74696e672e636f6d2e62722f6964 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Spammer_37466
+{
+strings:
+	$a0 = { 6d756c7469706f6e746f736d6b742e636f6d2e62722f612e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34798
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 434f525445204e4f20464f524e4543494d454e544f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37440
+{
+strings:
+	$a0 = { 6269742E6C792F[7-20]2062616978617220636F6D70726F76616E7465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32317
+{
+strings:
+	$a0 = { 406d6e662d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36324
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f2053722e28612920436c69656e74653a2042616e636f20646f2042726173696c202d20526567756c6172697a652d7365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36327
+{
+strings:
+	$a0 = { 5341432d4242202d20526567756c6172697a652073756120636f6e7461 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37446
+{
+strings:
+	$a0 = { 3137322e39382e3139342e3138352f636f6e74726f6c652e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37449
+{
+strings:
+	$a0 = { 6172717569766f73786d6c323031362e64646e732e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37448
+{
+strings:
+	$a0 = { 676C7071717374740700040100106A6176612F6C616E672F4F626A656374 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34794
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 6269746e616d696170702e636f6d2f }
+	$a2 = { 736f66746c617965722e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34795
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 414355534152204f205245434542494d454e544f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33773
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f28612920436c69656e74652c20436f6d756e696361646f20496d706f7274616e7465 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 6c65657975652e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32767
+{
+strings:
+	$a0 = { 76616c652050726573656e74652043616361752d53686f77 }
+	$a1 = { 3e494d5052494d49522d4355504f4d3c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32763
+{
+strings:
+	$a0 = { 6961762E736F6E756C612F65727473656D65732F6D6F632E6C69746E61666E696F746E616365726F697261646E6163756465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32762
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 6E6F74612066697363616C }
+	$a2 = { 2E64646E732E6E65742F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32959
+{
+strings:
+	$a0 = { 687474703a2f2f61637469766174652e736974652e70726f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34664
+{
+strings:
+	$a0 = { 6961762E6F697469732F6F74656A626F2F6D6F632E61676E617269707961646E657A6166 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36436
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20557267656e7465203a20436c69656e746520333020486f726173 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33685
+{
+strings:
+	$a0 = { 46726f6d3a20224369656c6f2e5072656d6961646f22406170616368652e6f7267 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37476
+{
+strings:
+	$a0 = { 636f727265696f7364656d61726b74696e672e636f6d2e62722f6964?? }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34662
+{
+strings:
+	$a0 = { 636f6d70617265636572206e657373612070726f63757261646f726961 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33686
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20646f2042726173696c }
+	$a1 = { 75706c6f61646465696d6167656e732e636f6d2e62722f }
+	$a2 = { 42616e636f20646f2042726173696c202d205365677572616e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34068
+{
+strings:
+	$a0 = { 736567756520616e65786f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 4a20572053202d204173736573736f726961 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37470
+{
+strings:
+	$a0 = { 407265636569746130312d6e6f74696669636163616f2e63663e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34066
+{
+strings:
+	$a0 = { 646f776e6c6f72642064652073756120696e74696d61 }
+	$a1 = { 2e6d7977696e646f7773486f7374696e672e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34067
+{
+strings:
+	$a0 = { 5375626a6563743a20536f6c6963697461646f }
+	$a1 = { 45737461206f206c696e6b }
+	$a2 = { 7a69702e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_29727
+{
+strings:
+	$a0 = { 6175746F6174656E64696D656E746F206262 }
+	$a1 = { 696E6963696172206F2070726F636573736F20646520617475616C697A61 }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32790
+{
+strings:
+	$a0 = { 406373782d776f726b2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37400
+{
+strings:
+	$a0 = { 626F6D20646961207375612068747470733A2F2F7777772E737567617273796E63 }
+	$a1 = { 666F6920656D6974696461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31225
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37473
+{
+strings:
+	$a0 = { 5375626a6563743a20434845515545204445564f4c5649444f }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 76697375616c697a616e646f20636c69717565 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31223
+{
+strings:
+	$a0 = { 736567756520656d20616e65786f }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31222
+{
+strings:
+	$a0 = { 536567756520656d20416e65786f }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32228
+{
+strings:
+	$a0 = { 7469746c653e4974617563617264 }
+	$a1 = { 696d61676575706c6f61642e636f2e756b }
+	$a2 = { 2e706870223e }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32229
+{
+strings:
+	$a0 = { 406b72742d63782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34080
+{
+strings:
+	$a0 = { 40626f6c2e636f6d2e62723e }
+	$a1 = { 456d697373266174696c64653b6f206465204e462d65 }
+	$a2 = { 64726f70626f782e636f6d2f }
+	$a3 = { 56697375616c697a617220656d20666f726d61746f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Junk_33499
+{
+strings:
+	$a0 = { 69204d2e612e692e6c2e692e6e2e67 }
+	$a1 = { 726573706f6e6465722065737461206d656e736167656d20636f6d206f20417373756e746f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32221
+{
+strings:
+	$a0 = { 4061707a2d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35208
+{
+strings:
+	$a0 = { 5375626a6563743a205072657a61646f2053722e28612920436c69656e74653a2042616e636f20646f2042726173696c202d20556c74696d6f20417669736f }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37442
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D7265667265736820636F6E74656E743D22303B2075726C3D68747470733A2F2F6269742E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35519
+{
+strings:
+	$a0 = { 5375626a6563743a2053616e74616e646572 }
+	$a1 = { 6f772e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37688
+{
+strings:
+	$a0 = { 636f6d70726f76616e74652d63616978612e617a75726577656273697465732e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37687
+{
+strings:
+	$a0 = { 626f6c65746f2d6f6e6c696e652e6e6f746963696173317072696d65697261732e636f6d2e62722f4765726172 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37478
+{
+strings:
+	$a0 = { 3137322e39382e3139392e33312f636f6e74726f6c652e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35514
+{
+strings:
+	$a0 = { 5375626a6563743a2042616e636f20646f2042726173696c }
+	$a1 = { 696d6167656e7362726173696c2e6f72672f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37683
+{
+strings:
+	$a0 = { 73696e686f6e6c792e636f2f73697465622f436f6d70 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33365
+{
+strings:
+	$a0 = { 504852706447786c506b4a686158686863694251624746756157786f5953426c625342515245597550433930615852735a54344e436a }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_27999
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c726573706f737461636f6e7461746f40626f6c2e636f6d2e6272 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34012
+{
+strings:
+	$a0 = { 504852706447786c506b4a68615868686369424f5269316c4947567449464245526934384c3352706447786c5067304b5047686c595751 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_34128
+{
+strings:
+	$a0 = { 4d61796f20436c696e6963 }
+	$a1 = { 506c65617365204d61696c20746f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_36330
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c776562616e74697669727573733230323040676d61696c2e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35939
+{
+strings:
+	$a0 = { 6578746f726e6f }
+	$a1 = { 74696e797069632e636f6d2f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35425
+{
+strings:
+	$a0 = { 706167616d656e746f2064652073756120666174757261 }
+	$a1 = { 2f69732e67642f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34321
+{
+strings:
+	$a0 = { 677374617469632e636f6d2f }
+	$a1 = { 6d756c746120646f2053656d205061726172 }
+	$a2 = { 6269742e6c79 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35421
+{
+strings:
+	$a0 = { 6f6e6564726976652e6c6976652e636f6d2f646f776e6c6f6164 }
+	$a1 = { 717565697861206465206372696d6520656d2073657520637066 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_30315
+{
+strings:
+	$a0 = { 6d756c7461646f2076656a612061626169786f20636f706961 }
+	$a1 = { 616272652e61692f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35423
+{
+strings:
+	$a0 = { 436f6d7061726563696d656e746f204f627269676174 }
+	$a1 = { 636f6d70617265636572206e657373612070726f63757261646f726961 }
+	$a2 = { 2e6269746e616d696170702e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35422
+{
+strings:
+	$a0 = { 7061726173616265726d6169732e66696c65732e776f726470726573732e636f6d }
+	$a1 = { 717565697861206465206372696d6520656d2073657520637066 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35337
+{
+strings:
+	$a0 = { 42616e636f20646f2042726173696c207c2043656e7472616c206465204174656e64696d656e746f }
+	$a1 = { 582d5048502d }
+	$a2 = { 676f6f676c6575736572636f6e74656e742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35334
+{
+strings:
+	$a0 = { 42524153494c2041424153544543452041515549 }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 3c617265612073686170653d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35332
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??3d43333d39416c74696d6f5f617669736f5f2d5f4974613d43333d42415f5365677572616e3d43333d413761 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32428
+{
+strings:
+	$a0 = { 406170722d6366782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32429
+{
+strings:
+	$a0 = { 406d72666d732d65782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32426
+{
+strings:
+	$a0 = { 406d72666d732d62782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29613
+{
+strings:
+	$a0 = { 646973706F73697469766F206465207365677572616E[1-8]612069746F6B656E20656E636F6E7472612D73652064657373696E63726F6E697A61646F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32425
+{
+strings:
+	$a0 = { 406d72666d732d61782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36380
+{
+strings:
+	$a0 = { 46726f6d3a202273616340697461752e636f6d }
+	$a1 = { 5375626a6563743a204677643a20436f6d756e696361646f20557267656e7465 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33214
+{
+strings:
+	$a0 = { 7469746c653e4356432076616c652076696167656d }
+	$a1 = { 74696e797069632e636f6d2f }
+	$a2 = { 70726573656e746561646f20706f7220756d20616d69676f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_24208
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 76657269666963616D6F7320717565207375612061646573[1-8]6F206465207365677572616E[1-8]6120656E636F6E7472612D73652064657361746976616461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34245
+{
+strings:
+	$a0 = { 5375626a6563743a2046616365626f6f6b207265636562657520756d20636f6d656e746172696f20646520766f7a20656d2073756120666f746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33218
+{
+strings:
+	$a0 = { 6f776e6c6f616420646f20436f6d70726f76616e7465 }
+	$a1 = { 2e3167622e72752f }
+	$a2 = { 6c696d706f20646520763d43333d4144727573 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30404
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 6e616d653d224f7263616d656e746f2d706c616e696c68612e7064662e68746d6c22 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31133
+{
+strings:
+	$a0 = { 656D20616E65786F }
+	$a1 = { 6172717569766F28732920656D20616E65786F287329203A2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32877
+{
+strings:
+	$a0 = { 433A5C55736572735C4D617269615C446F63756D656E74735C56697375616C2053747564696F20323030385C50726F6A656374735C6E6F766F66696E616C6C6F6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35029
+{
+strings:
+	$a0 = { 53616e74616e646572 }
+	$a1 = { 4d266f61637574653b64756c6f206465207365677572616e2663636564696c3b6120656e636f6e7472612d736520646573617475616c697a61646f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35028
+{
+strings:
+	$a0 = { 7469746c653e42616e636f20646f2042726173696c }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 4461646f732064652041636573736f204242 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36274
+{
+strings:
+	$a0 = { 6372696D657320646967697461697320687474703A2F2F7777772E676F6F676C65 }
+	$a1 = { 76697369746F7520756D207369746520646520636F6E746575646F20696C6567616C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_27045
+{
+strings:
+	$a0 = { 6578747261746F732070656E64656E63696173 }
+	$a1 = { 676678322E686F746D61696C2E636F6D }
+	$a2 = { 6C63206D6172636F6E206164766F6761646F73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37596
+{
+strings:
+	$a0 = { 582d5048502d }
+	$a1 = { 6d656d626572732e6c696e6f64652e636f6d }
+	$a2 = { 706f7374696d672e6f72672f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35024
+{
+strings:
+	$a0 = { 7469746C653E676F72646F2032303134 }
+	$a1 = { 2A736570617261646F20706F7220717565627261 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32816
+{
+strings:
+	$a0 = { 426f6c65746f20646520436f6272616e }
+	$a1 = { 6269742e646f2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33812
+{
+strings:
+	$a0 = { 616e65786f2073756120636172746120646520616e75656e636961 }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35756
+{
+strings:
+	$a0 = { 626C6F6773706F74 }
+	$a1 = { 2F676F6F2E676C2F }
+	$a2 = { 636F6D70726F76616E746520646520646570 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35755
+{
+strings:
+	$a0 = { 582d4c6962726172793a20496e6479 }
+	$a1 = { 416e65786f2e20687474703a2f2f6269742e6c79 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35754
+{
+strings:
+	$a0 = { 666f746f732071756520766f6365206d65207065646975 }
+	$a1 = { 2f676f6f2e676c2f }
+	$a2 = { 436f6469676f3a }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31636
+{
+strings:
+	$a0 = { 6375727469752073756120666f746f }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 46616365626f6f6b2c20496e63 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35202
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 7469746c653e446f63756d656e746f2073656d }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31637
+{
+strings:
+	$a0 = { 6400690072006500630074007800650078002E006E00650074002F0033003400340066003000360064006300330033003600340062003200630064002F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35209
+{
+strings:
+	$a0 = { 656e636f6d656e646120656e636f6e7472612d736520646973706f6e6976656c }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31046
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 6C74722F695F6174746163682E676966 }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_23979
+{
+strings:
+	$a0 = { 656D697373[1-8]6F206465206E6F74612066697363616C }
+	$a1 = { 6E6F746120636F6469676F20646520766572696669636163616F2076697375616C697A6172 }
+	$a2 = { 6174656E63696F73616D656E74652C2065717569706520646520636F6272616E }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36797
+{
+strings:
+	$a0 = { 746974756c6f20646520656c6569746f7220656e636f6e7472612d73652073757370656e736f }
+	$a1 = { 636c642e70742f646c }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36792
+{
+strings:
+	$a0 = { 504768306257772b44516f67504852706447786c506b466e645746795a4755754c6934384c3352706447786c5067304b4944786f5a57466b5067304b494478745a585268 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30893
+{
+strings:
+	$a0 = { 436F6E74656E742D547970653A206170706C69636174696F6E2F6F637465742D73747265616D3B206E616D653D }
+	$a1 = { 5047316C64474567614852306343316C63585670646A3069636D566D636D567A614349675932397564475675644430694D44736764584A7350 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32960
+{
+strings:
+	$a0 = { 55736572735C67306C70335C446F63756D656E74735C6E6F766F6C6F6164646F776E6C6F61645C6E6F766F6C6F6164646F776E6C6F6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32963
+{
+strings:
+	$a0 = { 49006E007400650072006E0061006C004E0061006D00650000004E004F0056004F00460049004E0041004C004C004F0041004400440044002E006500780065 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32964
+{
+strings:
+	$a0 = { 55736572735C67306C70335C446F63756D656E74735C56697375616C2053747564696F20323030385C50726F6A656374735C4E4F564F46494E414C4C4F4144 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32967
+{
+strings:
+	$a0 = { 46773a205365677565 }
+	$a1 = { 5047686c5957512b494478745a58526849476830644841745a58463161585939496e4a6c5a6e4a6c6332676949474e76626e526c626e5139496a453756564a4d50 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_31320
+{
+strings:
+	$a0 = { 63617274[1-8]6F206368617665206465207365677572616E }
+	$a1 = { 696D6775722E636F6D2F }
+	$a2 = { 627261646573636F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Spammer_37216
+{
+strings:
+	$a0 = { 667265736866696e65666f6f64732e636f6d2e61752f696d616765732f636174616c6f6775652f70726f64756374732f696e646578362e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36242
+{
+strings:
+	$a0 = { 666f746f732071756520766f6365206d65207065646975 }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Spammer_37218
+{
+strings:
+	$a0 = { 35302e3131362e3131322e3136372f7e61312f76732e706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36909
+{
+strings:
+	$a0 = { 66616365626F6F6B2068747470733A2F2F676F6F676C6564726976652E636F6D }
+	$a1 = { 66616365626F6F6B2C20696E632E }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_36309
+{
+strings:
+	$a0 = { 636F6E7365677569722076697375616C697A617220687474703A2F2F636C2E6C792F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35596
+{
+strings:
+	$a0 = { 427261646573636f }
+	$a1 = { 636f6e6669726d613d43333d41373d43333d41336f206465206461646f73 }
+	$a2 = { 6d696772652e6d652f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36303
+{
+strings:
+	$a0 = { 616E65786F206F20636F6D70726F76616E74653A20687474703A2F2F676F6F2E676C2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36302
+{
+strings:
+	$a0 = { 656D20616E65786F287329203A2068747470733A2F2F636C642E70742F646C2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34469
+{
+strings:
+	$a0 = { 46726f6d3a207375626d6172696e6f }
+	$a1 = { 2e706870?? }
+	$a2 = { 6c69766566696c6573746f72652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37509
+{
+strings:
+	$a0 = { 2e617669736f63656e74616c6d6b746d756c74692e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31522
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f6a3045344f2e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31521
+{
+strings:
+	$a0 = { 40627261646573636f2d73696e63726f6e697a6163616f2e636f6d3e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31947
+{
+strings:
+	$a0 = { 53006F0075007200630065003D00640062007300710030003000310035 }
+	$a1 = { 43006100740061006C006F0067003D00740061006D00790079006D006900720061006E0031 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32369
+{
+strings:
+	$a0 = { 706167616D656E746F206170726F7661646F }
+	$a1 = { 2F77702D636F6E74656E742F }
+	$a2 = { 666E61632E636F6D2E62722F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31945
+{
+strings:
+	$a0 = { 443A5C6172717569766F736B6C6C6C6C6C6C6C6C6C6C6C6C5C646F776E6C6F61646C6F6961645C646F776E6C6F61646C6F6961645C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31942
+{
+strings:
+	$a0 = { 45003A005C0032003000310034002D0032003000310035005C005F004E0065007700730020004C006F00610064007300200049006E007300740061006C006C0073002000650020004D0061006E006900700075006C00610074006F0072005C00500072006F0063006500730073005C006D005C004C006F0061006400650072 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32361
+{
+strings:
+	$a0 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f79 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32360
+{
+strings:
+	$a0 = { 6375696461646f20636f6d20617320666f746f73 }
+	$a1 = { 676f6f2e676c2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32367
+{
+strings:
+	$a0 = { 626F6C65746F207175652076656E636575 }
+	$a1 = { 64726976652E676F6F676C652E636F6D }
+	$a2 = { 76697375616C697A617220626F6C65746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31948
+{
+strings:
+	$a0 = { 636F70657263616E612E636F6D2E62722F3530616E6F732F61646F626533 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34063
+{
+strings:
+	$a0 = { 53696e63726f6e69736d6f206465205365677572616e }
+	$a1 = { 676f6f2e676c2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32027
+{
+strings:
+	$a0 = { 443A5C5455444F4E4F564F5C4241495841524C4F41445C4241495841524C4F41445C6F626A }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32028
+{
+strings:
+	$a0 = { 320030003100350020002D0020004F005500560049004E0044004F002000460041004E0041005400490053004D004F00200044004F0020004600410047004E00450052 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34883
+{
+strings:
+	$a0 = { 6465706f7369746f20656d2073756120636f6e7461 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 56697375616c697a617220436f6d70726f76616e7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34840
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 6269746c793d3245636f6d }
+	$a2 = { 4076656e6461733d3245636f6d }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_34207
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20415649534f }
+	$a1 = { 46726f6d3a2022496e666f456d61696c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_22736
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f36565374756a58 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35211
+{
+strings:
+	$a0 = { 69546f6b656e20656e636f6e7472612d73652064657373696e63726f6e697a61646f }
+	$a1 = { 42616e636f20497461 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_30499
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 736572[1-8]626C6F7175656164 }
+	$a2 = { 696D6775722E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36603
+{
+strings:
+	$a0 = { 636F727265696F732E636F6D2E6272 }
+	$a1 = { 6465766F6C75[1-8]6F206465207365646578 }
+	$a2 = { 656E636F6D656E6461732065206361727461732E2068747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34256
+{
+strings:
+	$a0 = { 77332F6C74722F695F617474616368 }
+	$a1 = { 6269742E6C792F }
+	$a2 = { 656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_37465
+{
+strings:
+	$a0 = { 62616E636F20646F2062726173696C }
+	$a1 = { 726563616461737472616D656E746F }
+	$a2 = { 626C6F717565696F }
+	$a3 = { 696D6775722E636F6D }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Phishing_37464
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d756e696361646f20496d706f7274616e746520646f2042616e636f20646f2042726173696c }
+	$a1 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32791
+{
+strings:
+	$a0 = { 4e6f74612046697363616c20456c657472 }
+	$a1 = { 69732e67642f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32797
+{
+strings:
+	$a0 = { 6C75706F72742E636F6D2F74656D706C617465732F6B6F6E6B75722F6C616E67756167652F6D2F[1]2E7A6970 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37199
+{
+strings:
+	$a0 = { 6E6F746966696361[1-8]6F206465206465766F6C75[1-8]6F206465207365646578 }
+	$a1 = { 6269746C792E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37313
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f2d656d61696c20436c69656e746520427261646573636f }
+	$a1 = { 617265612073686170653d22726563742220636f6f726473 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37312
+{
+strings:
+	$a0 = { 6c6f67636162696e73616c65732e6c74642e756b2f7836342e706e67 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_34848
+{
+strings:
+	$a0 = { 5265706c792d546f3a203c7765626c696e6b73734071712e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33362
+{
+strings:
+	$a0 = { 7469746c653e496e666f656d61696c20427261646573636f }
+	$a1 = { 636173696d616765732e6e65742f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37315
+{
+strings:
+	$a0 = { 46726f6d3a202243414958412045434f4e4f4d494341 }
+	$a1 = { 5375626a6563743a20494e5445524e45542042414e4b494e472028434f4e544120424c4f515545414441 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33361
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f656d61696c20427261646573636f }
+	$a1 = { 566f63652c20436c69656e74652049746175 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_34847
+{
+strings:
+	$a0 = { 5265706c792d546f3a207765626c696e6b73734071712e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_22045
+{
+strings:
+	$a0 = { 6163636f756e74734070617373706f72742e636f6d }
+	$a1 = { 582d4c6962726172793a20496e6479 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33213
+{
+strings:
+	$a0 = { 7469746c653e415f7a756c }
+	$a1 = { 72657175697369746f73206465207365677572616e }
+	$a2 = { 3e434c4951554520415155493c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33216
+{
+strings:
+	$a0 = { 6461646f7320636164617374726169732073656d70726520617475616c697a61646f73 }
+	$a1 = { 53494352454449 }
+	$a2 = { 436c69717565206e6f206172717569766f20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33217
+{
+strings:
+	$a0 = { 46726f6d3a20224174656e64696d656e746f2042616e6b6c696e65 }
+	$a1 = { 4964656e7469666963616d6f735f756d5f70726f626c656d615f6e6f5f7365755f61636573736f }
+	$a2 = { 2e706870??636c69656e7465 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33215
+{
+strings:
+	$a0 = { 7469746c653e452d6d61696c206465206f666572746173206578636c75736976617320646f2057616c6d617274 }
+	$a1 = { 6d696772652e6d652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37267
+{
+strings:
+	$a0 = { 5375626a6563743a2050726f636564696d656e746f206465203d??5554462d38??42??5532566e64584a6862734f6e59513d3d??3d204242 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_29840
+{
+strings:
+	$a0 = { 7061726173616265726D6169732E66696C65732E776F726470726573732E636F6D2F323030382F30342F6D70662E706E672070726F636564696D656E746F20696E7665737469676174 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33219
+{
+strings:
+	$a0 = { 5375626a6563743a2053657520636164617374726f206e6f204d65726361646f204c69767265 }
+	$a1 = { 2e686f6c2e65732f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_29844
+{
+strings:
+	$a0 = { 636173617362616869612E636F6D2E6272 }
+	$a1 = { 76697375616C697A6172206F207365752070656469646F3A2068747470733A2F2F646F63732E676F6F676C65 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37308
+{
+strings:
+	$a0 = { 407365727665722d30352e63663e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37609
+{
+strings:
+	$a0 = { 2E726567697374726F636172746F72696F73696C76612E636F6D2E62722F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37302
+{
+strings:
+	$a0 = { 4e6f74612046697363616c205061756c697374616e6120687265663d2268747470733a2f2f7777772e737567617273796e63 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32157
+{
+strings:
+	$a0 = { 636F6D70726176656E64616D6F74696E6861732E6B696E67686F73742E6E65742F636E2F636E742F6E6F746966792E706870 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37306
+{
+strings:
+	$a0 = { 407365727665722d30342e63663e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37307
+{
+strings:
+	$a0 = { 70726F746F636F6C6F206E[8-16]2068747470733A2F2F6269746C792E636F6D2F }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37304
+{
+strings:
+	$a0 = { 736563757265[2]2D75726C2E6D6C2F646F776E6C6F6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32486
+{
+strings:
+	$a0 = { 50726573656e74652043616361752d53686f77 }
+	$a1 = { 496d7072696d6972204375706f6d }
+	$a2 = { 697461752e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32487
+{
+strings:
+	$a0 = { 5375626a6563743a20436f6d70726f76616e746520646520646570 }
+	$a1 = { 582d4d61696c65723a204143454d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32899
+{
+strings:
+	$a0 = { 726573706f7374613a2071756f7461696e7465726e657440746563682d63656e7465722e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32898
+{
+strings:
+	$a0 = { 5265706c792d546f3a2071756f7461696e7465726e65744079616e6465782e636f6d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33176
+{
+strings:
+	$a0 = { 436f6e746120436f7272656e7465 }
+	$a1 = { 676f6f676c6564726976652e636f6d2f }
+	$a2 = { 3e436f6d70726f76616e74652e5044463c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33076
+{
+strings:
+	$a0 = { 6a756469636961697320656d20736575206e6f6d65 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 616173702e6f72672e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32488
+{
+strings:
+	$a0 = { 6669726D612E65786500544D6574686F64496D706C656D656E746174696F6E496E74657263657074 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32489
+{
+strings:
+	$a0 = { 55736572735C4D617269615C446F63756D656E74735C56697375616C2053747564696F20323030385C50726F6A656374735C6E6F766F66696E616C6C6F61645C6E6F766F66696E616C6C6F6164 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33077
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 406573782d666c65782e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32167
+{
+strings:
+	$a0 = { 646565702e6e656f2e6e6f74652d70782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32164
+{
+strings:
+	$a0 = { 4368617665206465205365677572616e }
+	$a1 = { 74657272612e636f6d2e62722f7365677572616e63612f636c69656e74652f73757370656e73616f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37676
+{
+strings:
+	$a0 = { 646574616C686172207475646F2062656D206F7267616E697A61646F2E20687474703A2F2F676F6F2E676C }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32169
+{
+strings:
+	$a0 = { 406f7665722d6273782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32168
+{
+strings:
+	$a0 = { 406e6f74652d70782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36680
+{
+strings:
+	$a0 = { 72652d76616c69646174652074686973206d61696c626f7820687474703a2f2f6269742e6c792f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36224
+{
+strings:
+	$a0 = { 5375626a6563743a204369656c6f202d20436f6d707261205072656d69616461 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36226
+{
+strings:
+	$a0 = { 6369656c6f202d20636f6d707261207072656d69616461 }
+	$a1 = { 63616461737472652d7365 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_36223
+{
+strings:
+	$a0 = { 46726f6d3a20224349454c4f }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37276
+{
+strings:
+	$a0 = { 633A5C5C6172717569766F732064652070726F6772616D61735C5C2229297B207472797B20646F776E6C6F616466696C652877646563727970742863686F7374 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35551
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 3e42616978617220636f6d6f207a69703c }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_35089
+{
+strings:
+	$a0 = { 5265706c792d546f3a202252697175657a612041676f726122 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37275
+{
+strings:
+	$a0 = { 40676572656e636961646f722e746f703e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37272
+{
+strings:
+	$a0 = { 626C6F6773706F742E636F6D2F }
+	$a1 = { 6964206F626A65746F3A2068747470 }
+	$a2 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33779
+{
+strings:
+	$a0 = { 696E666F28746869732C2270726F6475746F }
+	$a1 = { 6269742E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37271
+{
+strings:
+	$a0 = { 5375626a6563743a204e6f74612066697363616c20656d6974696461 }
+	$a1 = { 737567617273796e632e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33774
+{
+strings:
+	$a0 = { 3e5736342e77696e4d61696c54524a3c }
+	$a1 = { 6d6f64756c6f206465207365677572616e2663636564696c3b61 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37580
+{
+strings:
+	$a0 = { 636C69636B20686572652E2066656E6978206E6574776F726B20702E6F2E20626F7820323137 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37278
+{
+strings:
+	$a0 = { 73686f626172612d696e666f2e636f6d2f66696c65732f77616c6d6172745f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32095
+{
+strings:
+	$a0 = { 4369656c6f20466964656c6964616465 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_21313
+{
+strings:
+	$a0 = { 636F6D756E696361646F20696D706F7274616E746520646F2062616E636F20646F2062726173696C }
+	$a1 = { 726563616461737472616D656E746F }
+	$a2 = { 626C6F717565696F2064652073756120636F6E7461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32092
+{
+strings:
+	$a0 = { 646565702e6e656f2e6f7074696e2d68782e636f6d2e62722f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Junk_35338
+{
+strings:
+	$a0 = { 46726f6d3a20224c657669747261 }
+	$a1 = { 5375626a6563743a2048756765 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33079
+{
+strings:
+	$a0 = { 636f6d70726f76616e7465206465206465706f7369746f }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32306
+{
+strings:
+	$a0 = { 73697465617a7572652e73697465617a7572652e6a342e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33782
+{
+strings:
+	$a0 = { 434149584120494e5445524e45542042414e4b494e47 }
+	$a1 = { 626c6f71756561646f7320696e64657465726d696e6164616d656e7465 }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37458
+{
+strings:
+	$a0 = { 6175746f7069747572617431302e636f6d2e62722f436f6e7461646f5f626f6c2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_33787
+{
+strings:
+	$a0 = { 416c65727461204242 }
+	$a1 = { 6269746c792e636f6d2f }
+	$a2 = { 6c65657975652e6e65742f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37456
+{
+strings:
+	$a0 = { 6175746f7069747572617431302e636f6d2e62722f436f6e7461646f725f68746d6c2f426f6c65746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37457
+{
+strings:
+	$a0 = { 6c6172697361636361362e69742f6c69627261726965732f706870757466382f7574696c732f756e69636f642f6d6f645f7472616e7a6174696f6e732f696d6167656e776562636f6d656e74 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37454
+{
+strings:
+	$a0 = { 706167616D656E746F20646120666174757261 }
+	$a1 = { 616E65786F3A2068747470733A2F2F676F6F676C656472697665 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37452
+{
+strings:
+	$a0 = { 6C696E6B2061207365677569722068747470733A2F2F7777772E737567617273796E63 }
+	$a1 = { 6167726F70656375617269612073616E74612062617262617261 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37450
+{
+strings:
+	$a0 = { 626f617669737461636f6272616e6361732e746f702f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37451
+{
+strings:
+	$a0 = { 6D65746120687474702D65717569763D22726566726573682220636F6E74656E743D22303B2075726C3D687474703A2F2F[1-16]2E64646E732E6E6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34659
+{
+strings:
+	$a0 = { 5375626a6563743a204f692e5475646f2062656d2e44657363756c70652d6d652070656c61206d696e6861206672616e7175657a61 }
+	$a1 = { 657363616e6561646f2070656c6f204176617374 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_34658
+{
+strings:
+	$a0 = { 6d756c746120646f2053656d205061726172 }
+	$a1 = { 74696e7975726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33149
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f203d??49534f2d383835392d31??51??4974613d4641??3d }
+	$a1 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32945
+{
+strings:
+	$a0 = { 626f6c6c6130372e626f6c6c6130372e6d332e696e7465726e616c2e636c6f75646170702e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32771
+{
+strings:
+	$a0 = { 3A64696D7478743A7478743D226961762E }
+	$a1 = { 3A64696D74657272613A74657272613D22 }
+	$a2 = { 2B7374727265766572736528746572726129 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32772
+{
+strings:
+	$a0 = { 3100360038002E00360032002E003200300034002E003100300030002F00730070002F00[1]002E007A00610070 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33273
+{
+strings:
+	$a0 = { 536567756520656d20616e65786f }
+	$a1 = { 4173736573736f726961206520436f6272616e??61 }
+	$a2 = { 424c414e4b3e76697375616c697a61723c424c414e4b }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32949
+{
+strings:
+	$a0 = { 7365752069746F6B656E20666F6920657870697261646F }
+	$a1 = { 73756120636F6E746120736572[1-8]626C6F7175656164 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_33143
+{
+strings:
+	$a0 = { 636169786120646520636f727265696f206573743d43333d4131206163696d6120646120636f7461 }
+	$a1 = { 2e747269706f642e636f6d2f }
+	$a2 = { 506f73746d61737465722067657374 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_33140
+{
+strings:
+	$a0 = { 6174697669646164657320696e636f6d756e7320656d2073756120636f6e7461204f75746c6f6f6b }
+	$a1 = { 696d6775722e636f6d2f }
+	$a2 = { 76697375616c697a617268747470 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34652
+{
+strings:
+	$a0 = { 7469746c653e3d42305365677565206f20616e65786f }
+	$a1 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33687
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 42616978617220416e65786f3a }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34654
+{
+strings:
+	$a0 = { 504568465155512b44516f385455565551534249564652514c55565256556c5750534a535a575a795a584e6f496942445430355552553555505349774f3156535444 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_30099
+{
+strings:
+	$a0 = { 617669736F207C20626F6C65746F20646520636F6272616E }
+	$a1 = { 64726976652E676F6F676C652E636F6D2F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32577
+{
+strings:
+	$a0 = { 7469746c653e4e6f74612046697363616c }
+	$a1 = { 426169786172204e6f74612046697363616c }
+	$a2 = { 536567756520656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31239
+{
+strings:
+	$a0 = { 76696120646f20626f6c65746f }
+	$a1 = { 696d616765736861636b2e636f6d2f612f696d6736392f323632332f6a6276342e6a7067 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31231
+{
+strings:
+	$a0 = { 546d39305953424761584e6a595777 }
+	$a1 = { 44516f38625756305953426f644852774c57567864576c3250534a795a575a795a584e6f4969426a623235305a573530505349774f794231636d773961 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32238
+{
+strings:
+	$a0 = { 46726f6d3a20436f6e7374727543617264 }
+	$a1 = { 726563616461737472616d656e746f }
+	$a2 = { 696d6775722e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Junk_33483
+{
+strings:
+	$a0 = { 46726f6d3a202243696f6c6973204d65647322 }
+	$a1 = { 5375626a6563743a20506572736f6e616c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32237
+{
+strings:
+	$a0 = { 4061782d706e732e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32543
+{
+strings:
+	$a0 = { 406d61792d7372632e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32234
+{
+strings:
+	$a0 = { 4061782d73627a2e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33197
+{
+strings:
+	$a0 = { 6d696e68617320666f746f73 }
+	$a1 = { 636c2e6c792f }
+	$a2 = { 4d6520726573706f6e6461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35833
+{
+strings:
+	$a0 = { 5375626a6563743a204677643a20454e433a204154454e43414f20434f4d554e494341444f2049544155 }
+	$a1 = { 582d5048502d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37698
+{
+strings:
+	$a0 = { 6272617370726573736368656361646f722e636f6d2e62722f6f626a65746f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_36745
+{
+strings:
+	$a0 = { 5375626a6563743a20496e666f726d616d6f732071756520737561206368617665206465207365677572616e??6120427261646573636f20656e636f6e7472612d7365206578706972616461 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37694
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 636C2E6C792F }
+	$a2 = { 6E66702E66617A656E64612E7370 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37695
+{
+strings:
+	$a0 = { 73696e686f6e6c792e636f2f70616761722f646f63732f6163657373 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37690
+{
+strings:
+	$a0 = { 636F6D70726F76616E746520646520646570 }
+	$a1 = { 6269746C792E636F6D2F }
+	$a2 = { 64726F70626F782E636F6D2F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_37691
+{
+strings:
+	$a0 = { 2e636172746f72696f73696c7661726567697374726f2e636f6d2e62722f4f72646572 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37692
+{
+strings:
+	$a0 = { 6a6f74616e6577732e686f70746f2e6f72672f6172717569766f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_37693
+{
+strings:
+	$a0 = { 5375626a6563743a2046573a20436f6d756e696361646f20737063 }
+	$a1 = { 6269742e6c792f }
+	$a2 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_34435
+{
+strings:
+	$a0 = { 7469746c653e416e65786f }
+	$a1 = { 6269742e6c79 }
+	$a2 = { 4d494e4953544552494f205055424c49434f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35438
+{
+strings:
+	$a0 = { 5047316c64474567614852306343316c63585670646a3069636d566d636d567a614349675932397564475675644430694d43413764584a735057 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_33356
+{
+strings:
+	$a0 = { 5375626a6563743a2070726f746573746f20646520626f6c65746f }
+	$a1 = { 582d5048502d4f726967696e6174696e672d536372697074 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33351
+{
+strings:
+	$a0 = { 7469746c653e50726566656974757261 }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 4e6f74612046697363616c }
+	$a3 = { 676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2 and $a3
+}
+
+	
+rule Porcupine_Malware_35925
+{
+strings:
+	$a0 = { 636f6d656e746172696f20646520766f7a20656d2053756120466f746f }
+	$a1 = { 626c6f6773706f742e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35922
+{
+strings:
+	$a0 = { 666f746f7320646f2072657665696c6c6f6e }
+	$a1 = { 64726f70626f782e636f6d2f }
+	$a2 = { 2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_32431
+{
+strings:
+	$a0 = { 417475616c697a613d45373d45336f5f64655f5365677572616e3d4537615f2d5f4242 }
+	$a1 = { 582d4d61696c65723a205048504d61696c6572 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32430
+{
+strings:
+	$a0 = { 406d72666d732d64782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_32433
+{
+strings:
+	$a0 = { 406170722d6266782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_35692
+{
+strings:
+	$a0 = { 696d67207372633d226369643a }
+	$a1 = { 76696120646120466174757261 }
+	$a2 = { 3e446f776e6c6f6164206173205a69703c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35690
+{
+strings:
+	$a0 = { 696d6775722e636f6d2f }
+	$a1 = { 3e42616978617220636f6d6f207a69703c }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_32438
+{
+strings:
+	$a0 = { 406d72666d732d63782e636f6d2e62723e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36653
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 616d632061636573736f726961 }
+	$a2 = { 2f662e636c2e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36652
+{
+strings:
+	$a0 = { 7665726966696361722061206261697861 }
+	$a1 = { 676f6f676c6564726976652e636f6d }
+	$a2 = { 75706c6f61646465696d6167656e73 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36650
+{
+strings:
+	$a0 = { 4e4f54412046495343414c }
+	$a1 = { 2e337574696c69746965732e636f6d2f?? }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_37614
+{
+strings:
+	$a0 = { 7469746c653e426c61636b2066726964617920616d65726963616e6173 }
+	$a1 = { 746578742d6465636f726174696f6e3a206f7665726c696e65 }
+	$a2 = { 3e4c4f4a415320414d45524943414e41533c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Phishing_35650
+{
+strings:
+	$a0 = { 5375626a6563743a2053657520446973706f73697469766f204974617520456e636f6e7472612d736520446573617475616c697a61646f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_36494
+{
+strings:
+	$a0 = { 6269742e6c792f }
+	$a1 = { 766f636520657374612073656e646f20636f726e6f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35300
+{
+strings:
+	$a0 = { 46726f6d3a20224f757669646f7269612049746175 }
+	$a1 = { 5375626a6563743a2069546f6b656e202d }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35307
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??42616e636f5f53616e74616e6465725f2d5f5365755f4d6f64756c6f5f64655f50726f74653d45373d45336f5f656e636f6e7472612d73655f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_35305
+{
+strings:
+	$a0 = { 5375626a6563743a203d??69736f2d383835392d31??51??42425f2d5f416c657274615f64655f7365677572616e }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34500
+{
+strings:
+	$a0 = { 687474702d65717569763d334422726566726573682220636f6e74656e743d334422303b2075726c3d }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34502
+{
+strings:
+	$a0 = { 4e6f74612046697363616c }
+	$a1 = { 67653d324574742f6170692f }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33225
+{
+strings:
+	$a0 = { 6f723d4537616d656e746f2065206e616f207469766520726573706f737461 }
+	$a1 = { 2e3167622e72752f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_19350
+{
+strings:
+	$a0 = { 656e63616d696e68617220726573706f7374612070617261 }
+	$a1 = { 662e66696e616e636569726f4074657272612e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35780
+{
+strings:
+	$a0 = { 46726f6d3a2042616e636f20646f2042726173696c }
+	$a1 = { 5375626a6563743a20436f6d756e696361646f20496d706f7274616e7465202d20556c74696d6f20417669736f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_33226
+{
+strings:
+	$a0 = { 7065646920756d206f723d4537616d656e746f }
+	$a1 = { 2e3167622e72752f }
+	$a2 = { 6573743d4531206c69767265206465205669727573 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_33229
+{
+strings:
+	$a0 = { 7469746c653e6e662d726566 }
+	$a1 = { 3e416e65786f3a20266e6273703b205245462d434f4d5052 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35320
+{
+strings:
+	$a0 = { 7469746c653e446f63756d656e746f2073656d }
+	$a1 = { 4e6f74612046697363616c20456c657472 }
+	$a2 = { 2e7a706d782e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_23803
+{
+strings:
+	$a0 = { 6E6F74612066697363616C20656C657472 }
+	$a1 = { 706F6C69746963616C7065727370656374697665732E6F72672E756B }
+	$a2 = { 736567756520656D20616E65786F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30557
+{
+strings:
+	$a0 = { 436F6E74656E742D547970653A206170706C69636174696F6E2F6F637465742D73747265616D3B206E616D653D }
+	$a1 = { 5047686C5957512B494478745A58526849476830644841745A58463161585939496E4A6C5A6E4A6C6332676949474E76626E526C626E5139496A453756564A4D5057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31787
+{
+strings:
+	$a0 = { 46697363616c20456c657472 }
+	$a1 = { 737567617273796e632e636f6d2f }
+	$a2 = { 656d20616e65786f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_30550
+{
+strings:
+	$a0 = { 436F6E74656E742D547970653A206170706C69636174696F6E2F6F637465742D73747265616D3B206E616D653D }
+	$a1 = { 44516F38625756305953426F644852774C57567864576C3250534A795A575A795A584E6F4969426A623235305A573530505349774F794231636D7739 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_35328
+{
+strings:
+	$a0 = { 5375626a6563743a203d??7574662d38??71??4657443d33415f436f6d756e696361646f5f4974613d43333d42413d3245 }
+	$a1 = { 7469746c653e49544155 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_28716
+{
+strings:
+	$a0 = { 626C632066696E616E6365697261 }
+	$a1 = { 70617263656C616D656E746F206E6F20616E65786F2061626169786F2068747470 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35106
+{
+strings:
+	$a0 = { 506167616d656e746f20636f6e6669726d61646f }
+	$a1 = { 2f636c2e6c792f }
+	$a2 = { 747278642e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35107
+{
+strings:
+	$a0 = { 464f544f20544f525045444f }
+	$a1 = { 2e6174656d7075726c2e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35105
+{
+strings:
+	$a0 = { 676f6f676c6564726976652e636f6d2f }
+	$a1 = { 7469746c653d33442256697375616c697a617220496e74696d61 }
+	$a2 = { 6269746c792e636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35100
+{
+strings:
+	$a0 = { 7469746c653e506167616d656e746f204170726f7661646f }
+	$a1 = { 64726f70626f782e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35213
+{
+strings:
+	$a0 = { 6269746c792e636f6d2f }
+	$a1 = { 454d20414e45584f }
+	$a2 = { 4e4f54412046495343414c }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35210
+{
+strings:
+	$a0 = { 6d696e68617320666f746f73 }
+	$a1 = { 2e777872622e636f6d2e6272 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35214
+{
+strings:
+	$a0 = { 6269746C792E636F6D2F }
+	$a1 = { 656D20616E65786F }
+	$a2 = { 6E6F74612066697363616C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_35743
+{
+strings:
+	$a0 = { 62616978617220636f6d6f207a6970 }
+	$a1 = { 656d20616e65786f }
+	$a2 = { 6269742e6c792f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31050
+{
+strings:
+	$a0 = { 7469746c653e4e6f746966696361 }
+	$a1 = { 7469746c653d224d656e736167656d22 }
+	$a2 = { 666f726d5f72656c6f67696f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36275
+{
+strings:
+	$a0 = { 656E7472656775652070617261207472616E73706F727461646F72613A2070656469646F }
+	$a1 = { 656E74726567612D30312E706E67206E6F7465626F6F6B20766F7374726F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Junk_37347
+{
+strings:
+	$a0 = { 43414e45544120455350493d43333d3833 }
+	$a1 = { 736c6176656c6f6f702e696e666f2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_37600
+{
+strings:
+	$a0 = { 5375626a6563743a20555247454e5445202d20526567697374726f206465204f636f7272656e6369612028 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32972
+{
+strings:
+	$a0 = { 504c414e494c4841204445204f523d4337414d454e544f2e2068747470 }
+	$a1 = { 2e676f6f676c6564726976652e636f6d2f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32973
+{
+strings:
+	$a0 = { 617373696d2071756520636f6e66657269722e2020687474703a2f2f636c2e6c79 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32971
+{
+strings:
+	$a0 = { 433A5C6133345C6C6F616465725C57696E646F77734170706C69636174696F6E }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_29406
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 617475616C697A61[1-8]6F2063616461737472616C }
+	$a2 = { 626C6F717565696F2064652073756120636F6E7461 }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31746
+{
+strings:
+	$a0 = { 45003A005C00420061006E006B0073005C004C006F00610064006500720073002000320030003100340078 }
+	$a1 = { 69006D006100640077006D002E006500780065 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_35236
+{
+strings:
+	$a0 = { 656d20616e65786f }
+	$a1 = { 636f6d70726f76616e7465 }
+	$a2 = { 6269746c793d3245636f6d2f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36318
+{
+strings:
+	$a0 = { 6e6f74612066697363616c20656c657472 }
+	$a1 = { 2e7068702076697375616c697a6172 }
+	$a2 = { 2e6d6167617a696e656c75697a612e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_36314
+{
+strings:
+	$a0 = { 63757272[1-8]63756C6F207175652070656469752068747470733A2F2F7777772E64726F70626F782E }
+	$a1 = { 2F662E636C2E6C792F }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Phishing_22256
+{
+strings:
+	$a0 = { 74696e797069632e636f6d2f31353532666465 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_34524
+{
+strings:
+	$a0 = { 636f6d656e746172696f20646520766f7a20656d2073756120666f746f }
+	$a1 = { 2f7065672e61652f }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32553
+{
+strings:
+	$a0 = { 7000680070002E0073006F0073006900760061002F0073006F0073006900760061002F006F0066006E0069002E007A0069006E0075006D007200610063 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Phishing_31848
+{
+strings:
+	$a0 = { 627261646573636F }
+	$a1 = { 636F727265[1-8]6F206E6F2073657520636F6D706F6E656E7465206465207365677572616E }
+	$a2 = { 70726F636564696D656E746F }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31688
+{
+strings:
+	$a0 = { 4400610074006100200053006F0075007200630065003D }
+	$a1 = { 443A5C6B6C6C6C6C6C6C5C }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_32379
+{
+strings:
+	$a0 = { 50726573656e74652043616361752d53686f77 }
+	$a1 = { 636163617573686f772e636f6d2e62722f }
+	$a2 = { 697461752e636f6d2e62722f }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_31687
+{
+strings:
+	$a0 = { 443A5C6B6C6C6C6C6C6C5C62616978616C6F6164325C57696E646F77734170706C69636174696F6E315C57696E646F77734170706C69636174696F6E315C6F626A5C52656C65617365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31686
+{
+strings:
+	$a0 = { 443A5C6B6C6C6C6C6C6C5C57696E646F77734170706C69636174696F6E325C57696E646F77734170706C69636174696F6E325C6F626A5C52656C65617365 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31683
+{
+strings:
+	$a0 = { 706c616e696c682d6f7263616d656e746f2e64646e732e6e6574 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_31682
+{
+strings:
+	$a0 = { 536567756520616e65786f }
+	$a1 = { 50454a535067304b50453146564545675932397564475675644430694d44736764584a735057 }
+
+condition:
+	$a0 and $a1
+}
+
+	
+rule Porcupine_Malware_31689
+{
+strings:
+	$a0 = { 69656d696c6c65723038332e6e65742f6c6976656d61696c2f }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_24282
+{
+strings:
+	$a0 = { 736567756520656D20616E65786F }
+	$a1 = { 696D616765732E6F726B75742E636F6D2F }
+	$a2 = { 6E6F74612066697363616C }
+
+condition:
+	$a0 and $a1 and $a2
+}
+
+	
+rule Porcupine_Malware_32376
+{
+strings:
+	$a0 = { 310039002F00300033002F0032003000310034002D004B00410059004300450042005500410052005100550045 }
+
+condition:
+	$a0
+}
+
+	
+rule Porcupine_Malware_32377
+{
+strings:
+	$a0 = { 636D64202F63206269747361646D696E }
+	$a1 = { 43506C4170706C6574 }
+
+condition:
+	$a0 and $a1
+}
+
+	
