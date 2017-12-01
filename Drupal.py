@@ -4,8 +4,8 @@ from PrintUtils import print_debug
 # This class represents a Drupal installation
 class Drupal(CMS):
 
-    def __init__(self, path):
-        super().__init__(path)
+    def __init__(self, path, name):
+        super().__init__(path, name)
 
 
     def compare_with_clean_installation(self):

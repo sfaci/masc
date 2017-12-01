@@ -3,17 +3,20 @@ from abc import ABC, abstractmethod
 from MascEntry import MascEntry
 from Dictionary import Dictionary
 from PrintUtils import print_red
+from Constants import BACKUPS_DIR
 import hashlib
+import shutil
 
 class CMS(ABC):
 
-    def __init__(self, path):
+    def __init__(self, path, name="no_name"):
         super().__init__()
         # Path where this Wordpress is installed
         self.path = path
         # It will contain all the plain text files
         self.entry_list = []
-        #self.version = self.get_version()
+        self.version = self.get_version()
+        self.name = name
 
 
     # List and stores all the plain text files
@@ -28,7 +31,7 @@ class CMS(ABC):
             else:
                 st_type = "file"
 
-            masc_entry = MascEntry(entry.name, entry.path, os.getcwd() + "/" + entry.path, entry_stat.st_size, entry_stat.st_mode,
+            masc_entry = MascEntry(entry.name, entry.path, entry.path, entry_stat.st_size, entry_stat.st_mode,
                                    entry_stat.st_atime, entry_stat.st_mtime, entry_stat.st_ctime, st_type)
             self.entry_list.append(masc_entry)
 
@@ -63,7 +66,7 @@ class CMS(ABC):
             # TODO try to get more samples
             if checksum in Dictionary.signatures_db:
                 malware = str(Dictionary.signatures_db[checksum])
-                results.append(entry.name)
+                results.append(self.add_result(entry, malware))
 
             # Check for files applying yara rules
             if entry.is_plain_text():
@@ -72,12 +75,40 @@ class CMS(ABC):
                         result = rules.match(data=file_data)
                         if result:
                             for rule in result:
-                                results.append(entry.name)
+                                results.append(self.add_result(entry, str(rule).replace("_", " ")))
                     except:
                         # FIXME I don't know but some rules aret nor readable for me
                         print_red("Some error applying rules")
 
         return results
+
+    # Prepare a result and return it
+    def add_result(self, entry, details):
+        result = {
+            "entry": entry,
+            "details": details
+        }
+        return result
+
+    # Make a complete backup of the current installation
+    def make_backup(self):
+
+        # Set the destination directory with a prefix containing the type of the installation (wodpress, joomla, . . .)
+        backup_type = type(self).__name__.lower()
+        destination_dir = os.path.join(BACKUPS_DIR, backup_type + "_" + self.name)
+
+        try:
+            if os.path.isdir(destination_dir):
+                shutil.rmtree(destination_dir)
+            shutil.copytree(self.path, destination_dir)
+        except:
+            return False
+
+        return True
+
+    @abstractmethod
+    def cleanup_site(self):
+        pass
 
     @abstractmethod
     def get_version(self):
