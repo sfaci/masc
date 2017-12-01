@@ -1,6 +1,9 @@
 import os
 from abc import ABC, abstractmethod
 from MascEntry import MascEntry
+from Dictionary import Dictionary
+from PrintUtils import print_red
+import hashlib
 
 class CMS(ABC):
 
@@ -10,7 +13,7 @@ class CMS(ABC):
         self.path = path
         # It will contain all the plain text files
         self.entry_list = []
-        self.version = self.get_version()
+        #self.version = self.get_version()
 
 
     # List and stores all the plain text files
@@ -39,6 +42,43 @@ class CMS(ABC):
         return len(self.entry_list)
 
 
+    # Search for malware signatures using OWASP Web Malware Scanner database
+    def search_malware_signatures(self):
+
+        results = []
+
+        for entry in self.entry_list:
+            if not entry.is_file():
+                continue
+
+            # Get the checkum of each file to compare with the signatures
+            file = open(entry.path, "rb")
+            file_data = file.read()
+            hash = hashlib.md5()
+            hash.update(file_data)
+            checksum = hash.hexdigest()
+
+            # Search each checksum in the database
+            # Currently there is no results using OWASP samples
+            # TODO try to get more samples
+            if checksum in Dictionary.signatures_db:
+                malware = str(Dictionary.signatures_db[checksum])
+                results.append(entry.name)
+
+            # Check for files applying yara rules
+            if entry.is_plain_text():
+                for rules in Dictionary.yara_rules:
+                    try:
+                        result = rules.match(data=file_data)
+                        if result:
+                            for rule in result:
+                                results.append(entry.name)
+                    except:
+                        # FIXME I don't know but some rules aret nor readable for me
+                        print_red("Some error applying rules")
+
+        return results
+
     @abstractmethod
     def get_version(self):
         pass
@@ -49,10 +89,6 @@ class CMS(ABC):
 
     @abstractmethod
     def search_suspect_content(self):
-        pass
-
-    @abstractmethod
-    def search_malware_signatures(self):
         pass
 
     @abstractmethod

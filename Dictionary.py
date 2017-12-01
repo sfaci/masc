@@ -1,11 +1,22 @@
+import os
+import json
+import yara
+from PrintUtils import print_red
+
 DICTS_PATH = "dicts/"
+SIGNATURES_PATH = "signatures/"
+
 WP_SUSPECT_FILES_DATA = DICTS_PATH + "wp_suspect_files.data"
 WP_SUSPECT_CONTENT_DATA = DICTS_PATH + "wp_suspect_content.data"
+CHECKSUM_PATH = SIGNATURES_PATH + "checksum/"
+RULES_PATH = SIGNATURES_PATH + "rules/"
 
 class Dictionary:
 
     suspect_files = []
     suspect_content = []
+    signatures_db = {}
+    yara_rules = []
 
     # Return suspect files for an specific type of installation: wordpress, joomla, . . .
     @classmethod
@@ -32,8 +43,25 @@ class Dictionary:
 
     @classmethod
     def load_signatures(cls):
-        pass
 
+        errors = False
+
+        for entry in os.scandir(CHECKSUM_PATH):
+            file_data = open(entry.path).read()
+            signatures = json.loads(file_data)
+
+            for signature_hash in signatures["Database_Hash"]:
+                cls.signatures_db[signature_hash["Malware_Hash"]] = signature_hash["Malware_Name"]
+
+        for entry in os.scandir(RULES_PATH):
+            try:
+                rules = yara.compile(filepath=entry.path)
+                cls.yara_rules.append(rules)
+            except:
+                errors = True
+
+        if errors:
+            print_red("Some errors while reading yara rules")
 
     @staticmethod
     def add_suspect_file(filename):
