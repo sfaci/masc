@@ -1,7 +1,7 @@
 import os
 import json
 import yara
-from PrintUtils import print_red
+from PrintUtils import print_red, print_blue
 
 DICTS_PATH = "dicts/"
 SIGNATURES_PATH = "signatures/"
@@ -40,7 +40,7 @@ class Dictionary:
                     cls.suspect_content.append(line.rstrip())
         # TODO More CMS
 
-
+    # Load signatures (checksums and YARA rules) to create the signatures dictionary
     @classmethod
     def load_signatures(cls):
 
@@ -53,6 +53,8 @@ class Dictionary:
             for signature_hash in signatures["Database_Hash"]:
                 cls.signatures_db[signature_hash["Malware_Hash"]] = signature_hash["Malware_Name"]
 
+        print_blue("Loaded " + str(len(cls.signatures_db)) + " malware signatures")
+
         for entry in os.scandir(RULES_PATH):
             try:
                 rules = yara.compile(filepath=entry.path)
@@ -63,10 +65,14 @@ class Dictionary:
         if errors:
             print_red("Some errors while reading yara rules")
 
+        print_blue("Loaded " + str(len(cls.yara_rules)) + " YARA rules")
+
+
     @staticmethod
     def add_suspect_file(filename):
         with open(WP_SUSPECT_FILES_DATA, "a") as file:
             file.write(filename + "\n")
+
 
     @staticmethod
     def add_suspect_content(content):

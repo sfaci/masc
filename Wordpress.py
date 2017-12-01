@@ -1,8 +1,8 @@
 import os
 import urllib.request
 import zipfile
+import fnmatch
 from CMS import CMS
-from PrintUtils import print_red, print_debug
 from Constants import CACHE_DIR
 from Dictionary import Dictionary
 
@@ -10,9 +10,11 @@ from Dictionary import Dictionary
 # This class represents a Wordpress installation
 class Wordpress(CMS):
 
-    def __init__(self, path):
-        super().__init__(path)
+    def __init__(self, path, name):
+        super().__init__(path, name)
 
+        if not os.path.isfile(os.path.join(path, "wp-config.php")):
+            raise Exception("Fatal Error. This is not a WordPress installation.")
 
     # Search for suspect files in the current installation
     # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
@@ -23,12 +25,12 @@ class Wordpress(CMS):
 
         for entry in self.entry_list:
             if entry.name_ends_with_digits():
-                results.append(entry)
+                results.append(self.add_result(entry, "suspect_file"))
                 continue
 
             for file in Dictionary.suspect_files:
                 if entry.path == file:
-                    results.append(entry)
+                    results.append(self.add_result(entry, "suspect_file"))
 
         return results
 
@@ -67,7 +69,7 @@ class Wordpress(CMS):
 
         version_line = ""
 
-        with open(self.path + "wp-includes/version.php") as file:
+        with open(os.path.join(self.path, "wp-includes/version.php")) as file:
             for line in file:
                 if "$wp_version =" in line:
                     version_line = line.lstrip()
@@ -101,3 +103,50 @@ class Wordpress(CMS):
         zip_file.close()
 
         return True
+
+    # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website to attackers
+    def cleanup_site(self):
+
+        if not self.make_backup():
+            raise Exception("An error has occured while making backup. Aborting . . .")
+
+        # Fix permissions in folder and files
+        os.chmod(self.path, 0o755)
+        os.chmod(os.path.join(self.path, ".htaccess"), 0o644)
+        os.chmod(os.path.join(self.path, "wp-config.php"), 0o644)
+        os.chmod(os.path.join(self.path, "wp-admin"), 0o755)
+        os.chmod(os.path.join(self.path, "wp-content"), 0o755)
+        os.chmod(os.path.join(self.path, "wp-includes"), 0o755)
+
+        # Delete some files that show too more information about current installation
+        if os.path.isfile(os.path.join(self.path, "readme.html")):
+            os.remove(os.path.join(self.path, "readme.html"))
+
+        # Search for readme and related files to hide information about current installation and its plugin
+        for dirpath, dirnames, filenames in os.walk(self.path):
+
+            # Remove readme files. They show information about plugins/themes version
+            for filename in fnmatch.filter(filenames, "*.txt"):
+                os.remove(os.path.join(dirpath, filename))
+
+            # Remove LICENSE files
+            for filename in fnmatch.filter(filenames, "LICENSE"):
+                os.remove(os.path.join(dirpath, filename))
+
+            # Remove 'generator' metatag in theme files
+            for filename in fnmatch.filter(filenames, "functions.php"):
+
+                if "wp-content/themes" in dirpath:
+                    file = open(os.path.join(dirpath, filename), "a")
+                    file.write("remove_action('wp_head', 'wp_generator');")
+                    file.close()
+
+            # If folder hasn't index.php file, add an extra one with no code to avoid directory listing
+            if not os.path.isfile(os.path.join(dirpath, "index.php")):
+                file = open(os.path.join(dirpath, "index.php"), "w")
+                file.write("<?php\n// masc is protecting your site\n")
+                file.close()
+
+
+
+

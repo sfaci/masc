@@ -23,6 +23,13 @@ def print_blue(message, extra=None):
         print(colored(message, "blue"))
 
 
+def print_yellow(message, extra=None):
+    if extra == "":
+        print(colored(message, "yellow"), end="")
+    else:
+        print(colored(message, "yellow"))
+
+
 def print_debug(message, extra=None):
     if extra == "":
         print(colored("[DEBUG] " + message, "yellow"), end="")
@@ -36,9 +43,8 @@ def print_results(results, data_found_message, data_not_found_message):
         print_green(data_not_found_message)
     else:
         print_red(data_found_message)
-        for file in results:
-            if type(file) is MascEntry:
-                print("\t" + file.path)
-            else:
-                print("\t" + file)
-                # print("\t" + file + ": " + results[file])
+        for result in results:
+            print("\t" + result["entry"].path + ": " + result["details"])
+
+def print_info():
+    print("\nmasc 0.1 (http://github.com/sfaci/masc)")
