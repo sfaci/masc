@@ -21,6 +21,17 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
   * List your local backups
   * Logging support
 
+## Requirements
+
+* Python >= 3
+* Python YARA
+```bash
+santi@zenbook:$ apt-get install python3-yara
+```
+* Python libraries
+  * python-magic
+  * yara-python
+
 ## Usage
 
 ```bash
