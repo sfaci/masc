@@ -12,16 +12,21 @@ class CMS(ABC):
 
     def __init__(self, path, name="no_name"):
         super().__init__()
+
+        self.type = type(self).__name__.lower()
         # Path where this Wordpress is installed
         self.path = path
+        # Website name (to store backups)
+        self.name = name
         # It will contain all the plain text files
         self.entry_list = []
-        try:
-            self.version = self.get_version()
-        except:
-            raise Exception("Fatal error. Wrong installation type")
-        self.name = name
-        self.type = type(self).__name__.lower()
+        if self.type == "custom":
+            self.version = "custom"
+        else:
+            try:
+                self.version = self.get_version()
+            except:
+                raise Exception("Fatal error. Wrong installation type")
 
 
     # List and stores all the plain text files
