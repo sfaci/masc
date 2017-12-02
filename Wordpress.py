@@ -4,7 +4,7 @@ import fnmatch
 import logging
 import datetime
 from CMS import CMS
-from Constants import CACHE_DIR
+from Constants import CACHE_DIR, LOGS_DIR
 
 
 # This class represents a Wordpress installation
@@ -68,7 +68,9 @@ class Wordpress(CMS):
     def cleanup_site(self):
 
         date = datetime.datetime.now().strftime("%Y%m%d-%H%M")
-        logging.basicConfig(filename="logs/" + self.type + "-" + self.name + "-" + date + ".log", level=logging.INFO)
+        if not os.path.isdir(LOGS_DIR):
+            os.mkdir(LOGS_DIR)
+        logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-" + date + ".log", level=logging.INFO)
 
         if not self.make_backup():
             raise Exception("An error has occured while making backup. Aborting . . .")
@@ -94,7 +96,6 @@ class Wordpress(CMS):
 
         # Search for readme and related files to hide information about current installation and its plugin
         for dirpath, dirnames, filenames in os.walk(self.path):
-            print("hola")
             # Remove readme files. They show information about plugins/themes version
             for filename in fnmatch.filter(filenames, "*.txt"):
                 os.remove(os.path.join(dirpath, filename))

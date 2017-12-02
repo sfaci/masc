@@ -89,6 +89,7 @@ if args.scan:
                 os.remove(os.path.join(cms.path, filename))
 
             cms.cleanup_site()
+            print_green("done.")
         except Exception as e:
             print(e)
 
