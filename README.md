@@ -14,6 +14,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
   * Scan your site to know if it has been infected with some malware
   * List your local backups
   * Logging support
+  * Backup your site
 * WordPress support
   * Scan your site to know if it has been infected with some malware
   * Scan for suspect files and compare with a clean installation
@@ -31,6 +32,11 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ```bash
 santi@zenbook:$ pip3 install python-magic yara-python
 ```
+
+## Installation
+
+To install _masc_ on your computer, you can download a [release](https://github.com/sfaci/masc/releases), untar it and try.
+You can also install it usign pip ('pip3 install masc')
 
 ## Usage
 

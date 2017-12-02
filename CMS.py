@@ -118,6 +118,12 @@ class CMS(ABC):
 
         return True
 
+
+    # Revert any change of your website using a previous backup
+    def rollback_backup(self):
+        pass
+
+
     # Unzip a zip file that contains a clean installation of the current website
     def unzip_clean_installation(self):
 
