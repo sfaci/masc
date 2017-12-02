@@ -5,6 +5,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ## About
 
 [homepage](https://sfaci.github.io/masc)
+[PyPI](https://pypi.python.org/pypi/masc)
 
 ## Features
 
@@ -15,6 +16,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
   * List your local backups
   * Logging support
   * Backup your site
+  * Restore website
 * WordPress support
   * Scan your site to know if it has been infected with some malware
   * Scan for suspect files and compare with a clean installation
@@ -22,6 +24,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
   * Backup your site (to recover later if you need)
   * List your local backups
   * Logging support
+  * Restore website
 
 ## Requirements
 
@@ -53,9 +56,11 @@ optional arguments:
   --scan PATH           Scan an installation at the given PATH
   --name NAME           Name assigned to the scanned installation
   --list-backups        List local backups
+  --rollback            Restore a local backup
   --add-file FILENAME   Add a suspect file to the dictionary
   --add-word STRING     Add a suspect content to the dictionary
-  --clean-up            Clean up the site to hide information to attackers
+  --clean-site          Clean up the site to hide information to attackers
+  --clean-cache         Clean masc cache (cache and logs, NO backups)
 ```
 
 ## Documentation

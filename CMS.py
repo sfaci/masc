@@ -7,6 +7,8 @@ from PrintUtils import print_red, print_blue, print_green
 from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 import hashlib
 import shutil
+import logging
+import datetime
 
 class CMS(ABC):
 
@@ -28,6 +30,7 @@ class CMS(ABC):
             except:
                 raise Exception("Fatal error. Wrong installation type. Are you sure this is a " + self.type + " website?")
 
+        self.set_log()
 
     # List and stores all the plain text files
     def scan(self, path=""):
@@ -110,18 +113,31 @@ class CMS(ABC):
         destination_dir = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
 
         try:
+            # Remove previous backup
             if os.path.isdir(destination_dir):
                 shutil.rmtree(destination_dir)
             shutil.copytree(self.path, destination_dir)
+            logging.info("backup " + self.type + "_" + self.name + " created")
+            return True
         except:
             return False
-
-        return True
 
 
     # Revert any change of your website using a previous backup
     def rollback_backup(self):
-        pass
+
+        backup_src = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
+        if not os.path.isdir(backup_src):
+            print_red("It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
+        for dirpaths, root, filenames in os.walk(backup_src):
+            for filename in filenames:
+                filename = os.path.join(dirpaths, filename)
+                filename_dest = filename.replace(backup_src + os.sep, "")
+                path_dest = os.path.dirname(filename_dest)
+
+                if not os.path.isdir(os.path.join(self.path, path_dest)) and path_dest != "":
+                    os.mkdir(os.path.join(self.path, path_dest))
+                shutil.copyfile(filename, os.path.join(self.path, filename_dest))
 
 
     # Unzip a zip file that contains a clean installation of the current website
@@ -220,6 +236,12 @@ class CMS(ABC):
         for logfile in logfile_list:
             if logfile.name.startswith(self.get_log_name()):
                 results.append(logfile.name)
+
+    def set_log(self):
+        date = datetime.datetime.now().strftime("%Y%m%d-%H%M")
+        if not os.path.isdir(LOGS_DIR):
+            os.mkdir(LOGS_DIR)
+        logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-" + date + ".log", level=logging.INFO)
 
     @abstractmethod
     def cleanup_site(self):

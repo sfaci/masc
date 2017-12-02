@@ -5,7 +5,8 @@ import os
 import argparse
 import datetime
 import shutil
-from Constants import BACKUPS_DIR, LOGS_DIR
+import logging
+from Constants import BACKUPS_DIR, LOGS_DIR, CACHE_DIR
 from Custom import Custom
 from Wordpress import Wordpress
 from Drupal import Drupal
@@ -23,10 +24,11 @@ parser.add_argument("--name", help="Name assigned to the scanned installation", 
 parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
 parser.add_argument("--list-backups", help="List local backups", action="store_true")
 parser.add_argument("--list-logs", help="List logs for a specific installation", action="store_true")
-parser.add_argument("--rollback", help="Restore a local backup", metavar="BACKUP_NAME")
+parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
 parser.add_argument("--add-file", help="Add a suspect file to the dictionary", metavar="FILENAME")
 parser.add_argument("--add-word", help="Add a suspect content to the dictionary", metavar="STRING")
-parser.add_argument("--clean-up", help="Clean up the site to hide information to attackers", action="store_true")
+parser.add_argument("--clean-site", help="Clean up the site to hide information to attackers", action="store_true")
+parser.add_argument("--clean-cache", help="Clean masc cache (cache and logs files, NO backups)", action="store_true")
 
 print_info()
 args = parser.parse_args()
@@ -35,11 +37,11 @@ if len(sys.argv) == 1:
     print("No arguments provided. Execute '" + sys.argv[0] + " -h' for help")
     exit()
 
-if args.clean_up and not args.name:
+if args.clean_site and not args.name:
     print_red("No name provided. You must choose a name if you want to clean up your site")
     exit()
 
-if args.scan and not args.make_backup:
+if args.scan and not args.make_backup and not args.rollback:
 
     # Set a default or choosen name
     name = "no_name"
@@ -71,6 +73,13 @@ if args.scan and not args.make_backup:
     cms.scan()
     print_green("done.")
 
+    # First, it makes a complete backup of the website (user can rollback later if masc clean too agressive)
+    print_blue("Making a backup  . . .")
+    if not cms.make_backup():
+        print_red("An error has occured while making backup. Aborting . . .")
+        exit()
+    print_green("done")
+
     if args.site_type == "custom":
         print_blue("Searching for malware . . .")
         results = cms.search_malware_signatures()
@@ -84,28 +93,30 @@ if args.scan and not args.make_backup:
     if len(files_to_remove) == 0:
         print_green("No malware/suspect files were found. Congratulations! Your website seems to be clear")
 
-    if not args.clean_up:
+    if not args.clean_site:
         if len(files_to_remove) > 0:
-            print_red("Malware/suspect files were found. It will be removed if you include the option --clean-up")
+            print_red("Malware/suspect files were found. It will be removed if you include the option --clean-site")
             for filename in files_to_remove:
                 print("\t" + os.path.join(cms.path, filename))
         exit()
 
-    if args.clean_up:
+    if args.clean_site:
 
         try:
             if len(files_to_remove) > 0:
                 print_red("Malware/suspect files were found. Removing . . .")
 
+            # Remove malware/suspect files
             for filename in files_to_remove:
                 os.remove(os.path.join(cms.path, filename))
+                logging.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
             print_green("done.")
 
             print_blue("Cleaning site . . .")
             cms.cleanup_site()
             print_green("done.")
 
-            print_blue("Some changes can be occur. See log '" + LOGS_DIR + cms.get_log_name() + "'{%date} for details")
+            print_blue("Some changes can have occured. See log '" + LOGS_DIR + cms.get_log_name() + "'{%date} for details")
         except Exception as e:
             print(e)
 
@@ -138,9 +149,31 @@ elif args.make_backup:
     print_green("done.")
 
 elif args.rollback:
+
+    if not args.scan:
+        print_red("You must provide the path of your website to rollback")
+        exit()
+
+    if not args.site_type:
+        print_red("You must provide the type-site option to rollback")
+        exit
+
+    if not args.name:
+        print_red("You must provide the name of your installation to rollback")
+        exit()
+
     print_blue("Restoring backup . . .")
-    backup_file = os.path.join(BACKUPS_DIR, args.site_type + "_" + args.name)
-    destionation = args.scan
+    website = Custom(args.scan, args.name, args.site_type)
+    website.rollback_backup()
+    print_green("done.")
+
+elif args.clean_cache:
+    print_blue("Cleaning program cache . . .")
+    shutil.rmtree(CACHE_DIR)
+    shutil.rmtree(LOGS_DIR)
+    os.mkdir(CACHE_DIR)
+    os.mkdir(LOGS_DIR)
+    print_green("done.")
 
 elif args.add_file:
     if args.site_type == "wordpress":

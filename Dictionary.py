@@ -44,6 +44,7 @@ class Dictionary:
 
         errors = False
 
+        # Load malware signatures
         for entry in os.scandir(CHECKSUM_PATH):
             file_data = open(entry.path).read()
             signatures = json.loads(file_data)
@@ -53,11 +54,13 @@ class Dictionary:
 
         print_blue("Loaded " + str(len(cls.signatures_db)) + " malware signatures")
 
+        # Load YARA rules
         for entry in os.scandir(RULES_PATH):
             try:
                 rules = yara.compile(filepath=entry.path)
                 cls.yara_rules.append(rules)
-            except:
+            except Exception as e:
+                # print(e)
                 errors = True
 
         if errors:
