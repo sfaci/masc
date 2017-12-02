@@ -14,9 +14,6 @@ class Drupal(CMS):
             raise Exception("Fatal Error. This is not a Drupal installation.")
 
 
-    def compare_with_clean_installation(self):
-        pass
-
     def get_version(self):
         version_line = ""
 
@@ -40,11 +37,6 @@ class Drupal(CMS):
             return False
 
         return True
-
-    def search_suspect_files(self):
-        results = []
-
-        return results
 
 
     def search_suspect_content(self):
