@@ -9,8 +9,13 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ## Features
 
 * Scan any website for malware using OWASP WebMalwareScanner checksum and YARA rules databases
+* Custom website support
+  * Scan your site to know if it has been infected with some malware
+  * List your local backups
+  * Logging support
 * WordPress support
   * Scan your site to know if it has been infected with some malware
+  * Scan for suspect files and compare with a clean installation
   * Clean up your site to avoid giving extra information to attackers
   * Backup your site (to recover later if you need)
   * List your local backups
@@ -38,7 +43,7 @@ optional arguments:
 
 ## Documentation
 
-[wiki](https://github.com/sfaci/masc/wiki)
+You can find a complete tutorial about how to use _masc_ in the [wiki](https://github.com/sfaci/masc/wiki)
 
 ## Thanks
 
