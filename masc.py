@@ -20,6 +20,7 @@ parser.add_argument("--site-type", help="which type of web you want to scan:: wo
                     choices=["wordpress", "drupal", "custom"])
 parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
+parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
 parser.add_argument("--list-backups", help="List local backups", action="store_true")
 parser.add_argument("--list-logs", help="List logs for a specific installation", action="store_true")
 parser.add_argument("--rollback", help="Restore a local backup", metavar="BACKUP_NAME")
@@ -38,7 +39,7 @@ if args.clean_up and not args.name:
     print_red("No name provided. You must choose a name if you want to clean up your site")
     exit()
 
-if args.scan:
+if args.scan and not args.make_backup:
 
     # Set a default or choosen name
     name = "no_name"
@@ -115,6 +116,25 @@ elif args.list_backups:
         backup_parts = backup.name.split("_")
         date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
         print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
+    print_green("done.")
+
+elif args.make_backup:
+
+    if not args.scan:
+        print_red("You must provide the path of your website to make a backup")
+        exit()
+
+    if not args.site_type:
+        print_red("You must provide the type-site option to make a backup")
+        exit
+
+    if not args.name:
+        print_red("You must provide the name of your installation to make a backup")
+        exit()
+
+    print_blue("Making backup . . .")
+    website = Custom(args.scan, args.name, args.site_type)
+    website.make_backup()
     print_green("done.")
 
 elif args.rollback:
