@@ -48,6 +48,3 @@ def print_results(results, data_found_message, data_not_found_message):
 
 def print_info():
     print("\nmasc 0.1 (http://github.com/sfaci/masc)")
-
-def get_logdate():
-    return

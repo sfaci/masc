@@ -67,44 +67,36 @@ class Wordpress(CMS):
     # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website to attackers
     def cleanup_site(self):
 
-        date = datetime.datetime.now().strftime("%Y%m%d-%H%M")
-        if not os.path.isdir(LOGS_DIR):
-            os.mkdir(LOGS_DIR)
-        logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-" + date + ".log", level=logging.INFO)
-
-        if not self.make_backup():
-            raise Exception("An error has occured while making backup. Aborting . . .")
-
         # Fix permissions in folder and files
         os.chmod(self.path, 0o755)
-        logging.info("Changed root path permissions to 755")
+        logging.info("permissions changed:.:755")
         os.chmod(os.path.join(self.path, ".htaccess"), 0o644)
-        logging.info("Changed .htaccess permissions to 644")
+        logging.info("permissions changed:.htaccess:644")
         os.chmod(os.path.join(self.path, "wp-config.php"), 0o644)
-        logging.info("Changed wp-config.php permissions to 644")
+        logging.info("permissions changed:wp-config.php:644")
         os.chmod(os.path.join(self.path, "wp-admin"), 0o755)
-        logging.info("Changed wp-admin permissions to 755")
+        logging.info("permissions changed:wp-admin:755")
         os.chmod(os.path.join(self.path, "wp-content"), 0o755)
-        logging.info("Changed wp-content permissions to 755")
+        logging.info("permissions changed:wp-content:755")
         os.chmod(os.path.join(self.path, "wp-includes"), 0o755)
-        logging.info("Changed wp-includes permissions to 755")
+        logging.info("permissions changed:wp-includes:755")
 
         # Delete some files that show too more information about current installation
         if os.path.isfile(os.path.join(self.path, "readme.html")):
             os.remove(os.path.join(self.path, "readme.html"))
-            logging.info("Remove " + os.path.join(self.path, "readme.html"))
+            logging.info("file removed:" + os.path.join(self.path, "readme.html"))
 
         # Search for readme and related files to hide information about current installation and its plugin
         for dirpath, dirnames, filenames in os.walk(self.path):
             # Remove readme files. They show information about plugins/themes version
             for filename in fnmatch.filter(filenames, "*.txt"):
                 os.remove(os.path.join(dirpath, filename))
-                logging.info("Remove " + os.path.join(dirpath, filename))
+                logging.info("file removed:" + os.path.join(dirpath, filename))
 
             # Remove LICENSE files
             for filename in fnmatch.filter(filenames, "LICENSE"):
                 os.remove(os.path.join(dirpath, filename))
-                logging.info("Remove " + os.path.join(dirpath, filename))
+                logging.info("file removed:" + os.path.join(dirpath, filename))
 
             # Remove 'generator' metatag in theme files
             for filename in fnmatch.filter(filenames, "functions.php"):
@@ -113,7 +105,7 @@ class Wordpress(CMS):
                     file = open(os.path.join(dirpath, filename), "a")
                     file.write("remove_action('wp_head', 'wp_generator');")
                     file.close()
-                    logging.info("Added 'remove_action(\'wp-head\', \'wp_generator\');' at the enf of " +
+                    logging.info("added:'remove_action(\'wp-head\', \'wp_generator\');':enf of file:" +
                                  os.path.join(dirpath, filename))
 
             # If folder hasn't index.php file, add an extra one with no code to avoid directory listing
@@ -121,7 +113,7 @@ class Wordpress(CMS):
                 file = open(os.path.join(dirpath, "index.php"), "w")
                 file.write("<?php\n// masc is protecting your site\n")
                 file.close()
-                logging.info("Created and empty index.php in " + dirpath)
+                logging.info("file created:index.php:at:" + dirpath)
 
 
 
