@@ -91,11 +91,15 @@ if args.scan:
 
     if args.clean_up:
 
-        print_blue("Cleaning site . . .")
         try:
+            if len(files_to_remove) > 0:
+                print_red("Malware/suspect files were found. Removing . . .")
+
             for filename in files_to_remove:
                 os.remove(os.path.join(cms.path, filename))
+            print_green("done.")
 
+            print_blue("Cleaning site . . .")
             cms.cleanup_site()
             print_green("done.")
         except Exception as e:
