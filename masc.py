@@ -6,6 +6,7 @@ import argparse
 import datetime
 import shutil
 from Constants import BACKUPS_DIR
+from Custom import Custom
 from Wordpress import Wordpress
 from Drupal import Drupal
 from Joomla import Joomla
@@ -16,11 +17,11 @@ CWD = os.getcwd() + "/"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
-                    choices=["wordpress", "drupal", "joomla", "magento"])
+                    choices=["wordpress", "drupal", "custom"])
 parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
 parser.add_argument("--list-backups", help="List local backups", action="store_true")
-parser.add_argument("--restore-backup", help="Restore a local backup", metavar="BACKUP_NAME")
+parser.add_argument("--rollback", help="Restore a local backup", metavar="BACKUP_NAME")
 parser.add_argument("--add-file", help="Add a suspect file to the dictionary", metavar="FILENAME")
 parser.add_argument("--add-word", help="Add a suspect content to the dictionary", metavar="STRING")
 parser.add_argument("--clean-up", help="Clean up the site to hide information to attackers", action="store_true")
@@ -49,8 +50,8 @@ if args.scan:
             cms = Wordpress(args.scan, name)
         elif args.site_type == "drupal":
             cms = Drupal(args.scan, name)
-        elif args.site_type == "joomla":
-            cms = Joomla(args.scan, name)
+        elif args.site_type == "custom":
+            cms = Custom(args.scan, name)
     except Exception as e:
         print_red(e)
         print_blue("Exiting . . .")
@@ -64,9 +65,16 @@ if args.scan:
     print_green("done.")
 
     # Scan and load some information about the website
-    print_blue("Scanning web site . . . ")
+    print_blue("Loading web site . . . ")
     cms.scan()
     print_green("done.")
+
+    if args.site_type == "custom":
+        print_blue("Searching for malware . . .")
+        results = cms.search_malware_signatures()
+        print_results(results, "Malware were found. Listing files . . .", "Congratulations! No walware were found")
+        print_green("done.")
+        exit()
 
     # Compare malware and suspect files with clean installation files
     print_blue("Let's search for malware and suspect files. Then, let's compare results with a clean installation")
@@ -100,8 +108,9 @@ elif args.list_backups:
         backup_parts = backup.name.split("_")
         date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
         print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
+    print_green("done.")
 
-elif args.restore_backup:
+elif args.rollback:
     print_blue("Restoring backup . . .")
     backup_file = os.path.join(BACKUPS_DIR, args.site_type + "_" + args.name)
     destionation = args.scan
