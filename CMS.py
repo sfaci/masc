@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 from MascEntry import MascEntry
 from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
-from Constants import BACKUPS_DIR, CACHE_DIR
+from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 import hashlib
 import shutil
 
@@ -26,7 +26,7 @@ class CMS(ABC):
             try:
                 self.version = self.get_version()
             except:
-                raise Exception("Fatal error. Wrong installation type")
+                raise Exception("Fatal error. Wrong installation type. Are you sure this is a " + self.type + " website?")
 
 
     # List and stores all the plain text files
@@ -168,7 +168,7 @@ class CMS(ABC):
         clean_files = []
 
         # Scan the proper clean installation to store all the filenames
-        clean_installation_path = os.path.join("cache", self.type + "-" + self.version, self.type)
+        clean_installation_path = os.path.join("cache", self.type + "-" + self.version)
         if not os.path.isdir(clean_installation_path):
             print_blue("No clean installation for " + self.type + " " + self.version)
             print_blue("Downloading a new one . . .")
@@ -204,6 +204,16 @@ class CMS(ABC):
 
         return results
 
+    def get_log_name(self):
+        return self.type + "-" + self.name + "-";
+
+    def get_logs(self):
+
+        results = []
+        logfile_list = os.scandir(LOGS_DIR)
+        for logfile in logfile_list:
+            if logfile.name.startswith(self.get_log_name()):
+                results.append(logfile.name)
 
     @abstractmethod
     def cleanup_site(self):

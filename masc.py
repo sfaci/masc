@@ -5,7 +5,7 @@ import os
 import argparse
 import datetime
 import shutil
-from Constants import BACKUPS_DIR
+from Constants import BACKUPS_DIR, LOGS_DIR
 from Custom import Custom
 from Wordpress import Wordpress
 from Drupal import Drupal
@@ -21,6 +21,7 @@ parser.add_argument("--site-type", help="which type of web you want to scan:: wo
 parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
 parser.add_argument("--list-backups", help="List local backups", action="store_true")
+parser.add_argument("--list-logs", help="List logs for a specific installation", action="store_true")
 parser.add_argument("--rollback", help="Restore a local backup", metavar="BACKUP_NAME")
 parser.add_argument("--add-file", help="Add a suspect file to the dictionary", metavar="FILENAME")
 parser.add_argument("--add-word", help="Add a suspect content to the dictionary", metavar="STRING")
@@ -102,6 +103,8 @@ if args.scan:
             print_blue("Cleaning site . . .")
             cms.cleanup_site()
             print_green("done.")
+
+            print_blue("Some changes can be occur. See log '" + LOGS_DIR + cms.get_log_name() + "'{%date} for details")
         except Exception as e:
             print(e)
 

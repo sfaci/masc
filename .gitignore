@@ -4,6 +4,9 @@
 test
 test.py
 ideas.txt
+backups
+MANIFEST
+cache
 
 # Latex Beamer files
 *.aux
