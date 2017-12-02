@@ -13,7 +13,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ..* Scan your site to know if it has been infected with some malware
 ..* Clean up your site to avoid giving extra information to attackers
 ..* Backup your site (to recover later if you need)
---* List your local backups
+..* List your local backups
 ..* Logging support
 
 ## Usage
