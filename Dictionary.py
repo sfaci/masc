@@ -6,8 +6,8 @@ from PrintUtils import print_red, print_blue
 DICTS_PATH = "dicts/"
 SIGNATURES_PATH = "signatures/"
 
-WP_SUSPECT_FILES_DATA = DICTS_PATH + "wp_suspect_files.data"
-WP_SUSPECT_CONTENT_DATA = DICTS_PATH + "wp_suspect_content.data"
+SUSPECT_FILES_DATA = "_suspect_files.data"
+SUSPECT_CONTENT_DATA = "_suspect_content.data"
 CHECKSUM_PATH = SIGNATURES_PATH + "checksum/"
 RULES_PATH = SIGNATURES_PATH + "rules/"
 
@@ -21,24 +21,22 @@ class Dictionary:
     # Return suspect files for an specific type of installation: wordpress, joomla, . . .
     @classmethod
     def load_suspect_files(cls, type, path):
-        if type == "wordpress":
-            with open(WP_SUSPECT_FILES_DATA) as file:
-                for line in file:
-                    if line.startswith("#"):
-                        continue
-                    cls.suspect_files.append(path + line.rstrip())
-        # TODO More CMS
+
+        with open(os.path.join(DICTS_PATH, type + SUSPECT_FILES_DATA)) as file:
+            for line in file:
+                if line.startswith("#"):
+                    continue
+                cls.suspect_files.append(path + line.rstrip())
 
 
     @classmethod
     def load_suspect_content(cls, type, path):
-        if type == "wordpress":
-            with open(WP_SUSPECT_CONTENT_DATA) as file:
+            with open(os.path.join(DICTS_PATH, type + SUSPECT_CONTENT_DATA)) as file:
                 for line in file:
                     if line.startswith("#"):
                         continue;
                     cls.suspect_content.append(line.rstrip())
-        # TODO More CMS
+
 
     # Load signatures (checksums and YARA rules) to create the signatures dictionary
     @classmethod
@@ -63,7 +61,7 @@ class Dictionary:
                 errors = True
 
         if errors:
-            print_red("Some errors while reading yara rules")
+            print_red("Some errors while reading yara rules. Some rules were not loaded")
 
         print_blue("Loaded " + str(len(cls.yara_rules)) + " YARA rules")
 

@@ -1,9 +1,10 @@
 import os
+import zipfile
 from abc import ABC, abstractmethod
 from MascEntry import MascEntry
 from Dictionary import Dictionary
-from PrintUtils import print_red
-from Constants import BACKUPS_DIR
+from PrintUtils import print_red, print_blue, print_green
+from Constants import BACKUPS_DIR, CACHE_DIR
 import hashlib
 import shutil
 
@@ -15,8 +16,12 @@ class CMS(ABC):
         self.path = path
         # It will contain all the plain text files
         self.entry_list = []
-        self.version = self.get_version()
+        try:
+            self.version = self.get_version()
+        except:
+            raise Exception("Fatal error. Wrong installation type")
         self.name = name
+        self.type = type(self).__name__.lower()
 
 
     # List and stores all the plain text files
@@ -94,8 +99,7 @@ class CMS(ABC):
     def make_backup(self):
 
         # Set the destination directory with a prefix containing the type of the installation (wodpress, joomla, . . .)
-        backup_type = type(self).__name__.lower()
-        destination_dir = os.path.join(BACKUPS_DIR, backup_type + "_" + self.name)
+        destination_dir = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
 
         try:
             if os.path.isdir(destination_dir):
@@ -106,6 +110,93 @@ class CMS(ABC):
 
         return True
 
+    # Unzip a zip file that contains a clean installation of the current website
+    def unzip_clean_installation(self):
+
+        filename = self.type + "-" + self.version;
+        zip_filename = filename + ".zip"
+        zip_path = CACHE_DIR + zip_filename
+
+        zip_file = zipfile.ZipFile(zip_path, "r")
+        zip_file.extractall(CACHE_DIR + filename)
+        zip_file.close()
+
+        return True
+
+    @classmethod
+    def transform_results(cls, results):
+
+        total = []
+
+        for result in results:
+            total.append(result["entry"].path)
+
+        return list(set(total))
+
+
+    # Search for suspect files in the current installation
+    # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
+    # to check if this file belong to an official installation
+    def search_suspect_files(self):
+        results = []
+
+        for entry in self.entry_list:
+            if entry.name_ends_with_digits():
+                results.append(self.add_result(entry, "suspect_file"))
+                continue
+
+            for file in Dictionary.suspect_files:
+                if entry.path == file:
+                    results.append(self.add_result(entry, "suspect_file"))
+
+        return results
+
+
+    # Compare the files of the current installation with a clean installation to look for suspect files
+    # It returns the current installation files that doesn't appear in the official installation
+    def compare_with_clean_installation(self):
+
+        results = []
+        clean_files = []
+
+        # Scan the proper clean installation to store all the filenames
+        clean_installation_path = os.path.join("cache", self.type + "-" + self.version, self.type)
+        if not os.path.isdir(clean_installation_path):
+            print_blue("No clean installation for " + self.type + " " + self.version)
+            print_blue("Downloading a new one . . .")
+            self.download_clean_installation()
+            print_blue("Unzipping . . .")
+            self.unzip_clean_installation()
+            print_green("done")
+
+        for dirpaths, root, filenames in os.walk(clean_installation_path):
+            for filename in filenames:
+                clean_file = os.path.join(dirpaths, filename)
+                clean_file = clean_file.replace(clean_installation_path + os.sep, "")
+                clean_files.append(clean_file)
+
+        # Search for malware and suspect file to compare with a clean installation
+        print_blue("Searching for malware . . .")
+        results_malware = self.search_malware_signatures()
+        # To avoid repeated values
+        results_malware = CMS.transform_results(results_malware)
+
+        print_blue("Searching for suspect files . . .")
+        results_suspect_files = self.search_suspect_files()
+        results_suspect_files = CMS.transform_results(results_suspect_files)
+
+        total_suspected_files = results_malware + results_suspect_files
+        total_suspected_files = list(set(total_suspected_files))
+
+        print_blue("Comparing with a clean installation . . .")
+        for result in total_suspected_files:
+            result = result.replace(self.path + os.sep, "")
+            if not result in clean_files:
+                results.append(result)
+
+        return results
+
+
     @abstractmethod
     def cleanup_site(self):
         pass
@@ -115,19 +206,11 @@ class CMS(ABC):
         pass
 
     @abstractmethod
-    def search_suspect_files(self):
-        pass
-
-    @abstractmethod
     def search_suspect_content(self):
         pass
 
     @abstractmethod
     def download_clean_installation(self):
-        pass
-
-    @abstractmethod
-    def compare_with_clean_installation(self):
         pass
 
 

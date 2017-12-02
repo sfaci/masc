@@ -4,11 +4,12 @@ import sys
 import os
 import argparse
 import datetime
+import shutil
 from Constants import BACKUPS_DIR
 from Wordpress import Wordpress
 from Drupal import Drupal
 from Joomla import Joomla
-from PrintUtils import print_green, print_blue, print_red, print_info
+from PrintUtils import print_green, print_blue, print_red, print_info, print_results
 from Dictionary import Dictionary
 
 CWD = os.getcwd() + "/"
@@ -19,6 +20,7 @@ parser.add_argument("--site-type", help="which type of web you want to scan:: wo
 parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
 parser.add_argument("--list-backups", help="List local backups", action="store_true")
+parser.add_argument("--restore-backup", help="Restore a local backup", metavar="BACKUP_NAME")
 parser.add_argument("--add-file", help="Add a suspect file to the dictionary", metavar="FILENAME")
 parser.add_argument("--add-word", help="Add a suspect content to the dictionary", metavar="STRING")
 parser.add_argument("--clean-up", help="Clean up the site to hide information to attackers", action="store_true")
@@ -58,7 +60,7 @@ if args.scan:
     print_blue("Loading dictionaries and signatures. . . ")
     Dictionary.load_suspect_files(args.site_type, args.scan)
     Dictionary.load_suspect_content(args.site_type, args.scan)
-    # Dictionary.load_signatures()
+    Dictionary.load_signatures()
     print_green("done.")
 
     # Scan and load some information about the website
@@ -66,24 +68,26 @@ if args.scan:
     cms.scan()
     print_green("done.")
 
-    # Search for suspect files (base on several rules like dictionary, clean installation, . . .)
-    #print_blue("Searching for suspect files (by name) . . . ")
-    #results = cms.search_suspect_files()
-    #print_results(results, "Suspect files were found. Listing . . .", "No suspect files were found")
+    # Compare malware and suspect files with clean installation files
+    print_blue("Let's search for malware and suspect files. Then, let's compare results with a clean installation")
+    files_to_remove = cms.compare_with_clean_installation()
+    if len(files_to_remove) == 0:
+        print_green("No malware/suspect files were found. Congratulations! Your website seems to be clear")
 
-    #Search for suspect content (base on dictionary)
-    #print_blue("Searching for suspect files (by content) . . .")
-    #results = cms.search_suspect_content()
-    #print_results(results, "Suspect content were found in some file/s. Listing . . .", "No suspect content were found")
-
-    # Search for malware (base on OWASP WebMalwareScanner signatures database)
-    #print_blue("Searching for malware . . .")
-    #results = cms.search_malware_signatures()
-    #print_results(results, "Malware were found. Listing files. . .", "No malware were found")
+    if not args.clean_up:
+        if len(files_to_remove) > 0:
+            print_red("Malware/suspect files were found. It will be removed if you include the option --clean-up")
+            for filename in files_to_remove:
+                print("\t" + os.path.join(cms.path, filename))
+        exit()
 
     if args.clean_up:
+
         print_blue("Cleaning site . . .")
         try:
+            for filename in files_to_remove:
+                os.remove(os.path.join(cms.path, filename))
+
             cms.cleanup_site()
         except Exception as e:
             print(e)
@@ -95,6 +99,11 @@ elif args.list_backups:
         backup_parts = backup.name.split("_")
         date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
         print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
+
+elif args.restore_backup:
+    print_blue("Restoring backup . . .")
+    backup_file = os.path.join(BACKUPS_DIR, args.site_type + "_" + args.name)
+    destionation = args.scan
 
 elif args.add_file:
     if args.site_type == "wordpress":

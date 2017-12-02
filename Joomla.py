@@ -3,6 +3,7 @@ from CMS import CMS
 # This class represents a Joomla installation
 class Joomla(CMS):
 
+
     def __init__(self, path, name):
         super().__init__(path, name)
 
@@ -27,7 +28,7 @@ class Joomla(CMS):
         return results
 
 
-    def search_malware_signatures(self):
-        results = []
+    def cleanup_site(self):
+        pass
 
-        return results
+
