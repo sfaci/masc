@@ -9,6 +9,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ## Features
 
 * Scan any website for malware using OWASP WebMalwareScanner checksum and YARA rules databases
+* Perform some cleaning operations to improve website protection
 * Custom website support
   * Scan your site to know if it has been infected with some malware
   * List your local backups
