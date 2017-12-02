@@ -5,6 +5,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ## About
 
 [homepage](https://sfaci.github.io/masc)
+
 [PyPI](https://pypi.python.org/pypi/masc)
 
 ## Features
@@ -62,6 +63,10 @@ optional arguments:
   --clean-site          Clean up the site to hide information to attackers
   --clean-cache         Clean masc cache (cache and logs, NO backups)
 ```
+
+## Test
+
+There is a repository in the Docker Hub to perform tests [masc-wordpress](https://hub.docker.com/r/sfaci/masc-wordpress/)
 
 ## Documentation
 
