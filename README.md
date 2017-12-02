@@ -24,13 +24,12 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 ## Requirements
 
 * Python >= 3
-* Python YARA
-```bash
-santi@zenbook:$ apt-get install python3-yara
-```
-* Python libraries
+* Some Python libraries
   * python-magic
   * yara-python
+```bash
+santi@zenbook:$ pip3 install python-magic yara-python
+```
 
 ## Usage
 
