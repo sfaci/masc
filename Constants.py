@@ -12,3 +12,6 @@ CACHE_DIR = "cache/"
 
 # The dir where backups are stored
 BACKUPS_DIR = "backups/"
+
+# Logs dir
+LOGS_DIR = "logs/"

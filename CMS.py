@@ -98,6 +98,9 @@ class CMS(ABC):
     # Make a complete backup of the current installation
     def make_backup(self):
 
+        if not os.path.isdir(BACKUPS_DIR):
+            os.mkdir(BACKUPS_DIR)
+
         # Set the destination directory with a prefix containing the type of the installation (wodpress, joomla, . . .)
         destination_dir = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
 
