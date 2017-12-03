@@ -17,18 +17,19 @@ from Dictionary import Dictionary
 CWD = os.getcwd() + "/"
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
-                    choices=["wordpress", "drupal", "custom"])
-parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
-parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
-parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
-parser.add_argument("--list-backups", help="List local backups", action="store_true")
-parser.add_argument("--list-logs", help="List logs for a specific installation", action="store_true")
-parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
 parser.add_argument("--add-file", help="Add a suspect file to the dictionary", metavar="FILENAME")
 parser.add_argument("--add-word", help="Add a suspect content to the dictionary", metavar="STRING")
-parser.add_argument("--clean-site", help="Clean up the site to hide information to attackers", action="store_true")
 parser.add_argument("--clean-cache", help="Clean masc cache (cache and logs files, NO backups)", action="store_true")
+parser.add_argument("--clean-site", help="Clean up the site to hide information to attackers", action="store_true")
+parser.add_argument("--list-backups", help="List local backups", action="store_true")
+parser.add_argument("--list-logs", help="List logs for a specific installation", action="store_true")
+parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
+parser.add_argument("--monitor", help="Monitor site to detect changes", action="store_true")
+parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
+parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
+parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
+parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
+                    choices=["wordpress", "drupal", "custom"])
 
 print_info()
 args = parser.parse_args()
@@ -41,7 +42,7 @@ if args.clean_site and not args.name:
     print_red("No name provided. You must choose a name if you want to clean up your site")
     exit()
 
-if args.scan and not args.make_backup and not args.rollback:
+if args.scan and not args.make_backup and not args.rollback and not args.monitor:
 
     # Set a default or choosen name
     name = "no_name"
@@ -80,6 +81,7 @@ if args.scan and not args.make_backup and not args.rollback:
         exit()
     print_green("done")
 
+    # If user chosen custom website, masc only try to search. Then, exit
     if args.site_type == "custom":
         print_blue("Searching for malware . . .")
         results = cms.search_malware_signatures()
@@ -93,6 +95,7 @@ if args.scan and not args.make_backup and not args.rollback:
     if len(files_to_remove) == 0:
         print_green("No malware/suspect files were found. Congratulations! Your website seems to be clear")
 
+    # If the user didn't choose clean the site, masc only show that some files may be infected
     if not args.clean_site:
         if len(files_to_remove) > 0:
             print_red("Malware/suspect files were found. It will be removed if you include the option --clean-site")
@@ -100,6 +103,7 @@ if args.scan and not args.make_backup and not args.rollback:
                 print("\t" + os.path.join(cms.path, filename))
         exit()
 
+    # The user chosen clean up the site
     if args.clean_site:
 
         try:
@@ -109,9 +113,10 @@ if args.scan and not args.make_backup and not args.rollback:
             # Remove malware/suspect files
             for filename in files_to_remove:
                 os.remove(os.path.join(cms.path, filename))
-                logging.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
+                cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
             print_green("done.")
 
+            # Perform some cleaning up operations to hide some info about the site (at this moment only available for wordpress)
             print_blue("Cleaning site . . .")
             cms.cleanup_site()
             print_green("done.")
@@ -120,6 +125,7 @@ if args.scan and not args.make_backup and not args.rollback:
         except Exception as e:
             print(e)
 
+# User chose list backups
 elif args.list_backups:
     backups_list = os.scandir(BACKUPS_DIR)
     print_blue("Listing local backups . . .")
@@ -129,6 +135,7 @@ elif args.list_backups:
         print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
     print_green("done.")
 
+# User chose make a backup
 elif args.make_backup:
 
     if not args.scan:
@@ -148,6 +155,7 @@ elif args.make_backup:
     website.make_backup()
     print_green("done.")
 
+# User chose restore the website with a previous backup
 elif args.rollback:
 
     if not args.scan:
@@ -167,6 +175,7 @@ elif args.rollback:
     website.rollback_backup()
     print_green("done.")
 
+# User chose clean masc cache (logs and cache dirs)
 elif args.clean_cache:
     print_blue("Cleaning program cache . . .")
     shutil.rmtree(CACHE_DIR)
@@ -174,6 +183,26 @@ elif args.clean_cache:
     os.mkdir(CACHE_DIR)
     os.mkdir(LOGS_DIR)
     print_green("done.")
+
+# User chose monitor current installation
+elif args.monitor:
+
+    if not args.scan:
+        print_red("You must provide the path of your website to make a backup")
+        exit()
+
+    if not args.site_type:
+        print_red("You must provide the type-site option to make a backup")
+        exit
+
+    if not args.name:
+        print_red("You must provide the name of your installation to make a backup")
+        exit()
+
+    print_blue("Monitoring website . . .(Press CTRL+C to terminate)")
+    website = Custom(args.scan, args.name, args.site_type, False)
+    website.monitor()
+    print_green("Finish")
 
 elif args.add_file:
     if args.site_type == "wordpress":

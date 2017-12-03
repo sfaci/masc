@@ -13,4 +13,5 @@ setup(
     download_url = 'https://github.com/sfaci/masc/releases/download/masc-0.1/masc-0.1.tar.gz',
     keywords = 'malware scanner security',
     classifiers = ['Development Status :: 3 - Alpha'],
+    requires=['watchdog']
 )

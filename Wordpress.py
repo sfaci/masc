@@ -10,8 +10,8 @@ from Constants import CACHE_DIR, LOGS_DIR
 # This class represents a Wordpress installation
 class Wordpress(CMS):
 
-    def __init__(self, path, name):
-        super().__init__(path, name)
+    def __init__(self, path, name, log=True):
+        super().__init__(path, name, log)
 
         if not os.path.isfile(os.path.join(path, "wp-config.php")):
             raise Exception("Fatal Error. This is not a WordPress installation.")
@@ -19,7 +19,6 @@ class Wordpress(CMS):
 
     # Search for suspect content in the current installation based on the masc dictionary
     def search_suspect_content(self):
-
         results = []
         '''
         for entry in self.entry_list:
@@ -38,7 +37,6 @@ class Wordpress(CMS):
 
     # Obtain the version of the current installation
     def get_version(self):
-
         version_line = ""
 
         with open(os.path.join(self.path, "wp-includes/version.php")) as file:
@@ -52,7 +50,6 @@ class Wordpress(CMS):
 
     # Download a clean installation of the current website
     def download_clean_installation(self):
-
         url = "https://wordpress.org/wordpress-" + self.version + ".zip"
         zip_file = CACHE_DIR + "wordpress-" + self.version + ".zip"
 
@@ -69,34 +66,34 @@ class Wordpress(CMS):
 
         # Fix permissions in folder and files
         os.chmod(self.path, 0o755)
-        logging.info("permissions changed:.:755")
+        self.log.info("permissions changed:.:755")
         os.chmod(os.path.join(self.path, ".htaccess"), 0o644)
-        logging.info("permissions changed:.htaccess:644")
+        self.log.info("permissions changed:.htaccess:644")
         os.chmod(os.path.join(self.path, "wp-config.php"), 0o644)
-        logging.info("permissions changed:wp-config.php:644")
+        self.log.info("permissions changed:wp-config.php:644")
         os.chmod(os.path.join(self.path, "wp-admin"), 0o755)
-        logging.info("permissions changed:wp-admin:755")
+        self.log.info("permissions changed:wp-admin:755")
         os.chmod(os.path.join(self.path, "wp-content"), 0o755)
-        logging.info("permissions changed:wp-content:755")
+        self.log.info("permissions changed:wp-content:755")
         os.chmod(os.path.join(self.path, "wp-includes"), 0o755)
-        logging.info("permissions changed:wp-includes:755")
+        self.log.info("permissions changed:wp-includes:755")
 
         # Delete some files that show too more information about current installation
         if os.path.isfile(os.path.join(self.path, "readme.html")):
             os.remove(os.path.join(self.path, "readme.html"))
-            logging.info("file removed:" + os.path.join(self.path, "readme.html"))
+            self.log.info("file removed:" + os.path.join(self.path, "readme.html"))
 
         # Search for readme and related files to hide information about current installation and its plugin
         for dirpath, dirnames, filenames in os.walk(self.path):
             # Remove readme files. They show information about plugins/themes version
             for filename in fnmatch.filter(filenames, "*.txt"):
                 os.remove(os.path.join(dirpath, filename))
-                logging.info("file removed:" + os.path.join(dirpath, filename))
+                self.log.info("file removed:" + os.path.join(dirpath, filename))
 
             # Remove LICENSE files
             for filename in fnmatch.filter(filenames, "LICENSE"):
                 os.remove(os.path.join(dirpath, filename))
-                logging.info("file removed:" + os.path.join(dirpath, filename))
+                self.log.info("file removed:" + os.path.join(dirpath, filename))
 
             # Remove 'generator' metatag in theme files
             for filename in fnmatch.filter(filenames, "functions.php"):
@@ -105,7 +102,7 @@ class Wordpress(CMS):
                     file = open(os.path.join(dirpath, filename), "a")
                     file.write("remove_action('wp_head', 'wp_generator');")
                     file.close()
-                    logging.info("added:'remove_action(\'wp-head\', \'wp_generator\');':enf of file:" +
+                    self.log.info("added:'remove_action(\'wp-head\', \'wp_generator\');':enf of file:" +
                                  os.path.join(dirpath, filename))
 
             # If folder hasn't index.php file, add an extra one with no code to avoid directory listing
@@ -113,7 +110,7 @@ class Wordpress(CMS):
                 file = open(os.path.join(dirpath, "index.php"), "w")
                 file.write("<?php\n// masc is protecting your site\n")
                 file.close()
-                logging.info("file created:index.php:at:" + dirpath)
+                self.log.info("file created:index.php:at:" + dirpath)
 
 
 

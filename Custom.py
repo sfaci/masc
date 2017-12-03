@@ -4,8 +4,8 @@ from CMS import CMS
 
 class Custom(CMS):
 
-    def __init__(self, path, name, type="custom"):
-        super().__init__(path, name)
+    def __init__(self, path, name, type="custom", log=True):
+        super().__init__(path, name, log)
         # Override value in case it's creating a 'anonymous' backup
         self.type = type
 
