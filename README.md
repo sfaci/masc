@@ -12,6 +12,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 
 * Scan any website for malware using OWASP WebMalwareScanner checksum and YARA rules databases
 * Perform some cleaning operations to improve website protection
+* Monitor the website for changes. Details are written in a log file
 * Custom website support
   * Scan your site to know if it has been infected with some malware
   * List your local backups
@@ -45,23 +46,29 @@ You can also install it usign pip ('pip3 install masc')
 ## Usage
 
 ```bash
-usage: masc.py [-h] [--site-type {wordpress,drupal,joomla,magento}]
-               [--scan PATH] [--name NAME] [--list-backups]
-               [--add-file FILENAME] [--add-word STRING] [--clean-up]
+
+masc 0.1 (http://github.com/sfaci/masc)
+usage: masc.py [-h] [--add-file FILENAME] [--add-word STRING] [--clean-cache]
+               [--clean-site] [--list-backups] [--list-logs] [--make-backup]
+               [--monitor] [--name NAME] [--rollback] [--scan PATH]
+               [--site-type {wordpress,drupal,custom}]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --site-type {wordpress,drupal,joomla,magento}
-                        which type of web you want to scan:: wordpress,
-                        joomla, drupal or magento
-  --scan PATH           Scan an installation at the given PATH
-  --name NAME           Name assigned to the scanned installation
-  --list-backups        List local backups
-  --rollback            Restore a local backup
   --add-file FILENAME   Add a suspect file to the dictionary
   --add-word STRING     Add a suspect content to the dictionary
+  --clean-cache         Clean masc cache (cache and logs files, NO backups)
   --clean-site          Clean up the site to hide information to attackers
-  --clean-cache         Clean masc cache (cache and logs, NO backups)
+  --list-backups        List local backups
+  --list-logs           List logs for a specific installation
+  --make-backup         Create a local backup of the current installation
+  --monitor             Monitor site to detect changes
+  --name NAME           Name assigned to the scanned installation
+  --rollback            Restore a local backup
+  --scan PATH           Scan an installation at the given PATH
+  --site-type {wordpress,drupal,custom}
+                        which type of web you want to scan:: wordpress,
+                        joomla, drupal or magento
 ```
 
 ## Test

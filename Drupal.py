@@ -7,8 +7,8 @@ from Constants import CACHE_DIR
 # This class represents a Drupal installation
 class Drupal(CMS):
 
-    def __init__(self, path, name):
-        super().__init__(path, name)
+    def __init__(self, path, name, log=True):
+        super().__init__(path, name, log)
 
         if not os.path.isfile(os.path.join(path, "core/lib/Drupal.php")):
             raise Exception("Fatal Error. This is not a Drupal installation.")

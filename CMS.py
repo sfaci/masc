@@ -1,18 +1,23 @@
 import os
+import smtplib
 import zipfile
+import hashlib
+import shutil
+import logging
+import datetime
+import logging
+import time
+from watchdog.observers import Observer
+from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 from abc import ABC, abstractmethod
 from MascEntry import MascEntry
 from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
 from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
-import hashlib
-import shutil
-import logging
-import datetime
 
 class CMS(ABC):
 
-    def __init__(self, path, name="no_name"):
+    def __init__(self, path, name="no_name", log=True):
         super().__init__()
 
         self.type = type(self).__name__.lower()
@@ -30,7 +35,10 @@ class CMS(ABC):
             except:
                 raise Exception("Fatal error. Wrong installation type. Are you sure this is a " + self.type + " website?")
 
-        self.set_log()
+        # Configure logging
+        if log:
+            self.set_log()
+            self.log = logging.getLogger(self.name)
 
     # List and stores all the plain text files
     def scan(self, path=""):
@@ -117,7 +125,7 @@ class CMS(ABC):
             if os.path.isdir(destination_dir):
                 shutil.rmtree(destination_dir)
             shutil.copytree(self.path, destination_dir)
-            logging.info("backup " + self.type + "_" + self.name + " created")
+            self.log.info("backup " + self.type + "_" + self.name + " created")
             return True
         except:
             return False
@@ -129,6 +137,8 @@ class CMS(ABC):
         backup_src = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
         if not os.path.isdir(backup_src):
             print_red("It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
+            exit()
+
         for dirpaths, root, filenames in os.walk(backup_src):
             for filename in filenames:
                 filename = os.path.join(dirpaths, filename)
@@ -142,7 +152,6 @@ class CMS(ABC):
 
     # Unzip a zip file that contains a clean installation of the current website
     def unzip_clean_installation(self):
-
         filename = self.type + "-" + self.version;
         zip_filename = filename + ".zip"
         zip_path = CACHE_DIR + zip_filename
@@ -153,9 +162,9 @@ class CMS(ABC):
 
         return True
 
+    # Transform results structure in a filepath list non-repeated
     @classmethod
     def transform_results(cls, results):
-
         total = []
 
         for result in results:
@@ -185,7 +194,6 @@ class CMS(ABC):
     # Compare the files of the current installation with a clean installation to look for suspect files
     # It returns the current installation files that doesn't appear in the official installation
     def compare_with_clean_installation(self):
-
         results = []
         clean_files = []
 
@@ -226,22 +234,56 @@ class CMS(ABC):
 
         return results
 
+
     def get_log_name(self):
         return self.type + "-" + self.name + "-";
 
-    def get_logs(self):
 
+    def get_logs(self):
         results = []
         logfile_list = os.scandir(LOGS_DIR)
         for logfile in logfile_list:
             if logfile.name.startswith(self.get_log_name()):
                 results.append(logfile.name)
 
+
     def set_log(self):
         date = datetime.datetime.now().strftime("%Y%m%d-%H%M")
         if not os.path.isdir(LOGS_DIR):
             os.mkdir(LOGS_DIR)
         logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-" + date + ".log", level=logging.INFO)
+
+    # Notify on the screen changes during monitoring
+    def on_modified(self, event):
+        if event.is_directory:
+            print("directory " + event.event_type + " " + event.src_path)
+        else:
+            print("file " + event.event_type + " " + event.src_path)
+
+    # Monitor current installation and log any change
+    def monitor(self):
+
+        print("Details at: " + LOGS_DIR + self.type + "-" + self.name + "-monitor.log")
+        logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-monitor.log",
+                            level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%d-%m-%Y %H:%M:%S')
+        # Monitor for changes and write details to a log
+        event_handler = LoggingEventHandler()
+        observer = Observer()
+        observer.schedule(event_handler, self.path, recursive=True)
+        observer.start()
+
+        # Monitor for changes and trigger a event
+        filesystem_event = FileSystemEventHandler()
+        filesystem_event.on_modified = self.on_modified
+        observer.schedule(filesystem_event, self.path, recursive=True)
+
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            observer.stop()
+
+        observer.join()
 
     @abstractmethod
     def cleanup_site(self):
