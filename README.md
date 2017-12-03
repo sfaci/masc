@@ -60,7 +60,6 @@ optional arguments:
   --clean-cache         Clean masc cache (cache and logs files, NO backups)
   --clean-site          Clean up the site to hide information to attackers
   --list-backups        List local backups
-  --list-logs           List logs for a specific installation
   --make-backup         Create a local backup of the current installation
   --monitor             Monitor site to detect changes
   --name NAME           Name assigned to the scanned installation

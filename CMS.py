@@ -246,6 +246,8 @@ class CMS(ABC):
             if logfile.name.startswith(self.get_log_name()):
                 results.append(logfile.name)
 
+        return results
+
 
     def set_log(self):
         date = datetime.datetime.now().strftime("%Y%m%d-%H%M")

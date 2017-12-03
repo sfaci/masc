@@ -5,12 +5,10 @@ import os
 import argparse
 import datetime
 import shutil
-import logging
 from Constants import BACKUPS_DIR, LOGS_DIR, CACHE_DIR
 from Custom import Custom
 from Wordpress import Wordpress
 from Drupal import Drupal
-from Joomla import Joomla
 from PrintUtils import print_green, print_blue, print_red, print_info, print_results
 from Dictionary import Dictionary
 
@@ -22,7 +20,6 @@ parser.add_argument("--add-word", help="Add a suspect content to the dictionary"
 parser.add_argument("--clean-cache", help="Clean masc cache (cache and logs files, NO backups)", action="store_true")
 parser.add_argument("--clean-site", help="Clean up the site to hide information to attackers", action="store_true")
 parser.add_argument("--list-backups", help="List local backups", action="store_true")
-parser.add_argument("--list-logs", help="List logs for a specific installation", action="store_true")
 parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
 parser.add_argument("--monitor", help="Monitor site to detect changes", action="store_true")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
