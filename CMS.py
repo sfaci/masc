@@ -98,7 +98,7 @@ class CMS(ABC):
                             for rule in result:
                                 results.append(self.add_result(entry, str(rule).replace("_", " ")))
                     except:
-                        # FIXME I don't know but some rules aret nor readable for me
+                        # FIXME I don't know but some rules are not readable for me
                         print_red("Some error applying rules")
 
         return results
