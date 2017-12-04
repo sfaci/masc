@@ -203,12 +203,16 @@ elif args.monitor:
 elif args.add_file:
     if not args.site_type:
         print_red("You must specify the site_type to add a new suspect file")
-        Dictionary.add_suspect_file(args.site_type, args.add_file)
-        print_blue("Added '" + args.add_file + "' as a suspect file to the " + args.site_type + " dictionary")
+        exit()
+
+    Dictionary.add_suspect_file(args.site_type, args.add_file)
+    print_blue("Added '" + args.add_file + "' as a suspect file to the " + args.site_type + " dictionary")
 elif args.add_word:
     if not args.site_type:
         print_red("Yoy must specify the site_type to add a new suspect content")
-        Dictionary.add_suspect_content(args.site_type, args.add_word)
-        print_blue("Added '" + args.add_word + "' as a suspect word to the " + args.site_type + " dictionary")
+        exit()
+        
+    Dictionary.add_suspect_content(args.site_type, args.add_word)
+    print_blue("Added '" + args.add_word + "' as a suspect word to the " + args.site_type + " dictionary")
 else:
     print("No option provided. Try execute '" + sys.argv[0] + " -h' for help")
