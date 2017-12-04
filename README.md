@@ -30,12 +30,28 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 
 ## Requirements
 
+First of all, notice that this tool is developed under Linux and, at the moment, it has been tested only under this Operating System
+
 * Python >= 3
 * Some Python libraries
   * python-magic
   * yara-python
+  * watchdog
+  * termcolor
 ```bash
-santi@zenbook:$ pip3 install python-magic yara-python
+santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor
+```
+
+### Notice
+
+_masc_ is developed under Linux and it has not been tested under any other Operating System.
+
+Anyway, it should run without problems under any Unix-friendly OS. In particular, in Mac OSX I have noticed it's neccesary to install
+[Homebrew](https://brew.sh) to use python-magic library propery as _libmagic. Check first the previous link to the _brew_ homepage and then
+you will be able to install as I show below:
+
+```bash
+santi@zenbook:$ brew install libmagic
 ```
 
 ## Installation
