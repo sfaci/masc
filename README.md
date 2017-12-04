@@ -42,7 +42,7 @@ First of all, notice that this tool is developed under Linux and, at the moment,
 santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor
 ```
 
-### Notice
+#### Notice
 
 _masc_ is developed under Linux and it has not been tested under any other Operating System.
 
