@@ -1,5 +1,5 @@
 from termcolor import colored
-from MascEntry import MascEntry
+
 
 # Some utility methods
 def print_green(message, extra=None):
@@ -45,6 +45,7 @@ def print_results(results, data_found_message, data_not_found_message):
         print_red(data_found_message)
         for result in results:
             print("\t" + result["entry"].path + ": " + result["details"])
+
 
 def print_info():
     print("\nmasc 0.1 (http://github.com/sfaci/masc)")

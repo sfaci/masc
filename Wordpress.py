@@ -1,10 +1,9 @@
 import os
 import urllib.request
 import fnmatch
-import logging
-import datetime
+
 from CMS import CMS
-from Constants import CACHE_DIR, LOGS_DIR
+from Constants import CACHE_DIR
 
 
 # This class represents a Wordpress installation
@@ -15,7 +14,6 @@ class Wordpress(CMS):
 
         if not os.path.isfile(os.path.join(path, "wp-config.php")):
             raise Exception("Fatal Error. This is not a WordPress installation.")
-
 
     # Search for suspect content in the current installation based on the masc dictionary
     def search_suspect_content(self):
@@ -33,7 +31,6 @@ class Wordpress(CMS):
                     print_red("Error reading file: " + entry.absolute_path)
         '''
         return results
-
 
     # Obtain the version of the current installation
     def get_version(self):
@@ -60,8 +57,8 @@ class Wordpress(CMS):
 
         return True
 
-
-    # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website to attackers
+    # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website
+    # to attackers
     def cleanup_site(self):
 
         # Fix permissions in folder and files

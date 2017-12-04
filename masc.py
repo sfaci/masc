@@ -5,6 +5,7 @@ import os
 import argparse
 import datetime
 import shutil
+
 from Constants import BACKUPS_DIR, LOGS_DIR, CACHE_DIR
 from Custom import Custom
 from Wordpress import Wordpress
@@ -102,7 +103,6 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
 
     # The user chosen clean up the site
     if args.clean_site:
-
         try:
             if len(files_to_remove) > 0:
                 print_red("Malware/suspect files were found. Removing . . .")
@@ -113,12 +113,14 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
                 cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
             print_green("done.")
 
-            # Perform some cleaning up operations to hide some info about the site (at this moment only available for wordpress)
+            # Perform some cleaning up operations to hide some info about the site (at this moment only available
+            # for wordpress)
             print_blue("Cleaning site . . .")
             cms.cleanup_site()
             print_green("done.")
 
-            print_blue("Some changes can have occured. See log '" + LOGS_DIR + cms.get_log_name() + "'{%date} for details")
+            print_blue("Some changes can have occured. See log '" + LOGS_DIR + cms.get_log_name() +
+                       "'{%date} for details")
         except Exception as e:
             print(e)
 
@@ -134,7 +136,6 @@ elif args.list_backups:
 
 # User chose make a backup
 elif args.make_backup:
-
     if not args.scan:
         print_red("You must provide the path of your website to make a backup")
         exit()
@@ -154,7 +155,6 @@ elif args.make_backup:
 
 # User chose restore the website with a previous backup
 elif args.rollback:
-
     if not args.scan:
         print_red("You must provide the path of your website to rollback")
         exit()
@@ -183,7 +183,6 @@ elif args.clean_cache:
 
 # User chose monitor current installation
 elif args.monitor:
-
     if not args.scan:
         print_red("You must provide the path of your website to make a backup")
         exit()

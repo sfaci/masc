@@ -23,7 +23,6 @@ class MascEntry:
         self.st_type = st_type
         self.creator = creator
 
-
     # Return the content if it's a plain text file
     def get_content(self):
         if not self.is_plain_text():
@@ -34,14 +33,12 @@ class MascEntry:
         file.close()
         return content
 
-
     # Check if the entry is a file
     def is_file(self):
         if self.st_type == "file":
             return True
         else:
             return False
-
 
     # Check if the entry is a plain text file
     def is_plain_text(self):
@@ -54,7 +51,6 @@ class MascEntry:
             return True
         else:
             return False
-
 
     # Check if the filename (without extension) ends with a number
     def name_ends_with_digits(self):

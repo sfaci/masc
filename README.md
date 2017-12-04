@@ -47,7 +47,7 @@ santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor
 _masc_ is developed under Linux and it has not been tested under any other Operating System.
 
 Anyway, it should run without problems under any Unix-friendly OS. In particular, in Mac OSX I have noticed it's neccesary to install
-[Homebrew](https://brew.sh) to use python-magic library propery as _libmagic. Check first the previous link to the _brew_ homepage and then
+[Homebrew](https://brew.sh) to use python-magic library propery as _libmagic_. Check first the previous link to the _brew_ homepage and then
 you will be able to install as I show below:
 
 ```bash

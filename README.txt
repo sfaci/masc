@@ -28,26 +28,53 @@ https://sfaci.github.io/masc
 * Some Python libraries
   * python-magic
   * yara-python
-    
-    santi@zenbook:$ pip3 install python-magic yara-python
+  * watchdog
+  * termcolor
+
+  santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor
+
+#### Notice
+
+masc is developed under Linux and it has not been tested under any other Operating System.
+
+Anyway, it should run without problems under any Unix-friendly OS. In particular, in Mac OSX I have noticed it's neccesary to install
+[Homebrew](https://brew.sh) to use python-magic library propery as libmagic. Check first the previous link to the brew homepage and then
+you will be able to install as I show below:
+
+santi@zenbook:$ brew install libmagic
+
+## Installation
+
+To install _masc_ on your computer, you can download a [release](https://github.com/sfaci/masc/releases), untar it and try.
+You can also install it usign pip ('pip3 install masc')
 
 ## Usage
 
-usage: masc.py [-h] [--site-type {wordpress,drupal,joomla,magento}]
-               [--scan PATH] [--name NAME] [--list-backups]
-               [--add-file FILENAME] [--add-word STRING] [--clean-up]
+masc 0.1 (http://github.com/sfaci/masc)
+usage: masc.py [-h] [--add-file FILENAME] [--add-word STRING] [--clean-cache]
+               [--clean-site] [--list-backups] [--list-logs] [--make-backup]
+               [--monitor] [--name NAME] [--rollback] [--scan PATH]
+               [--site-type {wordpress,drupal,custom}]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --site-type {wordpress,drupal,joomla,magento}
-                        which type of web you want to scan:: wordpress,
-                        joomla, drupal or magento
-  --scan PATH           Scan an installation at the given PATH
-  --name NAME           Name assigned to the scanned installation
-  --list-backups        List local backups
   --add-file FILENAME   Add a suspect file to the dictionary
   --add-word STRING     Add a suspect content to the dictionary
-  --clean-up            Clean up the site to hide information to attackers
+  --clean-cache         Clean masc cache (cache and logs files, NO backups)
+  --clean-site          Clean up the site to hide information to attackers
+  --list-backups        List local backups
+  --make-backup         Create a local backup of the current installation
+  --monitor             Monitor site to detect changes
+  --name NAME           Name assigned to the scanned installation
+  --rollback            Restore a local backup
+  --scan PATH           Scan an installation at the given PATH
+  --site-type {wordpress,drupal,custom}
+                        which type of web you want to scan:: wordpress,
+                        joomla, drupal or magento
+
+## Test
+
+There is a repository in the Docker Hub to perform tests [masc-wordpress](https://hub.docker.com/r/sfaci/masc-wordpress/)
 
 ## Documentation
 
