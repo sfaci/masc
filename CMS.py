@@ -1,19 +1,19 @@
 import os
-import smtplib
 import zipfile
 import hashlib
 import shutil
-import logging
 import datetime
 import logging
 import time
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 from abc import ABC, abstractmethod
+
 from MascEntry import MascEntry
 from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
 from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
+
 
 class CMS(ABC):
 
@@ -60,15 +60,12 @@ class CMS(ABC):
             if entry.is_dir():
                 self.scan(entry.path)
 
-
     # Return the number of plain text files in this Wordpress installation
     def files_count(self):
         return len(self.entry_list)
 
-
     # Search for malware signatures using OWASP Web Malware Scanner database
     def search_malware_signatures(self):
-
         results = []
 
         for entry in self.entry_list:
@@ -113,7 +110,6 @@ class CMS(ABC):
 
     # Make a complete backup of the current installation
     def make_backup(self):
-
         if not os.path.isdir(BACKUPS_DIR):
             os.mkdir(BACKUPS_DIR)
 
@@ -130,10 +126,8 @@ class CMS(ABC):
         except:
             return False
 
-
     # Revert any change of your website using a previous backup
     def rollback_backup(self):
-
         backup_src = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
         if not os.path.isdir(backup_src):
             print_red("It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
@@ -148,7 +142,6 @@ class CMS(ABC):
                 if not os.path.isdir(os.path.join(self.path, path_dest)) and path_dest != "":
                     os.mkdir(os.path.join(self.path, path_dest))
                 shutil.copyfile(filename, os.path.join(self.path, filename_dest))
-
 
     # Unzip a zip file that contains a clean installation of the current website
     def unzip_clean_installation(self):
@@ -172,7 +165,6 @@ class CMS(ABC):
 
         return list(set(total))
 
-
     # Search for suspect files in the current installation
     # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
     # to check if this file belong to an official installation
@@ -189,7 +181,6 @@ class CMS(ABC):
                     results.append(self.add_result(entry, "suspect_file"))
 
         return results
-
 
     # Compare the files of the current installation with a clean installation to look for suspect files
     # It returns the current installation files that doesn't appear in the official installation
@@ -234,10 +225,8 @@ class CMS(ABC):
 
         return results
 
-
     def get_log_name(self):
         return self.type + "-" + self.name + "-";
-
 
     def get_logs(self):
         results = []
@@ -247,7 +236,6 @@ class CMS(ABC):
                 results.append(logfile.name)
 
         return results
-
 
     def set_log(self):
         date = datetime.datetime.now().strftime("%Y%m%d-%H%M")
@@ -302,5 +290,3 @@ class CMS(ABC):
     @abstractmethod
     def download_clean_installation(self):
         pass
-
-

@@ -1,6 +1,7 @@
 import os
 import json
 import yara
+
 from PrintUtils import print_red, print_blue
 
 DICTS_PATH = "dicts/"
@@ -11,6 +12,8 @@ SUSPECT_CONTENT_DATA = "_suspect_content.data"
 CHECKSUM_PATH = SIGNATURES_PATH + "checksum/"
 RULES_PATH = SIGNATURES_PATH + "rules/"
 
+
+# This class represent the dictionary that manage signatures and rules database
 class Dictionary:
 
     suspect_files = []
@@ -21,13 +24,11 @@ class Dictionary:
     # Return suspect files for an specific type of installation: wordpress, joomla, . . .
     @classmethod
     def load_suspect_files(cls, type, path):
-
         with open(os.path.join(DICTS_PATH, type + SUSPECT_FILES_DATA)) as file:
             for line in file:
                 if line.startswith("#"):
                     continue
                 cls.suspect_files.append(path + line.rstrip())
-
 
     @classmethod
     def load_suspect_content(cls, type, path):
@@ -37,11 +38,9 @@ class Dictionary:
                         continue;
                     cls.suspect_content.append(line.rstrip())
 
-
     # Load signatures (checksums and YARA rules) to create the signatures dictionary
     @classmethod
     def load_signatures(cls):
-
         errors = False
 
         # Load malware signatures
@@ -68,12 +67,10 @@ class Dictionary:
 
         print_blue("Loaded " + str(len(cls.yara_rules)) + " YARA rules")
 
-
     @staticmethod
     def add_suspect_file(filename):
         with open(WP_SUSPECT_FILES_DATA, "a") as file:
             file.write(filename + "\n")
-
 
     @staticmethod
     def add_suspect_content(content):

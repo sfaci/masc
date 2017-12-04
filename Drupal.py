@@ -1,6 +1,7 @@
-from CMS import CMS
-import urllib
+import urllib.request
 import os
+
+from CMS import CMS
 from Constants import CACHE_DIR
 
 
@@ -12,7 +13,6 @@ class Drupal(CMS):
 
         if not os.path.isfile(os.path.join(path, "core/lib/Drupal.php")):
             raise Exception("Fatal Error. This is not a Drupal installation.")
-
 
     def get_version(self):
         version_line = ""
@@ -27,7 +27,6 @@ class Drupal(CMS):
         return slices[1]
 
     def download_clean_installation(self):
-
         url = "https://ftp.drupal.org/files/projects/drupal-" + self.version + ".zip"
         zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
 
@@ -38,12 +37,10 @@ class Drupal(CMS):
 
         return True
 
-
     def search_suspect_content(self):
         results = []
 
         return results
-
 
     def cleanup_site(self):
         pass
