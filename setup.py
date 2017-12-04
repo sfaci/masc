@@ -11,7 +11,7 @@ file_readme.close()
 
 setup(
     name='masc',
-    version='0.2.1',
+    version='0.2.2',
     packages=['', ],
     license='GNU GENERAL PUBLIC LICENSE Version 3',
     description='A malware web scanner',
