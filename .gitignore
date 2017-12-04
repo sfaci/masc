@@ -9,6 +9,7 @@ MANIFEST
 cache
 README.txt
 *.pkg
+*.deb
 
 # Latex Beamer files
 *.aux
