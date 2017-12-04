@@ -69,10 +69,10 @@ class Dictionary:
 
     @staticmethod
     def add_suspect_file(type, filename):
-        with open(type + SUSPECT_FILES_DATA, "a+") as file:
+        with open(os.path.join(DICTS_PATH, type + SUSPECT_FILES_DATA), "a+") as file:
             file.write(filename + "\n")
 
     @staticmethod
     def add_suspect_content(type, content):
-        with open(type + SUSPECT_CONTENT_DATA, "a+") as file:
+        with open(os.path.join(DICTS_PATH, type + SUSPECT_CONTENT_DATA), "a+") as file:
             file.write(content + "\n")
