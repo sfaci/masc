@@ -7,6 +7,8 @@ ideas.txt
 backups
 MANIFEST
 cache
+README.txt
+*.pkg
 
 # Latex Beamer files
 *.aux

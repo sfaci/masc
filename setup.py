@@ -1,4 +1,13 @@
 from distutils.core import setup
+from pypandoc.pandoc_download import download_pandoc
+import pypandoc
+
+# generate README.txt from README.md
+download_pandoc()
+readme = pypandoc.convert_file('README.md', 'rst')
+file_readme = open('README.txt', 'w+')
+file_readme.write(readme)
+file_readme.close()
 
 setup(
     name='masc',
@@ -13,5 +22,5 @@ setup(
     download_url='https://github.com/sfaci/masc/releases/download/masc-0.1/masc-0.1.tar.gz',
     keywords='malware scanner security',
     classifiers=['Development Status :: 3 - Alpha'],
-    requires=['watchdog', 'yara', 'magic', 'termcolor']
+    requires=['watchdog', 'yara', 'magic', 'termcolor', 'pypandoc']
 )

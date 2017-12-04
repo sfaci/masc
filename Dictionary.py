@@ -68,11 +68,11 @@ class Dictionary:
         print_blue("Loaded " + str(len(cls.yara_rules)) + " YARA rules")
 
     @staticmethod
-    def add_suspect_file(filename):
-        with open(WP_SUSPECT_FILES_DATA, "a") as file:
+    def add_suspect_file(type, filename):
+        with open(type + SUSPECT_FILES_DATA, "a+") as file:
             file.write(filename + "\n")
 
     @staticmethod
-    def add_suspect_content(content):
-        with open(WP_SUSPECT_CONTENT_DATA, "a+") as file:
+    def add_suspect_content(type, content):
+        with open(type + SUSPECT_CONTENT_DATA, "a+") as file:
             file.write(content + "\n")

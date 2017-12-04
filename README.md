@@ -38,8 +38,9 @@ First of all, notice that this tool is developed under Linux and, at the moment,
   * yara-python
   * watchdog
   * termcolor
+  * pypandoc
 ```bash
-santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor
+santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc
 ```
 
 #### Notice
