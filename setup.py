@@ -22,5 +22,5 @@ setup(
     download_url='https://github.com/sfaci/masc/releases/download/masc-0.2.2/masc-0.2.2.tar.gz',
     keywords='malware scanner security',
     classifiers=['Development Status :: 3 - Alpha'],
-    requires=['watchdog', 'yara', 'magic', 'termcolor', 'pypandoc']
+    requires=['watchdog', 'yara', 'magic', 'termcolor', 'pypandoc', 'pyclamd']
 )
