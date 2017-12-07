@@ -5,6 +5,7 @@ import shutil
 import datetime
 import logging
 import time
+import pyclamd
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 from abc import ABC, abstractmethod
@@ -67,6 +68,16 @@ class CMS(ABC):
     # Search for malware signatures using OWASP Web Malware Scanner database
     def search_malware_signatures(self):
         results = []
+        using_clamv = False
+
+        # Check is ClamAV daemon is running to include its support to scan files
+        try:
+            clamav = pyclamd.ClamdAgnostic()
+            using_clamv = True
+            print_blue("Using ClamAV engine")
+        except:
+            print_red("ClamAV not found. Using only checksum and YARA rule databases")
+
 
         for entry in self.entry_list:
             if not entry.is_file():
@@ -97,6 +108,13 @@ class CMS(ABC):
                     except:
                         # FIXME I don't know but some rules are not readable for me
                         print_red("Some error applying rules")
+
+            # Check for files using ClamAV binding
+            if using_clamv:
+                result = clamav.scan_file(entry.path)
+                if result:
+                    malware = result[entry.path][1]
+                    results.append(self.add_result(entry, malware))
 
         return results
 
