@@ -50,12 +50,15 @@ class Wordpress(CMS):
         url = "https://wordpress.org/wordpress-" + self.version + ".zip"
         zip_file = CACHE_DIR + "wordpress-" + self.version + ".zip"
 
-        urllib.request.urlretrieve(url, zip_file)
+        try:
+            urllib.request.urlretrieve(url, zip_file)
 
-        if not os.path.isfile(zip_file):
-            return False
+            if not os.path.isfile(zip_file):
+                return False
 
-        return True
+            return True
+        except Exception as e:
+            raise Exception('Some error has produced while downloading a clean installation. Please, check your conectivity.')
 
     # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website
     # to attackers

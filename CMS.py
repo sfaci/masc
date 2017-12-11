@@ -210,11 +210,18 @@ class CMS(ABC):
         clean_installation_path = os.path.join("cache", self.type + "-" + self.version)
         if not os.path.isdir(clean_installation_path):
             print_blue("No clean installation for " + self.type + " " + self.version)
-            print_blue("Downloading a new one . . .")
-            self.download_clean_installation()
+            print_blue("Downloading a new one . . . (it will be stored in cache for nexts uses)")
+            try:
+                self.download_clean_installation()
+            except Exception as e:
+                print_red(e)
+                exit()
+
             print_blue("Unzipping . . .")
             self.unzip_clean_installation()
             print_green("done")
+        else:
+            print_blue("Clean installation found in cache for " + self.type + " " + self.version + ". It will be used to compare")
 
         for dirpaths, root, filenames in os.walk(clean_installation_path):
             for filename in filenames:
@@ -225,12 +232,14 @@ class CMS(ABC):
         # Search for malware and suspect file to compare with a clean installation
         print_blue("Searching for malware . . .")
         results_malware = self.search_malware_signatures()
+        print_green("done.")
         # To avoid repeated values
         results_malware = CMS.transform_results(results_malware)
 
         print_blue("Searching for suspect files . . .")
         results_suspect_files = self.search_suspect_files()
         results_suspect_files = CMS.transform_results(results_suspect_files)
+        print_green("done.")
 
         total_suspected_files = results_malware + results_suspect_files
         total_suspected_files = list(set(total_suspected_files))
@@ -240,6 +249,8 @@ class CMS(ABC):
             result = result.replace(self.path + os.sep, "")
             if not result in clean_files:
                 results.append(result)
+        print_green("done")
+
 
         return results
 

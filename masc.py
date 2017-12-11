@@ -174,7 +174,7 @@ elif args.rollback:
 
 # User chose clean masc cache (logs and cache dirs)
 elif args.clean_cache:
-    print_blue("Cleaning program cache . . .")
+    print_blue("Cleaning masc cache . . .")
     shutil.rmtree(CACHE_DIR)
     shutil.rmtree(LOGS_DIR)
     os.mkdir(CACHE_DIR)
