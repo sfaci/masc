@@ -24,11 +24,13 @@ parser.add_argument("--list-backups", help="List local backups", action="store_t
 parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
 parser.add_argument("--monitor", help="Monitor site to detect changes", action="store_true")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
+parser.add_argument("--path", help="Website installation path", metavar="PATH")
 parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
-parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
+parser.add_argument("--scan", help="Scan website for malware", action="store_true")
 parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
                     choices=["wordpress", "drupal", "custom"])
 
+# Print some info about masc (version, github site, . . .)
 print_info()
 args = parser.parse_args()
 
@@ -36,11 +38,17 @@ if len(sys.argv) == 1:
     print("No arguments provided. Execute '" + sys.argv[0] + " -h' for help")
     exit()
 
-if args.clean_site and not args.name:
-    print_red("No name provided. You must choose a name if you want to clean up your site")
-    exit()
+if args.scan:
 
-if args.scan and not args.make_backup and not args.rollback and not args.monitor:
+    if not args.path:
+        print_red("You must specifiy the installation path to perform a scan")
+        exit()
+
+    if args.clean_site and not args.name:
+
+        print_red("You selected clean up your website, but no name was provided. " +
+                  "You must choose a name if you want to clean up your site")
+        exit()
 
     # Set a default or choosen name
     name = "no_name"
@@ -50,11 +58,11 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
     cms = None
     try:
         if args.site_type == "wordpress":
-            cms = Wordpress(args.scan, name)
+            cms = Wordpress(args.path, name)
         elif args.site_type == "drupal":
-            cms = Drupal(args.scan, name)
+            cms = Drupal(args.path, name)
         elif args.site_type == "custom":
-            cms = Custom(args.scan, name)
+            cms = Custom(args.path, name)
     except Exception as e:
         print_red(e)
         print_blue("Exiting . . .")
@@ -62,8 +70,8 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
 
     # Load dictionaries/signatures/rules from databases
     print_blue("Loading dictionaries and signatures. . . ")
-    Dictionary.load_suspect_files(args.site_type, args.scan)
-    Dictionary.load_suspect_content(args.site_type, args.scan)
+    Dictionary.load_suspect_files(args.site_type, args.path)
+    Dictionary.load_suspect_content(args.site_type, args.path)
     Dictionary.load_signatures()
     print_green("done.")
 
@@ -81,7 +89,7 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
 
     # If user chosen custom website, masc only try to search. Then, exit
     if args.site_type == "custom":
-        print_blue("Searching for malware . . .")
+        # print_blue("Searching for malware . . .")
         results = cms.search_malware_signatures()
         print_results(results, "Malware were found. Listing files . . .", "Congratulations! No walware were found")
         print_green("done.")
@@ -93,7 +101,7 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
     if len(files_to_remove) == 0:
         print_green("No malware/suspect files were found. Congratulations! Your website seems to be clear")
 
-    # If the user didn't choose clean the site, masc only show that some files may be infected
+    # If the user didn't choose clean the site, masc only show which files may be infected
     if not args.clean_site:
         if len(files_to_remove) > 0:
             print_red("Malware/suspect files were found. It will be removed if you include the option --clean-site")
@@ -132,11 +140,12 @@ elif args.list_backups:
         backup_parts = backup.name.split("_")
         date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
         print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
+
     print_green("done.")
 
 # User chose make a backup
 elif args.make_backup:
-    if not args.scan:
+    if not args.path:
         print_red("You must provide the path of your website to make a backup")
         exit()
 
@@ -149,13 +158,13 @@ elif args.make_backup:
         exit()
 
     print_blue("Making backup . . .")
-    website = Custom(args.scan, args.name, args.site_type)
+    website = Custom(args.path, args.name, args.site_type)
     website.make_backup()
     print_green("done.")
 
 # User chose restore the website with a previous backup
 elif args.rollback:
-    if not args.scan:
+    if not args.path:
         print_red("You must provide the path of your website to rollback")
         exit()
 
@@ -168,7 +177,7 @@ elif args.rollback:
         exit()
 
     print_blue("Restoring backup . . .")
-    website = Custom(args.scan, args.name, args.site_type)
+    website = Custom(args.path, args.name, args.site_type)
     website.rollback_backup()
     print_green("done.")
 
@@ -183,22 +192,22 @@ elif args.clean_cache:
 
 # User chose monitor current installation
 elif args.monitor:
-    if not args.scan:
-        print_red("You must provide the path of your website to make a backup")
+    if not args.path:
+        print_red("You must provide the path of your website to monitor it")
         exit()
 
     if not args.site_type:
-        print_red("You must provide the type-site option to make a backup")
-        exit
+        print_red("You must provide the type-site option to monitor it")
+        exit()
 
     if not args.name:
-        print_red("You must provide the name of your installation to make a backup")
+        print_red("You must provide the name of your installation to monitor it")
         exit()
 
     print_blue("Monitoring website . . .(Press CTRL+C to terminate)")
-    website = Custom(args.scan, args.name, args.site_type, False)
+    website = Custom(args.path, args.name, args.site_type, False)
     website.monitor()
-    print_green("Finish")
+    print_green("Finished")
 
 elif args.add_file:
     if not args.site_type:

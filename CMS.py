@@ -9,6 +9,8 @@ import pyclamd
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 from abc import ABC, abstractmethod
+from termcolor import colored
+from progress.spinner import Spinner
 
 from MascEntry import MascEntry
 from Dictionary import Dictionary
@@ -74,11 +76,11 @@ class CMS(ABC):
         try:
             clamav = pyclamd.ClamdAgnostic()
             using_clamv = True
-            print_blue("Using ClamAV engine")
+            clamav_message = "Using ClamAV engine"
         except:
-            print_red("ClamAV not found. Using only checksum and YARA rule databases")
+            clamav_message = "ClamAV not found. Using only checksum and YARA rule databases"
 
-
+        spinner = Spinner(colored("Scanning your website (" + clamav_message + ") ", "blue"))
         for entry in self.entry_list:
             if not entry.is_file():
                 continue
@@ -96,6 +98,7 @@ class CMS(ABC):
             if checksum in Dictionary.signatures_db:
                 malware = str(Dictionary.signatures_db[checksum])
                 results.append(self.add_result(entry, malware))
+                spinner.next()
 
             # Check for files applying yara rules
             if entry.is_plain_text():
@@ -108,6 +111,7 @@ class CMS(ABC):
                     except:
                         # FIXME I don't know but some rules are not readable for me
                         print_red("Some error applying rules")
+                spinner.next()
 
             # Check for files using ClamAV binding
             if using_clamv:
@@ -115,7 +119,9 @@ class CMS(ABC):
                 if result:
                     malware = result[entry.path][1]
                     results.append(self.add_result(entry, malware))
+                spinner.next()
 
+        print()
         return results
 
     # Prepare a result and return it
@@ -210,7 +216,6 @@ class CMS(ABC):
         clean_installation_path = os.path.join("cache", self.type + "-" + self.version)
         if not os.path.isdir(clean_installation_path):
             print_blue("No clean installation for " + self.type + " " + self.version)
-            print_blue("Downloading a new one . . . (it will be stored in cache for nexts uses)")
             try:
                 self.download_clean_installation()
             except Exception as e:
@@ -230,7 +235,6 @@ class CMS(ABC):
                 clean_files.append(clean_file)
 
         # Search for malware and suspect file to compare with a clean installation
-        print_blue("Searching for malware . . .")
         results_malware = self.search_malware_signatures()
         print_green("done.")
         # To avoid repeated values

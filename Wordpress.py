@@ -1,10 +1,11 @@
 import os
 import urllib.request
 import fnmatch
+from termcolor import colored
+from progress.bar import Bar
 
 from CMS import CMS
 from Constants import CACHE_DIR
-
 
 # This class represents a Wordpress installation
 class Wordpress(CMS):
@@ -51,14 +52,31 @@ class Wordpress(CMS):
         zip_file = CACHE_DIR + "wordpress-" + self.version + ".zip"
 
         try:
-            urllib.request.urlretrieve(url, zip_file)
+            urllib.request.urlretrieve(url, zip_file, self.download_progress)
 
             if not os.path.isfile(zip_file):
                 return False
 
             return True
         except Exception as e:
+            print(e)
             raise Exception('Some error has produced while downloading a clean installation. Please, check your conectivity.')
+
+    bar = None
+
+    @staticmethod
+    def download_progress(block_count, block_size, total_size):
+        global bar
+
+        if Wordpress.bar is None:
+            Wordpress.bar = Bar(colored("Downloading a new one (it will be stored for later uses)", "blue"),
+                                 fill=colored("#", "blue"), max=total_size, suffix='%(percent)d%%')
+
+        downloaded = block_count * block_size
+        if downloaded < total_size:
+            Wordpress.bar.next(block_size)
+        else:
+            Wordpress.bar.finish()
 
     # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website
     # to attackers
