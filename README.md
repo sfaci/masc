@@ -10,23 +10,19 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 
 ## Features
 
+At the moment, there are some features avaiable for any type of website (custom or CMS)  and some of them only available for specific
+platforms:
+
 * Scan any website for malware using OWASP WebMalwareScanner checksum and YARA rules databases
 * Perform some cleaning operations to improve website protection
 * Monitor the website for changes. Details are written in a log file
-* Custom website support
-  * Scan your site to know if it has been infected with some malware
-  * List your local backups
-  * Logging support
-  * Backup your site
-  * Restore website
-* WordPress support
-  * Scan your site to know if it has been infected with some malware
-  * Scan for suspect files and compare with a clean installation
-  * Clean up your site to avoid giving extra information to attackers
-  * Backup your site (to recover later if you need)
-  * List your local backups
-  * Logging support
-  * Restore website
+* Scan your site to know if it has been infected with some malware
+* List your local backups
+* Logging support
+* Backup your site
+* Restore website
+* Scan for suspect files and compare with a clean installation (for Wordpress and Drupal)
+* Clean up your site to avoid giving extra information to attackers (only available for Wordpress)
 
 ## Requirements
 
@@ -102,4 +98,4 @@ rules (and how to load it to work with).
 
 ## Author
 
-Santiago Faci <santiago.faci@gmail.com>
+Santiago Faci <santi@arkabytes.com>
