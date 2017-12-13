@@ -13,7 +13,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 At the moment, there are some features avaiable for any type of website (custom or CMS)  and some of them only available for specific
 platforms:
 
-* Scan any website for malware using OWASP WebMalwareScanner checksum and YARA rules databases
+* Scan any website for malware using OWASP WebMalwareScanner checksum, YARA rules databases and ClamAV engine (if available)
 * Perform some cleaning operations to improve website protection
 * Monitor the website for changes. Details are written in a log file
 * Scan your site to know if it has been infected with some malware
@@ -35,9 +35,11 @@ First of all, notice that this tool is developed under Linux and, at the moment,
   * watchdog
   * termcolor
   * pypandoc
+  * progress
 ```bash
-santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc
+santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc progress
 ```
+* ClamAV to integrate with its engine (optional but recommended)
 
 #### Notice
 
@@ -60,10 +62,10 @@ You can also install it usign pip ('pip3 install masc')
 
 ```bash
 
-masc 0.1 (http://github.com/sfaci/masc)
+masc 0.2.2 (http://github.com/sfaci/masc)
 usage: masc.py [-h] [--add-file FILENAME] [--add-word STRING] [--clean-cache]
-               [--clean-site] [--list-backups] [--list-logs] [--make-backup]
-               [--monitor] [--name NAME] [--rollback] [--scan PATH]
+               [--clean-site] [--list-backups] [--make-backup] [--monitor]
+               [--name NAME] [--path PATH] [--rollback] [--scan]
                [--site-type {wordpress,drupal,custom}]
 
 optional arguments:
@@ -76,8 +78,9 @@ optional arguments:
   --make-backup         Create a local backup of the current installation
   --monitor             Monitor site to detect changes
   --name NAME           Name assigned to the scanned installation
+  --path PATH           Website installation path
   --rollback            Restore a local backup
-  --scan PATH           Scan an installation at the given PATH
+  --scan                Scan website for malware
   --site-type {wordpress,drupal,custom}
                         which type of web you want to scan:: wordpress,
                         joomla, drupal or magento
