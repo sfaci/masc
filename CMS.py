@@ -78,7 +78,7 @@ class CMS(ABC):
             using_clamv = True
             clamav_message = "Using ClamAV engine"
         except:
-            clamav_message = "ClamAV not found. Using only checksum and YARA rule databases"
+            clamav_message = "ClamAV not found. Using only checksum and YARA rules databases"
 
         spinner = Spinner(colored("Scanning your website (" + clamav_message + ") ", "blue"))
         for entry in self.entry_list:
@@ -224,7 +224,7 @@ class CMS(ABC):
 
             print_blue("Unzipping . . .")
             self.unzip_clean_installation()
-            print_green("done")
+            print_green("done.")
         else:
             print_blue("Clean installation found in cache for " + self.type + " " + self.version + ". It will be used to compare")
 
@@ -253,7 +253,7 @@ class CMS(ABC):
             result = result.replace(self.path + os.sep, "")
             if not result in clean_files:
                 results.append(result)
-        print_green("done")
+        print_green("done.")
 
 
         return results
