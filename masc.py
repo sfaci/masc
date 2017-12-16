@@ -5,6 +5,8 @@ import os
 import argparse
 import datetime
 import shutil
+from progress.spinner import Spinner
+from termcolor import colored
 
 from Constants import BACKUPS_DIR, LOGS_DIR, CACHE_DIR
 from Custom import Custom
@@ -27,7 +29,7 @@ parser.add_argument("--name", help="Name assigned to the scanned installation", 
 parser.add_argument("--path", help="Website installation path", metavar="PATH")
 parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
 parser.add_argument("--scan", help="Scan website for malware", action="store_true")
-parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
+parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, drupal or a custom website",
                     choices=["wordpress", "drupal", "custom"])
 
 # Print some info about masc (version, github site, . . .)
@@ -81,15 +83,15 @@ if args.scan:
     print_green("done.")
 
     # First, it makes a complete backup of the website (user can rollback later if masc clean too agressive)
-    print_blue("Making a backup  . . .")
+    print_blue("Making a backup . . .")
     if not cms.make_backup():
         print_red("An error has occured while making backup. Aborting . . .")
         exit()
-    print_green("done")
+    print_green("done.")
 
-    # If user chosen custom website, masc only try to search. Then, exit
+    # If user chosen custom website, masc only try to search and print some info. Then, exit
     if args.site_type == "custom":
-        # print_blue("Searching for malware . . .")
+        print_blue("Searching for malware . . .")
         results = cms.search_malware_signatures()
         print_results(results, "Malware were found. Listing files . . .", "Congratulations! No walware were found")
         print_green("done.")
@@ -113,13 +115,13 @@ if args.scan:
     if args.clean_site:
         try:
             if len(files_to_remove) > 0:
-                print_red("Malware/suspect files were found. Removing . . .")
-
-            # Remove malware/suspect files
-            for filename in files_to_remove:
-                os.remove(os.path.join(cms.path, filename))
-                cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
-            print_green("done.")
+                # Remove malware/suspect files
+                spinner = Spinner(colored("Malware/suspect files were found. Removing . . .", "red"))
+                for filename in files_to_remove:
+                    os.remove(os.path.join(cms.path, filename))
+                    cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
+                print()
+                print_green("done.")
 
             # Perform some cleaning up operations to hide some info about the site (at this moment only available
             # for wordpress)

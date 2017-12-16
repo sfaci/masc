@@ -62,16 +62,20 @@ class Wordpress(CMS):
             print(e)
             raise Exception('Some error has produced while downloading a clean installation. Please, check your conectivity.')
 
+    # Progress bar to show clean installation download
     bar = None
 
+    # Update download state using a progressbar
     @staticmethod
     def download_progress(block_count, block_size, total_size):
         global bar
 
+        # First time, progress bar is instantiated
         if Wordpress.bar is None:
             Wordpress.bar = Bar(colored("Downloading a new one (it will be stored for later uses)", "blue"),
                                  fill=colored("#", "blue"), max=total_size, suffix='%(percent)d%%')
 
+        # Calculate how much is downloaded and update progress bar during the whole process
         downloaded = block_count * block_size
         if downloaded < total_size:
             Wordpress.bar.next(block_size)

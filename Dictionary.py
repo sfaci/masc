@@ -82,6 +82,14 @@ class Dictionary:
         print_blue("Loaded " + str(len(cls.yara_rules)) + " YARA rules")
 
     @staticmethod
+    def download_hashes():
+        pass
+
+    @staticmethod
+    def download_yara_rules():
+        pass
+
+    @staticmethod
     def add_suspect_file(type, filename):
         with open(os.path.join(DICTS_PATH, type + SUSPECT_FILES_DATA), "a+") as file:
             file.write(filename + "\n")
