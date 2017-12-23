@@ -118,6 +118,10 @@ if args.scan:
                 # Remove malware/suspect files
                 spinner = Spinner(colored("Malware/suspect files were found. Removing . . .", "red"))
                 for filename in files_to_remove:
+                    # FIXME Sometimes a directory is listed
+                    if os.path.isfile(os.path.join(cms.path, filename)):
+                        continue
+
                     os.remove(os.path.join(cms.path, filename))
                     cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
                 print()
