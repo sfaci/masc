@@ -6,6 +6,11 @@ import datetime
 import logging
 import time
 import pyclamd
+import configparser
+import urllib.request
+import fnmatch
+
+from progress.bar import Bar
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 from abc import ABC, abstractmethod
@@ -42,6 +47,12 @@ class CMS(ABC):
         if log:
             self.set_log()
             self.log = logging.getLogger(self.name)
+
+        # Read download url depending of the CMS type
+        config = configparser.ConfigParser()
+        config.sections()
+        config.read('masc.conf')
+        self.download_url = config['download_urls'][self.type] + self.version + ".zip"
 
     # List and stores all the plain text files
     def scan(self, path=""):
@@ -308,6 +319,65 @@ class CMS(ABC):
 
         observer.join()
 
+    def delete_known_files(self):
+        # Search for readme and related files to hide information about current installation and its plugin
+        for dirpath, dirnames, filenames in os.walk(self.path):
+            # Remove readme files. They show information about plugins/themes version
+            for filename in fnmatch.filter(filenames, "*.txt"):
+                if filename == 'robots.txt':
+                    continue
+
+                os.remove(os.path.join(dirpath, filename))
+                self.log.info("file removed:" + os.path.join(dirpath, filename))
+
+            # Remove LICENSE files
+            for filename in fnmatch.filter(filenames, "LICENSE"):
+                os.remove(os.path.join(dirpath, filename))
+                self.log.info("file removed:" + os.path.join(dirpath, filename))
+
+            # If folder hasn't index.php file, add an extra one with no code to avoid directory listing
+            if not os.path.isfile(os.path.join(dirpath, "index.php")):
+                file = open(os.path.join(dirpath, "index.php"), "w")
+                file.write("<?php\n// masc is protecting your site\n")
+                file.close()
+                self.log.info("file created:index.php:at:" + dirpath)
+
+    # Download a clean installation of the current website
+    def download_clean_installation(self):
+        zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
+
+        try:
+            urllib.request.urlretrieve(self.download_url, zip_file, self.download_progress)
+
+            if not os.path.isfile(zip_file):
+                return False
+
+            return True
+        except Exception as e:
+            print(e)
+            raise Exception(
+                'Some error has produced while downloading a clean installation. Please, check your conectivity.')
+
+    # Progress bar to show clean installation download
+    bar = None
+
+    # Update download state using a progressbar
+    @staticmethod
+    def download_progress(block_count, block_size, total_size):
+        global bar
+
+        # First time, progress bar is instantiated
+        if CMS.bar is None:
+            CMS.bar = Bar(colored("Downloading a new one (it will be stored to use in advance)", "blue"),
+                                fill=colored("#", "blue"), max=total_size, suffix='%(percent)d%%')
+
+        # Calculate how much is downloaded and update progress bar during the whole process
+        downloaded = block_count * block_size
+        if downloaded < total_size:
+            CMS.bar.next(block_size)
+        else:
+            CMS.bar.finish()
+
     @abstractmethod
     def cleanup_site(self):
         pass
@@ -318,8 +388,4 @@ class CMS(ABC):
 
     @abstractmethod
     def search_suspect_content(self):
-        pass
-
-    @abstractmethod
-    def download_clean_installation(self):
         pass

@@ -1,5 +1,6 @@
 import urllib.request
 import os
+import fnmatch
 
 from CMS import CMS
 from Constants import CACHE_DIR
@@ -26,21 +27,18 @@ class Drupal(CMS):
         slices = version_line.split("'")
         return slices[1]
 
-    def download_clean_installation(self):
-        url = "https://ftp.drupal.org/files/projects/drupal-" + self.version + ".zip"
-        zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
-
-        urllib.request.urlretrieve(url, zip_file)
-
-        if not os.path.isfile(zip_file):
-            return False
-
-        return True
-
     def search_suspect_content(self):
         results = []
 
         return results
 
     def cleanup_site(self):
-        pass
+
+        # Generic cleaning for every CMS
+        self.delete_known_files()
+
+
+
+
+
+
