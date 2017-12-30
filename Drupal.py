@@ -1,9 +1,5 @@
-import urllib.request
 import os
-import fnmatch
-
 from CMS import CMS
-from Constants import CACHE_DIR
 
 
 # This class represents a Drupal installation
