@@ -4,7 +4,6 @@ import sys
 import os
 import argparse
 import datetime
-import shutil
 from progress.spinner import Spinner
 from termcolor import colored
 
@@ -14,6 +13,7 @@ from Wordpress import Wordpress
 from Drupal import Drupal
 from PrintUtils import print_green, print_blue, print_red, print_info, print_results
 from Dictionary import Dictionary
+from MascUtils import MascUtils
 
 CWD = os.getcwd() + "/"
 
@@ -44,6 +44,10 @@ if args.scan:
 
     if not args.path:
         print_red("You must specifiy the installation path to perform a scan")
+        exit()
+
+    if not args.site_type:
+        print_red("You must specify the installation type to perform a scan")
         exit()
 
     if args.clean_site and not args.name:
@@ -119,7 +123,7 @@ if args.scan:
                 spinner = Spinner(colored("Malware/suspect files were found. Removing . . .", "red"))
                 for filename in files_to_remove:
                     # FIXME Sometimes a directory is listed
-                    if os.path.isfile(os.path.join(cms.path, filename)):
+                    if os.path.isdir(os.path.join(cms.path, filename)):
                         continue
 
                     os.remove(os.path.join(cms.path, filename))
@@ -140,13 +144,8 @@ if args.scan:
 
 # User chose list backups
 elif args.list_backups:
-    backups_list = os.scandir(BACKUPS_DIR)
     print_blue("Listing local backups . . .")
-    for backup in backups_list:
-        backup_parts = backup.name.split("_")
-        date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
-        print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
-
+    MascUtils.list_backups()
     print_green("done.")
 
 # User chose make a backup
@@ -190,10 +189,7 @@ elif args.rollback:
 # User chose clean masc cache (logs and cache dirs)
 elif args.clean_cache:
     print_blue("Cleaning masc cache . . .")
-    shutil.rmtree(CACHE_DIR)
-    shutil.rmtree(LOGS_DIR)
-    os.mkdir(CACHE_DIR)
-    os.mkdir(LOGS_DIR)
+    MascUtils.clean_cache()
     print_green("done.")
 
 # User chose monitor current installation

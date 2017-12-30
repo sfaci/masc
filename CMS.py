@@ -22,7 +22,7 @@ from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
 from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
-
+# This class represent a generic website
 class CMS(ABC):
 
     def __init__(self, path, name="no_name", log=True):
@@ -48,13 +48,14 @@ class CMS(ABC):
             self.set_log()
             self.log = logging.getLogger(self.name)
 
-        # Read download url depending of the CMS type
+        # Read and create download url depending of the CMS type
         config = configparser.ConfigParser()
         config.sections()
         config.read('masc.conf')
-        self.download_url = config['download_urls'][self.type] + self.version + ".zip"
+        if self.type != 'custom':
+            self.download_url = config['download_urls'][self.type] + self.version + ".zip"
 
-    # List and stores all the plain text files
+    # List and stores all the files and directories to save the website structure
     def scan(self, path=""):
         if path == "":
             path = self.path
@@ -121,6 +122,7 @@ class CMS(ABC):
                                 results.append(self.add_result(entry, str(rule).replace("_", " ")))
                     except:
                         # FIXME I don't know but some rules are not readable for me
+                        # I think it's because the YARA version
                         print_red("Some error applying rules")
                 spinner.next()
 
@@ -203,9 +205,11 @@ class CMS(ABC):
     # Search for suspect files in the current installation
     # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
     # to check if this file belong to an official installation
+    # TODO The main idea is searching about known suspected files in the current CMS or website
     def search_suspect_files(self):
         results = []
 
+        '''
         for entry in self.entry_list:
             if entry.name_ends_with_digits():
                 results.append(self.add_result(entry, "suspect_file"))
@@ -215,7 +219,9 @@ class CMS(ABC):
                 if entry.path == file:
                     results.append(self.add_result(entry, "suspect_file"))
 
+        '''
         return results
+
 
     # Compare the files of the current installation with a clean installation to look for suspect files
     # It returns the current installation files that doesn't appear in the official installation
@@ -319,6 +325,8 @@ class CMS(ABC):
 
         observer.join()
 
+    # Delete known files in any website (README, LICENSE and some generic txt and html files)
+    # Also it create an index.php file to silence any 'index-empty' directory
     def delete_known_files(self):
         # Search for readme and related files to hide information about current installation and its plugin
         for dirpath, dirnames, filenames in os.walk(self.path):
@@ -354,7 +362,6 @@ class CMS(ABC):
 
             return True
         except Exception as e:
-            print(e)
             raise Exception(
                 'Some error has produced while downloading a clean installation. Please, check your conectivity.')
 

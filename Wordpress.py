@@ -46,32 +46,32 @@ class Wordpress(CMS):
     # to attackers
     def cleanup_site(self):
 
-        # Generic cleaning for every CMS
+        # Generic cleaning for any website
         self.delete_known_files()
 
         # Fix permissions in folder and files
         os.chmod(self.path, 0o755)
         self.log.info("permissions changed:.:755")
         os.chmod(os.path.join(self.path, ".htaccess"), 0o644)
-        self.log.info("permissions changed:.htaccess:644")
+        self.log.info("permissions changed:" + os.path.join(self.path, "htaccess") + ":644")
         os.chmod(os.path.join(self.path, "wp-config.php"), 0o644)
-        self.log.info("permissions changed:wp-config.php:644")
+        self.log.info("permissions changed:" + os.path.join(self.path, "wp-config.php") + ":644")
         os.chmod(os.path.join(self.path, "wp-admin"), 0o755)
-        self.log.info("permissions changed:wp-admin:755")
+        self.log.info("permissions changed:" + os.path.join(self.path, "wp-admin") + ":755")
         os.chmod(os.path.join(self.path, "wp-content"), 0o755)
-        self.log.info("permissions changed:wp-content:755")
+        self.log.info("permissions changed:" + os.path.join(self.path, "wp-content") + ":755")
         os.chmod(os.path.join(self.path, "wp-includes"), 0o755)
-        self.log.info("permissions changed:wp-includes:755")
+        self.log.info("permissions changed:" + os.path.join(self.path, "wp-includes") + ":755")
 
         # Delete some known files that show too more information about current installation
         if os.path.isfile(os.path.join(self.path, "readme.html")):
             os.remove(os.path.join(self.path, "readme.html"))
             self.log.info("file removed:" + os.path.join(self.path, "readme.html"))
 
-        # Remove tag info in index page
+        # Remove tag info at the index page
         if os.path.isfile(os.path.join(self.path, 'wp-content/themes/functions.php')):
             file = open(os.path.join(self.path, 'wp-content/themes/functions.php'), "a")
             file.write("remove_action('wp_head', 'wp_generator');")
             file.close()
-            self.log.info("added:'remove_action(\'wp-head\', \'wp_generator\');':enf of file:" +
+            self.log.info("added:'remove_action(\'wp-head\', \'wp_generator\');':end of file:" +
                             "wp-content/themes/functions.php")
