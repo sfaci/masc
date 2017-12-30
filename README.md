@@ -1,5 +1,7 @@
 # masc
 
+<img align="left" height="250px" width="250px" src="https://www.arkabytes.com/img/masc.jpg">
+
 A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Hackathon 2017
 
 ## About
