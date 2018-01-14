@@ -156,6 +156,11 @@ class CMS(ABC):
         try:
             # Remove previous backup
             if os.path.isdir(destination_dir):
+                answer = input("A previous backups exists. Do you want to overwrite it? [y|N] ")
+                if answer == '' or answer.lower() == 'n':
+                    print_blue("Operation cancelled by user")
+                    exit()
+
                 shutil.rmtree(destination_dir)
             shutil.copytree(self.path, destination_dir)
             self.log.info("backup " + self.type + "_" + self.name + " created")
