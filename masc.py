@@ -3,11 +3,10 @@
 import sys
 import os
 import argparse
-import datetime
 from progress.spinner import Spinner
 from termcolor import colored
 
-from Constants import BACKUPS_DIR, LOGS_DIR, CACHE_DIR
+from Constants import LOGS_DIR
 from Custom import Custom
 from Wordpress import Wordpress
 from Drupal import Drupal
