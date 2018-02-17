@@ -3,6 +3,8 @@ import json
 import yara
 
 from PrintUtils import print_red, print_blue
+from progress.bar import Bar
+from termcolor import colored
 
 DICTS_PATH = "dicts/"
 SIGNATURES_PATH = "signatures/"
@@ -43,6 +45,9 @@ class Dictionary:
     def load_signatures(cls):
         errors = False
 
+        signatures_count = len(list(os.scandir(CHECKSUM_PATH)))
+        bar = Bar(colored("Loading malware signature files", "blue"), fill=colored("#", "blue"),
+                  max=signatures_count, suffix='%(percent)d%%')
         # Load malware signatures
         for entry in os.scandir(CHECKSUM_PATH):
             file_data = open(entry.path).read()
@@ -51,8 +56,14 @@ class Dictionary:
             for signature_hash in signatures["Database_Hash"]:
                 cls.signatures_db[signature_hash["Malware_Hash"]] = signature_hash["Malware_Name"]
 
+            bar.next()
+
+        bar.finish()
         print_blue("Loaded " + str(len(cls.signatures_db)) + " malware signatures")
 
+        rules_count = len(list(os.scandir(RULES_PATH)))
+        bar = Bar(colored("Loading YARA rules . . .", "blue"), fill=colored("#", "blue"),
+                  max=rules_count, suffix='%(percent)d%%')
         # Load YARA rules
         for entry in os.scandir(RULES_PATH):
             try:
@@ -62,10 +73,21 @@ class Dictionary:
                 # print(e)
                 errors = True
 
+            bar.next()
+
+        bar.finish()
         if errors:
             print_red("Some errors while reading yara rules. Some rules were not loaded")
 
         print_blue("Loaded " + str(len(cls.yara_rules)) + " YARA rules")
+
+    @staticmethod
+    def download_hashes():
+        pass
+
+    @staticmethod
+    def download_yara_rules():
+        pass
 
     @staticmethod
     def add_suspect_file(type, filename):

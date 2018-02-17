@@ -3,15 +3,16 @@
 import sys
 import os
 import argparse
-import datetime
-import shutil
+from progress.spinner import Spinner
+from termcolor import colored
 
-from Constants import BACKUPS_DIR, LOGS_DIR, CACHE_DIR
+from Constants import LOGS_DIR
 from Custom import Custom
 from Wordpress import Wordpress
 from Drupal import Drupal
 from PrintUtils import print_green, print_blue, print_red, print_info, print_results
 from Dictionary import Dictionary
+from MascUtils import MascUtils
 
 CWD = os.getcwd() + "/"
 
@@ -24,11 +25,13 @@ parser.add_argument("--list-backups", help="List local backups", action="store_t
 parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
 parser.add_argument("--monitor", help="Monitor site to detect changes", action="store_true")
 parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
+parser.add_argument("--path", help="Website installation path", metavar="PATH")
 parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
-parser.add_argument("--scan", help="Scan an installation at the given PATH", metavar="PATH")
-parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, joomla, drupal or magento",
+parser.add_argument("--scan", help="Scan website for malware", action="store_true")
+parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, drupal or a custom website",
                     choices=["wordpress", "drupal", "custom"])
 
+# Print some info about masc (version, github site, . . .)
 print_info()
 args = parser.parse_args()
 
@@ -36,11 +39,21 @@ if len(sys.argv) == 1:
     print("No arguments provided. Execute '" + sys.argv[0] + " -h' for help")
     exit()
 
-if args.clean_site and not args.name:
-    print_red("No name provided. You must choose a name if you want to clean up your site")
-    exit()
+if args.scan:
 
-if args.scan and not args.make_backup and not args.rollback and not args.monitor:
+    if not args.path:
+        print_red("You must specifiy the installation path to perform a scan")
+        exit()
+
+    if not args.site_type:
+        print_red("You must specify the installation type to perform a scan")
+        exit()
+
+    if args.clean_site and not args.name:
+
+        print_red("You selected clean up your website, but no name was provided. " +
+                  "You must choose a name if you want to clean up your site")
+        exit()
 
     # Set a default or choosen name
     name = "no_name"
@@ -50,11 +63,11 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
     cms = None
     try:
         if args.site_type == "wordpress":
-            cms = Wordpress(args.scan, name)
+            cms = Wordpress(args.path, name)
         elif args.site_type == "drupal":
-            cms = Drupal(args.scan, name)
+            cms = Drupal(args.path, name)
         elif args.site_type == "custom":
-            cms = Custom(args.scan, name)
+            cms = Custom(args.path, name)
     except Exception as e:
         print_red(e)
         print_blue("Exiting . . .")
@@ -62,8 +75,8 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
 
     # Load dictionaries/signatures/rules from databases
     print_blue("Loading dictionaries and signatures. . . ")
-    Dictionary.load_suspect_files(args.site_type, args.scan)
-    Dictionary.load_suspect_content(args.site_type, args.scan)
+    Dictionary.load_suspect_files(args.site_type, args.path)
+    Dictionary.load_suspect_content(args.site_type, args.path)
     Dictionary.load_signatures()
     print_green("done.")
 
@@ -73,13 +86,13 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
     print_green("done.")
 
     # First, it makes a complete backup of the website (user can rollback later if masc clean too agressive)
-    print_blue("Making a backup  . . .")
+    print_blue("Making a backup . . .")
     if not cms.make_backup():
         print_red("An error has occured while making backup. Aborting . . .")
         exit()
-    print_green("done")
+    print_green("done.")
 
-    # If user chosen custom website, masc only try to search. Then, exit
+    # If user chosen custom website, masc only try to search and print some info. Then, exit
     if args.site_type == "custom":
         print_blue("Searching for malware . . .")
         results = cms.search_malware_signatures()
@@ -93,7 +106,7 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
     if len(files_to_remove) == 0:
         print_green("No malware/suspect files were found. Congratulations! Your website seems to be clear")
 
-    # If the user didn't choose clean the site, masc only show that some files may be infected
+    # If the user didn't choose clean the site, masc only show which files may be infected
     if not args.clean_site:
         if len(files_to_remove) > 0:
             print_red("Malware/suspect files were found. It will be removed if you include the option --clean-site")
@@ -105,13 +118,17 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
     if args.clean_site:
         try:
             if len(files_to_remove) > 0:
-                print_red("Malware/suspect files were found. Removing . . .")
+                # Remove malware/suspect files
+                spinner = Spinner(colored("Malware/suspect files were found. Removing . . .", "red"))
+                for filename in files_to_remove:
+                    # FIXME Sometimes a directory is listed
+                    if os.path.isdir(os.path.join(cms.path, filename)):
+                        continue
 
-            # Remove malware/suspect files
-            for filename in files_to_remove:
-                os.remove(os.path.join(cms.path, filename))
-                cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
-            print_green("done.")
+                    os.remove(os.path.join(cms.path, filename))
+                    cms.log.info("malware/suspect file removed:" + os.path.join(cms.path, filename))
+                print()
+                print_green("done.")
 
             # Perform some cleaning up operations to hide some info about the site (at this moment only available
             # for wordpress)
@@ -126,17 +143,13 @@ if args.scan and not args.make_backup and not args.rollback and not args.monitor
 
 # User chose list backups
 elif args.list_backups:
-    backups_list = os.scandir(BACKUPS_DIR)
     print_blue("Listing local backups . . .")
-    for backup in backups_list:
-        backup_parts = backup.name.split("_")
-        date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
-        print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
+    MascUtils.list_backups()
     print_green("done.")
 
 # User chose make a backup
 elif args.make_backup:
-    if not args.scan:
+    if not args.path:
         print_red("You must provide the path of your website to make a backup")
         exit()
 
@@ -169,13 +182,13 @@ elif args.make_backup:
             exit()
 
     print_blue("Making backup . . .")
-    website = Custom(args.scan, args.name, args.site_type)
+    website = Custom(args.path, args.name, args.site_type)
     website.make_backup()
     print_green("done.")
 
 # User chose restore the website with a previous backup
 elif args.rollback:
-    if not args.scan:
+    if not args.path:
         print_red("You must provide the path of your website to rollback")
         exit()
 
@@ -188,37 +201,34 @@ elif args.rollback:
         exit()
 
     print_blue("Restoring backup . . .")
-    website = Custom(args.scan, args.name, args.site_type)
+    website = Custom(args.path, args.name, args.site_type)
     website.rollback_backup()
     print_green("done.")
 
 # User chose clean masc cache (logs and cache dirs)
 elif args.clean_cache:
-    print_blue("Cleaning program cache . . .")
-    shutil.rmtree(CACHE_DIR)
-    shutil.rmtree(LOGS_DIR)
-    os.mkdir(CACHE_DIR)
-    os.mkdir(LOGS_DIR)
+    print_blue("Cleaning masc cache . . .")
+    MascUtils.clean_cache()
     print_green("done.")
 
 # User chose monitor current installation
 elif args.monitor:
-    if not args.scan:
-        print_red("You must provide the path of your website to make a backup")
+    if not args.path:
+        print_red("You must provide the path of your website to monitor it")
         exit()
 
     if not args.site_type:
-        print_red("You must provide the type-site option to make a backup")
-        exit
+        print_red("You must provide the type-site option to monitor it")
+        exit()
 
     if not args.name:
-        print_red("You must provide the name of your installation to make a backup")
+        print_red("You must provide the name of your installation to monitor it")
         exit()
 
     print_blue("Monitoring website . . .(Press CTRL+C to terminate)")
-    website = Custom(args.scan, args.name, args.site_type, False)
+    website = Custom(args.path, args.name, args.site_type, False)
     website.monitor()
-    print_green("Finish")
+    print_green("Finished")
 
 elif args.add_file:
     if not args.site_type:
