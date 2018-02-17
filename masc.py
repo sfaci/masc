@@ -148,6 +148,26 @@ elif args.make_backup:
         print_red("You must provide the name of your installation to make a backup")
         exit()
 
+    # Check if it's exists a previous backup of the same website for the same date
+    backups_list = os.scandir(BACKUPS_DIR)
+    found = False
+    for backup in backups_list:
+        backup_parts = backup.name.split("_")
+        # List dates from previous backup if found
+        if backup_parts[0] == args.name:
+            if not found:
+                print_blue("There is a previous backup with the same name")
+                found = True
+            print_blue("\t" + backup_parts[1])
+
+    # Some previous backups were found
+    if found:
+        print_blue("What do you want to do? [m]ake backup/[C]ancel")
+        user_input = input('')
+        if user_input != 'm':
+            print_red('Aborted by user.')
+            exit()
+
     print_blue("Making backup . . .")
     website = Custom(args.scan, args.name, args.site_type)
     website.make_backup()
@@ -211,7 +231,7 @@ elif args.add_word:
     if not args.site_type:
         print_red("Yoy must specify the site_type to add a new suspect content")
         exit()
-        
+
     Dictionary.add_suspect_content(args.site_type, args.add_word)
     print_blue("Added '" + args.add_word + "' as a suspect word to the " + args.site_type + " dictionary")
 else:
