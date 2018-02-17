@@ -12,7 +12,7 @@ from Wordpress import Wordpress
 from Drupal import Drupal
 from PrintUtils import print_green, print_blue, print_red, print_info, print_results
 from Dictionary import Dictionary
-from MascUtils import MascUtils
+from MascUtils import MascUtils, BACKUPS_DIR
 
 CWD = os.getcwd() + "/"
 
