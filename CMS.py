@@ -5,16 +5,24 @@ import shutil
 import datetime
 import logging
 import time
+import pyclamd
+import configparser
+import urllib.request
+import fnmatch
+
+from progress.bar import Bar
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 from abc import ABC, abstractmethod
+from termcolor import colored
+from progress.spinner import Spinner
 
 from MascEntry import MascEntry
 from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
 from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
-
+# This class represent a generic website
 class CMS(ABC):
 
     def __init__(self, path, name="no_name", log=True):
@@ -40,7 +48,14 @@ class CMS(ABC):
             self.set_log()
             self.log = logging.getLogger(self.name)
 
-    # List and stores all the plain text files
+        # Read and create download url depending of the CMS type
+        config = configparser.ConfigParser()
+        config.sections()
+        config.read('masc.conf')
+        if self.type != 'custom':
+            self.download_url = config['download_urls'][self.type] + self.version + ".zip"
+
+    # List and stores all the files and directories to save the website structure
     def scan(self, path=""):
         if path == "":
             path = self.path
@@ -67,7 +82,17 @@ class CMS(ABC):
     # Search for malware signatures using OWASP Web Malware Scanner database
     def search_malware_signatures(self):
         results = []
+        using_clamv = False
 
+        # Check is ClamAV daemon is running to include its support to scan files
+        try:
+            clamav = pyclamd.ClamdAgnostic()
+            using_clamv = True
+            clamav_message = "Using ClamAV engine"
+        except:
+            clamav_message = "ClamAV not found. Using only checksum and YARA rules databases"
+
+        spinner = Spinner(colored("Scanning your website (" + clamav_message + ") ", "blue"))
         for entry in self.entry_list:
             if not entry.is_file():
                 continue
@@ -85,6 +110,7 @@ class CMS(ABC):
             if checksum in Dictionary.signatures_db:
                 malware = str(Dictionary.signatures_db[checksum])
                 results.append(self.add_result(entry, malware))
+                spinner.next()
 
             # Check for files applying yara rules
             if entry.is_plain_text():
@@ -96,8 +122,19 @@ class CMS(ABC):
                                 results.append(self.add_result(entry, str(rule).replace("_", " ")))
                     except:
                         # FIXME I don't know but some rules are not readable for me
+                        # I think it's because the YARA version
                         print_red("Some error applying rules")
+                spinner.next()
 
+            # Check for files using ClamAV binding
+            if using_clamv:
+                result = clamav.scan_file(entry.path)
+                if result:
+                    malware = result[entry.path][1]
+                    results.append(self.add_result(entry, malware))
+                spinner.next()
+
+        print()
         return results
 
     # Prepare a result and return it
@@ -119,6 +156,11 @@ class CMS(ABC):
         try:
             # Remove previous backup
             if os.path.isdir(destination_dir):
+                answer = input("A previous backups exists. Do you want to overwrite it? [y|N] ")
+                if answer == '' or answer.lower() == 'n':
+                    print_blue("Operation cancelled by user")
+                    exit()
+
                 shutil.rmtree(destination_dir)
             shutil.copytree(self.path, destination_dir)
             self.log.info("backup " + self.type + "_" + self.name + " created")
@@ -168,9 +210,11 @@ class CMS(ABC):
     # Search for suspect files in the current installation
     # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
     # to check if this file belong to an official installation
+    # TODO The main idea is searching about known suspected files in the current CMS or website
     def search_suspect_files(self):
         results = []
 
+        '''
         for entry in self.entry_list:
             if entry.name_ends_with_digits():
                 results.append(self.add_result(entry, "suspect_file"))
@@ -180,7 +224,9 @@ class CMS(ABC):
                 if entry.path == file:
                     results.append(self.add_result(entry, "suspect_file"))
 
+        '''
         return results
+
 
     # Compare the files of the current installation with a clean installation to look for suspect files
     # It returns the current installation files that doesn't appear in the official installation
@@ -192,11 +238,17 @@ class CMS(ABC):
         clean_installation_path = os.path.join("cache", self.type + "-" + self.version)
         if not os.path.isdir(clean_installation_path):
             print_blue("No clean installation for " + self.type + " " + self.version)
-            print_blue("Downloading a new one . . .")
-            self.download_clean_installation()
+            try:
+                self.download_clean_installation()
+            except Exception as e:
+                print_red(e)
+                exit()
+
             print_blue("Unzipping . . .")
             self.unzip_clean_installation()
-            print_green("done")
+            print_green("done.")
+        else:
+            print_blue("Clean installation found in cache for " + self.type + " " + self.version + ". It will be used to compare")
 
         for dirpaths, root, filenames in os.walk(clean_installation_path):
             for filename in filenames:
@@ -205,14 +257,15 @@ class CMS(ABC):
                 clean_files.append(clean_file)
 
         # Search for malware and suspect file to compare with a clean installation
-        print_blue("Searching for malware . . .")
         results_malware = self.search_malware_signatures()
+        print_green("done.")
         # To avoid repeated values
         results_malware = CMS.transform_results(results_malware)
 
         print_blue("Searching for suspect files . . .")
         results_suspect_files = self.search_suspect_files()
         results_suspect_files = CMS.transform_results(results_suspect_files)
+        print_green("done.")
 
         total_suspected_files = results_malware + results_suspect_files
         total_suspected_files = list(set(total_suspected_files))
@@ -222,6 +275,8 @@ class CMS(ABC):
             result = result.replace(self.path + os.sep, "")
             if not result in clean_files:
                 results.append(result)
+        print_green("done.")
+
 
         return results
 
@@ -275,6 +330,66 @@ class CMS(ABC):
 
         observer.join()
 
+    # Delete known files in any website (README, LICENSE and some generic txt and html files)
+    # Also it create an index.php file to silence any 'index-empty' directory
+    def delete_known_files(self):
+        # Search for readme and related files to hide information about current installation and its plugin
+        for dirpath, dirnames, filenames in os.walk(self.path):
+            # Remove readme files. They show information about plugins/themes version
+            for filename in fnmatch.filter(filenames, "*.txt"):
+                if filename == 'robots.txt':
+                    continue
+
+                os.remove(os.path.join(dirpath, filename))
+                self.log.info("file removed:" + os.path.join(dirpath, filename))
+
+            # Remove LICENSE files
+            for filename in fnmatch.filter(filenames, "LICENSE"):
+                os.remove(os.path.join(dirpath, filename))
+                self.log.info("file removed:" + os.path.join(dirpath, filename))
+
+            # If folder hasn't index.php file, add an extra one with no code to avoid directory listing
+            if not os.path.isfile(os.path.join(dirpath, "index.php")):
+                file = open(os.path.join(dirpath, "index.php"), "w")
+                file.write("<?php\n// masc is protecting your site\n")
+                file.close()
+                self.log.info("file created:index.php:at:" + dirpath)
+
+    # Download a clean installation of the current website
+    def download_clean_installation(self):
+        zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
+
+        try:
+            urllib.request.urlretrieve(self.download_url, zip_file, self.download_progress)
+
+            if not os.path.isfile(zip_file):
+                return False
+
+            return True
+        except Exception as e:
+            raise Exception(
+                'Some error has produced while downloading a clean installation. Please, check your conectivity.')
+
+    # Progress bar to show clean installation download
+    bar = None
+
+    # Update download state using a progressbar
+    @staticmethod
+    def download_progress(block_count, block_size, total_size):
+        global bar
+
+        # First time, progress bar is instantiated
+        if CMS.bar is None:
+            CMS.bar = Bar(colored("Downloading a new one (it will be stored to use in advance)", "blue"),
+                                fill=colored("#", "blue"), max=total_size, suffix='%(percent)d%%')
+
+        # Calculate how much is downloaded and update progress bar during the whole process
+        downloaded = block_count * block_size
+        if downloaded < total_size:
+            CMS.bar.next(block_size)
+        else:
+            CMS.bar.finish()
+
     @abstractmethod
     def cleanup_site(self):
         pass
@@ -285,8 +400,4 @@ class CMS(ABC):
 
     @abstractmethod
     def search_suspect_content(self):
-        pass
-
-    @abstractmethod
-    def download_clean_installation(self):
         pass

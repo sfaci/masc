@@ -1,7 +1,7 @@
 from CMS import CMS
 
 
-# A custom website
+# This class represents a custom website
 class Custom(CMS):
 
     def __init__(self, path, name, type="custom", log=True):

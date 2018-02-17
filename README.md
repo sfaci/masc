@@ -1,5 +1,7 @@
 # masc
 
+<img align="left" height="200px" width="200px" src="https://www.arkabytes.com/img/masc.jpg">
+
 A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Hackathon 2017
 
 ## About
@@ -10,23 +12,19 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 
 ## Features
 
-* Scan any website for malware using OWASP WebMalwareScanner checksum and YARA rules databases
+At the moment, there are some features avaiable for any type of website (custom or CMS)  and some of them only available for specific
+platforms:
+
+* Scan any website for malware using OWASP WebMalwareScanner checksum, YARA rules databases and ClamAV engine (if available)
 * Perform some cleaning operations to improve website protection
 * Monitor the website for changes. Details are written in a log file
-* Custom website support
-  * Scan your site to know if it has been infected with some malware
-  * List your local backups
-  * Logging support
-  * Backup your site
-  * Restore website
-* WordPress support
-  * Scan your site to know if it has been infected with some malware
-  * Scan for suspect files and compare with a clean installation
-  * Clean up your site to avoid giving extra information to attackers
-  * Backup your site (to recover later if you need)
-  * List your local backups
-  * Logging support
-  * Restore website
+* Scan your site to know if it has been infected with some malware
+* List your local backups
+* Logging support
+* Backup your site
+* Restore website
+* Scan for suspect files and compare with a clean installation (for Wordpress and Drupal)
+* Clean up your site to avoid giving extra information to attackers (only available for Wordpress)
 
 ## Requirements
 
@@ -39,9 +37,11 @@ First of all, notice that this tool is developed under Linux and, at the moment,
   * watchdog
   * termcolor
   * pypandoc
+  * progress
 ```bash
-santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc
+santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc progress
 ```
+* ClamAV to integrate with its engine (optional but recommended)
 
 #### Notice
 
@@ -64,10 +64,10 @@ You can also install it usign pip ('pip3 install masc')
 
 ```bash
 
-masc 0.1 (http://github.com/sfaci/masc)
+masc 0.2.2 (http://github.com/sfaci/masc)
 usage: masc.py [-h] [--add-file FILENAME] [--add-word STRING] [--clean-cache]
-               [--clean-site] [--list-backups] [--list-logs] [--make-backup]
-               [--monitor] [--name NAME] [--rollback] [--scan PATH]
+               [--clean-site] [--list-backups] [--make-backup] [--monitor]
+               [--name NAME] [--path PATH] [--rollback] [--scan]
                [--site-type {wordpress,drupal,custom}]
 
 optional arguments:
@@ -80,8 +80,9 @@ optional arguments:
   --make-backup         Create a local backup of the current installation
   --monitor             Monitor site to detect changes
   --name NAME           Name assigned to the scanned installation
+  --path PATH           Website installation path
   --rollback            Restore a local backup
-  --scan PATH           Scan an installation at the given PATH
+  --scan                Scan website for malware
   --site-type {wordpress,drupal,custom}
                         which type of web you want to scan:: wordpress,
                         joomla, drupal or magento
@@ -102,4 +103,4 @@ rules (and how to load it to work with).
 
 ## Author
 
-Santiago Faci <santiago.faci@gmail.com>
+Santiago Faci <santi@arkabytes.com>
