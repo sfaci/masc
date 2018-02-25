@@ -45,6 +45,23 @@ santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypando
 
 #### Notice
 
+In my notebook, after upgrading to Debian testing, masc became to show an error related to Yara
+
+```bash
+OSError: /usr/lib/libyara.so: cannot open shared object file: No such file or directory
+```
+
+After trying a lot of solutions I found in the Internet, I realized that this file was located in my computer in 
+_/usr/local/lib/python3.5/dist-packages/usr/lib_, so I created a symbolic link from the previous path to _/usr/lib_
+
+```bash
+santi@zenbook:$ ln -s /usr/local/lib/python3.5/dist-packages/usr/lib/libyara.so /usr/lib/libyara.so
+```
+
+And now, masc and Yara library are running with no problems.
+
+#### Notice
+
 _masc_ is developed under Linux and it has not been tested under any other Operating System.
 
 Anyway, it should run without problems under any Unix-friendly OS. In particular, in Mac OSX I have noticed it's neccesary to install
