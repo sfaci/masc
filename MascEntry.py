@@ -2,9 +2,8 @@ import magic
 import re
 
 
-# A filesystem entry: file or directory with some information
 class MascEntry:
-
+    """A filesystem entry: file or directory with some information"""
     # Apparently 'st_creator' and 'st_type' are only available in some Unix (like Unix)
     # so, by now, I put 'file' or 'dir' manually checking the type of the entry
     def __init__(self, name, path, absolute_path, size, mode, atime, mtime, ctime, st_type, creator=""):
@@ -23,8 +22,8 @@ class MascEntry:
         self.st_type = st_type
         self.creator = creator
 
-    # Return the content if it's a plain text file
     def get_content(self):
+        """Return the content if it's a plain text file"""
         if not self.is_plain_text():
             return None
 
@@ -33,15 +32,15 @@ class MascEntry:
         file.close()
         return content
 
-    # Check if the entry is a file
     def is_file(self):
+        """Check if the entry is a file"""
         if self.st_type == "file":
             return True
         else:
             return False
 
-    # Check if the entry is a plain text file
     def is_plain_text(self):
+        """Check if the entry is a plain text file"""
         if not self.is_file():
             return False
 
@@ -52,14 +51,14 @@ class MascEntry:
         else:
             return False
 
-    # Check if the filename (without extension) ends with a number
     def name_ends_with_digits(self):
+        """Check if the filename (without extension) ends with a number"""
 
         if re.search(r'\d+$', self.name.split(".")[0]) is None:
             return False
 
         return True
 
-    # string representation of an entry
     def __str__(self):
+        """Return the string representation of an entry"""
         return self.absolute_path

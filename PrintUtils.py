@@ -1,7 +1,10 @@
 from termcolor import colored
 
+"""
+Some utility methods to print information on the screen
+"""
 
-# Some utility methods
+
 def print_green(message, extra=None):
     if extra == "":
         print(colored(message, "green"), end="")

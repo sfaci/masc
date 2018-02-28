@@ -1,9 +1,8 @@
 from CMS import CMS
 
 
-# This class represents a Joomla installation
 class Joomla(CMS):
-
+    """This class represents a Joomla installation"""
     def __init__(self, path, name):
         super().__init__(path, name)
 
