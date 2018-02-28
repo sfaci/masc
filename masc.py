@@ -17,9 +17,9 @@ from MascUtils import MascUtils, BACKUPS_DIR
 CWD = os.getcwd() + '/'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
-parser.add_argument('-w', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
-parser.add_argument('-h', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)', action='store_true')
+parser.add_argument('-af', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
+parser.add_argument('-aw', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
+parser.add_argument('-cc', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)', action='store_true')
 parser.add_argument('-c', '--clean-site', help='Clean up the site to hide information to attackers', action='store_true')
 parser.add_argument('-l', '--list-backups', help='List local backups', action='store_true')
 parser.add_argument('-b', '--make-backup', help='Create a local backup of the current installation', action='store_true')
