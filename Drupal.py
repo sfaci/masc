@@ -2,9 +2,8 @@ import os
 from CMS import CMS
 
 
-# This class represents a Drupal installation
 class Drupal(CMS):
-
+    """This class represents a Drupal installation"""
     def __init__(self, path, name, log=True):
         super().__init__(path, name, log)
 
@@ -12,6 +11,7 @@ class Drupal(CMS):
             raise Exception("Fatal Error. This is not a Drupal installation.")
 
     def get_version(self):
+        """Returns the version of the current installation"""
         version_line = ""
 
         with open(os.path.join(self.path, "core/lib/Drupal.php")) as file:

@@ -14,22 +14,22 @@ from PrintUtils import print_green, print_blue, print_red, print_info, print_res
 from Dictionary import Dictionary
 from MascUtils import MascUtils, BACKUPS_DIR
 
-CWD = os.getcwd() + "/"
+CWD = os.getcwd() + '/'
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--add-file", help="Add a suspect file to the dictionary", metavar="FILENAME")
-parser.add_argument("--add-word", help="Add a suspect content to the dictionary", metavar="STRING")
-parser.add_argument("--clean-cache", help="Clean masc cache (cache and logs files, NO backups)", action="store_true")
-parser.add_argument("--clean-site", help="Clean up the site to hide information to attackers", action="store_true")
-parser.add_argument("--list-backups", help="List local backups", action="store_true")
-parser.add_argument("--make-backup", help="Create a local backup of the current installation", action="store_true")
-parser.add_argument("--monitor", help="Monitor site to detect changes", action="store_true")
-parser.add_argument("--name", help="Name assigned to the scanned installation", metavar="NAME")
-parser.add_argument("--path", help="Website installation path", metavar="PATH")
-parser.add_argument("--rollback", help="Restore a local backup", action="store_true")
-parser.add_argument("--scan", help="Scan website for malware", action="store_true")
-parser.add_argument("--site-type", help="which type of web you want to scan:: wordpress, drupal or a custom website",
-                    choices=["wordpress", "drupal", "custom"])
+parser.add_argument('-f', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
+parser.add_argument('-w', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
+parser.add_argument('-h', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)', action='store_true')
+parser.add_argument('-c', '--clean-site', help='Clean up the site to hide information to attackers', action='store_true')
+parser.add_argument('-l', '--list-backups', help='List local backups', action='store_true')
+parser.add_argument('-b', '--make-backup', help='Create a local backup of the current installation', action='store_true')
+parser.add_argument('-m', '--monitor', help='Monitor site to detect changes', action='store_true')
+parser.add_argument('-n', '--name', help='Name assigned to the scanned installation', metavar='NAME')
+parser.add_argument('-p', '--path', help='Website installation path', metavar='PATH')
+parser.add_argument('-r', '--rollback', help='Restore a local backup', action='store_true')
+parser.add_argument('-s', '--scan', help='Scan website for malware', action='store_true')
+parser.add_argument('-t', '--site-type', help='which type of web you want to scan: wordpress, drupal or a custom website',
+                    choices=['wordpress', 'drupal', 'custom'])
 
 # Print some info about masc (version, github site, . . .)
 print_info()
@@ -56,17 +56,17 @@ if args.scan:
         exit()
 
     # Set a default or choosen name
-    name = "no_name"
+    name = 'no_name'
     if args.name:
         name = args.name
 
     cms = None
     try:
-        if args.site_type == "wordpress":
+        if args.site_type == 'wordpress':
             cms = Wordpress(args.path, name)
-        elif args.site_type == "drupal":
+        elif args.site_type == 'drupal':
             cms = Drupal(args.path, name)
-        elif args.site_type == "custom":
+        elif args.site_type == 'custom':
             cms = Custom(args.path, name)
     except Exception as e:
         print_red(e)

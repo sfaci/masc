@@ -22,9 +22,9 @@ from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
 from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
-# This class represent a generic website
-class CMS(ABC):
 
+class CMS(ABC):
+    """This class represent a generic website"""
     def __init__(self, path, name="no_name", log=True):
         super().__init__()
 
@@ -41,7 +41,8 @@ class CMS(ABC):
             try:
                 self.version = self.get_version()
             except:
-                raise Exception("Fatal error. Wrong installation type. Are you sure this is a " + self.type + " website?")
+                raise Exception(
+                    "Fatal error. Wrong installation type. Are you sure this is a " + self.type + " website?")
 
         # Configure logging
         if log:
@@ -55,8 +56,8 @@ class CMS(ABC):
         if self.type != 'custom':
             self.download_url = config['download_urls'][self.type] + self.version + ".zip"
 
-    # List and stores all the files and directories to save the website structure
     def scan(self, path=""):
+        """List and stores all the files and directories to save the website structure"""
         if path == "":
             path = self.path
         scanned_dir = os.scandir(path)
@@ -75,12 +76,12 @@ class CMS(ABC):
             if entry.is_dir():
                 self.scan(entry.path)
 
-    # Return the number of plain text files in this Wordpress installation
     def files_count(self):
+        """Return the number of plain text files in this WordPress installation"""
         return len(self.entry_list)
 
-    # Search for malware signatures using OWASP Web Malware Scanner database
     def search_malware_signatures(self):
+        """Search for malware signatures using OWASP Web Malware Scanner database"""
         results = []
         using_clamv = False
 
@@ -137,16 +138,16 @@ class CMS(ABC):
         print()
         return results
 
-    # Prepare a result and return it
     def add_result(self, entry, details):
+        """Prepare a result and return it"""
         result = {
             "entry": entry,
             "details": details
         }
         return result
 
-    # Make a complete backup of the current installation
     def make_backup(self):
+        """Make a complete backup of the current installation"""
         if not os.path.isdir(BACKUPS_DIR):
             os.mkdir(BACKUPS_DIR)
 
@@ -168,11 +169,12 @@ class CMS(ABC):
         except:
             return False
 
-    # Revert any change of your website using a previous backup
     def rollback_backup(self):
+        """Revert any change of your website using a previous backup"""
         backup_src = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
         if not os.path.isdir(backup_src):
-            print_red("It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
+            print_red(
+                "It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
             exit()
 
         for dirpaths, root, filenames in os.walk(backup_src):
@@ -185,9 +187,9 @@ class CMS(ABC):
                     os.mkdir(os.path.join(self.path, path_dest))
                 shutil.copyfile(filename, os.path.join(self.path, filename_dest))
 
-    # Unzip a zip file that contains a clean installation of the current website
     def unzip_clean_installation(self):
-        filename = self.type + "-" + self.version;
+        """Unzip a zip file that contains a clean installation of the current website"""
+        filename = self.type + "-" + self.version
         zip_filename = filename + ".zip"
         zip_path = CACHE_DIR + zip_filename
 
@@ -197,9 +199,9 @@ class CMS(ABC):
 
         return True
 
-    # Transform results structure in a filepath list non-repeated
     @classmethod
     def transform_results(cls, results):
+        """Transform results structure in a filepath list non-repeated"""
         total = []
 
         for result in results:
@@ -207,11 +209,14 @@ class CMS(ABC):
 
         return list(set(total))
 
-    # Search for suspect files in the current installation
-    # By now is only looking for filenames ending with numbers. It's not a final evidence because later we have
-    # to check if this file belong to an official installation
     # TODO The main idea is searching about known suspected files in the current CMS or website
     def search_suspect_files(self):
+        """
+        Search for suspect files in the current installation
+        By now it's only looking for filenames ending with numbers. It's not a final evidence because later we have
+        to check if this file belongs to an official installation
+        :return: suspect files found
+        """
         results = []
 
         '''
@@ -227,10 +232,11 @@ class CMS(ABC):
         '''
         return results
 
-
-    # Compare the files of the current installation with a clean installation to look for suspect files
-    # It returns the current installation files that doesn't appear in the official installation
     def compare_with_clean_installation(self):
+        """
+        Compare the files of the current installation with a clean installation to look for suspect files
+        :return: the current installation files that doesn't appear in the official installation
+        """
         results = []
         clean_files = []
 
@@ -248,7 +254,8 @@ class CMS(ABC):
             self.unzip_clean_installation()
             print_green("done.")
         else:
-            print_blue("Clean installation found in cache for " + self.type + " " + self.version + ". It will be used to compare")
+            print_blue(
+                "Clean installation found in cache for " + self.type + " " + self.version + ". It will be used to compare")
 
         for dirpaths, root, filenames in os.walk(clean_installation_path):
             for filename in filenames:
@@ -277,7 +284,6 @@ class CMS(ABC):
                 results.append(result)
         print_green("done.")
 
-
         return results
 
     def get_log_name(self):
@@ -298,16 +304,15 @@ class CMS(ABC):
             os.mkdir(LOGS_DIR)
         logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-" + date + ".log", level=logging.INFO)
 
-    # Notify on the screen changes during monitoring
     def on_modified(self, event):
+        """Notify on the screen changes during monitoring"""
         if event.is_directory:
             print("directory " + event.event_type + " " + event.src_path)
         else:
             print("file " + event.event_type + " " + event.src_path)
 
-    # Monitor current installation and log any change
     def monitor(self):
-
+        """Monitor current installation and log any changes"""
         print("Details at: " + LOGS_DIR + self.type + "-" + self.name + "-monitor.log")
         logging.basicConfig(filename=LOGS_DIR + self.type + "-" + self.name + "-monitor.log",
                             level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%d-%m-%Y %H:%M:%S')
@@ -330,9 +335,12 @@ class CMS(ABC):
 
         observer.join()
 
-    # Delete known files in any website (README, LICENSE and some generic txt and html files)
-    # Also it create an index.php file to silence any 'index-empty' directory
     def delete_known_files(self):
+        """
+        Delete known files in any website (README, LICENSE and some generic txt and html files)
+        Also it creates an index.php file to silence any 'index-empty' directory
+        :return:
+        """
         # Search for readme and related files to hide information about current installation and its plugin
         for dirpath, dirnames, filenames in os.walk(self.path):
             # Remove readme files. They show information about plugins/themes version
@@ -355,8 +363,8 @@ class CMS(ABC):
                 file.close()
                 self.log.info("file created:index.php:at:" + dirpath)
 
-    # Download a clean installation of the current website
     def download_clean_installation(self):
+        """Download a clean installation of the current website"""
         zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
 
         try:
@@ -373,15 +381,15 @@ class CMS(ABC):
     # Progress bar to show clean installation download
     bar = None
 
-    # Update download state using a progressbar
     @staticmethod
     def download_progress(block_count, block_size, total_size):
+        """Update download state using a progressbar"""
         global bar
 
         # First time, progress bar is instantiated
         if CMS.bar is None:
             CMS.bar = Bar(colored("Downloading a new one (it will be stored to use in advance)", "blue"),
-                                fill=colored("#", "blue"), max=total_size, suffix='%(percent)d%%')
+                          fill=colored("#", "blue"), max=total_size, suffix='%(percent)d%%')
 
         # Calculate how much is downloaded and update progress bar during the whole process
         downloaded = block_count * block_size

@@ -1,9 +1,8 @@
 from CMS import CMS
 
 
-# This class represents a custom website
 class Custom(CMS):
-
+    """This class represents a custom website"""
     def __init__(self, path, name, type="custom", log=True):
         super().__init__(path, name, log)
         # Override value in case it's creating a 'anonymous' backup

@@ -2,9 +2,9 @@ import os
 
 from CMS import CMS
 
-# This class represents a Wordpress installation
-class Wordpress(CMS):
 
+class Wordpress(CMS):
+    """This class represents a WordPress installation"""
     def __init__(self, path, name, log=True):
 
         super().__init__(path, name, log)
@@ -12,8 +12,8 @@ class Wordpress(CMS):
         if not os.path.isfile(os.path.join(path, "wp-config.php")):
             raise Exception("Fatal Error. This is not a WordPress installation.")
 
-    # Search for suspect content in the current installation based on the masc dictionary
     def search_suspect_content(self):
+        """Search for suspect content in the current installation based on the masc dictionary"""
         results = []
         '''
         for entry in self.entry_list:
@@ -29,8 +29,8 @@ class Wordpress(CMS):
         '''
         return results
 
-    # Obtain the version of the current installation
     def get_version(self):
+        """Get the version of the current installation"""
         version_line = ""
 
         with open(os.path.join(self.path, "wp-includes/version.php")) as file:
@@ -42,10 +42,11 @@ class Wordpress(CMS):
         slices = version_line.split("'")
         return slices[1]
 
-    # Cleanup the site fixing permissions and removing unnecessary files with information that exposes the website
-    # to attackers
     def cleanup_site(self):
-
+        """
+        Clean up the site fixing permissions and removing unnecessary files with information that exposes
+        the website to attackers
+        """
         # Generic cleaning for any website
         self.delete_known_files()
 
@@ -74,4 +75,4 @@ class Wordpress(CMS):
             file.write("remove_action('wp_head', 'wp_generator');")
             file.close()
             self.log.info("added:'remove_action(\'wp-head\', \'wp_generator\');':end of file:" +
-                            "wp-content/themes/functions.php")
+                          "wp-content/themes/functions.php")

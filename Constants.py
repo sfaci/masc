@@ -1,3 +1,7 @@
+"""
+Some contants to use
+"""
+
 # This is the local directory where I make some test with fake websites
 TEST_DIR = "test/"
 
