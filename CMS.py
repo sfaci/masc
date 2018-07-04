@@ -131,6 +131,7 @@ class CMS(ABC):
             if using_clamv:
                 result = clamav.scan_file(entry.path)
                 if result:
+                    print(result)
                     malware = result[entry.path][1]
                     results.append(self.add_result(entry, malware))
                 spinner.next()
@@ -163,6 +164,8 @@ class CMS(ABC):
                     exit()
 
                 shutil.rmtree(destination_dir)
+
+            print_blue("Using " + self.name + " as backup name")
             shutil.copytree(self.path, destination_dir)
             self.log.info("backup " + self.type + "_" + self.name + " created")
             return True
