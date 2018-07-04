@@ -109,7 +109,7 @@ if args.scan:
     # If the user didn't choose clean the site, masc only show which files may be infected
     if not args.clean_site:
         if len(files_to_remove) > 0:
-            print_red("Malware/suspect files were found. It will be removed if you include the option --clean-site")
+            print_red("Malware/suspect files were found. They will be removed if you include the option --clean-site")
             for filename in files_to_remove:
                 print("\t" + os.path.join(cms.path, filename))
         exit()
