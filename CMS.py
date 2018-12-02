@@ -130,10 +130,8 @@ class CMS(ABC):
             # Check for files using ClamAV binding
             if using_clamv:
                 result = clamav.scan_file(entry.path)
-                print(entry.path)
                 if result:
-                    #print(result)
-                    print(result[entry.path][0])
+                    print(result)
                     malware = result[entry.path][1]
                     results.append(self.add_result(entry, malware))
                 spinner.next()
