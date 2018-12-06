@@ -92,6 +92,8 @@ for this line
 To install _masc_ on your computer, you can download a [release](https://github.com/sfaci/masc/releases), untar it and try.
 You can also install it usign pip ('pip3 install masc')
 
+Check [this notice](https://github.com/sfaci/masc#notice-1) before if you are using Mac OSX.
+
 ## Usage
 
 ```bash
