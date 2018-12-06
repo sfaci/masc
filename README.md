@@ -87,6 +87,12 @@ for this line
 #!/usr/local/bin/python3
 ```
 
+Anyway, you always can run _masc_ using the Python interpreter instead running the script directly:
+
+```bash
+santi@zenbook:$ python3 masc.py
+```
+
 ## Installation
 
 To install _masc_ on your computer, you can download a [release](https://github.com/sfaci/masc/releases), untar it and try.
