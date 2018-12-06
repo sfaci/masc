@@ -72,10 +72,10 @@ you will be able to install as I show below:
 santi@zenbook:$ brew install libmagic
 ```
 
-Also, in my computer I had to change the first line of the __masc.py__ script. Python3 is installed in __/usr/local/bin__ and it's not 
-allowed to create symlinks from __/usr/bin__ 
+Also, in my computer I had to change the first line of the _masc.py_ script. Python3 is installed in _/usr/local/bin_ and it's not 
+allowed to create symlinks from _/usr/bin_ 
 
-Change the first line in __masc.py__
+Change the first line in _masc.py_
 
 ```bash
 #!/usr/bin/python3
