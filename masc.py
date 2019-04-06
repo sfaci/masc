@@ -20,7 +20,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-af', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
 parser.add_argument('-aw', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
 parser.add_argument('-cc', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)', action='store_true')
-parser.add_argument('-c', '--clean-site', help='Clean up the site to hide information to attackers', action='store_true')
+parser.add_argument('-c', '--clean-site', help='Clean up the site (and apply some extra actions to hide information to attackers)', action='store_true')
 parser.add_argument('-l', '--list-backups', help='List local backups', action='store_true')
 parser.add_argument('-b', '--make-backup', help='Create a local backup of the current installation', action='store_true')
 parser.add_argument('-m', '--monitor', help='Monitor site to detect changes', action='store_true')
@@ -114,7 +114,7 @@ if args.scan:
                 print("\t" + os.path.join(cms.path, filename))
         exit()
 
-    # The user chosen clean up the site
+    # The user chose clean up the site
     if args.clean_site:
         try:
             if len(files_to_remove) > 0:
@@ -186,7 +186,7 @@ elif args.make_backup:
     website.make_backup()
     print_green("done.")
 
-# User chose restore the website with a previous backup
+# User choose restore the website with a previous backup
 elif args.rollback:
     if not args.path:
         print_red("You must provide the path of your website to rollback")

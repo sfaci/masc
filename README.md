@@ -115,7 +115,7 @@ optional arguments:
   --add-file FILENAME   Add a suspect file to the dictionary
   --add-word STRING     Add a suspect content to the dictionary
   --clean-cache         Clean masc cache (cache and logs files, NO backups)
-  --clean-site          Clean up the site to hide information to attackers
+  --clean-site          Clean up the site (and apply some extra actions to hide information to attackers)
   --list-backups        List local backups
   --make-backup         Create a local backup of the current installation
   --monitor             Monitor site to detect changes
@@ -126,6 +126,22 @@ optional arguments:
   --site-type {wordpress,drupal,custom}
                         which type of web you want to scan:: wordpress,
                         joomla, drupal or magento
+```
+
+The actions you can perform over a web installation are:
+
+* --scan (with or without the option --clean-site)
+* --rollback
+* --monitor
+* --make-backup
+
+And you have to consider that if you want to perform some actions over some kind of web installation, it's mandatory to
+specify the type (-t or --type) and path (-o or --path).
+
+For instance, if you have a WordPress installation in /var/www/html and you want to scan it entirely:
+
+```
+santi@zenbook:$ ./masc.py -s -t wordpress -p /var/www/html
 ```
 
 ## Test
