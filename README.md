@@ -141,7 +141,13 @@ specify the type (-t or --type) and path (-o or --path).
 For instance, if you have a WordPress installation in /var/www/html and you want to scan it entirely:
 
 ```
-santi@zenbook:$ ./masc.py -s -t wordpress -p /var/www/html
+santi@zenbook:$ ./masc.py --scan --type wordpress --path /var/www/html
+```
+
+And if you want to perform clean up actions (to remove some malware, for instance):
+
+```
+santi@zenbook:$ ./masc.py --scan --type wordpress --path /var/www/html --clean-site
 ```
 
 ## Test
