@@ -72,10 +72,33 @@ you will be able to install as I show below:
 santi@zenbook:$ brew install libmagic
 ```
 
+Also, in my computer I had to change the first line of the _masc.py_ script. Python3 is installed in _/usr/local/bin_ and it's not 
+allowed to create symlinks from _/usr/bin_ 
+
+Change the first line in _masc.py_
+
+```bash
+#!/usr/bin/python3
+```
+
+for this line
+
+```bash
+#!/usr/local/bin/python3
+```
+
+Anyway, you always can run _masc_ using the Python interpreter instead running the script directly:
+
+```bash
+santi@zenbook:$ python3 masc.py
+```
+
 ## Installation
 
 To install _masc_ on your computer, you can download a [release](https://github.com/sfaci/masc/releases), untar it and try.
 You can also install it usign pip ('pip3 install masc')
+
+Check [this notice](https://github.com/sfaci/masc#notice-1) before if you are using Mac OSX.
 
 ## Usage
 
