@@ -12,7 +12,7 @@ A malware (web) scanner developed during [CyperCamp](http://www.cybercamp.es) Ha
 
 ## Features
 
-At the moment, there are some features avaiable for any type of website (custom or CMS)  and some of them only available for specific
+At the moment, there are some features avaiable for any type of website (custom or CMS) and some of them only available for specific
 platforms:
 
 * Scan any website for malware using OWASP WebMalwareScanner checksum, YARA rules databases and ClamAV engine (if available)
@@ -26,9 +26,20 @@ platforms:
 * Scan for suspect files and compare with a clean installation (for Wordpress and Drupal)
 * Clean up your site to avoid giving extra information to attackers (only available for Wordpress)
 
-## Requirements
+## Installation
 
-First of all, notice that this tool is developed under Linux and, at the moment, it has been tested only under this Operating System
+To install _masc_ on your computer, you can simply clone this repository.
+You can also download the latest [release](https://github.com/sfaci/masc/releases), untar it and try. Or maybe you prefer to install it usign pip ('pip3 install masc').
+
+Check [requirements](https://github.com/sfaci/masc#requirements) before run it.
+Check [this notice](https://github.com/sfaci/masc#notice) before if you are using Debian Linux.
+Check [this notice](https://github.com/sfaci/masc#notice-1) before if you are using Mac OSX.
+
+masc has been tested only in Linux and Mac OSX platforms. It should run under Windows but I don't have tried yet.
+
+### Requirements
+
+First of all, notice that this tool is developed under Linux and Mac OSX environments and, at the moment, it has been tested only under these Operating Systems
 
 * Python >= 3
 * Some Python libraries
@@ -38,12 +49,14 @@ First of all, notice that this tool is developed under Linux and, at the moment,
   * termcolor
   * pypandoc
   * progress
+  * pyclamd
+  
 ```bash
-santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc progress
+santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc progress pyclamd
 ```
 * ClamAV to integrate with its engine (optional but recommended)
 
-#### Notice
+#### Notice for Debian users/developers
 
 In my notebook, after upgrading to Debian testing, masc became to show an error related to Yara
 
@@ -60,12 +73,12 @@ santi@zenbook:$ ln -s /usr/local/lib/python3.5/dist-packages/usr/lib/libyara.so 
 
 And now, masc and Yara library are running with no problems.
 
-#### Notice
+#### Notice for MacOS users/developers
 
-_masc_ is developed under Linux and it has not been tested under any other Operating System.
+_masc_ is developed under Linux but it has been tested under Mac OSX. Anyway, it should run without problems under any Unix-friendly OS. 
 
-Anyway, it should run without problems under any Unix-friendly OS. In particular, in Mac OSX I have noticed it's neccesary to install
-[Homebrew](https://brew.sh) to use python-magic library propery as _libmagic_. Check first the previous link to the _brew_ homepage and then
+In particular, in Mac OSX I have noticed it's neccesary to install
+[Homebrew](https://brew.sh) to use python-magic library properly as _libmagic_. Check first the previous link to the _brew_ homepage and then
 you will be able to install as I show below:
 
 ```bash
@@ -93,74 +106,81 @@ Anyway, you always can run _masc_ using the Python interpreter instead running t
 santi@zenbook:$ python3 masc.py
 ```
 
-## Installation
-
-To install _masc_ on your computer, you can download a [release](https://github.com/sfaci/masc/releases), untar it and try.
-You can also install it usign pip ('pip3 install masc')
-
-Check [this notice](https://github.com/sfaci/masc#notice-1) before if you are using Mac OSX.
-
 ## Usage
 
 ```bash
 
 masc 0.2.2 (http://github.com/sfaci/masc)
-usage: masc.py [-h] [--add-file FILENAME] [--add-word STRING] [--clean-cache]
-               [--clean-site] [--list-backups] [--make-backup] [--monitor]
-               [--name NAME] [--path PATH] [--rollback] [--scan]
-               [--site-type {wordpress,drupal,custom}]
+usage: masc.py [-h] [-af FILENAME] [--aw STRING] [-cc] [-c] [-l] [-b] [-m]
+               [-n NAME] [-p PATH] [-r] [-s] [-t {wordpress,drupal,custom}]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --add-file FILENAME   Add a suspect file to the dictionary
-  --add-word STRING     Add a suspect content to the dictionary
-  --clean-cache         Clean masc cache (cache and logs files, NO backups)
-  --clean-site          Clean up the site (and apply some extra actions to hide information to attackers)
-  --list-backups        List local backups
-  --make-backup         Create a local backup of the current installation
-  --monitor             Monitor site to detect changes
-  --name NAME           Name assigned to the scanned installation
-  --path PATH           Website installation path
-  --rollback            Restore a local backup
-  --scan                Scan website for malware
-  --site-type {wordpress,drupal,custom}
+  -af FILENAME, --add-file FILENAME   
+                        Add a suspect file to the dictionary
+  -aw STRING --add-word STRING     
+                        Add a suspect content to the dictionary
+  -cc, --clean-cache        Clean masc cache (cache and logs files, NO backups)
+  -c, --clean-site          Clean up the site (and apply some extra actions to hide information to attackers)
+  -l, --list-backups        List local backups
+  -b, --make-backup         Create a local backup of the current installation
+  -m, --monitor             Monitor site to detect changes
+  -n NAME, --name NAME      Name assigned to the scanned installation
+  -p PATH, --path PATH      Website installation path
+  -r, --rollback            Restore a local backup
+  -s, --scan                Scan website for malware
+  -t {wordpress,drupal,custom}, --site-type {wordpress,drupal,custom}
                         which type of web you want to scan:: wordpress,
                         joomla, drupal or magento
 ```
 
 The actions you can perform over a web installation are:
 
-* --scan (with or without the option --clean-site)
-* --rollback
-* --monitor
-* --make-backup
+* -s, --scan (with or without the option --clean-site)
+* -r, --rollback (with its options)
+* -m, --monitor (with its options)
+* -b, --make-backup (with its options)
+* -l, --list-backups
 
 And you have to consider that if you want to perform some actions over some kind of web installation, it's mandatory to
-specify the type (-t or --type) and path (-o or --path).
+specify the type (-t or --type) and path (-p or --path).
 
 For instance, if you have a WordPress installation in /var/www/html and you want to scan it entirely:
 
 ```
-santi@zenbook:$ ./masc.py --scan --type wordpress --path /var/www/html
+santi@zenbook:$ ./masc.py --scan --site-type wordpress --path /var/www/html
 ```
 
 And if you want to perform clean up actions (to remove some malware, for instance):
 
 ```
-santi@zenbook:$ ./masc.py --scan --type wordpress --path /var/www/html --clean-site
+santi@zenbook:$ ./masc.py --scan --site-type wordpress --path /var/www/html --clean-site
 ```
 
 ## Test
 
 There is a repository in the Docker Hub to perform tests [masc-wordpress](https://hub.docker.com/r/sfaci/masc-wordpress/)
 
+In addition, there are two samples of hacked websites in the samples zip file:
+
+ * **drupal**: clean Drupal installation with some malware scripts. You can use it to make 
+ your test during development
+ * **wordpress**: clean WodPress installation with some malware to test. There is also some security holes such as
+ emtpy directories and some permissions wrong to test the extra features implemented to this kind of CMS
+
 ## Documentation
 
-You can find a complete tutorial about how to use _masc_ in the [wiki](https://github.com/sfaci/masc/wiki)
+You can find a tutorial about how to use _masc_ at the [wiki](https://github.com/sfaci/masc/wiki)
+
+## How to contribute
+
+If you want to contribute to this project, take a look at the [wiki](https://github.com/sfaci/masc/wiki). 
+There is a section about [How to contribute to this project](https://github.com/sfaci/masc/wiki/How-to-contribute)
 
 ## Thanks
 
-Thanks to [OWASP WebMalwareScanner](https://github.com/maxlabelle/WebMalwareScanner) for some ideas and the signatures databases with checksums and YARA
+Thanks to [OWASP WebMalwareScanner](https://wiki.owasp.org/index.php/OWASP_Web_Malware_Scanner_Project) for some ideas 
+and the signatures databases with checksums and YARA
 rules (and how to load it to work with). 
 
 ## Author

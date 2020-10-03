@@ -290,7 +290,7 @@ class CMS(ABC):
         return results
 
     def get_log_name(self):
-        return self.type + "-" + self.name + "-";
+        return self.type + "-" + self.name + "-"
 
     def get_logs(self):
         results = []
@@ -378,6 +378,7 @@ class CMS(ABC):
 
             return True
         except Exception as e:
+            print(e)
             raise Exception(
                 'Some error has produced while downloading a clean installation. Please, check your conectivity.')
 

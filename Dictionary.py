@@ -33,11 +33,11 @@ class Dictionary:
 
     @classmethod
     def load_suspect_content(cls, type, path):
-            with open(os.path.join(DICTS_PATH, type + SUSPECT_CONTENT_DATA)) as file:
-                for line in file:
-                    if line.startswith("#"):
-                        continue;
-                    cls.suspect_content.append(line.rstrip())
+        with open(os.path.join(DICTS_PATH, type + SUSPECT_CONTENT_DATA)) as file:
+            for line in file:
+                if line.startswith("#"):
+                    continue;
+                cls.suspect_content.append(line.rstrip())
 
     @classmethod
     def load_signatures(cls):

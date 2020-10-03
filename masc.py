@@ -40,7 +40,6 @@ if len(sys.argv) == 1:
     exit()
 
 if args.scan:
-
     if not args.path:
         print_red("You must specifiy the installation path to perform a scan")
         exit()
@@ -50,13 +49,12 @@ if args.scan:
         exit()
 
     if args.clean_site and not args.name:
-
         print_red("You selected clean up your website, but no name was provided. " +
                   "You must choose a name if you want to clean up your site")
         exit()
 
     # Set a default or choosen name
-    name = 'no_name'
+    name = 'no-name'
     if args.name:
         name = args.name
 
