@@ -32,8 +32,10 @@ To install _masc_ on your computer, you can simply clone this repository.
 You can also download the latest [release](https://github.com/sfaci/masc/releases), untar it and try. Or maybe you prefer to install it usign pip ('pip3 install masc').
 
 Check [requirements](https://github.com/sfaci/masc#requirements) before run it.
-Check [this notice](https://github.com/sfaci/masc#notice) before if you are using Debian Linux.
-Check [this notice](https://github.com/sfaci/masc#notice-1) before if you are using Mac OSX.
+
+Check [this notice](https://github.com/sfaci/masc#notice-for-debian-usersdevelopers) before if you are using Debian Linux.
+
+Check [this notice](https://github.com/sfaci/masc#notice-for-macos-usersdevelopers) before if you are using Mac OSX.
 
 masc has been tested only in Linux and Mac OSX platforms. It should run under Windows but I don't have tried yet.
 
@@ -157,16 +159,16 @@ And if you want to perform clean up actions (to remove some malware, for instanc
 santi@zenbook:$ ./masc.py --scan --site-type wordpress --path /var/www/html --clean-site
 ```
 
-## Test
+## Tests
 
-There is a repository in the Docker Hub to perform tests [masc-wordpress](https://hub.docker.com/r/sfaci/masc-wordpress/)
-
-In addition, there are two samples of hacked websites in the samples zip file:
+There are two samples of hacked websites in the samples zip file:
 
  * **drupal**: clean Drupal installation with some malware scripts. You can use it to make 
  your test during development
  * **wordpress**: clean WodPress installation with some malware to test. There is also some security holes such as
  emtpy directories and some permissions wrong to test the extra features implemented to this kind of CMS
+ 
+In addition, there is a repository in the Docker Hub to perform tests [masc-wordpress](https://hub.docker.com/r/sfaci/masc-wordpress/)
 
 ## Documentation
 
