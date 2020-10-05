@@ -20,7 +20,7 @@ from progress.spinner import Spinner
 from MascEntry import MascEntry
 from Dictionary import Dictionary
 from PrintUtils import print_red, print_blue, print_green
-from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
+from Constants import BASE_PATH, BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
 
 class CMS(ABC):
@@ -52,7 +52,7 @@ class CMS(ABC):
         # Read and create download url depending of the CMS type
         config = configparser.ConfigParser()
         config.sections()
-        config.read('masc.conf')
+        config.read(os.path.join(BASE_PATH, 'masc.conf'))
         if self.type != 'custom':
             self.download_url = config['download_urls'][self.type] + self.version + ".zip"
 
