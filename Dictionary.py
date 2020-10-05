@@ -2,12 +2,13 @@ import os
 import json
 import yara
 
+from Constants import BASE_PATH
 from PrintUtils import print_red, print_blue
 from progress.bar import Bar
 from termcolor import colored
 
-DICTS_PATH = "dicts/"
-SIGNATURES_PATH = "signatures/"
+DICTS_PATH = os.path.join(BASE_PATH, "dicts/")
+SIGNATURES_PATH = os.path.join(BASE_PATH, "signatures/")
 
 SUSPECT_FILES_DATA = "_suspect_files.data"
 SUSPECT_CONTENT_DATA = "_suspect_content.data"
