@@ -244,7 +244,7 @@ class CMS(ABC):
         clean_files = []
 
         # Scan the proper clean installation to store all the filenames
-        clean_installation_path = os.path.join("cache", self.type + "-" + self.version)
+        clean_installation_path = os.path.join(CACHE_DIR, self.type + "-" + self.version)
         if not os.path.isdir(clean_installation_path):
             print_blue("No clean installation for " + self.type + " " + self.version)
             try:
