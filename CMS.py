@@ -369,6 +369,9 @@ class CMS(ABC):
     def download_clean_installation(self):
         """Download a clean installation of the current website"""
         zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
+            
+        if not os.path.isdir(CACHE_DIR):
+            os.mkdir(CACHE_DIR)
 
         try:
             urllib.request.urlretrieve(self.download_url, zip_file, self.download_progress)
