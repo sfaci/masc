@@ -2,8 +2,8 @@ import os
 import json
 import yara
 
-from Constants import BASE_PATH
-from PrintUtils import print_red, print_blue
+from masc.Constants import BASE_PATH
+from masc.PrintUtils import print_red, print_blue
 from progress.bar import Bar
 from termcolor import colored
 

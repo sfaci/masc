@@ -1,4 +1,4 @@
-from CMS import CMS
+from masc.CMS import CMS
 
 
 class Joomla(CMS):

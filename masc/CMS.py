@@ -17,10 +17,10 @@ from abc import ABC, abstractmethod
 from termcolor import colored
 from progress.spinner import Spinner
 
-from MascEntry import MascEntry
-from Dictionary import Dictionary
-from PrintUtils import print_red, print_blue, print_green
-from Constants import BASE_PATH, BACKUPS_DIR, CACHE_DIR, LOGS_DIR
+from masc.MascEntry import MascEntry
+from masc.Dictionary import Dictionary
+from masc.PrintUtils import print_red, print_blue, print_green
+from masc.Constants import BASE_PATH, BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
 
 class CMS(ABC):
@@ -369,7 +369,7 @@ class CMS(ABC):
     def download_clean_installation(self):
         """Download a clean installation of the current website"""
         zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
-            
+
         if not os.path.isdir(CACHE_DIR):
             os.mkdir(CACHE_DIR)
 
