@@ -16,6 +16,9 @@ from MascUtils import MascUtils, BACKUPS_DIR
 
 CWD = os.getcwd() + '/'
 
+if not os.path.exists(os.path.expanduser("~/.masc")):
+    os.mkdir(os.path.expanduser("~/.masc"))
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-af', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
 parser.add_argument('-aw', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
