@@ -6,6 +6,8 @@ import argparse
 from progress.spinner import Spinner
 from termcolor import colored
 
+sys.path.extend(['.', '..'])
+
 from masc.constants import LOGS_DIR, BACKUPS_DIR
 from masc.custom import Custom
 from masc.wordpress import Wordpress
