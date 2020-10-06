@@ -1,5 +1,5 @@
 import os
-from masc.CMS import CMS
+from masc.cms import CMS
 
 
 class Drupal(CMS):

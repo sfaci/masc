@@ -6,13 +6,13 @@ import argparse
 from progress.spinner import Spinner
 from termcolor import colored
 
-from masc.Constants import LOGS_DIR, BACKUPS_DIR
-from masc.Custom import Custom
-from masc.Wordpress import Wordpress
-from masc.Drupal import Drupal
-from masc.PrintUtils import print_green, print_blue, print_red, print_info, print_results
-from masc.Dictionary import Dictionary
-from masc.MascUtils import MascUtils
+from masc.constants import LOGS_DIR, BACKUPS_DIR
+from masc.custom import Custom
+from masc.wordpress import Wordpress
+from masc.drupal import Drupal
+from masc.print_utils import print_green, print_blue, print_red, print_info, print_results
+from masc.dictionary import Dictionary
+from masc.masc_utils import MascUtils
 
 
 def main():

@@ -17,10 +17,10 @@ from abc import ABC, abstractmethod
 from termcolor import colored
 from progress.spinner import Spinner
 
-from masc.MascEntry import MascEntry
-from masc.Dictionary import Dictionary
-from masc.PrintUtils import print_red, print_blue, print_green
-from masc.Constants import BASE_PATH, BACKUPS_DIR, CACHE_DIR, LOGS_DIR
+from masc.masc_entry import MascEntry
+from masc.dictionary import Dictionary
+from masc.print_utils import print_red, print_blue, print_green
+from masc.constants import BASE_PATH, BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
 
 class CMS(ABC):
