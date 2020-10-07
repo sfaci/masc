@@ -1,3 +1,0 @@
-include dicts/*
-include signatures/checksum/*
-include signatures/rules/*

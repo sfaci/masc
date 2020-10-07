@@ -1,6 +1,10 @@
 """
 Some contants to use
 """
+import os
+
+# Current path that masc is being executed from
+BASE_PATH = os.path.dirname(os.path.realpath(__file__))
 
 # This is the local directory where I make some test with fake websites
 TEST_DIR = "test/"

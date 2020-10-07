@@ -1,6 +1,6 @@
 import os
 
-from CMS import CMS
+from masc.cms import CMS
 
 
 class Wordpress(CMS):
