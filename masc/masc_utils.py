@@ -3,6 +3,7 @@ import os
 import datetime
 
 from masc.constants import CACHE_DIR, LOGS_DIR, BACKUPS_DIR
+from masc.print_utils import print_red
 
 
 class MascUtils:
@@ -19,6 +20,14 @@ class MascUtils:
     @staticmethod
     def list_backups():
         """List backups. These are the local backups that users make any time they scan a website"""
+        if not os.path.isdir(BACKUPS_DIR):
+            os.mkdir(BACKUPS_DIR)
+
+        backup_count = len(os.listdir(BACKUPS_DIR))
+        if backup_count == 0:
+            print_red("no backups")
+            return
+
         backups_list = os.scandir(BACKUPS_DIR)
         for backup in backups_list:
             backup_parts = backup.name.split("_")
