@@ -1,7 +1,8 @@
+import os
+
 """
 Some contants to use
 """
-import os
 
 # Current path that masc is being executed from
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -16,10 +17,10 @@ DRUPAL_DIR = TEST_DIR + "druptal/"
 MAGENTO_DIR = TEST_DIR + "magento/"
 
 # The dir where clean installations are downloaded and unzipped
-CACHE_DIR = "cache/"
+CACHE_DIR = os.path.expanduser("~/.masc/cache/")
 
 # The dir where backups are stored
-BACKUPS_DIR = "backups/"
+BACKUPS_DIR = os.path.expanduser("~/.masc/backups/")
 
 # Logs dir
-LOGS_DIR = "logs/"
+LOGS_DIR = os.path.expanduser("~/.masc/logs/")
