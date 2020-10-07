@@ -17,10 +17,10 @@ from abc import ABC, abstractmethod
 from termcolor import colored
 from progress.spinner import Spinner
 
-from MascEntry import MascEntry
-from Dictionary import Dictionary
-from PrintUtils import print_red, print_blue, print_green
-from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
+from masc.masc_entry import MascEntry
+from masc.dictionary import Dictionary
+from masc.print_utils import print_red, print_blue, print_green
+from masc.constants import BASE_PATH, BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
 
 class CMS(ABC):
@@ -52,7 +52,7 @@ class CMS(ABC):
         # Read and create download url depending of the CMS type
         config = configparser.ConfigParser()
         config.sections()
-        config.read('masc.conf')
+        config.read(os.path.join(BASE_PATH, 'masc.conf'))
         if self.type != 'custom':
             self.download_url = config['download_urls'][self.type] + self.version + ".zip"
 
@@ -244,7 +244,7 @@ class CMS(ABC):
         clean_files = []
 
         # Scan the proper clean installation to store all the filenames
-        clean_installation_path = os.path.join("cache", self.type + "-" + self.version)
+        clean_installation_path = os.path.join(CACHE_DIR, self.type + "-" + self.version)
         if not os.path.isdir(clean_installation_path):
             print_blue("No clean installation for " + self.type + " " + self.version)
             try:
@@ -369,7 +369,7 @@ class CMS(ABC):
     def download_clean_installation(self):
         """Download a clean installation of the current website"""
         zip_file = CACHE_DIR + self.type + "-" + self.version + ".zip"
-            
+
         if not os.path.isdir(CACHE_DIR):
             os.mkdir(CACHE_DIR)
 
