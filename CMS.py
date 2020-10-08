@@ -25,6 +25,7 @@ from Constants import BACKUPS_DIR, CACHE_DIR, LOGS_DIR
 
 class CMS(ABC):
     """This class represent a generic website"""
+
     def __init__(self, path, name="no_name", log=True):
         super().__init__()
 
@@ -172,23 +173,39 @@ class CMS(ABC):
         except:
             return False
 
-    def rollback_backup(self):
+    def rollback_backup(self, file_path="ALL"):
         """Revert any change of your website using a previous backup"""
         backup_src = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
-        if not os.path.isdir(backup_src):
-            print_red(
-                "It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
-            exit()
+        if file_path == "ALL":
+            if not os.path.isdir(backup_src):
+                print_red(
+                    "It does not exist a backup with the given name. Are you sure it contained a " + self.type + " installation?")
+                exit()
 
-        for dirpaths, root, filenames in os.walk(backup_src):
-            for filename in filenames:
-                filename = os.path.join(dirpaths, filename)
-                filename_dest = filename.replace(backup_src + os.sep, "")
-                path_dest = os.path.dirname(filename_dest)
+            for dirpaths, root, filenames in os.walk(backup_src):
+                for filename in filenames:
+                    filename = os.path.join(dirpaths, filename)
+                    filename_dest = filename.replace(backup_src + os.sep, "")
+                    path_dest = os.path.dirname(filename_dest)
 
-                if not os.path.isdir(os.path.join(self.path, path_dest)) and path_dest != "":
-                    os.mkdir(os.path.join(self.path, path_dest))
-                shutil.copyfile(filename, os.path.join(self.path, filename_dest))
+                    if not os.path.isdir(os.path.join(self.path, path_dest)) and path_dest != "":
+                        os.mkdir(os.path.join(self.path, path_dest))
+                    shutil.copyfile(filename, os.path.join(self.path, filename_dest))
+        else:
+
+            if os.path.isdir(file_path):
+                for dirpaths, root, filenames in os.walk(file_path):
+                    for filename in filenames:
+                        filename = os.path.join(dirpaths, filename)
+                        filename_dest = filename.replace(backup_src + os.sep, "")
+                        path_dest = os.path.dirname(filename_dest)
+
+                        if not os.path.isdir(os.path.join(self.path, path_dest)) and path_dest != "":
+                            os.mkdir(os.path.join(self.path, path_dest))
+                        shutil.copyfile(filename, os.path.join(self.path, filename_dest))
+            else:
+                filename_dest = file_path.replace(backup_src + os.sep, "")
+                shutil.copyfile(file_path, os.path.join(self.path, filename_dest))
 
     def unzip_clean_installation(self):
         """Unzip a zip file that contains a clean installation of the current website"""

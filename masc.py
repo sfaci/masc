@@ -19,16 +19,21 @@ CWD = os.getcwd() + '/'
 parser = argparse.ArgumentParser()
 parser.add_argument('-af', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
 parser.add_argument('-aw', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
-parser.add_argument('-cc', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)', action='store_true')
-parser.add_argument('-c', '--clean-site', help='Clean up the site (and apply some extra actions to hide information to attackers)', action='store_true')
+parser.add_argument('-cc', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)',
+                    action='store_true')
+parser.add_argument('-c', '--clean-site', help='Clean up the site (and apply some extra actions to hide information '
+                                               'to attackers)', action='store_true')
 parser.add_argument('-l', '--list-backups', help='List local backups', action='store_true')
-parser.add_argument('-b', '--make-backup', help='Create a local backup of the current installation', action='store_true')
+parser.add_argument('-b', '--make-backup', help='Create a local backup of the current installation',
+                    action='store_true')
 parser.add_argument('-m', '--monitor', help='Monitor site to detect changes', action='store_true')
 parser.add_argument('-n', '--name', help='Name assigned to the scanned installation', metavar='NAME')
 parser.add_argument('-p', '--path', help='Website installation path', metavar='PATH')
-parser.add_argument('-r', '--rollback', help='Restore a local backup', action='store_true')
+parser.add_argument('-r', '--rollback', help='Restore a local backup. Provide a path to a txt file for rolling back '
+                                             'just the files specified, or provide \"ALL\" to restore all files.')
 parser.add_argument('-s', '--scan', help='Scan website for malware', action='store_true')
-parser.add_argument('-t', '--site-type', help='which type of web you want to scan: wordpress, drupal or a custom website',
+parser.add_argument('-t', '--site-type', help='which type of web you want to scan: wordpress, drupal or a custom '
+                                              'website',
                     choices=['wordpress', 'drupal', 'custom'])
 
 # Print some info about masc (version, github site, . . .)
@@ -41,7 +46,7 @@ if len(sys.argv) == 1:
 
 if args.scan:
     if not args.path:
-        print_red("You must specifiy the installation path to perform a scan")
+        print_red("You must specify the installation path to perform a scan")
         exit()
 
     if not args.site_type:
@@ -153,7 +158,7 @@ elif args.make_backup:
 
     if not args.site_type:
         print_red("You must provide the type-site option to make a backup")
-        exit
+        exit()
 
     if not args.name:
         print_red("You must provide the name of your installation to make a backup")
@@ -192,18 +197,49 @@ elif args.rollback:
 
     if not args.site_type:
         print_red("You must provide the type-site option to rollback")
-        exit
+        exit()
 
     if not args.name:
         print_red("You must provide the name of your installation to rollback")
         exit()
 
-    print_blue("Restoring backup . . .")
-    website = Custom(args.path, args.name, args.site_type)
-    website.rollback_backup()
-    print_green("done.")
+    if args.rollback == "ALL":
+        print_blue("Restoring backup . . .")
+        website = Custom(args.path, args.name, args.site_type)
+        website.rollback_backup()
+        print_green("done.")
+    else:
+        if not os.path.exists(args.rollback):
+            print_red("File not found. Please check the path or provide \"ALL\" for restoring all.")
+            exit()
+        print_blue("Restoring backup . . .")
+        filestorestore = []
+        try:
+            with open(args.rollback, "r") as txtfile:
+                num_lines = sum(1 for line in open(args.rollback))
+                lines = 0
+                while lines != num_lines:
+                    line = txtfile.readline().strip()
+                    lines += 1
+                    if line.strip() == "":
+                        continue
+                    if os.path.exists("backups/" + os.path.join(args.site_type + "_" + args.name, line)):
+                        website = Custom(args.path, args.name, args.site_type)
+                        website.rollback_backup(
+                            file_path="backups/" + os.path.join(args.site_type + "_" + args.name) + "/" +
+                                      line)
+                    else:
+                        print("The file " + line + " doesn't exist")
+                        continue
 
-# User chose clean masc cache (logs and cache dirs)
+                    filestorestore.append(line)
+                print_green("done.")
+        except Exception as error:
+            print_red(
+                "An exception occurred while opening the file: " + str(error) + ". Please check file permissions and "
+                                                                                "try again")
+
+        # User chose clean masc cache (logs and cache dirs)
 elif args.clean_cache:
     print_blue("Cleaning masc cache . . .")
     MascUtils.clean_cache()
