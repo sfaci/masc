@@ -153,8 +153,9 @@ class CMS(ABC):
             os.mkdir(BACKUPS_DIR)
 
         # Set the destination directory with a prefix containing the type of the installation (wodpress, joomla, . . .)
-        destination_dir = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
-
+        baseDir = os.path.join(BACKUPS_DIR, self.type + "_" + self.name)
+        destination_dir = os.path.join(baseDir, f"{datetime.datetime.now():%Y-%m-%d %H%M%S}")
+        
         try:
             # Remove previous backup
             if os.path.isdir(destination_dir):

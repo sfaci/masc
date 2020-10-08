@@ -28,8 +28,12 @@ class MascUtils:
             print_red("no backups")
             return
 
-        backups_list = os.scandir(BACKUPS_DIR)
-        for backup in backups_list:
-            backup_parts = backup.name.split("_")
-            date_str = datetime.datetime.fromtimestamp(os.stat(backup.path).st_atime).strftime("%d-%m-%Y %H:%M")
-            print("\t" + backup_parts[1] + " : " + backup_parts[0] + " installation (" + date_str + ")")
+        site_list = os.scandir(BACKUS_DIR)
+        for site in site_list:
+            site_parts = site.name.splist("_")
+            print("\t" + site_parts[1] + " : " + site_parts[0])
+
+            backups = os.scandir(site)
+            for backup in backups:
+                print("\t\t  " + "Backup date: " + backup.name)
+
