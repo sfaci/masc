@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import pyclamd
 import os
 import requests
 
@@ -18,6 +17,3 @@ params['resource'] = json_response['resource']
 response = requests.get('https://www.virustotal.com/vtapi/v2/file/report', params=params)
 json_response = response.json()
 print(json_response)
-
-
-

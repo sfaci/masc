@@ -40,7 +40,7 @@ class CMS(ABC):
         else:
             try:
                 self.version = self.get_version()
-            except:
+            except Exception:
                 raise Exception(
                     "Fatal error. Wrong installation type. Are you sure this is a " + self.type + " website?")
 
@@ -90,7 +90,7 @@ class CMS(ABC):
             clamav = pyclamd.ClamdAgnostic()
             using_clamv = True
             clamav_message = "Using ClamAV engine"
-        except:
+        except Exception:
             clamav_message = "ClamAV not found. Using only checksum and YARA rules databases"
 
         spinner = Spinner(colored("Scanning your website (" + clamav_message + ") ", "blue"))
@@ -121,7 +121,7 @@ class CMS(ABC):
                         if result:
                             for rule in result:
                                 results.append(self.add_result(entry, str(rule).replace("_", " ")))
-                    except:
+                    except Exception:
                         # FIXME I don't know but some rules are not readable for me
                         # I think it's because the YARA version
                         print_red("Some error applying rules")
@@ -169,7 +169,7 @@ class CMS(ABC):
             shutil.copytree(self.path, destination_dir)
             self.log.info("backup " + self.type + "_" + self.name + " created")
             return True
-        except:
+        except Exception:
             return False
 
     def rollback_backup(self):
@@ -283,7 +283,7 @@ class CMS(ABC):
         print_blue("Comparing with a clean installation . . .")
         for result in total_suspected_files:
             result = result.replace(self.path + os.sep, "")
-            if not result in clean_files:
+            if result not in clean_files:
                 results.append(result)
         print_green("done.")
 

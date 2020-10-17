@@ -32,9 +32,3 @@ class Drupal(CMS):
 
         # Generic cleaning for every CMS
         self.delete_known_files()
-
-
-
-
-
-
