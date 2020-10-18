@@ -14,8 +14,6 @@ from masc.print_utils import print_green, print_blue, print_red, print_info, pri
 from masc.dictionary import Dictionary
 from masc.masc_utils import MascUtils
 
-sys.path.extend(['.', '..'])
-
 
 def main():
     if not os.path.exists(os.path.expanduser("~/.masc")):
