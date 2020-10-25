@@ -17,5 +17,3 @@ class Joomla(CMS):
 
     def cleanup_site(self):
         pass
-
-

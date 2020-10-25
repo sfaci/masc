@@ -37,7 +37,7 @@ class Dictionary:
         with open(os.path.join(DICTS_PATH, type + SUSPECT_CONTENT_DATA)) as file:
             for line in file:
                 if line.startswith("#"):
-                    continue;
+                    continue
                 cls.suspect_content.append(line.rstrip())
 
     @classmethod
@@ -69,8 +69,7 @@ class Dictionary:
             try:
                 rules = yara.compile(filepath=entry.path)
                 cls.yara_rules.append(rules)
-            except Exception as e:
-                # print(e)
+            except Exception:
                 errors = True
 
             bar.next()

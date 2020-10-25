@@ -6,8 +6,6 @@ import argparse
 from progress.spinner import Spinner
 from termcolor import colored
 
-sys.path.extend(['.', '..'])
-
 from masc.constants import LOGS_DIR, BACKUPS_DIR
 from masc.custom import Custom
 from masc.wordpress import Wordpress
@@ -54,8 +52,8 @@ def main():
             exit()
 
         if args.clean_site and not args.name:
-            print_red("You selected clean up your website, but no name was provided. " +
-                    "You must choose a name if you want to clean up your site")
+            print_red("You selected clean up your website, but no name was provided. "
+                      "You must choose a name if you want to clean up your site")
             exit()
 
         # Set a default or choosen name
@@ -122,7 +120,7 @@ def main():
             try:
                 if len(files_to_remove) > 0:
                     # Remove malware/suspect files
-                    spinner = Spinner(colored("Malware/suspect files were found. Removing . . .", "red"))
+                    Spinner(colored("Malware/suspect files were found. Removing . . .", "red"))
                     for filename in files_to_remove:
                         # FIXME Sometimes a directory is listed
                         if os.path.isdir(os.path.join(cms.path, filename)):
@@ -139,8 +137,8 @@ def main():
                 cms.cleanup_site()
                 print_green("done.")
 
-                print_blue("Some changes can have occured. See log '" + LOGS_DIR + cms.get_log_name() +
-                        "'{%date} for details")
+                logs_full_path = LOGS_DIR + cms.get_log_name()
+                print_blue("Some changes can have occured. See log '" + logs_full_path + "'{%date} for details")
             except Exception as e:
                 print(e)
 

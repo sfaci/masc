@@ -74,5 +74,5 @@ class Wordpress(CMS):
             file = open(os.path.join(self.path, 'wp-content/themes/functions.php'), "a")
             file.write("remove_action('wp_head', 'wp_generator');")
             file.close()
-            self.log.info("added:'remove_action(\'wp-head\', \'wp_generator\');':end of file:" +
+            self.log.info("added:'remove_action(\'wp-head\', \'wp_generator\');':end of file:"
                           "wp-content/themes/functions.php")
