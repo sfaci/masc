@@ -30,7 +30,7 @@ class MascUtils:
 
         site_list = os.scandir(BACKUPS_DIR)
         for site in site_list:
-            site_parts = site.name.splist("_")
+            site_parts = site.name.split("_")
             print("\t" + site_parts[1] + " : " + site_parts[0])
 
             backups = os.scandir(site)
