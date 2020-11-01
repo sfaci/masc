@@ -28,7 +28,7 @@ class MascUtils:
             print_red("no backups")
             return
 
-        site_list = os.scandir(BACKUS_DIR)
+        site_list = os.scandir(BACKUPS_DIR)
         for site in site_list:
             site_parts = site.name.splist("_")
             print("\t" + site_parts[1] + " : " + site_parts[0])
