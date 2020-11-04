@@ -52,7 +52,7 @@ First of all, notice that this tool is developed under Linux and Mac OSX environ
   * pypandoc
   * progress
   * pyclamd
-  
+
 ```bash
 santi@zenbook:$ pip3 install python-magic yara-python watchdog termcolor pypandoc progress pyclamd
 ```
@@ -66,7 +66,7 @@ In my notebook, after upgrading to Debian testing, masc became to show an error 
 OSError: /usr/lib/libyara.so: cannot open shared object file: No such file or directory
 ```
 
-After trying a lot of solutions I found in the Internet, I realized that this file was located in my computer in 
+After trying a lot of solutions I found in the Internet, I realized that this file was located in my computer in
 _/usr/local/lib/python3.5/dist-packages/usr/lib_, so I created a symbolic link from the previous path to _/usr/lib_
 
 ```bash
@@ -77,7 +77,7 @@ And now, masc and Yara library are running with no problems.
 
 #### Notice for MacOS users/developers
 
-_masc_ is developed under Linux but it has been tested under Mac OSX. Anyway, it should run without problems under any Unix-friendly OS. 
+_masc_ is developed under Linux but it has been tested under Mac OSX. Anyway, it should run without problems under any Unix-friendly OS.
 
 In particular, in Mac OSX I have noticed it's neccesary to install
 [Homebrew](https://brew.sh) to use python-magic library properly as _libmagic_. Check first the previous link to the _brew_ homepage and then
@@ -87,8 +87,8 @@ you will be able to install as I show below:
 santi@zenbook:$ brew install libmagic
 ```
 
-Also, in my computer I had to change the first line of the _masc.py_ script. Python3 is installed in _/usr/local/bin_ and it's not 
-allowed to create symlinks from _/usr/bin_ 
+Also, in my computer I had to change the first line of the _masc.py_ script. Python3 is installed in _/usr/local/bin_ and it's not
+allowed to create symlinks from _/usr/bin_
 
 Change the first line in _masc.py_
 
@@ -111,16 +111,14 @@ santi@zenbook:$ python3 masc.py
 ## Usage
 
 ```bash
-
-masc 0.2.2 (http://github.com/sfaci/masc)
-usage: masc.py [-h] [-af FILENAME] [--aw STRING] [-cc] [-c] [-l] [-b] [-m]
+usage: masc [-h] [-af FILENAME] [--aw STRING] [-cc] [-c] [-l] [-b] [-m]
                [-n NAME] [-p PATH] [-r] [-s] [-t {wordpress,drupal,custom}]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -af FILENAME, --add-file FILENAME   
+  -af FILENAME, --add-file FILENAME
                         Add a suspect file to the dictionary
-  -aw STRING --add-word STRING     
+  -aw STRING --add-word STRING
                         Add a suspect content to the dictionary
   -cc, --clean-cache        Clean masc cache (cache and logs files, NO backups)
   -c, --clean-site          Clean up the site (and apply some extra actions to hide information to attackers)
@@ -163,11 +161,11 @@ santi@zenbook:$ ./masc.py --scan --site-type wordpress --path /var/www/html --cl
 
 There are two samples of hacked websites in the samples zip file:
 
- * **drupal**: clean Drupal installation with some malware scripts. You can use it to make 
+ * **drupal**: clean Drupal installation with some malware scripts. You can use it to make
  your test during development
  * **wordpress**: clean WodPress installation with some malware to test. There is also some security holes such as
  emtpy directories and some permissions wrong to test the extra features implemented to this kind of CMS
- 
+
 In addition, there is a repository in the Docker Hub to perform tests [masc-wordpress](https://hub.docker.com/r/sfaci/masc-wordpress/)
 
 ## Documentation
@@ -176,14 +174,14 @@ You can find a tutorial about how to use _masc_ at the [wiki](https://github.com
 
 ## How to contribute
 
-If you want to contribute to this project, take a look at the [wiki](https://github.com/sfaci/masc/wiki). 
+If you want to contribute to this project, take a look at the [wiki](https://github.com/sfaci/masc/wiki).
 There is a section about [How to contribute to this project](https://github.com/sfaci/masc/wiki/How-to-contribute)
 
 ## Thanks
 
-Thanks to [OWASP WebMalwareScanner](https://wiki.owasp.org/index.php/OWASP_Web_Malware_Scanner_Project) for some ideas 
+Thanks to [OWASP WebMalwareScanner](https://wiki.owasp.org/index.php/OWASP_Web_Malware_Scanner_Project) for some ideas
 and the signatures databases with checksums and YARA
-rules (and how to load it to work with). 
+rules (and how to load it to work with).
 
 ## Author
 
