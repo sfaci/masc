@@ -1,5 +1,7 @@
 from termcolor import colored
 
+from masc.constants import VERSION
+
 """
 Some utility methods to print information on the screen
 """
@@ -51,4 +53,4 @@ def print_results(results, data_found_message, data_not_found_message):
 
 
 def print_info():
-    print("\nmasc 0.2.2 (http://github.com/sfaci/masc)")
+    print(f"\nmasc {VERSION} (http://github.com/sfaci/masc)")
