@@ -1,8 +1,17 @@
 import os
+import sys
+
+if sys.version_info < (3, 8):
+    import importlib_metadata as metadata
+else:
+    from importlib import metadata
 
 """
 Some contants to use
 """
+
+# Current masc version as seen on setup.py
+VERSION = metadata.version('masc')
 
 # Current path that masc is being executed from
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))

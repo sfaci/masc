@@ -38,5 +38,6 @@ setup(
         'termcolor',
         'pyclamd',
         'progress',
+        'importlib-metadata;python_version<"3.8"',
     ],
 )
