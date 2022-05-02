@@ -111,7 +111,7 @@ santi@zenbook:$ python3 masc.py
 ## Usage
 
 ```bash
-usage: masc [-h] [-af FILENAME] [--aw STRING] [-cc] [-c] [-l] [-b] [-m]
+usage: masc [-h] [-af FILENAME] [--aw STRING] [-cc] [-cf] [-cr] [-c] [-l] [-b] [-m]
                [-n NAME] [-p PATH] [-r] [-s] [-t {wordpress,drupal,custom}]
 
 optional arguments:
@@ -121,6 +121,9 @@ optional arguments:
   -aw STRING --add-word STRING
                         Add a suspect content to the dictionary
   -cc, --clean-cache        Clean masc cache (cache and logs files, NO backups)
+  -cf, --compile-file       Compile rules and save them in the system
+  -cr, --run-compiled-rules Running Compiled rules will help in
+                            saving memory of your system
   -c, --clean-site          Clean up the site (and apply some extra actions to hide information to attackers)
   -l, --list-backups        List local backups
   -b, --make-backup         Create a local backup of the current installation
@@ -141,6 +144,7 @@ The actions you can perform over a web installation are:
 * -m, --monitor (with its options)
 * -b, --make-backup (with its options)
 * -l, --list-backups
+* -cf, --compile-file
 
 And you have to consider that if you want to perform some actions over some kind of web installation, it's mandatory to
 specify the type (-t or --type) and path (-p or --path).

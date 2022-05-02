@@ -23,6 +23,8 @@ def main():
     parser.add_argument('-af', '--add-file', help='Add a suspect file to the dictionary', metavar='FILENAME')
     parser.add_argument('-aw', '--add-word', help='Add a suspect content to the dictionary', metavar='STRING')
     parser.add_argument('-cc', '--clean-cache', help='Clean masc cache (cache and logs files, NO backups)', action='store_true')
+    parser.add_argument('-cf', '--compile-file', help='Compile rules and save them in the system', action='store_true')
+    parser.add_argument('-cr', '--run-compiled-rules', help='Running Compiled rules will help in saving memory of your system', action='store_true')
     parser.add_argument('-c', '--clean-site', help='Clean up the site (and apply some extra actions to hide information to attackers)', action='store_true')
     parser.add_argument('-l', '--list-backups', help='List local backups', action='store_true')
     parser.add_argument('-b', '--make-backup', help='Create a local backup of the current installation', action='store_true')
@@ -40,6 +42,11 @@ def main():
 
     if len(sys.argv) == 1:  # FIXME: if using entrypoint prints ugly path
         print("No arguments provided. Execute '" + sys.argv[0] + " -h' for help")
+        exit()
+
+    if args.compile_file:
+        Dictionary.save_compiled_rules()
+        print_green("Rules compiled. Now you can scan using compiled rules just add --run-compiled-rules")
         exit()
 
     if args.scan:
@@ -78,7 +85,10 @@ def main():
         print_blue("Loading dictionaries and signatures. . . ")
         Dictionary.load_suspect_files(args.site_type, args.path)
         Dictionary.load_suspect_content(args.site_type, args.path)
-        Dictionary.load_signatures()
+        run_compiled_rules = False
+        if args.run_compiled_rules:
+            run_compiled_rules = True
+        Dictionary.load_signatures(run_compiled_rules)
         print_green("done.")
 
         # Scan and load some information about the website

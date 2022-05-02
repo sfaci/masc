@@ -14,6 +14,7 @@ SUSPECT_FILES_DATA = "_suspect_files.data"
 SUSPECT_CONTENT_DATA = "_suspect_content.data"
 CHECKSUM_PATH = SIGNATURES_PATH + "checksum/"
 RULES_PATH = SIGNATURES_PATH + "rules/"
+COMPILED_RULES_PATH = SIGNATURES_PATH + "compiled_rules/"
 
 
 class Dictionary:
@@ -41,7 +42,7 @@ class Dictionary:
                 cls.suspect_content.append(line.rstrip())
 
     @classmethod
-    def load_signatures(cls):
+    def load_signatures(cls, run_compiled_rules):
         """Load signatures (checksums and YARA rules) to create the signatures dictionary"""
         errors = False
 
@@ -65,14 +66,28 @@ class Dictionary:
         bar = Bar(colored("Loading YARA rules . . .", "blue"), fill=colored("#", "blue"),
                   max=rules_count, suffix='%(percent)d%%')
         # Load YARA rules
-        for entry in os.scandir(RULES_PATH):
-            try:
-                rules = yara.compile(filepath=entry.path)
+        if run_compiled_rules:
+            if not os.path.isdir(COMPILED_RULES_PATH):
+                print_red("No compiled rules.. Please run [masc --compile-file] at first to generate compiled rules")
+                exit()
+            rules_count = len(list(os.scandir(COMPILED_RULES_PATH)))
+            if rules_count == 0:
+                print_red("No compiled rules.. Please run [masc --compile-file] to compile rules")
+                exit()
+            if rules_count < 700:
+                print_red("Please run [masc --compile-file] to make sure maximum files are compiled")
+            for compiled_rule in os.scandir(COMPILED_RULES_PATH):
+                rules = yara.load(compiled_rule.path)
                 cls.yara_rules.append(rules)
-            except Exception:
-                errors = True
-
-            bar.next()
+                bar.next()
+        else:
+            for entry in os.scandir(RULES_PATH):
+                try:
+                    rules = yara.compile(filepath=entry.path)
+                    cls.yara_rules.append(rules)
+                except Exception:
+                    errors = True        
+                bar.next()
 
         bar.finish()
         if errors:
@@ -99,3 +114,31 @@ class Dictionary:
         """Add a suspect content to the masc dictionary"""
         with open(os.path.join(DICTS_PATH, type + SUSPECT_CONTENT_DATA), "a+") as file:
             file.write(content + "\n")
+
+    @staticmethod
+    def save_compiled_rules():
+        if not os.path.isdir(COMPILED_RULES_PATH):
+            os.mkdir(COMPILED_RULES_PATH)
+
+        rules_count = len(list(os.scandir(RULES_PATH)))
+        bar = Bar(colored("Loading YARA rules . . .", "blue"), fill=colored("#", "blue"),
+                  max=rules_count, suffix='%(percent)d%%')
+        errors = False
+        track = 0
+        for entry in os.scandir(RULES_PATH):
+            try:
+                entry_name = entry.name.replace('.yar', '')
+                rules = yara.compile(filepath=entry.path)
+                rules.save(f'{COMPILED_RULES_PATH}/{entry_name}')
+                track += 1
+                # cls.yara_rules.append(rules)
+            except:
+                errors = True
+                continue                
+            bar.next()
+
+        bar.finish()
+        if errors:
+            print_red("Some errors while compiling yara rules. Some rules were not loaded")
+
+        print_blue("Loaded " + str(track) + " YARA rules")

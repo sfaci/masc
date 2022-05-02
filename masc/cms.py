@@ -132,8 +132,9 @@ class CMS(ABC):
                 result = clamav.scan_file(entry.path)
                 if result:
                     print(result)
-                    malware = result[entry.path][1]
-                    results.append(self.add_result(entry, malware))
+                    if result[entry.path][1] != "Can't open file or directory":
+                        malware = result[entry.path][1]
+                        results.append(self.add_result(entry, malware))
                 spinner.next()
 
         print()
